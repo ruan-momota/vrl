@@ -4,7 +4,7 @@ meeting 2.6.2026:
   until tuesday: 
     jakob: one run kinetic on <cheap-model>
         subtasks: load dataset, load model in .py files
-    haoxiang: run something-something-v2 on <cheap-model>
+    haoxiang: run something-something-v2 on VideoMAE
         subtasks: load dataset, load model in .py files
   until tuesday:
     research perturbations that target either mostly appearance or mostly motion 
