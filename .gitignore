@@ -222,3 +222,11 @@ __marimo__/
 data/
 meeting.md
 todo.md
+scripts/
+
+# Experiment outputs
+outputs/*
+!outputs/embeddings/
+!outputs/embeddings/.gitkeep
+!outputs/logs/
+!outputs/logs/.gitkeep
