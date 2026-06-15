@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import time
 from pathlib import Path
 from typing import Any
 
@@ -31,6 +32,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--image-size", type=int, default=224)
     parser.add_argument("--batch-size", type=int, default=1)
     parser.add_argument("--num-workers", type=int, default=0)
+    parser.add_argument("--pin-memory", action="store_true")
+    parser.add_argument("--shuffle", action="store_true")
+    parser.add_argument("--drop-last", action="store_true")
     parser.add_argument(
         "--processor-checkpoint",
         default=None,
@@ -68,15 +72,25 @@ def run_sanity_check(args: argparse.Namespace) -> dict[str, Any]:
     loader = DataLoader(
         dataset,
         batch_size=args.batch_size,
-        shuffle=False,
+        shuffle=args.shuffle,
         num_workers=args.num_workers,
+        pin_memory=args.pin_memory,
+        drop_last=args.drop_last,
         collate_fn=collate_video_batch,
     )
+    start_time = time.perf_counter()
     batch = next(iter(loader))
+    batch_load_seconds = time.perf_counter() - start_time
     pixel_values = batch["pixel_values"]
     return {
         "index_path": str(args.index_path),
         "dataset_size": len(dataset),
+        "batch_size": args.batch_size,
+        "num_workers": args.num_workers,
+        "pin_memory": args.pin_memory,
+        "shuffle": args.shuffle,
+        "drop_last": args.drop_last,
+        "batch_load_seconds": batch_load_seconds,
         "pixel_values_shape": list(pixel_values.shape),
         "pixel_values_dtype": str(pixel_values.dtype),
         "pixel_values_min": float(pixel_values.min().item()),

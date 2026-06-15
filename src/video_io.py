@@ -67,7 +67,7 @@ def read_video_frames(video_path: str | Path, *, video_id: str | None = None) ->
         raise RuntimeError("PyAV is not installed; cannot decode video files") from error
 
     try:
-        container = av.open(str(path))
+        container = av.open(str(path))  # open a video file
     except Exception as error:  # noqa: BLE001 - wrapped with sample context.
         raise VideoReadError(
             f"failed to open video ({error})", video_path=path, video_id=video_id
@@ -91,7 +91,7 @@ def read_video_frames(video_path: str | Path, *, video_id: str | None = None) ->
         metadata = VideoMetadata(
             video_id=video_id,
             video_path=str(path),
-            frames_decoded=int(frames.shape[0]),
+            frames_decoded=int(frames.shape[0]),  # number of frames
             height=int(frames.shape[1]),
             width=int(frames.shape[2]),
             fps=_stream_fps(stream),
