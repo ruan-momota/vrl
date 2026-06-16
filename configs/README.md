@@ -19,3 +19,8 @@ Project configs should record every choice needed to reproduce an embedding extr
 - `output_path`: embedding artifact path.
 - `seed`: random seed.
 - `deterministic`: whether deterministic behavior is requested.
+
+Additional experiment matrices:
+
+- `ssv2_videomae_perturbation_matrix.json`: first-round validation perturbations
+  and selected strength sweeps for the VideoMAE + local SSV2 experiment.

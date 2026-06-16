@@ -2,7 +2,7 @@
 
 Early-stage video research pipeline for motion and appearance sensitivity experiments.
 
-The current MVP starts with Something-Something-V2 as a motion-biased dataset and VideoMAE as the first pretrained video model. The immediate goal is a stable pipeline for reading local videos, sampling clips, forming model-ready batches, extracting embeddings, and then running a small KNN baseline.
+The current pipeline starts with Something-Something-V2 as a motion-biased dataset and VideoMAE as the first pretrained video model. The MVP pipeline is in place: local videos can be indexed, decoded, sampled, batched, embedded with VideoMAE, evaluated with KNN, and routed through deterministic perturbation hooks.
 
 ## Setup
 
@@ -22,7 +22,7 @@ The current lock file targets Python 3.12 via `.python-version`. If the remote s
 
 ## Current Progress
 
-MVP status: the first and second debug-subset acceptance points are complete. The project can read the local SSV2 debug subsets, preprocess clips, run VideoMAE, save embeddings, reload the saved artifacts with alignment checks, run a cosine KNN baseline over debug train / validation embeddings, and extract embeddings with deterministic perturbation hooks.
+MVP status: the debug-subset acceptance points are complete, and the first local 100 train / 100 validation original baseline has also been generated. The current active work is the first VideoMAE + SSV2 perturbation experiment: validation-only perturbation embeddings, paired sensitivity metrics, and KNN accuracy drop.
 
 Phase progress:
 
@@ -33,9 +33,9 @@ Phase progress:
 | 2. Video read and sampling | Done | PyAV decode, deterministic center/uniform sampling, fail-fast errors. |
 | 3. Dataset / DataLoader | Done | `SSV2ClipDataset`, custom collate, single-worker and multi-worker smoke checks. |
 | 4. VideoMAE model loading | Done | Bare `AutoModel` encoder, `MCG-NJU/videomae-base`, mean-pooled hidden-state embeddings. |
-| 5. Embedding extraction | Done for debug splits | `.pt` artifacts include tensors, labels, video ids, metadata, config, model metadata, and summary. |
-| 6. KNN baseline | Done for debug artifacts | Cosine and L2 KNN code path, deterministic majority vote, JSON report output, debug `k = 1, 5, 10` run. |
-| 7. Perturbation hooks | Initial hooks done | Deterministic frame perturbations can run before VideoMAE preprocessing; sensitivity metrics are still pending. |
+| 5. Embedding extraction | Done for debug and local original splits | `.pt` artifacts include tensors, labels, video ids, metadata, config, model metadata, and summary. |
+| 6. KNN baseline | Done for debug and local original 100/100 artifacts | Cosine and L2 KNN code path, deterministic majority vote, JSON report output. |
+| 7. Perturbation hooks and matrix | Design done | Deterministic frame perturbations are implemented; the first-round experiment matrix is recorded in `configs/ssv2_videomae_perturbation_matrix.json`. |
 
 Completed:
 
@@ -51,20 +51,31 @@ Completed:
 - Split-level embedding extraction with `.pt` artifacts, config snapshots, model metadata, per-sample metadata, and save/reload validation.
 - KNN baseline over saved embedding artifacts, with cosine similarity as the default metric and L2 as an available option.
 - Deterministic perturbation hooks between clip sampling and VideoMAE preprocessing: temporal reverse, temporal shuffle, freeze-tail, single-frame, grayscale, and center occlusion.
+- Original local embeddings for `train.jsonl` and `validation.jsonl`, each with 100 samples and 768-dimensional VideoMAE embeddings.
+- Original local 100/100 KNN baseline with cosine and L2 reports under `outputs/logs/`.
+- Baseline interpretability report showing that only 46 / 100 validation samples have labels seen in the 100-sample train reference set.
+- First-round perturbation matrix with motion / appearance grouping, default parameters, output names, and selected sweeps.
 
 Not completed yet:
 
-- Full train / validation embedding extraction and KNN beyond the debug subsets.
-- Full perturbation sweeps and motion / appearance sensitivity metrics.
+- Validation perturbation embeddings for the first-round matrix.
+- Paired original-vs-perturbed alignment checks.
+- Embedding sensitivity metrics and KNN accuracy drop reports.
+- Strength sweeps, class-level sensitivity reports, plots, and experiment summary.
 
 Current verification:
 
 - Test suite: `30 passed` with `.venv/bin/python -m pytest`.
 - Debug train extraction: 33 / 33 samples, embedding shape `[33, 768]`, failures `0`.
 - Debug validation extraction: 33 / 33 samples, embedding shape `[33, 768]`, failures `0`.
+- Local train original extraction: 100 / 100 samples, embedding shape `[100, 768]`, failures `0`.
+- Local validation original extraction: 100 / 100 samples, embedding shape `[100, 768]`, failures `0`.
 - Saved artifacts were reloaded immediately after writing and validated for row alignment across embeddings, labels, video ids, metadata, and frame indices.
 - Debug cosine KNN baseline: `k=1` accuracy `0.1212` (4 / 33), `k=5` accuracy `0.0606` (2 / 33), `k=10` accuracy `0.0303` (1 / 33).
+- Local 100/100 original KNN baseline, cosine and L2: `k=1` accuracy `0.0200` (2 / 100), `k=5` accuracy `0.0100` (1 / 100), `k=10` accuracy `0.0100` (1 / 100).
+- Train-seen-only local baseline: 46 / 100 validation samples have labels present in the train reference; `k=1` accuracy is `0.0435` (2 / 46).
 - Perturbation extraction smoke: `temporal_reverse` with `--limit 1`, embedding shape `[1, 768]`, saved artifact reloaded successfully with perturbation config and frame order metadata.
+- Perturbation matrix JSON validation: `python -m json.tool configs/ssv2_videomae_perturbation_matrix.json`.
 
 ## Data
 
@@ -198,6 +209,27 @@ The saved `.pt` artifact is a dictionary with:
 
 The CLI reloads the artifact after saving and validates that tensor rows, labels, video ids, metadata, and frame indices stay aligned.
 
+The first local original artifacts have already been generated:
+
+- `outputs/embeddings/ssv2_train100_videomae_base_16f_mean_original.pt`
+- `outputs/embeddings/ssv2_validation100_videomae_base_16f_mean_original.pt`
+
+Regenerate the local train original artifact:
+
+```bash
+uv run python -m src.embedding_extraction \
+  --config configs/ssv2_videomae_smoke.json \
+  --split train \
+  --index-path data/ssv2/index/train.jsonl \
+  --output-path outputs/embeddings/ssv2_train100_videomae_base_16f_mean_original.pt \
+  --batch-size 1 \
+  --num-workers 0 \
+  --local-files-only \
+  --overwrite
+```
+
+Regenerate the local validation original artifact by changing `--split`, `--index-path`, and `--output-path` to `validation`, `data/ssv2/index/validation.jsonl`, and `outputs/embeddings/ssv2_validation100_videomae_base_16f_mean_original.pt`.
+
 ## KNN Baseline
 
 Run the debug KNN baseline over the saved train / validation embedding artifacts:
@@ -221,6 +253,31 @@ Current debug-subset cosine result:
 | 1 | 4 / 33 | 0.1212 |
 | 5 | 2 / 33 | 0.0606 |
 | 10 | 1 / 33 | 0.0303 |
+
+Run the local 100/100 original cosine baseline:
+
+```bash
+uv run python -m src.knn_baseline \
+  --train-artifact outputs/embeddings/ssv2_train100_videomae_base_16f_mean_original.pt \
+  --validation-artifact outputs/embeddings/ssv2_validation100_videomae_base_16f_mean_original.pt \
+  --k 1 5 10 \
+  --metric cosine \
+  --output-path outputs/logs/ssv2_validation100_videomae_base_16f_mean_original_knn_cosine.json \
+  --overwrite
+```
+
+Current local 100/100 original result:
+
+| metric | k | Correct / Total | Accuracy |
+| --- | --- | --- | --- |
+| cosine | 1 | 2 / 100 | 0.0200 |
+| cosine | 5 | 1 / 100 | 0.0100 |
+| cosine | 10 | 1 / 100 | 0.0100 |
+| L2 | 1 | 2 / 100 | 0.0200 |
+| L2 | 5 | 1 / 100 | 0.0100 |
+| L2 | 10 | 1 / 100 | 0.0100 |
+
+The local train / validation label overlap is limited: 46 / 100 validation samples have a label present in the 100-sample train reference. Perturbation KNN reports should therefore include both all-validation accuracy and train-seen-only accuracy.
 
 ## Perturbation Hooks
 
@@ -253,6 +310,49 @@ uv run python -m src.embedding_extraction \
 ```
 
 Additional perturbation parameters include `--perturbation-seed`, `--perturbation-frame-index`, `--freeze-start-fraction`, `--occlusion-size-fraction`, and `--occlusion-fill-value`.
+
+## Perturbation Matrix
+
+The first VideoMAE + SSV2 perturbation matrix is recorded in:
+
+```text
+configs/ssv2_videomae_perturbation_matrix.json
+```
+
+First-round validation perturbations:
+
+| perturbation | group | default |
+| --- | --- | --- |
+| `temporal_reverse` | motion | reverse the sampled frame order |
+| `temporal_shuffle` | motion | deterministic per-video shuffle with seed `0` |
+| `freeze_tail` | motion | `freeze_start_fraction = 0.5` |
+| `single_frame` | motion | repeat the center sampled frame |
+| `grayscale` | appearance | convert RGB frames to grayscale RGB |
+| `center_occlusion` | appearance | `occlusion_size_fraction = 0.25`, fill value `0` |
+
+The first round applies perturbations only to the validation split. The train reference remains `outputs/embeddings/ssv2_train100_videomae_base_16f_mean_original.pt`, so KNN drop measures how perturbed validation embeddings move in the original train embedding space.
+
+Selected second-round sweeps are also fixed in the matrix:
+
+- `freeze_tail`: `freeze_start_fraction = 0.25, 0.5, 0.75`
+- `center_occlusion`: `occlusion_size_fraction = 0.15, 0.25, 0.4`
+- `single_frame`: first, center, and last sampled frame
+- `temporal_shuffle`: seeds `0, 1, 2`
+
+Example first-round extraction command:
+
+```bash
+uv run python -m src.embedding_extraction \
+  --config configs/ssv2_videomae_smoke.json \
+  --split validation \
+  --index-path data/ssv2/index/validation.jsonl \
+  --output-path outputs/embeddings/ssv2_validation100_videomae_base_16f_mean_temporal_reverse.pt \
+  --batch-size 1 \
+  --num-workers 0 \
+  --local-files-only \
+  --perturbation temporal_reverse \
+  --overwrite
+```
 
 ## Outputs
 
