@@ -22,7 +22,7 @@ The current lock file targets Python 3.12 via `.python-version`. If the remote s
 
 ## Current Progress
 
-MVP status: the first acceptance point is complete. The project can read the local SSV2 debug subsets, preprocess clips, run VideoMAE, save embeddings, and reload the saved artifacts with alignment checks.
+MVP status: the first and second debug-subset acceptance points are complete. The project can read the local SSV2 debug subsets, preprocess clips, run VideoMAE, save embeddings, reload the saved artifacts with alignment checks, and run a cosine KNN baseline over debug train / validation embeddings.
 
 Phase progress:
 
@@ -34,7 +34,7 @@ Phase progress:
 | 3. Dataset / DataLoader | Done | `SSV2ClipDataset`, custom collate, single-worker and multi-worker smoke checks. |
 | 4. VideoMAE model loading | Done | Bare `AutoModel` encoder, `MCG-NJU/videomae-base`, mean-pooled hidden-state embeddings. |
 | 5. Embedding extraction | Done for debug splits | `.pt` artifacts include tensors, labels, video ids, metadata, config, model metadata, and summary. |
-| 6. KNN baseline | Next | Debug train / validation artifacts are ready for a first KNN code path. |
+| 6. KNN baseline | Done for debug artifacts | Cosine and L2 KNN code path, deterministic majority vote, JSON report output, debug `k = 1, 5, 10` run. |
 | 7. Perturbation hooks | Later | Motion / appearance perturbation interfaces are still pending. |
 
 Completed:
@@ -49,19 +49,20 @@ Completed:
 - VideoMAE model loading with the Hugging Face checkpoint [`MCG-NJU/videomae-base`](https://huggingface.co/MCG-NJU/videomae-base).
 - Random-tensor and real-video VideoMAE forward checks, using `last_hidden_state` mean pooling as the MVP embedding.
 - Split-level embedding extraction with `.pt` artifacts, config snapshots, model metadata, per-sample metadata, and save/reload validation.
+- KNN baseline over saved embedding artifacts, with cosine similarity as the default metric and L2 as an available option.
 
 Not completed yet:
 
-- Full train / validation embedding extraction beyond the debug subsets.
-- KNN baseline over train and validation embeddings.
+- Full train / validation embedding extraction and KNN beyond the debug subsets.
 - Perturbation hooks and motion / appearance sensitivity metrics.
 
 Current verification:
 
-- Test suite: `15 passed, 1 skipped` with `uv run python -m pytest`.
+- Test suite: `23 passed` with `.venv/bin/python -m pytest`.
 - Debug train extraction: 33 / 33 samples, embedding shape `[33, 768]`, failures `0`.
 - Debug validation extraction: 33 / 33 samples, embedding shape `[33, 768]`, failures `0`.
 - Saved artifacts were reloaded immediately after writing and validated for row alignment across embeddings, labels, video ids, metadata, and frame indices.
+- Debug cosine KNN baseline: `k=1` accuracy `0.1212` (4 / 33), `k=5` accuracy `0.0606` (2 / 33), `k=10` accuracy `0.0303` (1 / 33).
 
 ## Data
 
@@ -195,6 +196,30 @@ The saved `.pt` artifact is a dictionary with:
 
 The CLI reloads the artifact after saving and validates that tensor rows, labels, video ids, metadata, and frame indices stay aligned.
 
+## KNN Baseline
+
+Run the debug KNN baseline over the saved train / validation embedding artifacts:
+
+```bash
+uv run python -m src.knn_baseline \
+  --train-artifact outputs/embeddings/ssv2_debug_train_videomae_base_16f_mean.pt \
+  --validation-artifact outputs/embeddings/ssv2_debug_validation_videomae_base_16f_mean.pt \
+  --k 1 5 10 \
+  --metric cosine \
+  --output-path outputs/logs/ssv2_debug_knn_videomae_base_16f_mean.json \
+  --overwrite
+```
+
+The KNN CLI validates that both artifacts are labeled, embedding dimensions match, and model checkpoint / embedding type metadata are compatible. Cosine KNN normalizes embeddings before similarity search; L2 can be selected with `--metric l2`.
+
+Current debug-subset cosine result:
+
+| k | Correct / Total | Accuracy |
+| --- | --- | --- |
+| 1 | 4 / 33 | 0.1212 |
+| 5 | 2 / 33 | 0.0606 |
+| 10 | 1 / 33 | 0.0303 |
+
 ## Outputs
 
 Generated embeddings should go under `outputs/embeddings/`. Logs should go under `outputs/logs/`.
@@ -203,12 +228,13 @@ Current generated debug artifacts:
 
 - `outputs/embeddings/ssv2_debug_train_videomae_base_16f_mean.pt`: 33 samples, embedding shape `[33, 768]`.
 - `outputs/embeddings/ssv2_debug_validation_videomae_base_16f_mean.pt`: 33 samples, embedding shape `[33, 768]`.
+- `outputs/logs/ssv2_debug_knn_videomae_base_16f_mean.json`: debug KNN report.
 
-Embedding `.pt` files are ignored by git; keep `.gitkeep` files in the output directories.
+Embedding `.pt` files and log `.json` files are ignored by git; keep `.gitkeep` files in the output directories.
 
 ## Next Steps
 
-The next engineering step is the KNN baseline over the two debug artifacts. Use cosine similarity first, report `k = 1, 5, 10`, and keep the result labeled as a debug-subset baseline. Full train / validation extraction can follow once the KNN path is stable.
+The next engineering step is to either run the now-stable extraction + KNN path on the larger local train / validation indexes or add the first perturbation hook for motion / appearance sensitivity experiments.
 
 Known remaining environment checks:
 
