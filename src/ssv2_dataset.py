@@ -8,6 +8,7 @@ import numpy as np
 import torch
 from torch.utils.data import Dataset
 
+from src.video_perturbations import VideoPerturbation
 from src.video_io import (
     FrameSamplingStrategy,
     read_sampled_clip,
@@ -40,12 +41,16 @@ class SSV2ClipDataset(Dataset[dict[str, Any]]):
         num_frames: int = 16,
         sampling_strategy: FrameSamplingStrategy = "deterministic_center_clip",
         transform: Callable[[np.ndarray], torch.Tensor] | None = None,
+        perturbation: VideoPerturbation | None = None,
+        include_original_clip: bool = False,
     ) -> None:
         self.index_path = Path(index_path)
         self.samples = load_index_jsonl(self.index_path)
         self.num_frames = num_frames
         self.sampling_strategy = sampling_strategy
         self.transform = transform
+        self.perturbation = perturbation
+        self.include_original_clip = include_original_clip
 
     def __len__(self) -> int:
         return len(self.samples)
@@ -59,24 +64,37 @@ class SSV2ClipDataset(Dataset[dict[str, Any]]):
             sampling_strategy=self.sampling_strategy,
             video_id=video_id,
         )
-        if self.transform is None:
-            pixel_values = torch.from_numpy(np.ascontiguousarray(clip.frames))
-        else:
-            pixel_values = self.transform(clip.frames)
+        frames = clip.frames
+        perturbation_metadata = {"name": "none", "operation": "identity"}
+        if self.perturbation is not None:
+            perturbation_result = self.perturbation(frames, video_id=video_id)
+            frames = perturbation_result.frames
+            perturbation_metadata = perturbation_result.metadata
+
+        pixel_values = self._to_pixel_values(frames)
 
         metadata = {
             **sample,
             "decode": clip.metadata.to_dict(),
             "frame_indices": list(clip.frame_indices),
             "sampling_strategy": clip.sampling_strategy,
+            "perturbation": perturbation_metadata,
         }
-        return {
+        item = {
             "pixel_values": pixel_values,
             "label_id": sample.get("label_id"),
             "video_id": video_id,
             "metadata": metadata,
             "frame_indices": torch.tensor(clip.frame_indices, dtype=torch.long),
         }
+        if self.include_original_clip:
+            item["original_pixel_values"] = self._to_pixel_values(clip.frames)
+        return item
+
+    def _to_pixel_values(self, frames: np.ndarray) -> torch.Tensor:
+        if self.transform is None:
+            return torch.from_numpy(np.ascontiguousarray(frames))
+        return self.transform(frames)
 
 
 def collate_video_batch(samples: Sequence[dict[str, Any]]) -> dict[str, Any]:
@@ -91,10 +109,19 @@ def collate_video_batch(samples: Sequence[dict[str, Any]]) -> dict[str, Any]:
         else None
     )
     frame_indices = torch.stack([sample["frame_indices"] for sample in samples], dim=0)
-    return {
+    batch = {
         "pixel_values": pixel_values,
         "label_ids": label_ids,
         "video_ids": [sample["video_id"] for sample in samples],
         "metadata": [sample["metadata"] for sample in samples],
         "frame_indices": frame_indices,
     }
+    has_original = ["original_pixel_values" in sample for sample in samples]
+    if any(has_original) and not all(has_original):
+        raise ValueError("cannot mix samples with and without original_pixel_values")
+    if all(has_original):
+        batch["original_pixel_values"] = torch.stack(
+            [sample["original_pixel_values"] for sample in samples],
+            dim=0,
+        )
+    return batch

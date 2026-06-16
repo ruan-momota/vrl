@@ -22,6 +22,11 @@ from src.videomae_model import (
     resolve_device,
 )
 from src.videomae_preprocessing import VideoMAEClipTransform
+from src.video_perturbations import (
+    VideoPerturbationConfig,
+    build_video_perturbation,
+    parse_perturbation_name,
+)
 
 
 @dataclass(frozen=True)
@@ -265,6 +270,7 @@ def build_extraction_dataset(
     processor_checkpoint: str | None = None,
     local_files_only: bool = False,
     limit: int | None = None,
+    perturbation_config: VideoPerturbationConfig | None = None,
 ) -> SSV2ClipDataset | Subset[dict[str, Any]]:
     transform = VideoMAEClipTransform(
         image_size=image_size,
@@ -276,6 +282,7 @@ def build_extraction_dataset(
         num_frames=num_frames,
         sampling_strategy=sampling_strategy,
         transform=transform,
+        perturbation=build_video_perturbation(perturbation_config),
     )
     if limit is not None:
         dataset = Subset(dataset, range(min(limit, len(dataset))))
@@ -314,6 +321,30 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--overwrite", action="store_true")
     parser.add_argument("--local-files-only", action="store_true")
     parser.add_argument("--no-progress", action="store_true")
+    parser.add_argument(
+        "--perturbation",
+        default="none",
+        choices=[
+            "none",
+            "temporal_reverse",
+            "temporal_shuffle",
+            "freeze_tail",
+            "single_frame",
+            "grayscale",
+            "center_occlusion",
+        ],
+        help="Optional deterministic frame-level perturbation before VideoMAE preprocessing.",
+    )
+    parser.add_argument("--perturbation-seed", type=int, default=0)
+    parser.add_argument(
+        "--perturbation-frame-index",
+        type=int,
+        default=None,
+        help="Source frame for single_frame perturbation. Defaults to the center frame.",
+    )
+    parser.add_argument("--freeze-start-fraction", type=float, default=0.5)
+    parser.add_argument("--occlusion-size-fraction", type=float, default=0.25)
+    parser.add_argument("--occlusion-fill-value", type=int, default=0)
     return parser.parse_args()
 
 
@@ -329,6 +360,14 @@ def run_extraction_from_args(args: argparse.Namespace) -> dict[str, Any]:
     num_workers = config.num_workers if args.num_workers is None else args.num_workers
     output_path = args.output_path or Path(config.output_path)
     resolved_device = resolve_device(device_name)
+    perturbation_config = VideoPerturbationConfig(
+        name=parse_perturbation_name(args.perturbation),
+        seed=args.perturbation_seed,
+        frame_index=args.perturbation_frame_index,
+        freeze_start_fraction=args.freeze_start_fraction,
+        occlusion_size_fraction=args.occlusion_size_fraction,
+        occlusion_fill_value=args.occlusion_fill_value,
+    )
 
     dataset = build_extraction_dataset(
         index_path=index_path,
@@ -338,6 +377,7 @@ def run_extraction_from_args(args: argparse.Namespace) -> dict[str, Any]:
         processor_checkpoint=args.processor_checkpoint,
         local_files_only=args.local_files_only,
         limit=args.limit,
+        perturbation_config=perturbation_config,
     )
     model, model_metadata = load_videomae_model(
         checkpoint,
@@ -363,6 +403,7 @@ def run_extraction_from_args(args: argparse.Namespace) -> dict[str, Any]:
         "num_workers": num_workers,
         "device": str(resolved_device),
         "output_path": str(output_path),
+        "perturbation": perturbation_config.to_dict(),
     }
     artifact = save_embedding_artifact(
         result,
@@ -374,6 +415,7 @@ def run_extraction_from_args(args: argparse.Namespace) -> dict[str, Any]:
             "pin_memory": args.pin_memory,
             "local_files_only": args.local_files_only,
             "processor_checkpoint": args.processor_checkpoint,
+            "perturbation": perturbation_config.to_dict(),
         },
         overwrite=args.overwrite,
     )
