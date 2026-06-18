@@ -123,6 +123,32 @@ Group-level `k=1` means:
 
 Current first-round KNN result: temporal reverse, temporal shuffle, and freeze-tail remove the two original `k=1` correct predictions. `single_frame` causes the highest prediction change rate, but its accuracy drop is zero at `k=1` because two correct-to-incorrect changes are offset by two incorrect-to-correct changes. The absolute accuracies are very small, so the train-seen and prediction-change columns are more informative than all-validation accuracy alone.
 
+## Sweep Results
+
+Sweep metric rows report mean cosine distance plus cosine KNN `k=1` all-validation accuracy drop.
+
+| sweep | case | mean cosine distance | k=1 all accuracy drop | prediction change rate | trend note |
+| --- | --- | ---: | ---: | ---: | --- |
+| `freeze_tail_start_fraction` | 0.25 | 0.014284 | 0.0200 | 0.59 | smaller start freezes more and shifts more |
+| `freeze_tail_start_fraction` | 0.5 | 0.006110 | 0.0200 | 0.44 |  |
+| `freeze_tail_start_fraction` | 0.75 | 0.001373 | 0.0200 | 0.17 |  |
+| `center_occlusion_size_fraction` | 0.15 | 0.000881 | 0.0100 | 0.21 | larger occlusion shifts more |
+| `center_occlusion_size_fraction` | 0.25 | 0.002787 | 0.0100 | 0.34 |  |
+| `center_occlusion_size_fraction` | 0.4 | 0.012902 | 0.0100 | 0.75 |  |
+| `single_frame_position` | first | 0.027557 | 0.0200 | 0.78 | first and last shift slightly more than center |
+| `single_frame_position` | center | 0.024987 | 0.0000 | 0.77 |  |
+| `single_frame_position` | last | 0.027101 | 0.0200 | 0.73 |  |
+| `temporal_shuffle_seed_repeat` | seed 0 | 0.021562 | 0.0200 | 0.62 | seed repeat is stable for k=1 drop |
+| `temporal_shuffle_seed_repeat` | seed 1 | 0.022341 | 0.0200 | 0.61 |  |
+| `temporal_shuffle_seed_repeat` | seed 2 | 0.022779 | 0.0200 | 0.68 |  |
+
+Sweep observations:
+
+- `freeze_tail` embedding shift decreases monotonically as `freeze_start_fraction` increases from 0.25 to 0.75.
+- `center_occlusion` embedding shift increases monotonically with occlusion size.
+- `temporal_shuffle` seed repeats are stable for KNN drop: all three seeds have `k=1` all accuracy drop `0.0200`.
+- KNN drop is often flat across sweep strengths because the baseline has only 2 correct `k=1` predictions.
+
 ## Class-Level Sensitivity Candidates
 
 These are qualitative inspection candidates, not stable class-level conclusions. Many validation classes have only one local sample.
@@ -158,6 +184,14 @@ First-round KNN drop reports:
 - `outputs/logs/ssv2_validation100_videomae_base_16f_mean_center_occlusion_knn_cosine.json`
 - `outputs/logs/ssv2_validation100_videomae_base_16f_mean_all_perturbations_knn_drop_cosine.json`
 
+Sweep reports:
+
+- `outputs/logs/ssv2_validation100_videomae_base_16f_mean_freeze_tail_start_fraction_sweep_summary.json`
+- `outputs/logs/ssv2_validation100_videomae_base_16f_mean_center_occlusion_size_fraction_sweep_summary.json`
+- `outputs/logs/ssv2_validation100_videomae_base_16f_mean_single_frame_position_sweep_summary.json`
+- `outputs/logs/ssv2_validation100_videomae_base_16f_mean_temporal_shuffle_seed_repeat_sweep_summary.json`
+- `outputs/logs/ssv2_validation100_videomae_base_16f_mean_all_sweeps_summary.json`
+
 Core embedding artifacts:
 
 - `outputs/embeddings/ssv2_train100_videomae_base_16f_mean_original.pt`
@@ -186,7 +220,7 @@ uv run python -m pytest
 Current verified result:
 
 ```text
-50 passed
+53 passed
 ```
 
 Regenerate the first-round sensitivity reports from existing artifacts:
@@ -219,6 +253,18 @@ uv run python -m src.knn_perturbation_analysis \
   --overwrite
 ```
 
+Regenerate missing sweep artifacts and sweep reports:
+
+```bash
+uv run python -m src.perturbation_sweeps \
+  --matrix configs/ssv2_videomae_perturbation_matrix.json \
+  --config configs/ssv2_videomae_smoke.json \
+  --output-dir outputs/logs \
+  --generate-missing-artifacts \
+  --overwrite-reports \
+  --no-progress
+```
+
 ## Current Missing Results
 
-The first-round local experiment now has original baseline, embedding sensitivity, class-level sensitivity, and KNN drop reports. Remaining result work is strength sweeps, plots, and a written experiment summary.
+The first-round local experiment now has original baseline, embedding sensitivity, class-level sensitivity, KNN drop, and selected sweep reports. Remaining result work is plots, qualitative sample inspection, and a written experiment summary.
