@@ -2,7 +2,7 @@
 
 VideoMAE + Something-Something-V2 sensitivity experiment over a small local SSV2 sample.
 
-The current experiment uses frozen `MCG-NJU/videomae-base` embeddings to compare original validation videos against deterministic motion and appearance perturbations. The main outputs are KNN baseline reports and original-vs-perturbed embedding sensitivity reports.
+The current experiment uses frozen `MCG-NJU/videomae-base` embeddings to compare original validation videos against deterministic motion and appearance perturbations. The main outputs are KNN baseline reports, embedding sensitivity reports, and perturbation KNN accuracy drop reports.
 
 ## Experiment Setup
 
@@ -99,6 +99,30 @@ Group comparison:
 
 Current first-round result: motion perturbations produce substantially larger embedding shifts than appearance perturbations on this local validation100 split. The largest shifts come from `single_frame` and `temporal_shuffle`.
 
+## Perturbation KNN Drop Results
+
+Metric: cosine KNN with original train100 embeddings as the reference set.
+
+Primary readout below uses `k=1`, because the original baseline is strongest at `k=1` on this local sample.
+
+| perturbation | group | perturbed all accuracy | all accuracy drop | perturbed train-seen accuracy | train-seen accuracy drop | prediction change rate |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| `temporal_reverse` | motion | 0.0000 | 0.0200 | 0.0000 | 0.0435 | 0.31 |
+| `temporal_shuffle` | motion | 0.0000 | 0.0200 | 0.0000 | 0.0435 | 0.62 |
+| `freeze_tail` | motion | 0.0000 | 0.0200 | 0.0000 | 0.0435 | 0.44 |
+| `grayscale` | appearance | 0.0100 | 0.0100 | 0.0217 | 0.0217 | 0.12 |
+| `center_occlusion` | appearance | 0.0100 | 0.0100 | 0.0217 | 0.0217 | 0.34 |
+| `single_frame` | motion | 0.0200 | 0.0000 | 0.0435 | 0.0000 | 0.77 |
+
+Group-level `k=1` means:
+
+| group | mean all accuracy drop | mean train-seen accuracy drop | mean prediction change rate |
+| --- | ---: | ---: | ---: |
+| motion | 0.0150 | 0.0326 | 0.5350 |
+| appearance | 0.0100 | 0.0217 | 0.2300 |
+
+Current first-round KNN result: temporal reverse, temporal shuffle, and freeze-tail remove the two original `k=1` correct predictions. `single_frame` causes the highest prediction change rate, but its accuracy drop is zero at `k=1` because two correct-to-incorrect changes are offset by two incorrect-to-correct changes. The absolute accuracies are very small, so the train-seen and prediction-change columns are more informative than all-validation accuracy alone.
+
 ## Class-Level Sensitivity Candidates
 
 These are qualitative inspection candidates, not stable class-level conclusions. Many validation classes have only one local sample.
@@ -123,6 +147,16 @@ First-round sensitivity reports:
 - `outputs/logs/ssv2_validation100_videomae_base_16f_mean_center_occlusion_sensitivity.json`
 - `outputs/logs/ssv2_validation100_videomae_base_16f_mean_all_perturbations_sensitivity_summary.json`
 - `outputs/logs/ssv2_validation100_videomae_base_16f_mean_class_sensitivity.json`
+
+First-round KNN drop reports:
+
+- `outputs/logs/ssv2_validation100_videomae_base_16f_mean_temporal_reverse_knn_cosine.json`
+- `outputs/logs/ssv2_validation100_videomae_base_16f_mean_temporal_shuffle_knn_cosine.json`
+- `outputs/logs/ssv2_validation100_videomae_base_16f_mean_freeze_tail_knn_cosine.json`
+- `outputs/logs/ssv2_validation100_videomae_base_16f_mean_single_frame_knn_cosine.json`
+- `outputs/logs/ssv2_validation100_videomae_base_16f_mean_grayscale_knn_cosine.json`
+- `outputs/logs/ssv2_validation100_videomae_base_16f_mean_center_occlusion_knn_cosine.json`
+- `outputs/logs/ssv2_validation100_videomae_base_16f_mean_all_perturbations_knn_drop_cosine.json`
 
 Core embedding artifacts:
 
@@ -152,7 +186,7 @@ uv run python -m pytest
 Current verified result:
 
 ```text
-45 passed
+50 passed
 ```
 
 Regenerate the first-round sensitivity reports from existing artifacts:
@@ -176,6 +210,15 @@ uv run python -m src.knn_baseline \
   --overwrite
 ```
 
-## Current Missing Result
+Regenerate the first-round perturbation KNN drop reports:
 
-The remaining first-round metric is KNN accuracy drop for each perturbation, reported both on all validation samples and on the 46 train-seen validation samples.
+```bash
+uv run python -m src.knn_perturbation_analysis \
+  --matrix configs/ssv2_videomae_perturbation_matrix.json \
+  --output-dir outputs/logs \
+  --overwrite
+```
+
+## Current Missing Results
+
+The first-round local experiment now has original baseline, embedding sensitivity, class-level sensitivity, and KNN drop reports. Remaining result work is strength sweeps, plots, and a written experiment summary.
