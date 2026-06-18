@@ -161,6 +161,27 @@ These are qualitative inspection candidates, not stable class-level conclusions.
 | 151 | Throwing something | 0.030586 | `single_frame` |
 | 173 | Wiping something off of something | 0.028445 | `single_frame` |
 
+## Reporting Outputs
+
+Phase 8 consolidates the JSON reports into CSV tables, a Markdown report draft, qualitative sample lists, and SVG plots.
+
+Tables and qualitative samples:
+
+- `outputs/reports/baseline_table.csv`
+- `outputs/reports/perturbation_summary_table.csv`
+- `outputs/reports/class_sensitivity_table.csv`
+- `outputs/reports/sweep_summary_table.csv`
+- `outputs/reports/qualitative_samples.json`
+- `outputs/reports/ssv2_videomae_sensitivity_report.md`
+
+Plots:
+
+- `outputs/plots/perturbation_mean_cosine_distance.svg`
+- `outputs/plots/perturbation_k1_accuracy_drop.svg`
+- `outputs/plots/sweep_mean_cosine_distance.svg`
+
+Qualitative sample categories include largest embedding shift, smallest embedding shift, correct-to-incorrect predictions, incorrect-to-correct predictions, high-shift unchanged predictions, and low-shift changed predictions.
+
 ## Result Files
 
 First-round sensitivity reports:
@@ -220,7 +241,7 @@ uv run python -m pytest
 Current verified result:
 
 ```text
-53 passed
+57 passed
 ```
 
 Regenerate the first-round sensitivity reports from existing artifacts:
@@ -265,6 +286,15 @@ uv run python -m src.perturbation_sweeps \
   --no-progress
 ```
 
+Regenerate tables, qualitative sample lists, and SVG plots:
+
+```bash
+uv run python -m src.reporting \
+  --log-dir outputs/logs \
+  --report-dir outputs/reports \
+  --plot-dir outputs/plots
+```
+
 ## Current Missing Results
 
-The first-round local experiment now has original baseline, embedding sensitivity, class-level sensitivity, KNN drop, and selected sweep reports. Remaining result work is plots, qualitative sample inspection, and a written experiment summary.
+The first-round local experiment now has original baseline, embedding sensitivity, class-level sensitivity, KNN drop, selected sweep reports, consolidated tables, SVG plots, and qualitative sample candidates. Remaining result work is a written conclusion-focused experiment summary.
