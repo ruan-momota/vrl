@@ -58,38 +58,51 @@ class SSV2ClipDataset(Dataset[dict[str, Any]]):
     def __getitem__(self, index: int) -> dict[str, Any]:
         sample = self.samples[index]
         video_id = str(sample["video_id"])
-        clip = read_sampled_clip(
-            sample["video_path"],
-            num_frames=self.num_frames,
-            sampling_strategy=self.sampling_strategy,
-            video_id=video_id,
-        )
-        frames = clip.frames
-        perturbation_metadata = {"name": "none", "operation": "identity"}
-        if self.perturbation is not None:
-            perturbation_result = self.perturbation(frames, video_id=video_id)
-            frames = perturbation_result.frames
-            perturbation_metadata = perturbation_result.metadata
+        try:
+            clip = read_sampled_clip(
+                sample["video_path"],
+                num_frames=self.num_frames,
+                sampling_strategy=self.sampling_strategy,
+                video_id=video_id,
+            )
+            frames = clip.frames
+            perturbation_metadata = {"name": "none", "operation": "identity"}
+            if self.perturbation is not None:
+                perturbation_result = self.perturbation(frames, video_id=video_id)
+                frames = perturbation_result.frames
+                perturbation_metadata = perturbation_result.metadata
 
-        pixel_values = self._to_pixel_values(frames)
+            pixel_values = self._to_pixel_values(frames)
 
-        metadata = {
-            **sample,
-            "decode": clip.metadata.to_dict(),
-            "frame_indices": list(clip.frame_indices),
-            "sampling_strategy": clip.sampling_strategy,
-            "perturbation": perturbation_metadata,
-        }
-        item = {
-            "pixel_values": pixel_values,
-            "label_id": sample.get("label_id"),
-            "video_id": video_id,
-            "metadata": metadata,
-            "frame_indices": torch.tensor(clip.frame_indices, dtype=torch.long),
-        }
-        if self.include_original_clip:
-            item["original_pixel_values"] = self._to_pixel_values(clip.frames)
-        return item
+            metadata = {
+                **sample,
+                "decode": clip.metadata.to_dict(),
+                "frame_indices": list(clip.frame_indices),
+                "sampling_strategy": clip.sampling_strategy,
+                "perturbation": perturbation_metadata,
+            }
+            item = {
+                "pixel_values": pixel_values,
+                "label_id": sample.get("label_id"),
+                "video_id": video_id,
+                "metadata": metadata,
+                "frame_indices": torch.tensor(clip.frame_indices, dtype=torch.long),
+            }
+            if self.include_original_clip:
+                item["original_pixel_values"] = self._to_pixel_values(clip.frames)
+            return item
+        except Exception as error:  # noqa: BLE001 - attach sample context before failing fast.
+            perturbation_config = (
+                self.perturbation.config.to_dict()
+                if self.perturbation is not None
+                else {"name": "none"}
+            )
+            raise RuntimeError(
+                "Failed to build SSV2 clip sample "
+                f"video_id={video_id} "
+                f"path={sample['video_path']} "
+                f"perturbation={perturbation_config}"
+            ) from error
 
     def _to_pixel_values(self, frames: np.ndarray) -> torch.Tensor:
         if self.transform is None:

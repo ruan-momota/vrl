@@ -22,7 +22,7 @@ The current lock file targets Python 3.12 via `.python-version`. If the remote s
 
 ## Current Progress
 
-MVP status: the debug-subset acceptance points are complete, and the first local 100 train / 100 validation original baseline has also been generated. The current active work is the first VideoMAE + SSV2 perturbation experiment: validation-only perturbation embeddings, paired sensitivity metrics, and KNN accuracy drop.
+MVP status: the debug-subset acceptance points are complete, the first local 100 train / 100 validation original baseline has been generated, and first-round validation perturbation embeddings are available. The current active work is paired sensitivity metrics and KNN accuracy drop for the VideoMAE + SSV2 perturbation experiment.
 
 Phase progress:
 
@@ -36,6 +36,7 @@ Phase progress:
 | 5. Embedding extraction | Done for debug and local original splits | `.pt` artifacts include tensors, labels, video ids, metadata, config, model metadata, and summary. |
 | 6. KNN baseline | Done for debug and local original 100/100 artifacts | Cosine and L2 KNN code path, deterministic majority vote, JSON report output. |
 | 7. Perturbation hooks and matrix | Design done | Deterministic frame perturbations are implemented; the first-round experiment matrix is recorded in `configs/ssv2_videomae_perturbation_matrix.json`. |
+| 8. Paired perturbation embeddings | Done for first-round validation artifacts | Six validation perturbation artifacts generated and aligned with original validation rows. |
 
 Completed:
 
@@ -55,21 +56,23 @@ Completed:
 - Original local 100/100 KNN baseline with cosine and L2 reports under `outputs/logs/`.
 - Baseline interpretability report showing that only 46 / 100 validation samples have labels seen in the 100-sample train reference set.
 - First-round perturbation matrix with motion / appearance grouping, default parameters, output names, and selected sweeps.
+- First-round validation perturbation embeddings for temporal reverse, temporal shuffle, freeze-tail, single-frame, grayscale, and center occlusion.
+- Paired artifact alignment helper and checks for video id order, labels, sample count, embedding dim, and sampled frame indices.
 
 Not completed yet:
 
-- Validation perturbation embeddings for the first-round matrix.
-- Paired original-vs-perturbed alignment checks.
 - Embedding sensitivity metrics and KNN accuracy drop reports.
 - Strength sweeps, class-level sensitivity reports, plots, and experiment summary.
 
 Current verification:
 
-- Test suite: `30 passed` with `.venv/bin/python -m pytest`.
+- Test suite: `38 passed` with `.venv/bin/python -m pytest`.
 - Debug train extraction: 33 / 33 samples, embedding shape `[33, 768]`, failures `0`.
 - Debug validation extraction: 33 / 33 samples, embedding shape `[33, 768]`, failures `0`.
 - Local train original extraction: 100 / 100 samples, embedding shape `[100, 768]`, failures `0`.
 - Local validation original extraction: 100 / 100 samples, embedding shape `[100, 768]`, failures `0`.
+- First-round validation perturbation extractions: each 100 / 100 samples, embedding shape `[100, 768]`, failures `0`.
+- Paired alignment checks: all six first-round perturbation artifacts match original validation video ids, labels, sample count, embedding dim, and sampled frame indices.
 - Saved artifacts were reloaded immediately after writing and validated for row alignment across embeddings, labels, video ids, metadata, and frame indices.
 - Debug cosine KNN baseline: `k=1` accuracy `0.1212` (4 / 33), `k=5` accuracy `0.0606` (2 / 33), `k=10` accuracy `0.0303` (1 / 33).
 - Local 100/100 original KNN baseline, cosine and L2: `k=1` accuracy `0.0200` (2 / 100), `k=5` accuracy `0.0100` (1 / 100), `k=10` accuracy `0.0100` (1 / 100).

@@ -3,6 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 
 import numpy as np
+import pytest
 import torch
 
 from src.ssv2_dataset import SSV2ClipDataset, collate_video_batch
@@ -128,6 +129,32 @@ def test_dataset_can_return_perturbed_and_original_clips(tmp_path: Path) -> None
     assert torch.equal(item["pixel_values"][0], item["pixel_values"][1])
     assert batch["original_pixel_values"].shape == batch["pixel_values"].shape
     assert batch["label_ids"].tolist() == [7]
+
+
+def test_dataset_failure_includes_sample_and_perturbation_context(tmp_path: Path) -> None:
+    missing_video_path = tmp_path / "missing.mp4"
+    index_path = tmp_path / "index.jsonl"
+    index_path.write_text(
+        '{"video_id": "missing-sample", "video_path": "'
+        + str(missing_video_path)
+        + '", "label_id": 7, "label_name": "Example", "split": "train"}\n',
+        encoding="utf-8",
+    )
+    dataset = SSV2ClipDataset(
+        index_path,
+        num_frames=4,
+        perturbation=VideoPerturbation(
+            VideoPerturbationConfig(name="center_occlusion")
+        ),
+    )
+
+    with pytest.raises(RuntimeError) as exc_info:
+        dataset[0]
+
+    message = str(exc_info.value)
+    assert "video_id=missing-sample" in message
+    assert str(missing_video_path) in message
+    assert "'name': 'center_occlusion'" in message
 
 
 def _toy_frames(*, frame_count: int) -> np.ndarray:
