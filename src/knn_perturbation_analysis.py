@@ -18,8 +18,9 @@ from src.knn_baseline import (
 from src.embedding_sensitivity import compute_embedding_distances
 
 
-DEFAULT_MATRIX_PATH = Path("configs/ssv2_videomae_perturbation_matrix.json")
+DEFAULT_MATRIX_PATH = Path("configs/ssv2_videomae_50c_perturbation_matrix.json")
 DEFAULT_OUTPUT_DIR = Path("outputs/logs")
+DEFAULT_REPORT_BASENAME = "ssv2_50c_train100_val30_videomae_base_16f"
 
 
 def evaluate_knn_perturbation_drop(
@@ -261,9 +262,9 @@ def run_matrix_knn_perturbation_analysis(
         )
 
     summary = build_all_perturbations_knn_drop_summary(reports, matrix=matrix)
+    report_basename = _report_basename(matrix)
     summary_path = output_path / (
-        f"ssv2_validation100_videomae_base_16f_mean_"
-        f"all_perturbations_knn_drop_{resolved_metric}.json"
+        f"{report_basename}_all_perturbations_knn_drop_{resolved_metric}.json"
     )
     save_json_report(summary, summary_path, overwrite=overwrite)
     return {
@@ -291,6 +292,10 @@ def save_json_report(
         json.dumps(report, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
     )
+
+
+def _report_basename(matrix: dict[str, Any]) -> str:
+    return str(matrix.get("report_basename", DEFAULT_REPORT_BASENAME))
 
 
 def parse_args() -> argparse.Namespace:

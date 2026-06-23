@@ -13,7 +13,7 @@
   "device": "auto",
   "embedding_type": "last_hidden_state_mean_pool",
   "video_decoder": "pyav",
-  "output_path": "outputs/embeddings/ssv2_train_videomae_base_16f_mean.pt",
+  "output_path": "outputs/embeddings/train_original.pt",
   "seed": 42,
   "deterministic": true
 }

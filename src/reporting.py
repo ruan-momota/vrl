@@ -13,10 +13,8 @@ from src.embedding_extraction import load_embedding_artifact
 DEFAULT_LOG_DIR = Path("outputs/logs")
 DEFAULT_REPORT_DIR = Path("outputs/reports")
 DEFAULT_PLOT_DIR = Path("outputs/plots")
-BASE_NAME = "ssv2_validation100_videomae_base_16f_mean"
-DEFAULT_ORIGINAL_ARTIFACT = Path(
-    "outputs/embeddings/ssv2_validation100_videomae_base_16f_mean_original.pt"
-)
+BASE_NAME = "ssv2_50c_train100_val30_videomae_base_16f"
+DEFAULT_ORIGINAL_ARTIFACT = Path("outputs/embeddings/validation_original.pt")
 FIRST_ROUND_PERTURBATIONS = {
     "temporal_reverse",
     "temporal_shuffle",
@@ -33,7 +31,7 @@ def build_baseline_rows(baseline_report: dict[str, Any]) -> list[dict[str, Any]]
         for row in metric_rows:
             rows.append(
                 {
-                    "split": "validation100",
+                    "split": "validation",
                     "train_samples": baseline_report["train_samples"],
                     "validation_samples": baseline_report["validation_samples"],
                     "train_class_count": baseline_report["train_class_count"],
@@ -476,11 +474,16 @@ def run_reporting(
     plots.mkdir(parents=True, exist_ok=True)
 
     baseline = _load_json(logs / f"{BASE_NAME}_original_baseline_interpretability.json")
+    sensitivity_logs = logs / "sensitivity"
+    knn_logs = logs / "knn"
+    sweep_logs = logs / "sweeps"
     sensitivity_summary = _load_json(
-        logs / f"{BASE_NAME}_all_perturbations_sensitivity_summary.json"
+        sensitivity_logs / f"{BASE_NAME}_all_perturbations_sensitivity_summary.json"
     )
-    knn_drop_summary = _load_json(logs / f"{BASE_NAME}_all_perturbations_knn_drop_cosine.json")
-    class_report = _load_json(logs / f"{BASE_NAME}_class_sensitivity.json")
+    knn_drop_summary = _load_json(
+        knn_logs / f"{BASE_NAME}_all_perturbations_knn_drop_cosine.json"
+    )
+    class_report = _load_json(sensitivity_logs / f"{BASE_NAME}_class_sensitivity.json")
     original_artifact = load_embedding_artifact(DEFAULT_ORIGINAL_ARTIFACT)
     sample_metadata_by_index = {
         index: metadata
@@ -488,15 +491,15 @@ def run_reporting(
     }
     sweep_summaries = [
         _load_json(path)
-        for path in sorted(logs.glob(f"{BASE_NAME}_*_sweep_summary.json"))
+        for path in sorted(sweep_logs.glob(f"{BASE_NAME}_*_sweep_summary.json"))
         if "all_sweeps" not in path.name
     ]
     sensitivity_reports = [
-        _load_json(logs / f"{BASE_NAME}_{perturbation}_sensitivity.json")
+        _load_json(sensitivity_logs / f"validation_{perturbation}_sensitivity.json")
         for perturbation in sorted(FIRST_ROUND_PERTURBATIONS)
     ]
     knn_reports = [
-        _load_json(logs / f"{BASE_NAME}_{perturbation}_knn_cosine.json")
+        _load_json(knn_logs / f"validation_{perturbation}_knn_cosine.json")
         for perturbation in sorted(FIRST_ROUND_PERTURBATIONS)
     ]
 

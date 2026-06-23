@@ -23,9 +23,10 @@ from src.video_perturbations import VideoPerturbationConfig, parse_perturbation_
 from src.videomae_model import load_videomae_model, resolve_device
 
 
-DEFAULT_MATRIX_PATH = Path("configs/ssv2_videomae_perturbation_matrix.json")
-DEFAULT_CONFIG_PATH = Path("configs/ssv2_videomae_smoke.json")
+DEFAULT_MATRIX_PATH = Path("configs/ssv2_videomae_50c_perturbation_matrix.json")
+DEFAULT_CONFIG_PATH = Path("configs/ssv2_videomae_50c_validation.json")
 DEFAULT_OUTPUT_DIR = Path("outputs/logs")
+DEFAULT_REPORT_BASENAME = "ssv2_50c_train100_val30_videomae_base_16f"
 
 
 @dataclass(frozen=True)
@@ -236,6 +237,7 @@ def run_sweep_reports(
         )
 
     sweep_summaries: list[dict[str, Any]] = []
+    report_basename = _report_basename(matrix)
     for sweep_name, entries in sweep_entries.items():
         summary = build_sweep_summary(
             matrix=matrix,
@@ -243,9 +245,7 @@ def run_sweep_reports(
             entries=entries,
             metric=resolved_metric,
         )
-        summary_path = output_path / (
-            f"ssv2_validation100_videomae_base_16f_mean_{sweep_name}_sweep_summary.json"
-        )
+        summary_path = output_path / f"{report_basename}_{sweep_name}_sweep_summary.json"
         save_json_report(summary, summary_path, overwrite=overwrite)
         sweep_summaries.append(
             {
@@ -261,9 +261,7 @@ def run_sweep_reports(
         "sweep_count": len(sweep_summaries),
         "sweeps": sweep_summaries,
     }
-    all_summary_path = output_path / (
-        "ssv2_validation100_videomae_base_16f_mean_all_sweeps_summary.json"
-    )
+    all_summary_path = output_path / f"{report_basename}_all_sweeps_summary.json"
     save_json_report(all_summary, all_summary_path, overwrite=overwrite)
     return {
         "sweeps": sweep_summaries,
@@ -514,6 +512,10 @@ def _format_output_path(template: str, *, label: str, value: Any) -> str:
 
 def _load_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _report_basename(matrix: dict[str, Any]) -> str:
+    return str(matrix.get("report_basename", DEFAULT_REPORT_BASENAME))
 
 
 if __name__ == "__main__":

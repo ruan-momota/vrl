@@ -224,14 +224,11 @@ __marimo__/
 .streamlit/secrets.toml
 
 data/
-meeting.md
-todo.md
-todo2.md
+private/
 scripts/
+tests/
 
 # Experiment outputs
 outputs/*
-!outputs/embeddings/
-!outputs/embeddings/.gitkeep
-!outputs/logs/
-!outputs/logs/.gitkeep
+!outputs/plots
+!outputs/reports

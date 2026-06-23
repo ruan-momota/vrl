@@ -12,9 +12,10 @@ from src.artifact_alignment import check_paired_embedding_alignment
 from src.embedding_extraction import load_embedding_artifact
 
 
-DEFAULT_MATRIX_PATH = Path("configs/ssv2_videomae_perturbation_matrix.json")
+DEFAULT_MATRIX_PATH = Path("configs/ssv2_videomae_50c_perturbation_matrix.json")
 DEFAULT_OUTPUT_DIR = Path("outputs/logs")
 EPSILON = 1e-12
+DEFAULT_REPORT_BASENAME = "ssv2_50c_train100_val30_videomae_base_16f"
 
 
 def compute_embedding_distances(
@@ -294,13 +295,9 @@ def run_matrix_sensitivity(
 
     summary = build_all_perturbations_summary(reports, matrix=matrix)
     class_report = build_class_sensitivity_report(reports, matrix=matrix)
-    summary_path = output_path / (
-        "ssv2_validation100_videomae_base_16f_mean_"
-        "all_perturbations_sensitivity_summary.json"
-    )
-    class_report_path = output_path / (
-        "ssv2_validation100_videomae_base_16f_mean_class_sensitivity.json"
-    )
+    report_basename = _report_basename(matrix)
+    summary_path = output_path / f"{report_basename}_all_perturbations_sensitivity_summary.json"
+    class_report_path = output_path / f"{report_basename}_class_sensitivity.json"
     save_json_report(summary, summary_path, overwrite=overwrite)
     save_json_report(class_report, class_report_path, overwrite=overwrite)
     return {
@@ -326,6 +323,10 @@ def save_json_report(
         json.dumps(report, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
     )
+
+
+def _report_basename(matrix: dict[str, Any]) -> str:
+    return str(matrix.get("report_basename", DEFAULT_REPORT_BASENAME))
 
 
 def parse_args() -> argparse.Namespace:
