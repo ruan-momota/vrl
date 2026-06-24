@@ -7,8 +7,8 @@ import pytest
 import torch
 from torch.utils.data import DataLoader
 
-from src.ssv2_dataset import SSV2ClipDataset, collate_video_batch
-from src.videomae_preprocessing import VideoMAEClipTransform
+from src.data.indexed_dataset import IndexedVideoDataset, collate_video_batch
+from src.models.videomae_preprocessing import VideoMAEClipTransform
 
 from tests.test_video_io import _write_tiny_video
 
@@ -26,7 +26,7 @@ def test_videomae_clip_transform_outputs_model_layout() -> None:
     assert torch.isfinite(pixel_values).all()
 
 
-def test_ssv2_clip_dataset_collates_videomae_batch(tmp_path: Path) -> None:
+def test_indexed_video_dataset_collates_videomae_batch(tmp_path: Path) -> None:
     pytest.importorskip("PIL")
     video_path = _write_tiny_video(tmp_path / "sample.mp4", frame_count=6)
     index_path = tmp_path / "index.jsonl"
@@ -37,7 +37,7 @@ def test_ssv2_clip_dataset_collates_videomae_batch(tmp_path: Path) -> None:
         encoding="utf-8",
     )
 
-    dataset = SSV2ClipDataset(
+    dataset = IndexedVideoDataset(
         index_path,
         num_frames=4,
         transform=VideoMAEClipTransform(image_size=16),
@@ -55,3 +55,4 @@ def test_ssv2_clip_dataset_collates_videomae_batch(tmp_path: Path) -> None:
     assert batch["label_ids"].tolist() == [7]
     assert batch["video_ids"] == ["sample"]
     assert batch["frame_indices"].shape == (1, 4)
+    assert batch["metadata"][0]["source_dataset"] is None

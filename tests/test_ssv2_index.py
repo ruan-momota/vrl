@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from src.ssv2_index import (
+from src.data.ssv2_index import (
     build_split_index,
     build_video_lookup,
     canonical_label_name,

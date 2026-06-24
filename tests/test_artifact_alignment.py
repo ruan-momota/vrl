@@ -3,7 +3,7 @@ from __future__ import annotations
 import pytest
 import torch
 
-from src.artifact_alignment import (
+from src.evaluation.alignment import (
     ArtifactAlignmentError,
     check_paired_embedding_alignment,
 )
@@ -31,6 +31,9 @@ def test_check_paired_embedding_alignment_accepts_matching_artifacts() -> None:
         ({"embeddings": torch.zeros((1, 3))}, "sample_count_match"),
         ({"embeddings": torch.zeros((2, 4))}, "embedding_dim_match"),
         ({"frame_indices": torch.tensor([[0, 2], [1, 2]])}, "frame_indices_match"),
+        ({"run_id": "different-run"}, "run_id_match"),
+        ({"model_metadata": {"checkpoint": "other"}}, "model_metadata_match"),
+        ({"config": {"num_frames": 8}}, "sampling_match"),
     ],
 )
 def test_check_paired_embedding_alignment_reports_mismatch(
@@ -64,6 +67,9 @@ def _artifact(**override):
         "label_ids": torch.tensor([1, 2]),
         "video_ids": ["a", "b"],
         "frame_indices": torch.tensor([[0, 1], [0, 1]]),
+        "run_id": "run-a",
+        "model_metadata": {"checkpoint": "tiny", "embedding_type": "mean"},
+        "config": {"num_frames": 2, "sampling_strategy": "center"},
     }
     artifact.update(override)
     return artifact

@@ -5,7 +5,7 @@ from pathlib import Path
 import pytest
 import torch
 
-from src.knn_baseline import (
+from src.evaluation.knn import (
     evaluate_knn_baseline,
     knn_predict,
     majority_vote_by_rank,
@@ -175,6 +175,28 @@ def test_evaluate_knn_baseline_rejects_mismatched_embedding_dims() -> None:
         evaluate_knn_baseline(
             train_artifact=train_artifact,
             validation_artifact=validation_artifact,
+        )
+
+
+def test_evaluate_knn_baseline_rejects_different_run_ids() -> None:
+    train = _artifact(
+        embeddings=torch.tensor([[1.0, 0.0], [0.0, 1.0]]),
+        labels=torch.tensor([0, 1]),
+        split="train",
+    )
+    validation = _artifact(
+        embeddings=torch.tensor([[1.0, 0.0], [0.0, 1.0]]),
+        labels=torch.tensor([0, 1]),
+        split="validation",
+    )
+    train["run_id"] = "run-a"
+    validation["run_id"] = "run-b"
+
+    with pytest.raises(ValueError, match="different runs"):
+        evaluate_knn_baseline(
+            train_artifact=train,
+            validation_artifact=validation,
+            k_values=(1,),
         )
 
 

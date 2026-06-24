@@ -5,7 +5,7 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-from src.video_io import (
+from src.video.io import (
     read_sampled_clip,
     read_video_frames,
     sample_frame_indices,

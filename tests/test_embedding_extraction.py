@@ -5,27 +5,23 @@ from types import SimpleNamespace
 
 import torch
 
-from src.embedding_extraction import (
-    extract_embeddings,
-    load_embedding_artifact,
-    save_embedding_artifact,
-)
-from src.ssv2_dataset import SSV2ClipDataset
+from src.artifacts import load_embedding_artifact, save_embedding_artifact
+from src.data.indexed_dataset import IndexedVideoDataset
+from src.embedding_extraction import extract_embeddings as legacy_extract_embeddings
+from src.pipeline.extraction import extract_embeddings
 
 from tests.test_video_io import _write_tiny_video
 
 
 def test_extract_embeddings_and_save_reload_artifact(tmp_path: Path) -> None:
     index_path = _write_index_with_two_videos(tmp_path)
-    dataset = SSV2ClipDataset(
+    dataset = IndexedVideoDataset(
         index_path,
         num_frames=4,
         transform=_to_model_tensor,
     )
-    model = TinyEmbeddingModel()
-
     result = extract_embeddings(
-        model=model,
+        encoder=TinyEncoder(),
         dataset=dataset,
         batch_size=2,
         num_workers=0,
@@ -62,6 +58,57 @@ def test_extract_embeddings_and_save_reload_artifact(tmp_path: Path) -> None:
     assert artifact["config"]["split"] == "debug_train"
 
 
+def test_extract_embeddings_accepts_generic_encoder(tmp_path: Path) -> None:
+    index_path = _write_index_with_two_videos(tmp_path)
+    dataset = IndexedVideoDataset(index_path, num_frames=4, transform=_to_model_tensor)
+
+    generic_result = extract_embeddings(
+        encoder=TinyEncoder(),
+        dataset=dataset,
+        batch_size=2,
+        num_workers=0,
+        device="cpu",
+        show_progress=False,
+    )
+
+    legacy_result = legacy_extract_embeddings(
+        model=TinyEmbeddingModel(),
+        dataset=dataset,
+        batch_size=2,
+        num_workers=0,
+        device="cpu",
+        show_progress=False,
+    )
+
+    assert generic_result.embeddings.shape == (2, 4)
+    assert generic_result.video_ids == ["sample-1", "sample-2"]
+    assert torch.allclose(generic_result.embeddings, legacy_result.embeddings)
+    assert torch.equal(generic_result.frame_indices, legacy_result.frame_indices)
+
+
+def test_load_embedding_artifact_accepts_legacy_v1_schema(tmp_path: Path) -> None:
+    path = tmp_path / "legacy.pt"
+    torch.save(
+        {
+            "format_version": 1,
+            "embeddings": torch.tensor([[1.0, 0.0]]),
+            "label_ids": torch.tensor([3]),
+            "video_ids": ["legacy-sample"],
+            "sample_metadata": [{"video_id": "legacy-sample"}],
+            "frame_indices": torch.tensor([[0, 1, 2, 3]]),
+            "config": {"num_frames": 4, "sampling_strategy": "deterministic_center_clip"},
+            "model_metadata": {"checkpoint": "legacy-videomae"},
+            "summary": {"embeddings_shape": [1, 2]},
+        },
+        path,
+    )
+
+    artifact = load_embedding_artifact(path)
+
+    assert artifact["format_version"] == 1
+    assert artifact["video_ids"] == ["legacy-sample"]
+
+
 def _write_index_with_two_videos(tmp_path: Path) -> Path:
     first = _write_tiny_video(tmp_path / "sample-1.mp4", frame_count=5)
     second = _write_tiny_video(tmp_path / "sample-2.mp4", frame_count=6)
@@ -96,3 +143,11 @@ class TinyEmbeddingModel(torch.nn.Module):
         base = pixel_values.float().mean(dim=(1, 2, 3, 4)) + self.anchor
         hidden = torch.stack([base, base + 1, base + 2, base + 3], dim=1)
         return SimpleNamespace(last_hidden_state=hidden.unsqueeze(1).repeat(1, 2, 1))
+
+
+class TinyEncoder:
+    name = "tiny"
+
+    def encode(self, pixel_values: torch.Tensor, *, device: str | torch.device | None = None) -> torch.Tensor:
+        base = pixel_values.to(device).float().mean(dim=(1, 2, 3, 4))
+        return torch.stack([base, base + 1, base + 2, base + 3], dim=1)

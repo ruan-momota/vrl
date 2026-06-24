@@ -6,8 +6,8 @@ from pathlib import Path
 import pytest
 import torch
 
-from src.artifact_alignment import ArtifactAlignmentError
-from src.knn_perturbation_analysis import (
+from src.evaluation.alignment import ArtifactAlignmentError
+from src.evaluation.knn_perturbation import (
     build_all_perturbations_knn_drop_summary,
     evaluate_knn_perturbation_drop,
     run_matrix_knn_perturbation_analysis,

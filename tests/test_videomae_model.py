@@ -3,7 +3,8 @@ from __future__ import annotations
 import pytest
 import torch
 
-from src.videomae_model import (
+from src.models.videomae import VideoMAEEncoder
+from src.models.videomae_model import (
     build_videomae_metadata,
     forward_videomae_embeddings,
     pool_videomae_hidden_state,
@@ -61,6 +62,27 @@ def test_videomae_metadata_reads_config_fields() -> None:
     assert metadata.patch_size == 8
     assert metadata.tubelet_size == 2
     assert metadata.to_dict()["embedding_type"] == "last_hidden_state_mean_pool"
+
+
+def test_videomae_encoder_adapter_wraps_existing_model() -> None:
+    model = _build_tiny_videomae_model()
+    metadata = build_videomae_metadata(
+        model,
+        checkpoint="tiny-local",
+        device="cpu",
+        embedding_type="last_hidden_state_mean_pool",
+    )
+    encoder = VideoMAEEncoder(
+        model=model,
+        model_metadata=metadata,
+        transform=lambda frames: torch.from_numpy(frames).permute(0, 3, 1, 2).float(),
+    )
+
+    embeddings = encoder.encode(torch.randn(2, 4, 3, 16, 16), device="cpu")
+
+    assert embeddings.shape == (2, 16)
+    assert encoder.metadata()["encoder_name"] == "videomae"
+    assert encoder.input_spec()["input_layout"] == "[B, T, C, H, W]"
 
 
 def test_resolve_device_auto_and_cpu() -> None:

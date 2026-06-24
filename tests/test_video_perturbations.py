@@ -6,8 +6,8 @@ import numpy as np
 import pytest
 import torch
 
-from src.ssv2_dataset import SSV2ClipDataset, collate_video_batch
-from src.video_perturbations import (
+from src.data.indexed_dataset import IndexedVideoDataset, collate_video_batch
+from src.video.perturbations import (
     VideoPerturbation,
     VideoPerturbationConfig,
     apply_video_perturbation,
@@ -110,7 +110,7 @@ def test_dataset_can_return_perturbed_and_original_clips(tmp_path: Path) -> None
         + '", "label_id": 7, "label_name": "Example", "split": "train"}\n',
         encoding="utf-8",
     )
-    dataset = SSV2ClipDataset(
+    dataset = IndexedVideoDataset(
         index_path,
         num_frames=4,
         transform=_to_channel_mean_tensor,
@@ -140,7 +140,7 @@ def test_dataset_failure_includes_sample_and_perturbation_context(tmp_path: Path
         + '", "label_id": 7, "label_name": "Example", "split": "train"}\n',
         encoding="utf-8",
     )
-    dataset = SSV2ClipDataset(
+    dataset = IndexedVideoDataset(
         index_path,
         num_frames=4,
         perturbation=VideoPerturbation(

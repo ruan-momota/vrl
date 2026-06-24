@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from src.perturbation_sweeps import (
+from src.legacy.perturbation_sweeps import (
     build_sweep_summary,
     expand_sweep_cases,
 )

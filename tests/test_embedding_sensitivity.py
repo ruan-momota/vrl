@@ -6,8 +6,8 @@ from pathlib import Path
 import pytest
 import torch
 
-from src.artifact_alignment import ArtifactAlignmentError
-from src.embedding_sensitivity import (
+from src.evaluation.alignment import ArtifactAlignmentError
+from src.evaluation.sensitivity import (
     build_all_perturbations_summary,
     build_class_sensitivity_report,
     build_embedding_sensitivity_report,

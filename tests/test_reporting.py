@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from src.reporting import (
+from src.evaluation.reporting import (
     build_perturbation_rows,
     build_qualitative_sample_records,
     build_qualitative_sample_summary,
