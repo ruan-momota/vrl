@@ -225,6 +225,7 @@ data
 
 /outputs/*
 !/outputs/runs/
-/outputs/runs/*
-!/outputs/runs/plots/
-!/outputs/runs/reports/
+!/outputs/runs/*/
+/outputs/runs/*/*
+!/outputs/runs/*/plots/
+!/outputs/runs/*/reports/

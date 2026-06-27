@@ -1,0 +1,524 @@
+{
+  "artifact_commands": {
+    "embeddings/train/original.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/ssv2_videomae_linear_probe/ssv2_videomae_c50_train_original.json"
+    ],
+    "embeddings/validation/original.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python3",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/ssv2_videomae_linear_probe/ssv2_videomae_c50_heldout_original.json"
+    ],
+    "embeddings/validation/perturbations/color-high.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python3",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/ssv2_videomae_linear_probe/ssv2_videomae_c50_heldout_color_high.json"
+    ],
+    "embeddings/validation/perturbations/color-low.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python3",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/ssv2_videomae_linear_probe/ssv2_videomae_c50_heldout_color_low.json"
+    ],
+    "embeddings/validation/perturbations/color-mid.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python3",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/ssv2_videomae_linear_probe/ssv2_videomae_c50_heldout_color_mid.json"
+    ],
+    "embeddings/validation/perturbations/freeze-tail-high.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python3",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/ssv2_videomae_linear_probe/ssv2_videomae_c50_heldout_freeze_tail_high.json"
+    ],
+    "embeddings/validation/perturbations/freeze-tail-low.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python3",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/ssv2_videomae_linear_probe/ssv2_videomae_c50_heldout_freeze_tail_low.json"
+    ],
+    "embeddings/validation/perturbations/freeze-tail-mid.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python3",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/ssv2_videomae_linear_probe/ssv2_videomae_c50_heldout_freeze_tail_mid.json"
+    ],
+    "embeddings/validation/perturbations/spatial-blur-mid.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python3",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/ssv2_videomae_linear_probe/ssv2_videomae_c50_heldout_blur_mid.json"
+    ],
+    "embeddings/validation/perturbations/temporal-shuffle-mid.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python3",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/ssv2_videomae_linear_probe/ssv2_videomae_c50_heldout_temporal_shuffle_mid.json"
+    ]
+  },
+  "artifacts": {
+    "color-high": {
+      "model_metadata": {
+        "checkpoint": "MCG-NJU/videomae-base",
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "videomae",
+        "hidden_size": 768,
+        "image_size": 224,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 16
+        },
+        "model_type": "videomae",
+        "num_frames": 16,
+        "patch_size": 16,
+        "revision": "dc740ceda42fce44faed2ea03c6d447db72f6af9",
+        "tubelet_size": 2,
+        "use_mean_pooling": false
+      },
+      "path": "outputs/runs/ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/validation/perturbations/color-high.pt",
+      "sha256": "6c96d5b1681164af3d0e8c6c251de8fc95aff38fffe1541890da55428143f81b",
+      "size_bytes": 5981756,
+      "summary": {
+        "average_batch_seconds": 0.2535480866772511,
+        "batch_count": 1500,
+        "dataset_size": 1500,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1500,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1500
+        ],
+        "output_path": "outputs/runs/ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/validation/perturbations/color-high.pt",
+        "successful_samples": 1500,
+        "total_seconds": 380.5713547029882
+      }
+    },
+    "color-low": {
+      "model_metadata": {
+        "checkpoint": "MCG-NJU/videomae-base",
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "videomae",
+        "hidden_size": 768,
+        "image_size": 224,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 16
+        },
+        "model_type": "videomae",
+        "num_frames": 16,
+        "patch_size": 16,
+        "revision": "dc740ceda42fce44faed2ea03c6d447db72f6af9",
+        "tubelet_size": 2,
+        "use_mean_pooling": false
+      },
+      "path": "outputs/runs/ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/validation/perturbations/color-low.pt",
+      "sha256": "bb4046266b1546ccaed12063129bb15b30df78659a3bf20d6f9798d3e5b0194f",
+      "size_bytes": 5981683,
+      "summary": {
+        "average_batch_seconds": 0.257030494499874,
+        "batch_count": 1500,
+        "dataset_size": 1500,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1500,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1500
+        ],
+        "output_path": "outputs/runs/ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/validation/perturbations/color-low.pt",
+        "successful_samples": 1500,
+        "total_seconds": 385.79508833697764
+      }
+    },
+    "color-mid": {
+      "model_metadata": {
+        "checkpoint": "MCG-NJU/videomae-base",
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "videomae",
+        "hidden_size": 768,
+        "image_size": 224,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 16
+        },
+        "model_type": "videomae",
+        "num_frames": 16,
+        "patch_size": 16,
+        "revision": "dc740ceda42fce44faed2ea03c6d447db72f6af9",
+        "tubelet_size": 2,
+        "use_mean_pooling": false
+      },
+      "path": "outputs/runs/ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/validation/perturbations/color-mid.pt",
+      "sha256": "de66072d5608031a175eab713464e28b84f4c2541c9919c19bcec5fd97922580",
+      "size_bytes": 5981683,
+      "summary": {
+        "average_batch_seconds": 0.2602207774704633,
+        "batch_count": 1500,
+        "dataset_size": 1500,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1500,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1500
+        ],
+        "output_path": "outputs/runs/ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/validation/perturbations/color-mid.pt",
+        "successful_samples": 1500,
+        "total_seconds": 390.5797149549471
+      }
+    },
+    "freeze-tail-high": {
+      "model_metadata": {
+        "checkpoint": "MCG-NJU/videomae-base",
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "videomae",
+        "hidden_size": 768,
+        "image_size": 224,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 16
+        },
+        "model_type": "videomae",
+        "num_frames": 16,
+        "patch_size": 16,
+        "revision": "dc740ceda42fce44faed2ea03c6d447db72f6af9",
+        "tubelet_size": 2,
+        "use_mean_pooling": false
+      },
+      "path": "outputs/runs/ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/validation/perturbations/freeze-tail-high.pt",
+      "sha256": "04fb1ed714f95ea678bb1bcf729009581b20191059fa6b8a01741ec2d2166287",
+      "size_bytes": 5881266,
+      "summary": {
+        "average_batch_seconds": 0.23955546175455675,
+        "batch_count": 1500,
+        "dataset_size": 1500,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1500,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1500
+        ],
+        "output_path": "outputs/runs/ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/validation/perturbations/freeze-tail-high.pt",
+        "successful_samples": 1500,
+        "total_seconds": 359.58206352900015
+      }
+    },
+    "freeze-tail-low": {
+      "model_metadata": {
+        "checkpoint": "MCG-NJU/videomae-base",
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "videomae",
+        "hidden_size": 768,
+        "image_size": 224,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 16
+        },
+        "model_type": "videomae",
+        "num_frames": 16,
+        "patch_size": 16,
+        "revision": "dc740ceda42fce44faed2ea03c6d447db72f6af9",
+        "tubelet_size": 2,
+        "use_mean_pooling": false
+      },
+      "path": "outputs/runs/ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/validation/perturbations/freeze-tail-low.pt",
+      "sha256": "3c41124e00dcdfea199dca4bae0ed636338e36e5dc970b5d69e58d82d35d9320",
+      "size_bytes": 5881257,
+      "summary": {
+        "average_batch_seconds": 0.21291939083995143,
+        "batch_count": 1500,
+        "dataset_size": 1500,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1500,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1500
+        ],
+        "output_path": "outputs/runs/ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/validation/perturbations/freeze-tail-low.pt",
+        "successful_samples": 1500,
+        "total_seconds": 319.62538041197695
+      }
+    },
+    "freeze-tail-mid": {
+      "model_metadata": {
+        "checkpoint": "MCG-NJU/videomae-base",
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "videomae",
+        "hidden_size": 768,
+        "image_size": 224,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 16
+        },
+        "model_type": "videomae",
+        "num_frames": 16,
+        "patch_size": 16,
+        "revision": "dc740ceda42fce44faed2ea03c6d447db72f6af9",
+        "tubelet_size": 2,
+        "use_mean_pooling": false
+      },
+      "path": "outputs/runs/ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/validation/perturbations/freeze-tail-mid.pt",
+      "sha256": "b8368c23cc78d27eea9eabf3c84303462d1aedbb22bf729542ce4bfc3a1ed95e",
+      "size_bytes": 5881257,
+      "summary": {
+        "average_batch_seconds": 0.2134403382439632,
+        "batch_count": 1500,
+        "dataset_size": 1500,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1500,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1500
+        ],
+        "output_path": "outputs/runs/ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/validation/perturbations/freeze-tail-mid.pt",
+        "successful_samples": 1500,
+        "total_seconds": 320.4114481550059
+      }
+    },
+    "heldout_original": {
+      "model_metadata": {
+        "checkpoint": "MCG-NJU/videomae-base",
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "videomae",
+        "hidden_size": 768,
+        "image_size": 224,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 16
+        },
+        "model_type": "videomae",
+        "num_frames": 16,
+        "patch_size": 16,
+        "revision": "dc740ceda42fce44faed2ea03c6d447db72f6af9",
+        "tubelet_size": 2,
+        "use_mean_pooling": false
+      },
+      "path": "outputs/runs/ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/validation/original.pt",
+      "sha256": "18caf57b6cef66c343fcaaa53928e31e1cfc771c4f7de51c728c488e4c5b7f8a",
+      "size_bytes": 5732394,
+      "summary": {
+        "average_batch_seconds": 0.2528596497704663,
+        "batch_count": 1500,
+        "dataset_size": 1500,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1500,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1500
+        ],
+        "output_path": "outputs/runs/ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/validation/original.pt",
+        "successful_samples": 1500,
+        "total_seconds": 379.53686158102937
+      }
+    },
+    "spatial-blur-mid": {
+      "model_metadata": {
+        "checkpoint": "MCG-NJU/videomae-base",
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "videomae",
+        "hidden_size": 768,
+        "image_size": 224,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 16
+        },
+        "model_type": "videomae",
+        "num_frames": 16,
+        "patch_size": 16,
+        "revision": "dc740ceda42fce44faed2ea03c6d447db72f6af9",
+        "tubelet_size": 2,
+        "use_mean_pooling": false
+      },
+      "path": "outputs/runs/ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/validation/perturbations/spatial-blur-mid.pt",
+      "sha256": "29973fbda9429c3d08ce7eb2137ed565a470f279c31a06abb9165cbdd86c3365",
+      "size_bytes": 5905266,
+      "summary": {
+        "average_batch_seconds": 0.26221952145406974,
+        "batch_count": 1500,
+        "dataset_size": 1500,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1500,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1500
+        ],
+        "output_path": "outputs/runs/ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/validation/perturbations/spatial-blur-mid.pt",
+        "successful_samples": 1500,
+        "total_seconds": 393.57931649597595
+      }
+    },
+    "temporal-shuffle-mid": {
+      "model_metadata": {
+        "checkpoint": "MCG-NJU/videomae-base",
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "videomae",
+        "hidden_size": 768,
+        "image_size": 224,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 16
+        },
+        "model_type": "videomae",
+        "num_frames": 16,
+        "patch_size": 16,
+        "revision": "dc740ceda42fce44faed2ea03c6d447db72f6af9",
+        "tubelet_size": 2,
+        "use_mean_pooling": false
+      },
+      "path": "outputs/runs/ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/validation/perturbations/temporal-shuffle-mid.pt",
+      "sha256": "27e014e7d65f7455beb9764d269faffded1872f6b6c875583f34c087e9c2a618",
+      "size_bytes": 5938262,
+      "summary": {
+        "average_batch_seconds": 0.24810118256524827,
+        "batch_count": 1500,
+        "dataset_size": 1500,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1500,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1500
+        ],
+        "output_path": "outputs/runs/ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/validation/perturbations/temporal-shuffle-mid.pt",
+        "successful_samples": 1500,
+        "total_seconds": 372.39751830202295
+      }
+    },
+    "train_original": {
+      "model_metadata": {
+        "checkpoint": "MCG-NJU/videomae-base",
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "videomae",
+        "hidden_size": 768,
+        "image_size": 224,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 16
+        },
+        "model_type": "videomae",
+        "num_frames": 16,
+        "patch_size": 16,
+        "revision": "dc740ceda42fce44faed2ea03c6d447db72f6af9",
+        "tubelet_size": 2,
+        "use_mean_pooling": false
+      },
+      "path": "outputs/runs/ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/train/original.pt",
+      "sha256": "3c983d19c20d09ae8cc5f642c79912318244bcf1e59ce47c4b0ab41a4f82c2f4",
+      "size_bytes": 19035690,
+      "summary": {
+        "average_batch_seconds": 0.2341356452427339,
+        "batch_count": 5000,
+        "dataset_size": 5000,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          5000,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          5000
+        ],
+        "output_path": "outputs/runs/ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/train/original.pt",
+        "successful_samples": 5000,
+        "total_seconds": 1171.5377293120255
+      }
+    }
+  },
+  "code_commit": "130f8f9a4f1419d6b2795ec470acd9278312e257",
+  "created_at_utc": "2026-06-24T19:28:33.311298+00:00",
+  "evaluation_commands": [
+    [
+      "/home/r/ruan/dev/vrl/.venv/bin/python3",
+      "-m",
+      "src.pipeline.evaluate",
+      "--config",
+      "configs/runs/ssv2_videomae_linear_probe/ssv2_videomae_c50_linear_probe_evaluation.json"
+    ],
+    [
+      "/home/r/ruan/dev/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.evaluate",
+      "--config",
+      "configs/runs/ssv2_videomae_linear_probe/ssv2_videomae_c50_linear_probe_evaluation.json"
+    ]
+  ],
+  "format_version": 1,
+  "hardware": {
+    "environment_recording_policy": "The artifact records the observed encoder device. Scheduler hostnames and GPU model names are intentionally excluded because allocations vary and are not experiment variables.",
+    "note": "The extraction artifact records device=cuda.",
+    "observed_encoder_devices": [
+      "cuda"
+    ]
+  },
+  "manifest_path": "outputs/runs/ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe/manifest.json",
+  "run_id": "ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe"
+}

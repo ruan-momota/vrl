@@ -1,0 +1,34 @@
+{
+  "cosine_k5_original_baseline": {
+    "current_accuracy": 0.09933333333333333,
+    "legacy_accuracy": 0.09933333333333333
+  },
+  "format_version": 1,
+  "method_boundary": "Legacy KNN k=1 and current KNN k=5 are not directly comparable. Only the explicitly declared common perturbations compare representation shift directly.",
+  "shared_perturbation_comparisons": [
+    {
+      "comparability_note": "The sampled-frame set and temporal-shuffle family match, but the deterministic shuffle seed changed from legacy seed 0 to current seed 42; compare the representation-shift magnitude as a stability check, not an exact repeat.",
+      "current_artifact_label": "temporal-shuffle-mid",
+      "current_knn_accuracy_drop": 0.04599999999999999,
+      "current_knn_k": 5,
+      "current_mean_cosine_distance": 0.0230212714523077,
+      "legacy_knn_accuracy_drop": 0.04666666666666667,
+      "legacy_knn_k": 1,
+      "legacy_mean_cosine_distance": 0.02287355065345764,
+      "legacy_perturbation": "temporal_shuffle",
+      "mean_cosine_distance_delta_current_minus_legacy": 0.0001477207988500595
+    },
+    {
+      "comparability_note": "Both runs use freeze_start_fraction=0.5 and the same frozen VideoMAE/SSV2 setup; KNN drops differ in k (legacy k=1, current k=5) and are not directly comparable.",
+      "current_artifact_label": "freeze-tail-mid",
+      "current_knn_accuracy_drop": 0.03599999999999999,
+      "current_knn_k": 5,
+      "current_mean_cosine_distance": 0.004983745981007814,
+      "legacy_knn_accuracy_drop": 0.02466666666666667,
+      "legacy_knn_k": 1,
+      "legacy_mean_cosine_distance": 0.004983745981007814,
+      "legacy_perturbation": "freeze_tail",
+      "mean_cosine_distance_delta_current_minus_legacy": 0.0
+    }
+  ]
+}
