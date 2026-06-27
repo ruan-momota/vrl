@@ -24,4 +24,5 @@ class DatasetAdapter(Protocol):
         sampling_strategy: FrameSamplingStrategy,
         transform: Callable[[np.ndarray], torch.Tensor] | None,
         perturbation: VideoPerturbation | None,
+        subset_id: str | None = None,
     ) -> Dataset[dict[str, object]]: ...

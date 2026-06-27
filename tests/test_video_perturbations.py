@@ -101,6 +101,91 @@ def test_center_occlusion_fills_center_box() -> None:
     assert np.all(result.frames[:, 0, :, :] == 100)
 
 
+def test_color_transform_is_deterministic_clip_global_and_preserves_input() -> None:
+    frames = np.array(
+        [
+            [[[200, 80, 20], [20, 80, 200]]],
+            [[[180, 40, 60], [60, 160, 40]]],
+        ],
+        dtype=np.uint8,
+    )
+    original = frames.copy()
+    config = VideoPerturbationConfig(name="color_transform", color_strength=0.4)
+
+    first = apply_video_perturbation(frames, config, video_id="sample")
+    second = apply_video_perturbation(frames, config, video_id="sample")
+
+    assert np.array_equal(first.frames, second.frames)
+    assert np.array_equal(frames, original)
+    assert first.frames.shape == frames.shape
+    assert first.frames.dtype == frames.dtype
+    assert first.metadata["constant_across_frames"] is True
+    assert first.metadata["color_strength"] == 0.4
+    assert len(first.metadata["channel_gains"]) == 3
+
+
+def test_color_transform_strength_increases_rgb_deviation() -> None:
+    frames = np.array([[[[240, 80, 10], [20, 160, 230]]]], dtype=np.uint8)
+    low = apply_video_perturbation(
+        frames,
+        VideoPerturbationConfig(name="color_transform", color_strength=0.15),
+    )
+    high = apply_video_perturbation(
+        frames,
+        VideoPerturbationConfig(name="color_transform", color_strength=0.6),
+    )
+
+    low_distance = np.abs(low.frames.astype(np.int16) - frames.astype(np.int16)).mean()
+    high_distance = np.abs(high.frames.astype(np.int16) - frames.astype(np.int16)).mean()
+
+    assert high_distance > low_distance
+
+
+def test_spatial_blur_preserves_timeline_shape_dtype_and_input() -> None:
+    frames = np.zeros((2, 5, 5, 3), dtype=np.uint8)
+    frames[0, 2, 2] = [255, 255, 255]
+    frames[1, 1, 1] = [255, 255, 255]
+    original = frames.copy()
+
+    result = apply_video_perturbation(
+        frames,
+        VideoPerturbationConfig(name="spatial_blur", blur_kernel_size=3),
+    )
+
+    assert np.array_equal(frames, original)
+    assert result.frames.shape == frames.shape
+    assert result.frames.dtype == frames.dtype
+    assert result.frames[0, 2, 2, 0] < frames[0, 2, 2, 0]
+    assert result.frames[0, 2, 1, 0] > 0
+    assert result.metadata["constant_across_frames"] is True
+    assert result.metadata["blur_kernel_size"] == 3
+
+
+@pytest.mark.parametrize(
+    ("config", "message"),
+    [
+        (
+            VideoPerturbationConfig(name="color_transform", color_strength=0.0),
+            "color_strength",
+        ),
+        (
+            VideoPerturbationConfig(name="color_transform", color_strength=1.1),
+            "color_strength",
+        ),
+        (
+            VideoPerturbationConfig(name="spatial_blur", blur_kernel_size=2),
+            "blur_kernel_size",
+        ),
+    ],
+)
+def test_new_appearance_perturbations_reject_invalid_parameters(
+    config: VideoPerturbationConfig,
+    message: str,
+) -> None:
+    with pytest.raises(ValueError, match=message):
+        apply_video_perturbation(_toy_frames(frame_count=2), config)
+
+
 def test_dataset_can_return_perturbed_and_original_clips(tmp_path: Path) -> None:
     video_path = _write_tiny_video(tmp_path / "sample.mp4", frame_count=5)
     index_path = tmp_path / "index.jsonl"

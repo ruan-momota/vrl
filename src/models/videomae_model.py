@@ -23,6 +23,7 @@ class VideoMAEModelMetadata:
     patch_size: int | None
     tubelet_size: int | None
     use_mean_pooling: bool | None
+    revision: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -50,6 +51,7 @@ def load_videomae_model(
     *,
     device: str = "auto",
     local_files_only: bool = False,
+    revision: str | None = None,
 ) -> tuple[torch.nn.Module, VideoMAEModelMetadata]:
     """Load a bare VideoMAE encoder for embedding extraction."""
     try:
@@ -58,10 +60,10 @@ def load_videomae_model(
         raise RuntimeError("transformers is required to load VideoMAE models") from error
 
     resolved_device = resolve_device(device)
-    model = AutoModel.from_pretrained(
-        checkpoint,
-        local_files_only=local_files_only,
-    )
+    load_options: dict[str, Any] = {"local_files_only": local_files_only}
+    if revision is not None:
+        load_options["revision"] = revision
+    model = AutoModel.from_pretrained(checkpoint, **load_options)
     model.to(resolved_device)
     model.eval()
     metadata = build_videomae_metadata(
@@ -69,6 +71,7 @@ def load_videomae_model(
         checkpoint=checkpoint,
         device=str(resolved_device),
         embedding_type="last_hidden_state_mean_pool",
+        revision=revision or _config_value(getattr(model, "config", None), "_commit_hash"),
     )
     return model, metadata
 
@@ -79,6 +82,7 @@ def build_videomae_metadata(
     checkpoint: str,
     device: str,
     embedding_type: EmbeddingType,
+    revision: str | None = None,
 ) -> VideoMAEModelMetadata:
     config = getattr(model, "config", None)
     return VideoMAEModelMetadata(
@@ -92,6 +96,7 @@ def build_videomae_metadata(
         patch_size=_config_value(config, "patch_size"),
         tubelet_size=_config_value(config, "tubelet_size"),
         use_mean_pooling=_config_value(config, "use_mean_pooling"),
+        revision=revision or _config_value(config, "_commit_hash"),
     )
 
 

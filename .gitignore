@@ -208,10 +208,6 @@ tempCodeRunnerFile.py
 # Ruff stuff:
 .ruff_cache/
 
-# Experiment artifacts
-outputs/embeddings/*.pt
-outputs/logs/*.json
-
 # PyPI configuration file
 .pypirc
 
@@ -223,23 +219,12 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-data/
-private/
-scripts/
-tests/
-plan.md
-todo-*.md
+src/data/__pycache__
+private
+data
 
-# Source adapters and project tests are code, not downloaded data or test output.
-!src/data/
-!src/data/**
-!tests/
-tests/*
-!tests/test_data_records.py
-!tests/test_dependency_boundaries.py
-!tests/test_pipeline_run.py
-
-# Experiment outputs
-outputs/*
-!outputs/plots
-!outputs/reports
+/outputs/*
+!/outputs/runs/
+/outputs/runs/*
+!/outputs/runs/plots/
+!/outputs/runs/reports/

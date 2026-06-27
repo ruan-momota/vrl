@@ -26,6 +26,7 @@ class SSV2DatasetAdapter:
         sampling_strategy: FrameSamplingStrategy,
         transform: Callable[[np.ndarray], torch.Tensor] | None,
         perturbation: VideoPerturbation | None,
+        subset_id: str | None = None,
     ) -> IndexedVideoDataset:
         return IndexedVideoDataset(
             index_path,
@@ -34,6 +35,7 @@ class SSV2DatasetAdapter:
             transform=transform,
             perturbation=perturbation,
             source_dataset=self.name,
+            subset_id=subset_id,
         )
 
 

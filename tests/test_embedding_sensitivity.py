@@ -7,6 +7,7 @@ import pytest
 import torch
 
 from src.evaluation.alignment import ArtifactAlignmentError
+from src.evaluation.bootstrap import BootstrapConfig
 from src.evaluation.sensitivity import (
     build_all_perturbations_summary,
     build_class_sensitivity_report,
@@ -60,6 +61,7 @@ def test_build_embedding_sensitivity_report_from_aligned_artifacts() -> None:
         perturbed_artifact_path="reverse.pt",
         perturbation_name="temporal_reverse",
         perturbation_group="motion",
+        bootstrap_config=BootstrapConfig(resamples=40, seed=11),
     )
 
     assert report["alignment"]["aligned"] is True
@@ -70,6 +72,9 @@ def test_build_embedding_sensitivity_report_from_aligned_artifacts() -> None:
     assert report["sample_metrics"][1]["label_name"] == "Up"
     assert report["sample_metrics"][1]["cosine_distance"] == pytest.approx(1.0)
     assert report["sample_metrics"][1]["perturbation_config"]["name"] == "temporal_reverse"
+    assert report["bootstrap"]["cosine_distance"]["statistics"]["mean"][
+        "point_estimate"
+    ] == pytest.approx(0.5)
 
 
 def test_build_embedding_sensitivity_report_rejects_misalignment() -> None:

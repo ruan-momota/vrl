@@ -59,6 +59,9 @@ def test_manifest_reuses_only_matching_config(tmp_path: Path) -> None:
     assert json.loads(paths.manifest_path.read_text(encoding="utf-8"))["artifact_configs"] == {
         "embeddings/validation/original.pt": config.to_dict()
     }
+    assert json.loads(paths.manifest_path.read_text(encoding="utf-8"))["artifact_commands"] == {
+        "embeddings/validation/original.pt": ["python", "-m", "example"]
+    }
     assert write_manifest(paths)["run_id"] == config.resolved_run_id
 
     perturbed_config = _config(tmp_path, perturbation={"name": "temporal_shuffle"})
@@ -82,6 +85,34 @@ def test_manifest_reuses_only_matching_config(tmp_path: Path) -> None:
     )
     with pytest.raises(FileExistsError, match="different config"):
         write_manifest(changed_paths)
+
+
+def test_manifest_allows_split_specific_index_paths_with_one_run_id(tmp_path: Path) -> None:
+    train_config = RunConfig(
+        **{
+            **_config(tmp_path).to_dict(),
+            "split": "train",
+            "index_path": "data/ssv2/index/train.jsonl",
+            "run_id": "shared-run",
+        }
+    )
+    heldout_config = RunConfig(
+        **{
+            **_config(tmp_path).to_dict(),
+            "split": "validation",
+            "index_path": "data/ssv2/index/validation.jsonl",
+            "run_id": "shared-run",
+        }
+    )
+
+    write_manifest(RunPaths(train_config))
+    manifest = write_manifest(RunPaths(heldout_config))
+
+    assert manifest["run_id"] == "shared-run"
+    assert set(manifest["artifact_configs"]) == {
+        "embeddings/train/original.pt",
+        "embeddings/validation/original.pt",
+    }
 
 
 def test_generic_pipeline_writes_run_scoped_artifact(tmp_path: Path) -> None:
@@ -121,6 +152,7 @@ def test_generic_pipeline_writes_run_scoped_artifact(tmp_path: Path) -> None:
     assert Path(result["manifest_path"]).exists()
     assert artifact["run_id"] == config.resolved_run_id
     assert artifact["sample_metadata"][0]["source_dataset"] == "ssv2"
+    assert artifact["sample_metadata"][0]["subset_id"] == "c50"
     assert artifact["embeddings"].shape == (1, 2)
 
 

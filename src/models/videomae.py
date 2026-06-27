@@ -35,11 +35,13 @@ class VideoMAEEncoder:
         processor_checkpoint: str | None = None,
         local_files_only: bool = False,
         embedding_type: EmbeddingType = "last_hidden_state_mean_pool",
+        revision: str | None = None,
     ) -> "VideoMAEEncoder":
         model, metadata = load_videomae_model(
             checkpoint,
             device=device,
             local_files_only=local_files_only,
+            revision=revision,
         )
         return cls(
             model=model,

@@ -47,6 +47,7 @@ def run_extraction(
     resolved_encoder = encoder or load_video_encoder(
         config.model_name,
         checkpoint=config.model_checkpoint,
+        revision=config.model_revision,
         device=config.device,
         image_size=config.image_size,
         local_files_only=local_files_only,
@@ -58,6 +59,7 @@ def run_extraction(
         sampling_strategy=config.sampling_strategy,  # type: ignore[arg-type]
         transform=resolved_encoder.preprocess,
         perturbation=build_video_perturbation(perturbation),
+        subset_id=config.subset_id,
     )
     if limit is not None:
         from torch.utils.data import Subset
@@ -111,13 +113,22 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
+    command = [sys.executable, "-m", "src.pipeline.extract", "--run-config", str(args.run_config)]
+    if args.limit is not None:
+        command.extend(["--limit", str(args.limit)])
+    if args.local_files_only:
+        command.append("--local-files-only")
+    if args.overwrite:
+        command.append("--overwrite")
+    if args.no_progress:
+        command.append("--no-progress")
     result = run_extraction(
         RunConfig.from_file(args.run_config),
         limit=args.limit,
         local_files_only=args.local_files_only,
         overwrite=args.overwrite,
         show_progress=not args.no_progress,
-        command=[sys.executable, "-m", "src.pipeline.extract", "--run-config", str(args.run_config)],
+        command=command,
     )
     print(json.dumps(result, indent=2, sort_keys=True))
     return 0

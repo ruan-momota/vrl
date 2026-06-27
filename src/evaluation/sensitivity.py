@@ -12,6 +12,7 @@ import torch.nn.functional as F
 
 from src.artifacts import load_embedding_artifact
 from src.evaluation.alignment import check_paired_embedding_alignment
+from src.evaluation.bootstrap import BootstrapConfig, paired_bootstrap_summary
 
 
 DEFAULT_MATRIX_PATH = Path("configs/ssv2_videomae_50c_perturbation_matrix.json")
@@ -78,6 +79,7 @@ def build_embedding_sensitivity_report(
     perturbed_artifact_path: str | Path | None = None,
     perturbation_name: str | None = None,
     perturbation_group: str | None = None,
+    bootstrap_config: BootstrapConfig | None = None,
 ) -> dict[str, Any]:
     alignment = check_paired_embedding_alignment(original_artifact, perturbed_artifact)
     original_embeddings = original_artifact["embeddings"]
@@ -123,6 +125,19 @@ def build_embedding_sensitivity_report(
         "perturbation_config": perturbation_config,
         "alignment": alignment.to_dict(),
         "summary": summary,
+        "bootstrap": None
+        if bootstrap_config is None
+        else {
+            metric_name: paired_bootstrap_summary(
+                distances[metric_name],
+                config=bootstrap_config,
+            )
+            for metric_name in (
+                "cosine_distance",
+                "l2_distance",
+                "relative_l2_distance",
+            )
+        },
         "sample_metrics": sample_metrics,
     }
 
@@ -133,6 +148,7 @@ def run_embedding_sensitivity(
     perturbed_artifact_path: str | Path,
     perturbation_name: str | None = None,
     perturbation_group: str | None = None,
+    bootstrap_config: BootstrapConfig | None = None,
 ) -> dict[str, Any]:
     original_path = Path(original_artifact_path)
     perturbed_path = Path(perturbed_artifact_path)
@@ -143,6 +159,7 @@ def run_embedding_sensitivity(
         perturbed_artifact_path=perturbed_path,
         perturbation_name=perturbation_name,
         perturbation_group=perturbation_group,
+        bootstrap_config=bootstrap_config,
     )
 
 

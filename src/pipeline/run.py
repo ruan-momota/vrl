@@ -27,6 +27,9 @@ class RunConfig:
     device: str
     seed: int
     deterministic: bool
+    model_revision: str | None = None
+    input_profile: str | None = None
+    subset_summary_path: str | None = None
     perturbation: dict[str, Any] = field(default_factory=lambda: {"name": "none"})
     output_root: str = "outputs/runs"
     run_id: str | None = None
@@ -67,7 +70,14 @@ class RunConfig:
         return {
             key: value
             for key, value in self.to_dict().items()
-            if key not in {"split", "perturbation", "output_root", "run_id"}
+            if key
+            not in {
+                "split",
+                "index_path",
+                "perturbation",
+                "output_root",
+                "run_id",
+            }
         }
 
 
@@ -137,6 +147,8 @@ def write_manifest(
         "created_at_utc": datetime.now(UTC).isoformat(),
         "experiment_config": paths.config.experiment_definition(),
         "artifact_configs": {artifact_key: paths.config.to_dict()},
+        "artifact_commands": {artifact_key: command or []},
+        "dataset_subset_summary": _load_optional_json(paths.config.subset_summary_path),
         "code_commit": _git_commit(),
         "command": command or [],
     }
@@ -149,6 +161,9 @@ def write_manifest(
         artifact_configs = existing.setdefault("artifact_configs", {})
         if not isinstance(artifact_configs, dict):
             raise TypeError(f"Run manifest has invalid artifact_configs: {manifest_path}")
+        artifact_commands = existing.setdefault("artifact_commands", {})
+        if not isinstance(artifact_commands, dict):
+            raise TypeError(f"Run manifest has invalid artifact_commands: {manifest_path}")
         existing_config = artifact_configs.get(artifact_key)
         if existing_config is not None and existing_config != paths.config.to_dict():
             raise FileExistsError(
@@ -157,6 +172,7 @@ def write_manifest(
             )
         if existing_config is None:
             artifact_configs[artifact_key] = paths.config.to_dict()
+            artifact_commands[artifact_key] = command or []
             manifest_path.write_text(
                 json.dumps(existing, indent=2, sort_keys=True) + "\n",
                 encoding="utf-8",
@@ -190,3 +206,9 @@ def _load_json(path: Path) -> dict[str, Any]:
     if not isinstance(data, dict):
         raise TypeError(f"Run manifest must contain a JSON object: {path}")
     return data
+
+
+def _load_optional_json(path_value: str | None) -> dict[str, Any] | None:
+    if path_value is None:
+        return None
+    return _load_json(Path(path_value))
