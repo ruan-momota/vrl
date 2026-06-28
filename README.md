@@ -26,16 +26,18 @@ Completed:
 | --- | --- | --- |
 | VideoMAE x SSV2 C50 | Complete | `outputs/runs/ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe/` |
 | VideoMAE x UCF101 C50 | Complete | `outputs/runs/ucf101-c50-train100-heldout30-videomae-base-frozen-linear-probe/` |
+| SlowFast R50 8x8 x SSV2 C50 | Complete | `outputs/runs/ssv2-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe/` |
+| SlowFast R50 8x8 x UCF101 C50 | Complete | `outputs/runs/ucf101-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe/` |
 
 Next:
 
-- add SlowFast `4x16 R50`;
-- run SlowFast x SSV2 and SlowFast x UCF101 with the same perturbation and
-  evaluation protocol.
+- summarize the full 2 x 2 matrix;
+- write the course report with model, dataset, intervention, and interaction
+  conclusions.
 
 ## Data
 
-Both completed cells use 50 classes with balanced splits:
+All completed cells use 50 classes with balanced splits:
 
 | Dataset | Train | Held-out | Notes |
 | --- | ---: | ---: | --- |
@@ -61,8 +63,10 @@ committed.
 
 For each completed cell:
 
-- encoder: frozen `MCG-NJU/videomae-base`;
-- input: deterministic 16-frame center clip, image size 224;
+- encoder: frozen `MCG-NJU/videomae-base` or PyTorchVideo SlowFast R50 `8x8`;
+- input: deterministic center clip, model-specific preprocessing;
+  VideoMAE uses 16 frames at image size 224, SlowFast uses 32 fast-pathway
+  frames at image size 256 and alpha 4;
 - train artifact: original train embeddings only;
 - held-out artifacts: original held-out plus eight perturbations;
 - classifier: train-only frozen linear probe with stratified train/probe-val
@@ -91,15 +95,20 @@ to perturbed held-out. KNN is auxiliary.
 | --- | ---: | ---: | --- |
 | VideoMAE x SSV2 | 0.2507 | 0.0993 | `temporal_shuffle`: 0.1767; `spatial_blur`: 0.0273 |
 | VideoMAE x UCF101 | 0.8533 | 0.8360 | `spatial_blur`: 0.2920; `temporal_shuffle`: 0.2493 |
+| SlowFast x SSV2 | 0.3393 | 0.2033 | `temporal_shuffle`: 0.2053; `spatial_blur`: 0.0007 |
+| SlowFast x UCF101 | 0.9940 | 0.9933 | `temporal_shuffle`: 0.0460; `spatial_blur`: 0.0140 |
 
-Both `freeze_tail` and `color_transform` show increasing effects from low to
-high strength in the completed runs. The two VideoMAE cells can support a
-dataset-interaction discussion, but they are not cross-model evidence.
+`freeze_tail` shows increasing label effects from low to high strength in the
+completed runs. `color_transform` generally shows increasing representation
+shift, with much smaller label-related drops. The four completed cells now
+support model-dataset interaction analysis.
 
 Main reports:
 
 - `outputs/runs/ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe/reports/linear_probe_sensitivity_report.md`
 - `outputs/runs/ucf101-c50-train100-heldout30-videomae-base-frozen-linear-probe/reports/linear_probe_sensitivity_report.md`
+- `outputs/runs/ssv2-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe/reports/linear_probe_sensitivity_report.md`
+- `outputs/runs/ucf101-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe/reports/linear_probe_sensitivity_report.md`
 
 ## Repository Layout
 

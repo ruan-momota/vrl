@@ -39,3 +39,8 @@ The SSV2 × VideoMAE frozen-linear-probe sensitivity configs are in
   SSV2 C50 × frozen VideoMAE;
 - `ssv2_videomae_c50_linear_probe_evaluation.json` configures the train-only linear
   probe, paired bootstrap, auxiliary KNN k=5, and run-scoped reporting.
+
+Phase 4 SlowFast configs use the same run-scoped protocol:
+
+- `configs/runs/ssv2_slowfast_linear_probe/`
+- `configs/runs/ucf101_slowfast_linear_probe/`
