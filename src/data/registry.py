@@ -1,11 +1,13 @@
 from __future__ import annotations
 
 from src.data.base import DatasetAdapter
+from src.data.kinetics import KineticsDatasetAdapter
 from src.data.ssv2 import SSV2DatasetAdapter
 from src.data.ucf101 import UCF101DatasetAdapter
 
 
 _DATASET_ADAPTERS: dict[str, DatasetAdapter] = {
+    "kinetics": KineticsDatasetAdapter(),
     "ssv2": SSV2DatasetAdapter(),
     "ucf101": UCF101DatasetAdapter(),
 }
@@ -16,7 +18,8 @@ def get_dataset_adapter(name: str) -> DatasetAdapter:
         return _DATASET_ADAPTERS[name]
     except KeyError as error:
         supported = ", ".join(sorted(_DATASET_ADAPTERS))
-        raise ValueError(f"Unsupported dataset adapter {name!r}; supported: {supported}") from error
+        raise ValueError(
+            f"Unsupported dataset adapter {name!r}; supported: {supported}") from error
 
 
 def supported_dataset_adapters() -> tuple[str, ...]:
