@@ -41,6 +41,7 @@ def test_pipeline_does_not_depend_on_compatibility_implementations() -> None:
     imports = _project_imports(PROJECT_ROOT / "src" / "pipeline")
 
     assert not imports & COMPATIBILITY_IMPLEMENTATIONS
+    assert "src.models.dinov2" not in imports
     assert not any(module == "src.legacy" or module.startswith("src.legacy.") for module in imports)
 
 
@@ -49,6 +50,7 @@ def test_evaluation_depends_only_on_artifact_contract_and_evaluation_modules() -
     forbidden_prefixes = ("src.data", "src.models", "src.video", "src.pipeline", "src.legacy")
 
     assert not any(module.startswith(forbidden_prefixes) for module in imports)
+    assert "src.models.dinov2" not in imports
     assert not imports & COMPATIBILITY_IMPLEMENTATIONS
 
 

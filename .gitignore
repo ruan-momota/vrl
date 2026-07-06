@@ -228,4 +228,14 @@ private
 !/outputs/runs/*/
 /outputs/runs/*/*
 !/outputs/runs/*/plots/
+!/outputs/runs/*/plots/*
 !/outputs/runs/*/reports/
+!/outputs/runs/*/reports/*
+!/outputs/reports/
+/outputs/reports/*
+!/outputs/reports/dinov2_3x2/
+!/outputs/reports/dinov2_3x2/*
+!/outputs/plots/
+/outputs/plots/*
+!/outputs/plots/dinov2_3x2/
+!/outputs/plots/dinov2_3x2/*

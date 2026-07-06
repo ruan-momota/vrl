@@ -28,10 +28,12 @@ Completed:
 | VideoMAE x UCF101 C50 | Complete | `outputs/runs/ucf101-c50-train100-heldout30-videomae-base-frozen-linear-probe/` |
 | SlowFast R50 8x8 x SSV2 C50 | Complete | `outputs/runs/ssv2-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe/` |
 | SlowFast R50 8x8 x UCF101 C50 | Complete | `outputs/runs/ucf101-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe/` |
+| DINOv2 frame-mean x SSV2 C50 | Complete | `outputs/runs/ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/` |
+| DINOv2 frame-mean x UCF101 C50 | Complete | `outputs/runs/ucf101-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/` |
 
 Next:
 
-- summarize the full 2 x 2 matrix;
+- use the completed 3 x 2 matrix in the final analysis;
 - write the course report with model, dataset, intervention, and interaction
   conclusions.
 
@@ -63,10 +65,12 @@ committed.
 
 For each completed cell:
 
-- encoder: frozen `MCG-NJU/videomae-base` or PyTorchVideo SlowFast R50 `8x8`;
+- encoder: frozen `MCG-NJU/videomae-base`, PyTorchVideo SlowFast R50 `8x8`,
+  or DINOv2 frame-mean baseline;
 - input: deterministic center clip, model-specific preprocessing;
   VideoMAE uses 16 frames at image size 224, SlowFast uses 32 fast-pathway
-  frames at image size 256 and alpha 4;
+  frames at image size 256 and alpha 4, and DINOv2 encodes 16 frames
+  independently at image size 224 before averaging frame CLS embeddings;
 - train artifact: original train embeddings only;
 - held-out artifacts: original held-out plus eight perturbations;
 - classifier: train-only frozen linear probe with stratified train/probe-val
@@ -97,11 +101,14 @@ to perturbed held-out. KNN is auxiliary.
 | VideoMAE x UCF101 | 0.8533 | 0.8360 | `spatial_blur`: 0.2920; `temporal_shuffle`: 0.2493 |
 | SlowFast x SSV2 | 0.3393 | 0.2033 | `temporal_shuffle`: 0.2053; `spatial_blur`: 0.0007 |
 | SlowFast x UCF101 | 0.9940 | 0.9933 | `temporal_shuffle`: 0.0460; `spatial_blur`: 0.0140 |
+| DINOv2 frame-mean x SSV2 | 0.2973 | 0.1940 | `spatial_blur`: 0.0067; `temporal_shuffle`: 0.0000 |
+| DINOv2 frame-mean x UCF101 | 0.9900 | 0.9773 | `spatial_blur`: 0.0020; `temporal_shuffle`: 0.0000 |
 
 `freeze_tail` shows increasing label effects from low to high strength in the
-completed runs. `color_transform` generally shows increasing representation
-shift, with much smaller label-related drops. The four completed cells now
-support model-dataset interaction analysis.
+completed video-model runs and much smaller label effects for DINOv2.
+`color_transform` generally shows increasing representation shift, with much
+smaller label-related drops. DINOv2 `temporal_shuffle` is a sanity check:
+frame-mean embeddings are effectively invariant to frame order.
 
 Main reports:
 
@@ -109,6 +116,9 @@ Main reports:
 - `outputs/runs/ucf101-c50-train100-heldout30-videomae-base-frozen-linear-probe/reports/linear_probe_sensitivity_report.md`
 - `outputs/runs/ssv2-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe/reports/linear_probe_sensitivity_report.md`
 - `outputs/runs/ucf101-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe/reports/linear_probe_sensitivity_report.md`
+- `outputs/runs/ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/reports/linear_probe_sensitivity_report.md`
+- `outputs/runs/ucf101-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/reports/linear_probe_sensitivity_report.md`
+- `outputs/reports/dinov2_3x2/dinov2_3x2_summary.md`
 
 ## Repository Layout
 
@@ -143,6 +153,10 @@ Run configs are grouped by cell:
 
 - `configs/runs/ssv2_videomae_linear_probe/`
 - `configs/runs/ucf101_videomae_linear_probe/`
+- `configs/runs/ssv2_slowfast_linear_probe/`
+- `configs/runs/ucf101_slowfast_linear_probe/`
+- `configs/runs/ssv2_dinov2_linear_probe/`
+- `configs/runs/ucf101_dinov2_linear_probe/`
 
 Each directory has a `README.md` with smoke extraction, full extraction, and
 evaluation commands. The common entry points are:
