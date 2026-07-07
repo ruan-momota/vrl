@@ -222,6 +222,12 @@ __marimo__/
 src/data/__pycache__
 private
 /data
+!/data/
+/data/*
+!/data/diving48/
+/data/diving48/*
+!/data/diving48/subsets/
+!/data/diving48/subsets/**
 
 /outputs/*
 !/outputs/runs/
@@ -235,7 +241,11 @@ private
 /outputs/reports/*
 !/outputs/reports/dinov2_3x2/
 !/outputs/reports/dinov2_3x2/*
+!/outputs/reports/diving48_3x3/
+!/outputs/reports/diving48_3x3/*
 !/outputs/plots/
 /outputs/plots/*
 !/outputs/plots/dinov2_3x2/
 !/outputs/plots/dinov2_3x2/*
+!/outputs/plots/diving48_3x3/
+!/outputs/plots/diving48_3x3/*

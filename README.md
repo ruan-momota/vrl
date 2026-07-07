@@ -30,24 +30,41 @@ Completed:
 | SlowFast R50 8x8 x UCF101 C50 | Complete | `outputs/runs/ucf101-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe/` |
 | DINOv2 frame-mean x SSV2 C50 | Complete | `outputs/runs/ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/` |
 | DINOv2 frame-mean x UCF101 C50 | Complete | `outputs/runs/ucf101-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/` |
+| VideoMAE x Diving48 C32 | Complete | `outputs/runs/diving48-c32-train50-heldout15-videomae-base-frozen-linear-probe/` |
+| SlowFast R50 8x8 x Diving48 C32 | Complete | `outputs/runs/diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe/` |
+| DINOv2 frame-mean x Diving48 C32 | Complete | `outputs/runs/diving48-c32-train50-heldout15-dinov2-base-frame-mean-frozen-linear-probe/` |
+
+Latest verification, 2026-07-07:
+
+- the primary `3 models x 3 datasets` matrix is complete;
+- all Diving48 full artifacts passed paired alignment checks, with 1,600 train
+  samples and 480 held-out samples per held-out artifact;
+- quality audits report successful extraction and 0 failed samples for the
+  Diving48 cells;
+- matrix summary Markdown files in `outputs/reports/dinov2_3x2/` and
+  `outputs/reports/diving48_3x3/` are now written in English;
+- full test suite passed: `121 passed`.
 
 Next:
 
-- use the completed 3 x 2 matrix in the final analysis;
+- use the completed 3 x 3 matrix in the final analysis;
 - write the course report with model, dataset, intervention, and interaction
   conclusions.
 
 ## Data
 
-All completed cells use 50 classes with balanced splits:
+Completed cells use balanced controlled subsets:
 
 | Dataset | Train | Held-out | Notes |
 | --- | ---: | ---: | --- |
 | SSV2 C50 | 5,000 videos | 1,500 videos | 100/30 per class |
 | UCF101 C50 | 5,000 videos | 1,500 videos | 100/30 per class; UCF101 `test` is reported as held-out |
+| Diving48 C32 | 1,600 videos | 480 videos | 50/15 per class; Diving48 `test` is reported as held-out |
 
-UCF101 subset manifests are stored in
-`data/ucf101/subsets/c50_train100_heldout30/`:
+UCF101 and Diving48 subset manifests are stored in:
+
+- `data/ucf101/subsets/c50_train100_heldout30/`
+- `data/diving48/subsets/c32_train50_heldout15/`
 
 - `label_mapping.json`
 - `train.jsonl`
@@ -56,7 +73,8 @@ UCF101 subset manifests are stored in
 - `summary.json`
 - `decode_failures.jsonl`
 
-The UCF101 decode audit attempted 6,500 videos with 0 failures.
+The UCF101 decode audit attempted 6,500 videos with 0 failures. The Diving48
+decode audit attempted 2,080 videos with 0 failures.
 
 Raw videos and large embedding/prediction artifacts are not meant to be
 committed.
@@ -103,12 +121,18 @@ to perturbed held-out. KNN is auxiliary.
 | SlowFast x UCF101 | 0.9940 | 0.9933 | `temporal_shuffle`: 0.0460; `spatial_blur`: 0.0140 |
 | DINOv2 frame-mean x SSV2 | 0.2973 | 0.1940 | `spatial_blur`: 0.0067; `temporal_shuffle`: 0.0000 |
 | DINOv2 frame-mean x UCF101 | 0.9900 | 0.9773 | `spatial_blur`: 0.0020; `temporal_shuffle`: 0.0000 |
+| VideoMAE x Diving48 | 0.0750 | 0.0375 | `temporal_shuffle`: 0.0375; `spatial_blur`: 0.0188 |
+| SlowFast x Diving48 | 0.0896 | 0.0729 | `temporal_shuffle`: 0.0188; `spatial_blur`: -0.0083 |
+| DINOv2 frame-mean x Diving48 | 0.0875 | 0.0896 | `spatial_blur`: 0.0021; `temporal_shuffle`: 0.0000 |
 
 `freeze_tail` shows increasing label effects from low to high strength in the
 completed video-model runs and much smaller label effects for DINOv2.
 `color_transform` generally shows increasing representation shift, with much
 smaller label-related drops. DINOv2 `temporal_shuffle` is a sanity check:
-frame-mean embeddings are effectively invariant to frame order.
+frame-mean embeddings are effectively invariant to frame order. Diving48
+baselines are low across all three models, which is treated as a fine-grained,
+small-sample model-dataset interaction rather than a reason to change the
+frozen subset.
 
 Main reports:
 
@@ -118,7 +142,11 @@ Main reports:
 - `outputs/runs/ucf101-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe/reports/linear_probe_sensitivity_report.md`
 - `outputs/runs/ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/reports/linear_probe_sensitivity_report.md`
 - `outputs/runs/ucf101-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/reports/linear_probe_sensitivity_report.md`
-- `outputs/reports/dinov2_3x2/dinov2_3x2_summary.md`
+- `outputs/runs/diving48-c32-train50-heldout15-videomae-base-frozen-linear-probe/reports/linear_probe_sensitivity_report.md`
+- `outputs/runs/diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe/reports/linear_probe_sensitivity_report.md`
+- `outputs/runs/diving48-c32-train50-heldout15-dinov2-base-frame-mean-frozen-linear-probe/reports/linear_probe_sensitivity_report.md`
+- English 3x2 summary: `outputs/reports/dinov2_3x2/dinov2_3x2_summary.md`
+- English 3x3 summary: `outputs/reports/diving48_3x3/diving48_3x3_summary.md`
 
 ## Repository Layout
 
@@ -149,6 +177,12 @@ Build or refresh the UCF101 subset index and decode audit:
 uv run python -m src.data.ucf101_index --decode-audit
 ```
 
+Build or refresh the Diving48 subset index and decode audit:
+
+```bash
+uv run python -m src.data.diving48_index --decode-audit
+```
+
 Run configs are grouped by cell:
 
 - `configs/runs/ssv2_videomae_linear_probe/`
@@ -157,6 +191,9 @@ Run configs are grouped by cell:
 - `configs/runs/ucf101_slowfast_linear_probe/`
 - `configs/runs/ssv2_dinov2_linear_probe/`
 - `configs/runs/ucf101_dinov2_linear_probe/`
+- `configs/runs/diving48_videomae_linear_probe/`
+- `configs/runs/diving48_slowfast_linear_probe/`
+- `configs/runs/diving48_dinov2_linear_probe/`
 
 Each directory has a `README.md` with smoke extraction, full extraction, and
 evaluation commands. The common entry points are:

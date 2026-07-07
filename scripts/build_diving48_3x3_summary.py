@@ -8,8 +8,8 @@ from pathlib import Path
 from typing import Any
 
 
-REPORT_DIR = Path("outputs/reports/dinov2_3x2")
-PLOT_DIR = Path("outputs/plots/dinov2_3x2")
+REPORT_DIR = Path("outputs/reports/diving48_3x3")
+PLOT_DIR = Path("outputs/plots/diving48_3x3")
 
 
 @dataclass(frozen=True)
@@ -45,6 +45,13 @@ CELLS = (
         run_id="ucf101-c50-train100-heldout30-videomae-base-frozen-linear-probe",
     ),
     Cell(
+        dataset="Diving48",
+        dataset_role="fine-grained motion / pose contrast",
+        model="VideoMAE",
+        checkpoint="MCG-NJU/videomae-base",
+        run_id="diving48-c32-train50-heldout15-videomae-base-frozen-linear-probe",
+    ),
+    Cell(
         dataset="SSV2",
         dataset_role="motion-oriented",
         model="SlowFast R50 8x8",
@@ -57,6 +64,13 @@ CELLS = (
         model="SlowFast R50 8x8",
         checkpoint="facebookresearch/pytorchvideo:slowfast_r50",
         run_id="ucf101-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe",
+    ),
+    Cell(
+        dataset="Diving48",
+        dataset_role="fine-grained motion / pose contrast",
+        model="SlowFast R50 8x8",
+        checkpoint="facebookresearch/pytorchvideo:slowfast_r50",
+        run_id="diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe",
     ),
     Cell(
         dataset="SSV2",
@@ -72,16 +86,26 @@ CELLS = (
         checkpoint="facebook/dinov2-base",
         run_id="ucf101-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe",
     ),
+    Cell(
+        dataset="Diving48",
+        dataset_role="fine-grained motion / pose contrast",
+        model="DINOv2 frame-mean",
+        checkpoint="facebook/dinov2-base",
+        run_id="diving48-c32-train50-heldout15-dinov2-base-frame-mean-frozen-linear-probe",
+    ),
 )
 
 
 CELL_COLORS = {
     "VideoMAE x SSV2": "#3b82f6",
     "VideoMAE x UCF101": "#0f766e",
+    "VideoMAE x Diving48": "#9333ea",
     "SlowFast R50 8x8 x SSV2": "#dc2626",
     "SlowFast R50 8x8 x UCF101": "#d97706",
+    "SlowFast R50 8x8 x Diving48": "#0891b2",
     "DINOv2 frame-mean x SSV2": "#7c3aed",
     "DINOv2 frame-mean x UCF101": "#16a34a",
+    "DINOv2 frame-mean x Diving48": "#be123c",
 }
 
 
@@ -130,7 +154,7 @@ def main() -> int:
         build_interaction_notes(baseline_rows, perturbation_rows, quality_rows),
         encoding="utf-8",
     )
-    (REPORT_DIR / "dinov2_3x2_summary.md").write_text(
+    (REPORT_DIR / "diving48_3x3_summary.md").write_text(
         build_summary_markdown(baseline_rows, perturbation_rows, quality_rows),
         encoding="utf-8",
     )
@@ -247,7 +271,7 @@ def write_fixed_mid_bar_chart(
     min_value = min(0.0, min(values))
     max_value = max(values)
 
-    width, height = 980, 520
+    width, height = 1280, 560
     left, right, top, bottom = 90, 30, 55, 120
     plot_width = width - left - right
     plot_height = height - top - bottom
@@ -297,7 +321,7 @@ def write_strength_curve_chart(
     title: str,
     y_label: str,
 ) -> None:
-    width, height = 980, 760
+    width, height = 1280, 790
     parts = svg_header(width, height)
     parts.append(text(width / 2, 28, title, size=18, weight="700", anchor="middle"))
     panel_specs = (
@@ -333,7 +357,7 @@ def write_curve_panel(
     title: str,
     y_label: str,
 ) -> None:
-    left, right, panel_height, bottom_pad = 90, 260, 260, 55
+    left, right, panel_height, bottom_pad = 90, 390, 270, 55
     plot_width = width - left - right
     plot_height = panel_height - bottom_pad
     strengths = ("low", "mid", "high")
@@ -433,39 +457,51 @@ def build_interaction_notes(
 ) -> str:
     ssv2_dino = find_row(baselines, "DINOv2 frame-mean", "SSV2")
     ucf_dino = find_row(baselines, "DINOv2 frame-mean", "UCF101")
+    diving_videomae = find_row(baselines, "VideoMAE", "Diving48")
+    diving_slowfast = find_row(baselines, "SlowFast R50 8x8", "Diving48")
+    diving_dino = find_row(baselines, "DINOv2 frame-mean", "Diving48")
     dino_ssv2_shuffle = find_perturbation(perturbations, "DINOv2 frame-mean", "SSV2", "temporal-shuffle-mid")
     dino_ucf_shuffle = find_perturbation(perturbations, "DINOv2 frame-mean", "UCF101", "temporal-shuffle-mid")
-    dino_ssv2_freeze_high = find_perturbation(perturbations, "DINOv2 frame-mean", "SSV2", "freeze-tail-high")
-    dino_ucf_blur = find_perturbation(perturbations, "DINOv2 frame-mean", "UCF101", "spatial-blur-mid")
+    dino_diving_shuffle = find_perturbation(perturbations, "DINOv2 frame-mean", "Diving48", "temporal-shuffle-mid")
+    videomae_diving_shuffle = find_perturbation(perturbations, "VideoMAE", "Diving48", "temporal-shuffle-mid")
+    slowfast_diving_shuffle = find_perturbation(perturbations, "SlowFast R50 8x8", "Diving48", "temporal-shuffle-mid")
+    videomae_diving_blur = find_perturbation(perturbations, "VideoMAE", "Diving48", "spatial-blur-mid")
+    slowfast_diving_blur = find_perturbation(perturbations, "SlowFast R50 8x8", "Diving48", "spatial-blur-mid")
+    dino_diving_blur = find_perturbation(perturbations, "DINOv2 frame-mean", "Diving48", "spatial-blur-mid")
     quality_ok = all(row["quality_ok"] in {True, "True", "true"} for row in quality_rows)
-    return f"""# DINOv2 3 x 2 Interaction Notes
+    return f"""# Diving48 3 x 3 Interaction Notes
 
-This note summarizes the completed `3 models x 2 datasets` C50 matrix. The DINOv2 runs are frame-wise image baselines, not temporal video encoders.
+This note summarizes the completed `3 models x 3 datasets` matrix. The added Diving48 C32 setting uses a balanced train50 / heldout15 subset. Its role is a fine-grained motion / pose contrast, not a full Diving48 benchmark.
 
 ## Status
 
-- All six cells have 2 original artifacts and 8 held-out perturbation artifacts.
-- Quality audit overall status: `{quality_ok}`; both DINOv2 runs have 0 failed samples.
-- DINOv2 original LP accuracy is {pct(ssv2_dino['linear_probe_original_accuracy'])} on SSV2 and {pct(ucf_dino['linear_probe_original_accuracy'])} on UCF101.
+- All nine cells have 2 original artifacts and 8 held-out perturbation artifacts.
+- Quality audit overall status: `{quality_ok}`; all three Diving48 runs have 0 failed samples.
+- Diving48 original LP accuracy: VideoMAE {pct(diving_videomae['linear_probe_original_accuracy'])}, SlowFast {pct(diving_slowfast['linear_probe_original_accuracy'])}, DINOv2 {pct(diving_dino['linear_probe_original_accuracy'])}.
 
 ## DINOv2 sanity check
 
 - SSV2 `temporal-shuffle-mid`: mean cosine distance {fmt_float(dino_ssv2_shuffle['mean_cosine_distance'])}, LP drop {fmt_float(dino_ssv2_shuffle['linear_probe_accuracy_drop'])}.
 - UCF101 `temporal-shuffle-mid`: mean cosine distance {fmt_float(dino_ucf_shuffle['mean_cosine_distance'])}, LP drop {fmt_float(dino_ucf_shuffle['linear_probe_accuracy_drop'])}.
+- Diving48 `temporal-shuffle-mid`: mean cosine distance {fmt_float(dino_diving_shuffle['mean_cosine_distance'])}, LP drop {fmt_float(dino_diving_shuffle['linear_probe_accuracy_drop'])}.
 
 This matches the frame-mean DINOv2 expectation: when the same frame set is preserved and only order changes, the simple-mean embedding is effectively unchanged.
 
-## Main Interactions
+## Main Interactions and Interpretation Boundaries
 
 - DINOv2 is nearly saturated on UCF101, with LP accuracy of {pct(ucf_dino['linear_probe_original_accuracy'])}. This indicates that the C50 subset is highly readable from strong static image representations.
 - DINOv2 reaches {pct(ssv2_dino['linear_probe_original_accuracy'])} LP accuracy on SSV2, higher than VideoMAE but lower than SlowFast. This shows that the SSV2 C50 subset still contains usable static cues, so VideoMAE/SlowFast versus DINOv2 differences should not be reduced to a simple motion-understanding claim.
-- DINOv2 `freeze-tail-high` on SSV2 has LP drop {fmt_float(dino_ssv2_freeze_high['linear_probe_accuracy_drop'])}, much smaller than the high-strength freeze-tail drops for the video models. For DINOv2, this is mainly a frame-content distribution change, not evidence of temporal modeling.
-- DINOv2 UCF101 `spatial-blur-mid` has a small LP drop of {fmt_float(dino_ucf_blur['linear_probe_accuracy_drop'])}. In contrast, VideoMAE x UCF101 still shows a much stronger appearance-related label effect under blur.
+- All three Diving48 baselines are low but still above random 1/32. This should primarily be interpreted as fine-grained, small-sample difficulty in the C32 train50 setting, not as a failure of any single model implementation.
+- On Diving48, VideoMAE temporal-shuffle LP drop is {fmt_float(videomae_diving_shuffle['linear_probe_accuracy_drop'])}, and SlowFast is {fmt_float(slowfast_diving_shuffle['linear_probe_accuracy_drop'])}. Both are less pronounced than the fixed-mid label effects observed on SSV2/UCF101.
+- SlowFast x Diving48 temporal-shuffle representation shift is {fmt_float(slowfast_diving_shuffle['mean_cosine_distance'])}, much larger than DINOv2's {fmt_float(dino_diving_shuffle['mean_cosine_distance'])}, but the label drop is only {fmt_float(slowfast_diving_shuffle['linear_probe_accuracy_drop'])}. Representation shift and label-related drop must therefore be reported separately.
+- Diving48 spatial-blur LP drops are: VideoMAE {fmt_float(videomae_diving_blur['linear_probe_accuracy_drop'])}, SlowFast {fmt_float(slowfast_diving_blur['linear_probe_accuracy_drop'])}, DINOv2 {fmt_float(dino_diving_blur['linear_probe_accuracy_drop'])}. Current results do not support explaining Diving48 differences as simple static-appearance cue effects.
 
 ## Writing Boundaries
 
 - UCF101 should be described as an `appearance-rich / context-correlated contrast`, not as a purely appearance-biased dataset.
-- DINOv2 results cannot prove or disprove motion understanding; they mainly quantify how readable the current C50 subsets are from static frame-level representations.
+- Diving48 should be described as a `fine-grained motion / pose contrast`, while explicitly stating that this experiment uses a C32 train50/heldout15 subset.
+- DINOv2 results cannot prove or disprove motion understanding; they mainly quantify how readable the current subsets are from static frame-level representations.
+- The low Diving48 baseline is an important result and should not be optimized away by post-hoc class or quota changes.
 - Representation shift and label-related drop should be reported separately.
 """
 
@@ -524,18 +560,25 @@ def build_summary_markdown(
     )
     dino_ssv2_shuffle = find_perturbation(perturbations, "DINOv2 frame-mean", "SSV2", "temporal-shuffle-mid")
     dino_ucf_shuffle = find_perturbation(perturbations, "DINOv2 frame-mean", "UCF101", "temporal-shuffle-mid")
+    dino_diving_shuffle = find_perturbation(perturbations, "DINOv2 frame-mean", "Diving48", "temporal-shuffle-mid")
+    diving_videomae = find_row(baselines, "VideoMAE", "Diving48")
+    diving_slowfast = find_row(baselines, "SlowFast R50 8x8", "Diving48")
+    diving_dino = find_row(baselines, "DINOv2 frame-mean", "Diving48")
+    diving_slowfast_shuffle = find_perturbation(perturbations, "SlowFast R50 8x8", "Diving48", "temporal-shuffle-mid")
     quality_ok = all(row["quality_ok"] in {True, "True", "true"} for row in quality_rows)
-    return f"""# DINOv2 3 x 2 Summary
+    return f"""# Diving48 3 x 3 Summary
 
-Generated: 2026-07-06
+Generated: 2026-07-07
 
-This summary reads the six completed run reports and does not re-extract embeddings. The DINOv2 cells use a frame-wise image encoder: 16 frames are encoded independently, CLS tokens are averaged, and the result is treated as a static image-representation baseline.
+This summary reads the nine completed run reports and does not re-extract embeddings. The matrix covers three models, VideoMAE, SlowFast R50 8x8, and DINOv2 frame-mean, across three datasets: SSV2 C50, UCF101 C50, and Diving48 C32.
+
+Diving48 uses the balanced `c32_train50_heldout15` subset: 1,600 train videos, 480 held-out videos, 32 classes, with 50 train and 15 held-out videos per class. Its role in this project is a fine-grained motion / pose contrast, not a full Diving48 benchmark.
 
 ## Input Runs
 
 {chr(10).join(f'- `{cell.run_id}`' for cell in CELLS)}
 
-Quality audit overall status: `{quality_ok}`. Extraction succeeded for all six cells, and both DINOv2 runs have 0 failed samples.
+Quality audit overall status: `{quality_ok}`. Extraction succeeded for all nine cells, and all three Diving48 runs have 0 failed samples.
 
 ## Baseline
 
@@ -543,39 +586,45 @@ Quality audit overall status: `{quality_ok}`. Extraction succeeded for all six c
 
 DINOv2 frame-mean reaches {pct(find_row(baselines, "DINOv2 frame-mean", "UCF101")["linear_probe_original_accuracy"])} LP accuracy on UCF101, close to the saturated SlowFast result. This indicates that the current UCF101 C50 subset has strong static appearance/context readability. On SSV2, DINOv2 reaches {pct(find_row(baselines, "DINOv2 frame-mean", "SSV2")["linear_probe_original_accuracy"])}, showing that this SSV2 subset also contains static cues. Model differences should therefore not be written as a one-dimensional motion ranking.
 
+Diving48 baselines are low overall: VideoMAE {pct(diving_videomae["linear_probe_original_accuracy"])}, SlowFast {pct(diving_slowfast["linear_probe_original_accuracy"])}, and DINOv2 {pct(diving_dino["linear_probe_original_accuracy"])}. These results are above random 1/32 but far below UCF101, consistent with the fine-grained action/pose difficulty and limited train50 setting. In the report, this should be treated as dataset difficulty and model-dataset interaction, not as a reason for post-hoc subset changes.
+
 ## Fixed-mid Interventions
 
 {fixed_table}
 
-DINOv2 `temporal-shuffle-mid` is a sanity check: mean cosine distance is {fmt_float(dino_ssv2_shuffle["mean_cosine_distance"])} on SSV2 and {fmt_float(dino_ucf_shuffle["mean_cosine_distance"])} on UCF101, and both LP drops are {fmt_float(0)}. This matches the frame-mean design, which is insensitive to frame order.
+DINOv2 `temporal-shuffle-mid` is a sanity check: mean cosine distance is {fmt_float(dino_ssv2_shuffle["mean_cosine_distance"])} on SSV2, {fmt_float(dino_ucf_shuffle["mean_cosine_distance"])} on UCF101, and {fmt_float(dino_diving_shuffle["mean_cosine_distance"])} on Diving48. This matches the frame-mean design, which is insensitive to frame order.
+
+On Diving48, SlowFast temporal-shuffle representation shift is {fmt_float(diving_slowfast_shuffle["mean_cosine_distance"])}, but LP drop is only {fmt_float(diving_slowfast_shuffle["linear_probe_accuracy_drop"])}. This shows that a large embedding shift does not necessarily translate into an equally large label-related drop, especially in a low-baseline, small-sample, fine-grained dataset.
 
 ## Strength Curves
 
 {curve_table}
 
-DINOv2 `freeze-tail` changes the frame-content distribution, but that does not imply temporal modeling. Compared with VideoMAE and SlowFast, DINOv2 has much smaller freeze-tail label drops overall. `color_transform` mainly increases representation shift, while label drops are usually small.
+DINOv2 `freeze-tail` changes the frame-content distribution, but that does not imply temporal modeling. `color_transform` mainly increases representation shift, while label drops are usually small. Diving48 strength curves should be read together with the low baseline rather than interpreted from individual drop values alone.
 
 ## Figures
 
-- `outputs/plots/dinov2_3x2/matrix_fixed_mid_accuracy_drop.svg`
-- `outputs/plots/dinov2_3x2/matrix_fixed_mid_representation_shift.svg`
-- `outputs/plots/dinov2_3x2/matrix_strength_curves_accuracy_drop.svg`
-- `outputs/plots/dinov2_3x2/matrix_strength_curves_representation_shift.svg`
+- `outputs/plots/diving48_3x3/matrix_fixed_mid_accuracy_drop.svg`
+- `outputs/plots/diving48_3x3/matrix_fixed_mid_representation_shift.svg`
+- `outputs/plots/diving48_3x3/matrix_strength_curves_accuracy_drop.svg`
+- `outputs/plots/diving48_3x3/matrix_strength_curves_representation_shift.svg`
 
 ## Conclusions
 
 1. DINOv2 temporal-shuffle results validate the order-insensitivity of the frame-mean baseline. This is not a bug; it is the key interpretation boundary of this baseline.
 2. UCF101 C50 can be distinguished well by strong static image representations, supporting its role as an appearance-rich / context-correlated contrast.
 3. SSV2 C50 also contains usable static cues. DINOv2 has a higher SSV2 baseline than VideoMAE, but it does not use frame order, so the SSV2 result should not be equated directly with motion understanding.
-4. Video-model label drops under temporal perturbation provide a useful contrast against DINOv2's near-zero temporal-shuffle drop. However, DINOv2 freeze-tail effects should be interpreted as frame-content distribution changes.
-5. Representation shift and label-related drop are not always synchronized and should be reported separately.
+4. Diving48 adds a more fine-grained, lower-sample action/pose contrast. All three models have low baselines, indicating that this subset is harder than the current UCF101 and SSV2 subsets.
+5. Video-model label drops under temporal perturbation provide a useful contrast against DINOv2's near-zero temporal-shuffle drop. However, DINOv2 freeze-tail effects should be interpreted as frame-content distribution changes.
+6. Representation shift and label-related drop are not always synchronized and should be reported separately.
 
 ## Limitations
 
 - DINOv2 is not a temporal video model; it is a frame-wise static representation baseline.
-- Current results cover only the controlled C50 train100/heldout30 subsets and should not be directly generalized to full datasets.
+- Current results cover SSV2/UCF101 C50 train100/heldout30 and Diving48 C32 train50/heldout15, and should not be directly generalized to full datasets.
 - Perturbation sensitivity is not a clean causal isolation of motion versus appearance.
 - Checkpoint pretraining-overlap risk should remain in the report, especially for UCF101-related claims.
+- The low Diving48 baseline limits the dynamic range of drop metrics, so original accuracy, representation shift, and paired accuracy drop must be reported together.
 """
 
 

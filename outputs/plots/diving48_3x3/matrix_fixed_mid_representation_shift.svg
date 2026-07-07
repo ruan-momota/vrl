@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="560" viewBox="0 0 1280 560">
+<rect width="100%" height="100%" fill="#ffffff" />
+<style>text { font-family: Arial, Helvetica, sans-serif; fill: #111827; }</style>
+<text x="640.00" y="28.00" font-size="18" font-weight="700" text-anchor="middle">Fixed-mid perturbation: mean cosine distance</text>
+<text x="18.00" y="247.50" font-size="12" font-weight="400" text-anchor="middle" transform="rotate(-90 18.00 247.50)">Mean cosine distance</text>
+<line x1="90" y1="440" x2="1250" y2="440" stroke="#111827" stroke-width="1" />
+<line x1="90" y1="55" x2="90" y2="440" stroke="#111827" stroke-width="1" />
+<line x1="86" y1="440.00" x2="90" y2="440.00" stroke="#111827" />
+<text x="82.00" y="444.00" font-size="10" font-weight="400" text-anchor="end">-0.027</text>
+<line x1="86" y1="363.00" x2="90" y2="363.00" stroke="#111827" />
+<text x="82.00" y="367.00" font-size="10" font-weight="400" text-anchor="end">0.028</text>
+<line x1="90" y1="363.00" x2="1250" y2="363.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="86" y1="286.00" x2="90" y2="286.00" stroke="#111827" />
+<text x="82.00" y="290.00" font-size="10" font-weight="400" text-anchor="end">0.083</text>
+<line x1="90" y1="286.00" x2="1250" y2="286.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="86" y1="209.00" x2="90" y2="209.00" stroke="#111827" />
+<text x="82.00" y="213.00" font-size="10" font-weight="400" text-anchor="end">0.138</text>
+<line x1="90" y1="209.00" x2="1250" y2="209.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="86" y1="132.00" x2="90" y2="132.00" stroke="#111827" />
+<text x="82.00" y="136.00" font-size="10" font-weight="400" text-anchor="end">0.193</text>
+<line x1="90" y1="132.00" x2="1250" y2="132.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="86" y1="55.00" x2="90" y2="55.00" stroke="#111827" />
+<text x="82.00" y="59.00" font-size="10" font-weight="400" text-anchor="end">0.248</text>
+<line x1="90" y1="402.74" x2="1250" y2="402.74" stroke="#6b7280" stroke-dasharray="4 4" />
+<rect x="119.00" y="370.52" width="32.22" height="32.22" fill="#2563eb" />
+<rect x="157.67" y="393.68" width="32.22" height="9.06" fill="#ea580c" />
+<text x="154.44" y="522.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-35 154.44 522.00)">VideoMAE x SSV2</text>
+<rect x="247.89" y="385.64" width="32.22" height="17.11" fill="#2563eb" />
+<rect x="286.56" y="389.52" width="32.22" height="13.22" fill="#ea580c" />
+<text x="283.33" y="522.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-35 283.33 522.00)">VideoMAE x UCF101</text>
+<rect x="376.78" y="290.52" width="32.22" height="112.22" fill="#2563eb" />
+<rect x="415.44" y="401.25" width="32.22" height="1.49" fill="#ea580c" />
+<text x="412.22" y="522.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-35 412.22 522.00)">VideoMAE x Diving48</text>
+<rect x="505.67" y="92.26" width="32.22" height="310.48" fill="#2563eb" />
+<rect x="544.33" y="296.18" width="32.22" height="106.57" fill="#ea580c" />
+<text x="541.11" y="522.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-35 541.11 522.00)">SlowFast R50 8x8 x SSV2</text>
+<rect x="634.56" y="176.89" width="32.22" height="225.85" fill="#2563eb" />
+<rect x="673.22" y="317.62" width="32.22" height="85.13" fill="#ea580c" />
+<text x="670.00" y="522.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-35 670.00 522.00)">SlowFast R50 8x8 x UCF101</text>
+<rect x="763.44" y="115.35" width="32.22" height="287.40" fill="#2563eb" />
+<rect x="802.11" y="395.27" width="32.22" height="7.48" fill="#ea580c" />
+<text x="798.89" y="522.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-35 798.89 522.00)">SlowFast R50 8x8 x Diving48</text>
+<rect x="892.33" y="402.74" width="32.22" height="0.00" fill="#2563eb" />
+<rect x="931.00" y="335.14" width="32.22" height="67.60" fill="#ea580c" />
+<text x="927.78" y="522.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-35 927.78 522.00)">DINOv2 frame-mean x SSV2</text>
+<rect x="1021.22" y="402.74" width="32.22" height="0.00" fill="#2563eb" />
+<rect x="1059.89" y="347.63" width="32.22" height="55.11" fill="#ea580c" />
+<text x="1056.67" y="522.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-35 1056.67 522.00)">DINOv2 frame-mean x UCF101</text>
+<rect x="1150.11" y="402.74" width="32.22" height="0.00" fill="#2563eb" />
+<rect x="1188.78" y="398.08" width="32.22" height="4.66" fill="#ea580c" />
+<text x="1185.56" y="522.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-35 1185.56 522.00)">DINOv2 frame-mean x Diving48</text>
+<rect x="102" y="38" width="12" height="12" fill="#2563eb" />
+<text x="120.00" y="48.00" font-size="12" font-weight="400" text-anchor="start">temporal-shuffle-mid</text>
+<rect x="102" y="58" width="12" height="12" fill="#ea580c" />
+<text x="120.00" y="68.00" font-size="12" font-weight="400" text-anchor="start">spatial-blur-mid</text>
+</svg>
