@@ -1,12 +1,14 @@
 from __future__ import annotations
 
 from src.data.base import DatasetAdapter
+from src.data.hmdb51 import HMDB51DatasetAdapter
 from src.data.kinetics import KineticsDatasetAdapter
 from src.data.ssv2 import SSV2DatasetAdapter
 from src.data.ucf101 import UCF101DatasetAdapter
 
 
 _DATASET_ADAPTERS: dict[str, DatasetAdapter] = {
+    "hmdb51": HMDB51DatasetAdapter(),
     "kinetics": KineticsDatasetAdapter(),
     "ssv2": SSV2DatasetAdapter(),
     "ucf101": UCF101DatasetAdapter(),

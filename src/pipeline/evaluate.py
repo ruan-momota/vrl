@@ -704,6 +704,7 @@ def _first_sample_value(samples: Any, key: str) -> Any:
 
 def _dataset_label(dataset_name: str) -> str:
     labels = {
+        "hmdb51": "HMDB51",
         "ssv2": "SSV2",
         "ucf101": "UCF101",
     }
@@ -712,6 +713,7 @@ def _dataset_label(dataset_name: str) -> str:
 
 def _dataset_description(dataset_name: str) -> str:
     descriptions = {
+        "hmdb51": "action-recognition HMDB51 dataset cell",
         "ssv2": "motion-oriented SSV2 dataset cell",
         "ucf101": "appearance-rich/context-correlated UCF101 dataset cell",
     }
@@ -722,6 +724,7 @@ def _model_label(model_name: str) -> str:
     labels = {
         "videomae": "VideoMAE",
         "slowfast": "SlowFast",
+        "vjepa": "V-JEPA2",
     }
     return labels.get(model_name.lower(), model_name)
 
