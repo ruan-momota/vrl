@@ -221,7 +221,7 @@ __marimo__/
 
 src/data/__pycache__
 private
-data
+/data/
 
 /outputs/*
 !/outputs/runs/
