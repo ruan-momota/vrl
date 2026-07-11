@@ -221,7 +221,14 @@ __marimo__/
 
 src/data/__pycache__
 private
-/data/
+/data
+!/data/
+/data/*
+!/data/hmdb51/
+/data/hmdb51/*
+!/data/hmdb51/subsets/
+!/data/hmdb51/subsets/**
+runpod-key
 
 /outputs/*
 !/outputs/runs/

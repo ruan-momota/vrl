@@ -1,0 +1,438 @@
+{
+  "class_count": 51,
+  "dataset": "hmdb51",
+  "decode_failures": {
+    "excluded_from_index": true,
+    "failure_count": 25,
+    "probed": true
+  },
+  "path_audit": {
+    "missing_path_count": 0,
+    "missing_paths": []
+  },
+  "per_class": [
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 0,
+      "label_name": "brush_hair",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 1,
+      "label_name": "cartwheel",
+      "train": 69
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 2,
+      "label_name": "catch",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 3,
+      "label_name": "chew",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 4,
+      "label_name": "clap",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 5,
+      "label_name": "climb",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 6,
+      "label_name": "climb_stairs",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 7,
+      "label_name": "dive",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 8,
+      "label_name": "draw_sword",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 9,
+      "label_name": "dribble",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 10,
+      "label_name": "drink",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 11,
+      "label_name": "eat",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 12,
+      "label_name": "fall_floor",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 13,
+      "label_name": "fencing",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 14,
+      "label_name": "flic_flac",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 15,
+      "label_name": "golf",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 16,
+      "label_name": "handstand",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 17,
+      "label_name": "hit",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 18,
+      "label_name": "hug",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 19,
+      "label_name": "jump",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 20,
+      "label_name": "kick",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 21,
+      "label_name": "kick_ball",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 22,
+      "label_name": "kiss",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 23,
+      "label_name": "laugh",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 24,
+      "label_name": "pick",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 25,
+      "label_name": "pour",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 26,
+      "label_name": "pullup",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 29,
+      "label_id": 27,
+      "label_name": "punch",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 28,
+      "label_name": "push",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 29,
+      "label_name": "pushup",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 30,
+      "label_name": "ride_bike",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 31,
+      "label_name": "ride_horse",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 32,
+      "label_name": "run",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 33,
+      "label_name": "shake_hands",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 34,
+      "label_name": "shoot_ball",
+      "train": 62
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 29,
+      "label_id": 35,
+      "label_name": "shoot_bow",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 29,
+      "label_id": 36,
+      "label_name": "shoot_gun",
+      "train": 65
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 37,
+      "label_name": "sit",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 38,
+      "label_name": "situp",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 39,
+      "label_name": "smile",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 40,
+      "label_name": "smoke",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 29,
+      "label_id": 41,
+      "label_name": "somersault",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 42,
+      "label_name": "stand",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 43,
+      "label_name": "swing_baseball",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 29,
+      "label_id": 44,
+      "label_name": "sword",
+      "train": 69
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 45,
+      "label_name": "sword_exercise",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 46,
+      "label_name": "talk",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 29,
+      "label_id": 47,
+      "label_name": "throw",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 48,
+      "label_name": "turn",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 49,
+      "label_name": "walk",
+      "train": 70
+    },
+    {
+      "available_test": 30,
+      "available_train": 70,
+      "heldout": 30,
+      "label_id": 50,
+      "label_name": "wave",
+      "train": 66
+    }
+  ],
+  "seed": 0,
+  "splits": {
+    "heldout": {
+      "count": 1524,
+      "per_class_max": 30,
+      "per_class_min": 29
+    },
+    "train": {
+      "count": 3551,
+      "per_class_max": 70,
+      "per_class_min": 62
+    }
+  },
+  "subset_id": "full_split1",
+  "video_root": "data/hmdb51/videos_split1"
+}
