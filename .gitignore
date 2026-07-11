@@ -229,6 +229,16 @@ private
 !/data/diving48/subsets/
 !/data/diving48/subsets/**
 
+!/data/ssv2/
+/data/ssv2/*
+!/data/ssv2/subsets/
+!/data/ssv2/subsets/**
+
+!/data/ucf101/
+/data/ucf101/*
+!/data/ucf101/subsets/
+!/data/ucf101/subsets/**
+
 /outputs/*
 !/outputs/runs/
 !/outputs/runs/*/
