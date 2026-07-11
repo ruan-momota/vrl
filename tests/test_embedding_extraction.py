@@ -1,13 +1,11 @@
 from __future__ import annotations
 
 from pathlib import Path
-from types import SimpleNamespace
 
 import torch
 
 from src.artifacts import load_embedding_artifact, save_embedding_artifact
 from src.data.indexed_dataset import IndexedVideoDataset
-from src.embedding_extraction import extract_embeddings as legacy_extract_embeddings
 from src.pipeline.extraction import extract_embeddings
 
 from tests.test_video_io import _write_tiny_video
@@ -58,34 +56,6 @@ def test_extract_embeddings_and_save_reload_artifact(tmp_path: Path) -> None:
     assert artifact["config"]["split"] == "debug_train"
 
 
-def test_extract_embeddings_accepts_generic_encoder(tmp_path: Path) -> None:
-    index_path = _write_index_with_two_videos(tmp_path)
-    dataset = IndexedVideoDataset(index_path, num_frames=4, transform=_to_model_tensor)
-
-    generic_result = extract_embeddings(
-        encoder=TinyEncoder(),
-        dataset=dataset,
-        batch_size=2,
-        num_workers=0,
-        device="cpu",
-        show_progress=False,
-    )
-
-    legacy_result = legacy_extract_embeddings(
-        model=TinyEmbeddingModel(),
-        dataset=dataset,
-        batch_size=2,
-        num_workers=0,
-        device="cpu",
-        show_progress=False,
-    )
-
-    assert generic_result.embeddings.shape == (2, 4)
-    assert generic_result.video_ids == ["sample-1", "sample-2"]
-    assert torch.allclose(generic_result.embeddings, legacy_result.embeddings)
-    assert torch.equal(generic_result.frame_indices, legacy_result.frame_indices)
-
-
 def test_load_embedding_artifact_accepts_legacy_v1_schema(tmp_path: Path) -> None:
     path = tmp_path / "legacy.pt"
     torch.save(
@@ -132,17 +102,6 @@ def _write_index_with_two_videos(tmp_path: Path) -> Path:
 
 def _to_model_tensor(frames) -> torch.Tensor:
     return torch.from_numpy(frames).permute(0, 3, 1, 2).float().contiguous()
-
-
-class TinyEmbeddingModel(torch.nn.Module):
-    def __init__(self) -> None:
-        super().__init__()
-        self.anchor = torch.nn.Parameter(torch.zeros(()))
-
-    def forward(self, *, pixel_values: torch.Tensor) -> SimpleNamespace:
-        base = pixel_values.float().mean(dim=(1, 2, 3, 4)) + self.anchor
-        hidden = torch.stack([base, base + 1, base + 2, base + 3], dim=1)
-        return SimpleNamespace(last_hidden_state=hidden.unsqueeze(1).repeat(1, 2, 1))
 
 
 class TinyEncoder:

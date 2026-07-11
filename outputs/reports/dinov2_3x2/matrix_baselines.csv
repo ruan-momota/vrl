@@ -1,7 +1,0 @@
-dataset,dataset_role,model,checkpoint,run_id,train_n,heldout_n,embedding_dim,linear_probe_original_accuracy,knn_k5_original_accuracy,quality_ok,failed_samples_total
-SSV2,motion-oriented,VideoMAE,MCG-NJU/videomae-base,ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe,5000,1500,768,0.25066667795181274,0.09933333333333333,True,0
-UCF101,appearance-rich / context-correlated contrast,VideoMAE,MCG-NJU/videomae-base,ucf101-c50-train100-heldout30-videomae-base-frozen-linear-probe,5000,1500,768,0.8533333539962769,0.836,True,0
-SSV2,motion-oriented,SlowFast R50 8x8,facebookresearch/pytorchvideo:slowfast_r50,ssv2-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,5000,1500,9216,0.33933332562446594,0.20333333333333334,True,0
-UCF101,appearance-rich / context-correlated contrast,SlowFast R50 8x8,facebookresearch/pytorchvideo:slowfast_r50,ucf101-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,5000,1500,9216,0.9940000176429749,0.9933333333333333,True,0
-SSV2,motion-oriented,DINOv2 frame-mean,facebook/dinov2-base,ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,5000,1500,768,0.29733332991600037,0.194,True,0
-UCF101,appearance-rich / context-correlated contrast,DINOv2 frame-mean,facebook/dinov2-base,ucf101-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,5000,1500,768,0.9900000095367432,0.9773333333333334,True,0

@@ -28,21 +28,5 @@
   "hardware": {
     "environment_recording_policy": "The artifact records the observed encoder device. Scheduler hostnames and GPU model names are intentionally excluded because allocations vary and are not experiment variables.",
     "note": "The extraction artifact records device=cuda."
-  },
-  "legacy_anchor_comparison": {
-    "legacy_perturbation_summary": "outputs/reports/perturbation_summary_table.csv",
-    "legacy_baseline_table": "outputs/reports/baseline_table.csv",
-    "matches": [
-      {
-        "legacy_perturbation": "temporal_shuffle",
-        "current_artifact_label": "temporal-shuffle-mid",
-        "comparability_note": "The sampled-frame set and temporal-shuffle family match, but the deterministic shuffle seed changed from legacy seed 0 to current seed 42; compare the representation-shift magnitude as a stability check, not an exact repeat."
-      },
-      {
-        "legacy_perturbation": "freeze_tail",
-        "current_artifact_label": "freeze-tail-mid",
-        "comparability_note": "Both runs use freeze_start_fraction=0.5 and the same frozen VideoMAE/SSV2 setup; KNN drops differ in k (legacy k=1, current k=5) and are not directly comparable."
-      }
-    ]
   }
 }

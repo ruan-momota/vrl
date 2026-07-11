@@ -62,13 +62,4 @@ All sampled frame-index and sampling-strategy checks passed: True.
 - Each perturbation measures sensitivity to a specific intervention; it does not by itself prove human-like action understanding.
 - Temporal shuffle and freeze-tail also alter clip naturalness and temporal redundancy, so they are temporal-dependence probes rather than isolated causal motion interventions.
 - The fixed color transform and spatial blur preserve frame order but can still alter normalization-sensitive statistics, object visibility, and texture cues; they are not perfectly isolated appearance interventions.
-- This report covers one frozen model × one motion-oriented dataset cell. It must not be generalized to another model or dataset before the remaining matrix cells are evaluated.
-
-## Legacy-anchor comparison
-
-Legacy KNN k=1 and current KNN k=5 are not directly comparable. Only the explicitly declared common perturbations compare representation shift directly.
-
-| legacy_perturbation | current_artifact_label | legacy_mean_cosine_distance | current_mean_cosine_distance | mean_cosine_distance_delta_current_minus_legacy | comparability_note |
-| --- | --- | --- | --- | --- | --- |
-| temporal_shuffle | temporal-shuffle-mid | 0.022874 | 0.023021 | 0.000148 | The sampled-frame set and temporal-shuffle family match, but the deterministic shuffle seed changed from legacy seed 0 to current seed 42; compare the representation-shift magnitude as a stability check, not an exact repeat. |
-| freeze_tail | freeze-tail-mid | 0.004984 | 0.004984 | 0.000000 | Both runs use freeze_start_fraction=0.5 and the same frozen VideoMAE/SSV2 setup; KNN drops differ in k (legacy k=1, current k=5) and are not directly comparable. |
+- This report covers one frozen model × one motion-oriented SSV2 dataset cell. It must not be generalized to another model or dataset before the remaining matrix cells are evaluated.

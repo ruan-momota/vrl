@@ -41,8 +41,7 @@ Latest verification, 2026-07-07:
   samples and 480 held-out samples per held-out artifact;
 - quality audits report successful extraction and 0 failed samples for the
   Diving48 cells;
-- matrix summary Markdown files in `outputs/reports/dinov2_3x2/` and
-  `outputs/reports/diving48_3x3/` are now written in English;
+- matrix summary Markdown files in `outputs/reports/diving48_3x3/` are now written in English;
 - full test suite passed: `121 passed`.
 
 Next:

@@ -1,7 +1,6 @@
 # Experiment configs
 
-Legacy extraction configs at this directory's root use the original schema. New
-run-scoped extraction configs live under `configs/runs/` and record every
+Run-scoped extraction configs live under `configs/runs/` and record every
 choice needed to reproduce one embedding artifact:
 
 - `dataset_name`: dataset identifier, for example `ssv2`.
@@ -26,11 +25,6 @@ choice needed to reproduce one embedding artifact:
   not create a new run ID.
 - `seed`: random seed.
 - `deterministic`: whether deterministic behavior is requested.
-
-Additional experiment matrices:
-
-- `ssv2_videomae_perturbation_matrix.json`: first-round validation perturbations
-  and selected strength sweeps for the VideoMAE + local SSV2 experiment.
 
 The SSV2 × VideoMAE frozen-linear-probe sensitivity configs are in
 `configs/runs/ssv2_videomae_linear_probe/`:

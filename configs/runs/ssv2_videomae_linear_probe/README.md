@@ -48,6 +48,3 @@ complete run:
 uv run python -m src.pipeline.evaluate \
   --config configs/runs/ssv2_videomae_linear_probe/ssv2_videomae_c50_linear_probe_evaluation.json
 ```
-
-`legacy_anchor` artifacts and the legacy perturbation matrix must not be mixed
-with this run.

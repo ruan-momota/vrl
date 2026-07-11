@@ -239,13 +239,9 @@ private
 !/outputs/runs/*/reports/*
 !/outputs/reports/
 /outputs/reports/*
-!/outputs/reports/dinov2_3x2/
-!/outputs/reports/dinov2_3x2/*
 !/outputs/reports/diving48_3x3/
 !/outputs/reports/diving48_3x3/*
 !/outputs/plots/
 /outputs/plots/*
-!/outputs/plots/dinov2_3x2/
-!/outputs/plots/dinov2_3x2/*
 !/outputs/plots/diving48_3x3/
 !/outputs/plots/diving48_3x3/*
