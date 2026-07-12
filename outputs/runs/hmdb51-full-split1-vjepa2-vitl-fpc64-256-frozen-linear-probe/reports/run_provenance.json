@@ -1,0 +1,507 @@
+{
+  "artifact_commands": {
+    "embeddings/heldout/original.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_vjepa_linear_probe/hmdb51_vjepa_full_split1_heldout_original.json"
+    ],
+    "embeddings/heldout/perturbations/color-high.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_vjepa_linear_probe/hmdb51_vjepa_full_split1_heldout_color_high.json"
+    ],
+    "embeddings/heldout/perturbations/color-low.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_vjepa_linear_probe/hmdb51_vjepa_full_split1_heldout_color_low.json"
+    ],
+    "embeddings/heldout/perturbations/color-mid.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_vjepa_linear_probe/hmdb51_vjepa_full_split1_heldout_color_mid.json"
+    ],
+    "embeddings/heldout/perturbations/freeze-tail-high.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_vjepa_linear_probe/hmdb51_vjepa_full_split1_heldout_freeze_tail_high.json"
+    ],
+    "embeddings/heldout/perturbations/freeze-tail-low.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_vjepa_linear_probe/hmdb51_vjepa_full_split1_heldout_freeze_tail_low.json"
+    ],
+    "embeddings/heldout/perturbations/freeze-tail-mid.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_vjepa_linear_probe/hmdb51_vjepa_full_split1_heldout_freeze_tail_mid.json"
+    ],
+    "embeddings/heldout/perturbations/spatial-blur-mid.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_vjepa_linear_probe/hmdb51_vjepa_full_split1_heldout_blur_mid.json"
+    ],
+    "embeddings/heldout/perturbations/temporal-shuffle-mid.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_vjepa_linear_probe/hmdb51_vjepa_full_split1_heldout_temporal_shuffle_mid.json"
+    ],
+    "embeddings/train/original.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_vjepa_linear_probe/hmdb51_vjepa_full_split1_train_original.json"
+    ]
+  },
+  "artifacts": {
+    "color-high": {
+      "model_metadata": {
+        "checkpoint": "facebook/vjepa2-vitl-fpc64-256",
+        "crop_size": 256,
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "vjepa",
+        "frames_per_clip": 64,
+        "hidden_size": 1024,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 64
+        },
+        "model_type": "vjepa2",
+        "patch_size": 16,
+        "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+        "tubelet_size": 2
+      },
+      "path": "outputs/runs/hmdb51-full-split1-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/color-high.pt",
+      "sha256": "c7f0c72f9e3008824d58731fb81fd75e8a2fd16153c67a3a02a550720239d2e1",
+      "size_bytes": 8314281,
+      "summary": {
+        "average_batch_seconds": 1.8472443811541663,
+        "batch_count": 1524,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          1024
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/color-high.pt",
+        "successful_samples": 1524,
+        "total_seconds": 2815.709139773622
+      }
+    },
+    "color-low": {
+      "model_metadata": {
+        "checkpoint": "facebook/vjepa2-vitl-fpc64-256",
+        "crop_size": 256,
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "vjepa",
+        "frames_per_clip": 64,
+        "hidden_size": 1024,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 64
+        },
+        "model_type": "vjepa2",
+        "patch_size": 16,
+        "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+        "tubelet_size": 2
+      },
+      "path": "outputs/runs/hmdb51-full-split1-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/color-low.pt",
+      "sha256": "4641cbdff7b32e45b3dc9577e9a35d1a086468217bd4f635b6696fb2c3d7dac2",
+      "size_bytes": 8314274,
+      "summary": {
+        "average_batch_seconds": 1.9548709318139579,
+        "batch_count": 1524,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          1024
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/color-low.pt",
+        "successful_samples": 1524,
+        "total_seconds": 2979.74016748555
+      }
+    },
+    "color-mid": {
+      "model_metadata": {
+        "checkpoint": "facebook/vjepa2-vitl-fpc64-256",
+        "crop_size": 256,
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "vjepa",
+        "frames_per_clip": 64,
+        "hidden_size": 1024,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 64
+        },
+        "model_type": "vjepa2",
+        "patch_size": 16,
+        "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+        "tubelet_size": 2
+      },
+      "path": "outputs/runs/hmdb51-full-split1-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/color-mid.pt",
+      "sha256": "2789f3a02f2b1543081926ef7a370e5ba9c2a5ee7c6b8bb4d0c65d76653564f0",
+      "size_bytes": 8314274,
+      "summary": {
+        "average_batch_seconds": 1.9117378652257127,
+        "batch_count": 1524,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          1024
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/color-mid.pt",
+        "successful_samples": 1524,
+        "total_seconds": 2914.058753311634
+      }
+    },
+    "freeze-tail-high": {
+      "model_metadata": {
+        "checkpoint": "facebook/vjepa2-vitl-fpc64-256",
+        "crop_size": 256,
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "vjepa",
+        "frames_per_clip": 64,
+        "hidden_size": 1024,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 64
+        },
+        "model_type": "vjepa2",
+        "patch_size": 16,
+        "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+        "tubelet_size": 2
+      },
+      "path": "outputs/runs/hmdb51-full-split1-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-high.pt",
+      "sha256": "a138e5e12da03579f717b14becd38fb28fa70d9dadc29f6dff509fcded5073b0",
+      "size_bytes": 8212179,
+      "summary": {
+        "average_batch_seconds": 1.6571121871926067,
+        "batch_count": 1524,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          1024
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-high.pt",
+        "successful_samples": 1524,
+        "total_seconds": 2525.9973572511226
+      }
+    },
+    "freeze-tail-low": {
+      "model_metadata": {
+        "checkpoint": "facebook/vjepa2-vitl-fpc64-256",
+        "crop_size": 256,
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "vjepa",
+        "frames_per_clip": 64,
+        "hidden_size": 1024,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 64
+        },
+        "model_type": "vjepa2",
+        "patch_size": 16,
+        "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+        "tubelet_size": 2
+      },
+      "path": "outputs/runs/hmdb51-full-split1-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-low.pt",
+      "sha256": "436675d4b75476e1c982363713ce7145ea41a48d0691d76dd565d0719e6b3c1c",
+      "size_bytes": 8212172,
+      "summary": {
+        "average_batch_seconds": 1.591491469040298,
+        "batch_count": 1524,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          1024
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-low.pt",
+        "successful_samples": 1524,
+        "total_seconds": 2425.9300437532365
+      }
+    },
+    "freeze-tail-mid": {
+      "model_metadata": {
+        "checkpoint": "facebook/vjepa2-vitl-fpc64-256",
+        "crop_size": 256,
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "vjepa",
+        "frames_per_clip": 64,
+        "hidden_size": 1024,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 64
+        },
+        "model_type": "vjepa2",
+        "patch_size": 16,
+        "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+        "tubelet_size": 2
+      },
+      "path": "outputs/runs/hmdb51-full-split1-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-mid.pt",
+      "sha256": "56b44614d4df7567b0fdcecb61613144fe3a83ad466f68988bce7de69c93a706",
+      "size_bytes": 8212172,
+      "summary": {
+        "average_batch_seconds": 1.655819434655483,
+        "batch_count": 1524,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          1024
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-mid.pt",
+        "successful_samples": 1524,
+        "total_seconds": 2523.9973525423557
+      }
+    },
+    "heldout_original": {
+      "model_metadata": {
+        "checkpoint": "facebook/vjepa2-vitl-fpc64-256",
+        "crop_size": 256,
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "vjepa",
+        "frames_per_clip": 64,
+        "hidden_size": 1024,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 64
+        },
+        "model_type": "vjepa2",
+        "patch_size": 16,
+        "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+        "tubelet_size": 2
+      },
+      "path": "outputs/runs/hmdb51-full-split1-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/original.pt",
+      "sha256": "7198322d76755355d5c89873e8f393162badd525abf30716fad301c88806d9ea",
+      "size_bytes": 8060955,
+      "summary": {
+        "average_batch_seconds": 1.5906162237249843,
+        "batch_count": 1524,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          1024
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/original.pt",
+        "successful_samples": 1524,
+        "total_seconds": 2424.6352705899626
+      }
+    },
+    "spatial-blur-mid": {
+      "model_metadata": {
+        "checkpoint": "facebook/vjepa2-vitl-fpc64-256",
+        "crop_size": 256,
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "vjepa",
+        "frames_per_clip": 64,
+        "hidden_size": 1024,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 64
+        },
+        "model_type": "vjepa2",
+        "patch_size": 16,
+        "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+        "tubelet_size": 2
+      },
+      "path": "outputs/runs/hmdb51-full-split1-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/spatial-blur-mid.pt",
+      "sha256": "e3f1e3955e8135df202c295b71176434bee680cf62ac0dd6b72152d75c82f553",
+      "size_bytes": 8236563,
+      "summary": {
+        "average_batch_seconds": 1.9815752924923489,
+        "batch_count": 1524,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          1024
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/spatial-blur-mid.pt",
+        "successful_samples": 1524,
+        "total_seconds": 3020.424125747755
+      }
+    },
+    "temporal-shuffle-mid": {
+      "model_metadata": {
+        "checkpoint": "facebook/vjepa2-vitl-fpc64-256",
+        "crop_size": 256,
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "vjepa",
+        "frames_per_clip": 64,
+        "hidden_size": 1024,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 64
+        },
+        "model_type": "vjepa2",
+        "patch_size": 16,
+        "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+        "tubelet_size": 2
+      },
+      "path": "outputs/runs/hmdb51-full-split1-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/temporal-shuffle-mid.pt",
+      "sha256": "4022664fae4f82315f8640017428f0b0389835a453ae92398c85ed672403725c",
+      "size_bytes": 8416367,
+      "summary": {
+        "average_batch_seconds": 1.6577986075745754,
+        "batch_count": 1524,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          1024
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/temporal-shuffle-mid.pt",
+        "successful_samples": 1524,
+        "total_seconds": 2527.02059029229
+      }
+    },
+    "train_original": {
+      "model_metadata": {
+        "checkpoint": "facebook/vjepa2-vitl-fpc64-256",
+        "crop_size": 256,
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "vjepa",
+        "frames_per_clip": 64,
+        "hidden_size": 1024,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 64
+        },
+        "model_type": "vjepa2",
+        "patch_size": 16,
+        "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+        "tubelet_size": 2
+      },
+      "path": "outputs/runs/hmdb51-full-split1-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/train/original.pt",
+      "sha256": "e643d506abbe5afb7bf453a18c7c0a86bf6ff28bb45e1c433ea3c182ddcb408c",
+      "size_bytes": 18627035,
+      "summary": {
+        "average_batch_seconds": 1.667355262179487,
+        "batch_count": 3551,
+        "dataset_size": 3551,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          3551,
+          1024
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          3551
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/train/original.pt",
+        "successful_samples": 3551,
+        "total_seconds": 5922.229695945978
+      }
+    }
+  },
+  "code_commit": null,
+  "created_at_utc": "2026-07-11T17:08:16.421053+00:00",
+  "evaluation_commands": [
+    [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.evaluate",
+      "--config",
+      "configs/runs/hmdb51_vjepa_linear_probe/hmdb51_vjepa_full_split1_linear_probe_evaluation.json"
+    ]
+  ],
+  "format_version": 1,
+  "hardware": {
+    "environment_recording_policy": "The artifact records the observed encoder device. Scheduler hostnames and GPU model names are intentionally excluded because allocations vary and are not experiment variables.",
+    "note": "The extraction artifact records device at runtime.",
+    "observed_encoder_devices": [
+      "cuda"
+    ]
+  },
+  "manifest_path": "outputs/runs/hmdb51-full-split1-vjepa2-vitl-fpc64-256-frozen-linear-probe/manifest.json",
+  "run_id": "hmdb51-full-split1-vjepa2-vitl-fpc64-256-frozen-linear-probe"
+}
