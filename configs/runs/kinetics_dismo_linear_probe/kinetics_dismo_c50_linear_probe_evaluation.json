@@ -1,0 +1,89 @@
+{
+  "run_id": "kinetics-c50-train100-heldout30-dismo-motion-extractor-large-frozen-linear-probe",
+  "output_root": "outputs/runs",
+  "train_original": "embeddings/train/original.pt",
+  "heldout_original": "embeddings/heldout/original.pt",
+  "perturbations": [
+    {
+      "name": "freeze_tail",
+      "artifact": "embeddings/heldout/perturbations/freeze-tail-low.pt",
+      "group": "motion",
+      "role": "curve",
+      "strength": "low"
+    },
+    {
+      "name": "freeze_tail",
+      "artifact": "embeddings/heldout/perturbations/freeze-tail-mid.pt",
+      "group": "motion",
+      "role": "curve",
+      "strength": "mid"
+    },
+    {
+      "name": "freeze_tail",
+      "artifact": "embeddings/heldout/perturbations/freeze-tail-high.pt",
+      "group": "motion",
+      "role": "curve",
+      "strength": "high"
+    },
+    {
+      "name": "color_transform",
+      "artifact": "embeddings/heldout/perturbations/color-low.pt",
+      "group": "appearance",
+      "role": "curve",
+      "strength": "low"
+    },
+    {
+      "name": "color_transform",
+      "artifact": "embeddings/heldout/perturbations/color-mid.pt",
+      "group": "appearance",
+      "role": "curve",
+      "strength": "mid"
+    },
+    {
+      "name": "color_transform",
+      "artifact": "embeddings/heldout/perturbations/color-high.pt",
+      "group": "appearance",
+      "role": "curve",
+      "strength": "high"
+    },
+    {
+      "name": "spatial_blur",
+      "artifact": "embeddings/heldout/perturbations/spatial-blur-mid.pt",
+      "group": "appearance",
+      "role": "fixed_mid"
+    },
+    {
+      "name": "temporal_shuffle",
+      "artifact": "embeddings/heldout/perturbations/temporal-shuffle-mid.pt",
+      "group": "motion",
+      "role": "fixed_mid"
+    }
+  ],
+  "linear_probe": {
+    "validation_fraction": 0.2,
+    "split_seed": 42,
+    "training_seed": 42,
+    "l2_values": [
+      0.0,
+      1e-05,
+      0.0001,
+      0.001,
+      0.01
+    ],
+    "max_iterations": 100,
+    "learning_rate": 1.0,
+    "feature_normalization": "l2",
+    "device": "auto"
+  },
+  "bootstrap": {
+    "resamples": 1000,
+    "seed": 42,
+    "confidence_level": 0.95
+  },
+  "knn": {
+    "metric": "cosine",
+    "k_values": [
+      5
+    ]
+  }
+}

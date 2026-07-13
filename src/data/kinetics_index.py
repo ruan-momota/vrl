@@ -21,6 +21,7 @@ import argparse
 import json
 import random
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Any, Iterable, Mapping, Sequence
 
@@ -82,6 +83,37 @@ def _record(
     }
 
 
+def probe_decodable_paths(
+    paths: Sequence[Path],
+    *,
+    max_workers: int = 8,
+) -> tuple[list[Path], list[dict[str, Any]]]:
+    """Attempt to decode each path, returning (decodable, failure records).
+
+    Run before selection so a bad clip never reaches train.jsonl/heldout.jsonl
+    in the first place, rather than crashing extraction hours into a run.
+    """
+    from src.video.io import VideoReadError, read_video_frames
+
+    def _probe(path: Path) -> tuple[Path, str | None]:
+        try:
+            read_video_frames(path, video_id=_video_id(path))
+        except VideoReadError as error:
+            return path, str(error)
+        return path, None
+
+    decodable: list[Path] = []
+    failures: list[dict[str, Any]] = []
+    with ThreadPoolExecutor(max_workers=max_workers) as pool:
+        for path, error in pool.map(_probe, paths):
+            if error is None:
+                decodable.append(path)
+            else:
+                failures.append(
+                    {"video_id": _video_id(path), "video_path": str(path), "error": error})
+    return decodable, failures
+
+
 def split_class_videos(
     paths: Sequence[Path],
     *,
@@ -137,6 +169,7 @@ def build_subset_index(
     val_frac: float = 0.2,
     seed: int = 0,
     video_extensions: Sequence[str] = VIDEO_EXTENSIONS,
+    probe_decode: bool = False,
 ) -> dict[str, Any]:
     """Build a normalized Kinetics subset index from a class-directory tree."""
     rng = random.Random(seed)
@@ -152,9 +185,20 @@ def build_subset_index(
     label_mapping = build_label_mapping(class_names)
     class_to_id = label_mapping["class_to_id"]
 
+    decode_failures: list[dict[str, Any]] = []
+    if probe_decode:
+        all_candidates = [path for name in class_names for path in by_class[name]]
+        decodable, decode_failures = probe_decodable_paths(all_candidates)
+        decodable_set = set(decodable)
+        by_class = {
+            name: [path for path in by_class[name] if path in decodable_set]
+            for name in class_names
+        }
+
     train_records: list[dict[str, Any]] = []
     heldout_records: list[dict[str, Any]] = []
     per_class_summary: list[dict[str, Any]] = []
+    short_classes: list[str] = []
     for class_name in class_names:
         label_id = class_to_id[class_name]
         train_paths, heldout_paths = split_class_videos(
@@ -164,6 +208,9 @@ def build_subset_index(
             val_frac=val_frac,
             rng=rng,
         )
+        if (train_per_class is not None and len(train_paths) < train_per_class) or (
+                heldout_per_class is not None and len(heldout_paths) < heldout_per_class):
+            short_classes.append(class_name)
         for path in train_paths:
             train_records.append(
                 _record(
@@ -204,6 +251,7 @@ def build_subset_index(
     write_jsonl(output_dir / "train.jsonl", train_records)
     write_jsonl(output_dir / "heldout.jsonl", heldout_records)
     write_jsonl(output_dir / "selected_samples.jsonl", selected_records)
+    write_jsonl(output_dir / "decode_failures.jsonl", decode_failures)
 
     def _per_class_counts(records: Sequence[Mapping[str, Any]]) -> dict[int, int]:
         counts: dict[int, int] = defaultdict(int)
@@ -231,6 +279,11 @@ def build_subset_index(
                 "per_class_max": max(heldout_counts.values()) if heldout_counts else 0,
             },
         },
+        "decode_failures": {
+            "probed": probe_decode,
+            "failure_count": len(decode_failures),
+        },
+        "short_classes": short_classes,
         "per_class": per_class_summary,
     }
     write_json(output_dir / "summary.json", summary)
@@ -260,6 +313,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-classes", type=int, default=None)
     parser.add_argument("--val-frac", type=float, default=0.2)
     parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument(
+        "--probe-decode",
+        action="store_true",
+        help="Attempt to decode every candidate video before selection and drop "
+        "any that fail, so a bad clip can't crash extraction hours into a run.",
+    )
     return parser.parse_args()
 
 
@@ -274,12 +333,19 @@ def main() -> int:
         max_classes=args.max_classes,
         val_frac=args.val_frac,
         seed=args.seed,
+        probe_decode=args.probe_decode,
     )
     print(
         f"classes={summary['class_count']} "
         f"train={summary['splits']['train']['count']} "
-        f"heldout={summary['splits']['heldout']['count']}"
+        f"heldout={summary['splits']['heldout']['count']} "
+        f"decode_failures={summary['decode_failures']['failure_count']}"
     )
+    if summary["short_classes"]:
+        print(
+            f"WARNING: {len(summary['short_classes'])} class(es) short of the "
+            f"requested per-class count after filtering: {summary['short_classes']}"
+        )
     print(f"wrote index files under {args.output_dir}")
     return 0
 

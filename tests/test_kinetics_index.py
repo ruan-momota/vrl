@@ -100,6 +100,35 @@ def test_kinetics_adapter_reads_normalized_index(tmp_path: Path) -> None:
     assert dataset.records[0].subset_id == "tiny"
 
 
+def test_kinetics_index_builder_drops_undecodable_clips_when_probing(tmp_path: Path) -> None:
+    video_root = _write_kinetics_tree(tmp_path)
+    output_dir = tmp_path / "subset"
+
+    summary = build_subset_index(
+        video_root=video_root,
+        output_dir=output_dir,
+        subset_id="tiny",
+        train_per_class=2,
+        heldout_per_class=1,
+        seed=0,
+        probe_decode=True,
+    )
+
+    train_index = load_index_jsonl(output_dir / "train.jsonl")
+    heldout_index = load_index_jsonl(output_dir / "heldout.jsonl")
+    decode_failures = json.loads(
+        "[" + ",".join((output_dir / "decode_failures.jsonl").read_text(
+            encoding="utf-8").splitlines()) + "]"
+    )
+
+    assert summary["decode_failures"]["probed"] is True
+    assert summary["decode_failures"]["failure_count"] == 6
+    assert len(decode_failures) == 6
+    assert len(train_index) == 0
+    assert len(heldout_index) == 0
+    assert set(summary["short_classes"]) == {"abseiling", "archery"}
+
+
 def test_kinetics_is_registered() -> None:
     assert "kinetics" in supported_dataset_adapters()
     assert get_dataset_adapter("kinetics").name == "kinetics"

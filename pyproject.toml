@@ -6,9 +6,15 @@ requires-python = ">=3.11,<3.13"
 dependencies = [
     "accelerate>=0.30,<2",
     "av>=12.0,<18",
+    "diffusers>=0.30,<1",
+    "einops>=0.7,<1",
+    "jaxtyping>=0.2,<1",
     "numpy>=1.26,<3",
     "pillow>=10.0,<13",
+    "protobuf>=4.25,<7",
+    "sentencepiece>=0.1.99,<1",
     "torch>=2.3,<3",
+    "torchvision>=0.18,<1",
     "tqdm>=4.66,<5",
     "transformers>=4.40,<5",
 ]
