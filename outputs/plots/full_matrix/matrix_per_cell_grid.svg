@@ -123,7 +123,16 @@
 <text x="985.00" y="465.00" font-size="10" font-weight="400" text-anchor="middle">no run</text>
 <text x="120.00" y="615.00" font-size="12" font-weight="700" text-anchor="end">HMDB51</text>
 <rect x="134" y="544" width="182" height="142" fill="none" stroke="#e5e7eb" stroke-width="1" />
-<text x="225.00" y="615.00" font-size="10" font-weight="400" text-anchor="middle">no run</text>
+<text x="225.00" y="556.00" font-size="9" font-weight="400" text-anchor="middle">LP orig. 36%</text>
+<rect x="134.00" y="616.48" width="21.00" height="65.52" fill="#2563eb" />
+<rect x="157.00" y="672.13" width="21.00" height="9.87" fill="#2563eb" />
+<rect x="180.00" y="658.22" width="21.00" height="23.78" fill="#2563eb" />
+<rect x="203.00" y="633.76" width="21.00" height="48.24" fill="#2563eb" />
+<rect x="226.00" y="681.33" width="21.00" height="0.67" fill="#ea580c" />
+<rect x="249.00" y="676.62" width="21.00" height="5.38" fill="#ea580c" />
+<rect x="272.00" y="659.11" width="21.00" height="22.89" fill="#ea580c" />
+<rect x="295.00" y="618.05" width="21.00" height="63.95" fill="#ea580c" />
+<line x1="134" y1="682.00" x2="316" y2="682.00" stroke="#9ca3af" stroke-width="1" />
 <rect x="324" y="544" width="182" height="142" fill="none" stroke="#e5e7eb" stroke-width="1" />
 <text x="415.00" y="615.00" font-size="10" font-weight="400" text-anchor="middle">no run</text>
 <rect x="514" y="544" width="182" height="142" fill="none" stroke="#e5e7eb" stroke-width="1" />

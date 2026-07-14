@@ -1,0 +1,24 @@
+{
+  "dataset_name": "hmdb51",
+  "subset_id": "full_split1",
+  "subset_summary_path": "data/hmdb51/subsets/full_split1/summary.json",
+  "split": "heldout",
+  "index_path": "data/hmdb51/subsets/full_split1/heldout.jsonl",
+  "model_name": "videomae",
+  "model_checkpoint": "MCG-NJU/videomae-base",
+  "model_revision": null,
+  "input_profile": "videomae_16f_224_deterministic_center_clip",
+  "num_frames": 16,
+  "sampling_strategy": "deterministic_center_clip",
+  "image_size": 224,
+  "batch_size": 8,
+  "num_workers": 8,
+  "device": "auto",
+  "seed": 42,
+  "deterministic": true,
+  "perturbation": {
+    "name": "none"
+  },
+  "output_root": "outputs/runs",
+  "run_id": "hmdb51-full-split1-videomae-base-frozen-linear-probe"
+}

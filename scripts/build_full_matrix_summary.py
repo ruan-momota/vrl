@@ -86,6 +86,8 @@ CELLS = (
     # (kinetics-videomae branch)
     Cell("HMDB51", "action-recognition", "V-JEPA2", "facebook/vjepa2-vitl-fpc64-256",
          "hmdb51-full-split1-vjepa2-vitl-fpc64-256-frozen-linear-probe"),
+    Cell("HMDB51", "action-recognition", "VideoMAE", "MCG-NJU/videomae-base",
+         "hmdb51-full-split1-videomae-base-frozen-linear-probe"),
     Cell("Kinetics", "large-scale web-video", "VideoMAE", "MCG-NJU/videomae-base",
          "kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe"),
     Cell("Kinetics", "large-scale web-video", "DisMo", "motion_extractor_large",
@@ -111,6 +113,7 @@ CELL_COLORS = {
     "VideoMAE x UCF101": "#0f766e",
     "VideoMAE x Diving48": "#9333ea",
     "VideoMAE x Kinetics": "#65a30d",
+    "VideoMAE x HMDB51": "#1d4ed8",
     "SlowFast R50 8x8 x SSV2": "#dc2626",
     "SlowFast R50 8x8 x UCF101": "#d97706",
     "SlowFast R50 8x8 x Diving48": "#0891b2",
