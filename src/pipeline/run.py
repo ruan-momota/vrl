@@ -30,6 +30,7 @@ class RunConfig:
     model_revision: str | None = None
     input_profile: str | None = None
     subset_summary_path: str | None = None
+    window_frames: int | None = None
     perturbation: dict[str, Any] = field(default_factory=lambda: {"name": "none"})
     output_root: str = "outputs/runs"
     run_id: str | None = None

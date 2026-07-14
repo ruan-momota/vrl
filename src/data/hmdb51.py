@@ -32,6 +32,7 @@ class HMDB51DatasetAdapter:
         transform: Callable[[np.ndarray], torch.Tensor] | None,
         perturbation: VideoPerturbation | None,
         subset_id: str | None = None,
+        window_frames: int | None = None,
     ) -> IndexedVideoDataset:
         return IndexedVideoDataset(
             index_path,
@@ -41,4 +42,5 @@ class HMDB51DatasetAdapter:
             perturbation=perturbation,
             source_dataset=self.name,
             subset_id=subset_id,
+            window_frames=window_frames,
         )

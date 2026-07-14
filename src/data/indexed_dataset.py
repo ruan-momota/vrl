@@ -48,6 +48,7 @@ class IndexedVideoDataset(Dataset[dict[str, Any]]):
         include_original_clip: bool = False,
         source_dataset: str | None = None,
         subset_id: str | None = None,
+        window_frames: int | None = None,
     ) -> None:
         self.index_path = Path(index_path)
         self.samples = load_index_jsonl(self.index_path)
@@ -64,6 +65,7 @@ class IndexedVideoDataset(Dataset[dict[str, Any]]):
         self.transform = transform
         self.perturbation = perturbation
         self.include_original_clip = include_original_clip
+        self.window_frames = window_frames
 
     def __len__(self) -> int:
         return len(self.records)
@@ -76,6 +78,7 @@ class IndexedVideoDataset(Dataset[dict[str, Any]]):
                 num_frames=self.num_frames,
                 sampling_strategy=self.sampling_strategy,
                 video_id=record.video_id,
+                window_frames=self.window_frames,
             )
             frames = clip.frames
             perturbation_metadata = {"name": "none", "operation": "identity"}

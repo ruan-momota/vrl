@@ -25,4 +25,5 @@ class DatasetAdapter(Protocol):
         transform: Callable[[np.ndarray], torch.Tensor] | None,
         perturbation: VideoPerturbation | None,
         subset_id: str | None = None,
+        window_frames: int | None = None,
     ) -> Dataset[dict[str, object]]: ...

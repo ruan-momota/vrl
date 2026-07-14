@@ -110,21 +110,47 @@ def sample_frame_indices(
     num_frames: int,
     *,
     strategy: FrameSamplingStrategy = "deterministic_center_clip",
+    window_frames: int | None = None,
 ) -> tuple[int, ...]:
     """Return deterministic frame indices for a fixed-size clip.
 
     The MVP default keeps a contiguous center clip when the video is long enough.
     Short videos are padded by deterministic repeated sampling over the full video.
+
+    ``window_frames``, when given, decouples "how many frames the model
+    consumes" (``num_frames``) from "how much real time the clip spans"
+    (``window_frames`` native frames, i.e. ``window_frames / fps`` seconds).
+    Without it, a lower-``num_frames`` model implicitly samples a shorter
+    contiguous slice of the source video than a higher-``num_frames`` model
+    (stride is always 1), which means temporal perturbations like
+    ``freeze_tail``/``temporal_shuffle`` are not operating on comparable
+    real-world durations across models -- a fixed fraction of a 16-frame
+    window and the same fraction of a 64-frame window cover very different
+    amounts of actual motion. Passing the same ``window_frames`` to every
+    model in a comparison normalizes the sampled duration: each model still
+    gets its own native ``num_frames``, just spread evenly across the same
+    center window instead of densely packed into a shorter one. Defaults to
+    ``None`` (identical to the pre-existing behavior) so no existing config
+    or already-extracted artifact is affected.
     """
     if frame_count <= 0:
         raise ValueError(f"frame_count must be positive, got {frame_count}")
     if num_frames <= 0:
         raise ValueError(f"num_frames must be positive, got {num_frames}")
+    if window_frames is not None and window_frames <= 0:
+        raise ValueError(f"window_frames must be positive, got {window_frames}")
 
     if strategy == "deterministic_center_clip":
-        if frame_count >= num_frames:
-            start = (frame_count - num_frames) // 2
-            return tuple(range(start, start + num_frames))
+        if window_frames is None:
+            if frame_count >= num_frames:
+                start = (frame_count - num_frames) // 2
+                return tuple(range(start, start + num_frames))
+            return _uniform_repeated_indices(frame_count, num_frames)
+
+        effective_window = min(window_frames, frame_count)
+        if effective_window >= num_frames:
+            start = (frame_count - effective_window) // 2
+            return _window_spaced_indices(start, effective_window, num_frames)
         return _uniform_repeated_indices(frame_count, num_frames)
 
     if strategy == "deterministic_uniform":
@@ -139,12 +165,14 @@ def read_sampled_clip(
     num_frames: int,
     sampling_strategy: FrameSamplingStrategy = "deterministic_center_clip",
     video_id: str | None = None,
+    window_frames: int | None = None,
 ) -> SampledClip:
     decoded = read_video_frames(video_path, video_id=video_id)
     indices = sample_frame_indices(
         decoded.metadata.frames_decoded,
         num_frames,
         strategy=sampling_strategy,
+        window_frames=window_frames,
     )
     clip = np.ascontiguousarray(decoded.frames[list(indices)])
     return SampledClip(
@@ -162,6 +190,22 @@ def _uniform_repeated_indices(frame_count: int, num_frames: int) -> tuple[int, .
     indices = np.floor(positions).astype(np.int64)
     indices = np.clip(indices, 0, frame_count - 1)
     return tuple(int(index) for index in indices)
+
+
+def _window_spaced_indices(start: int, window_frames: int, num_frames: int) -> tuple[int, ...]:
+    """Evenly space ``num_frames`` bin-center indices across a native window.
+
+    Degenerates to a contiguous ``range(start, start + num_frames)`` when
+    ``window_frames == num_frames`` (i.e. when a model's own num_frames is
+    used as the reference window), matching the no-``window_frames`` path
+    exactly.
+    """
+    positions = (np.arange(num_frames, dtype=np.float64) + 0.5) * (
+        window_frames / num_frames
+    )
+    offsets = np.floor(positions).astype(np.int64)
+    offsets = np.clip(offsets, 0, window_frames - 1)
+    return tuple(int(start + offset) for offset in offsets)
 
 
 def _stream_fps(stream: Any) -> float | None:

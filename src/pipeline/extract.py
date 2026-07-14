@@ -60,6 +60,7 @@ def run_extraction(
         transform=resolved_encoder.preprocess,
         perturbation=build_video_perturbation(perturbation),
         subset_id=config.subset_id,
+        window_frames=config.window_frames,
     )
     if limit is not None:
         from torch.utils.data import Subset

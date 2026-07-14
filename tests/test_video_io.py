@@ -30,6 +30,26 @@ def test_sample_frame_indices_uniform_strategy() -> None:
     )
 
 
+def test_sample_frame_indices_window_frames_none_matches_legacy_behavior() -> None:
+    """Omitting window_frames must reproduce every existing config's sampling exactly."""
+    assert sample_frame_indices(20, 6) == sample_frame_indices(20, 6, window_frames=None)
+
+
+def test_sample_frame_indices_window_frames_equal_to_num_frames_is_contiguous() -> None:
+    """A model using its own num_frames as the reference window changes nothing."""
+    assert sample_frame_indices(20, 6, window_frames=6) == sample_frame_indices(20, 6)
+
+
+def test_sample_frame_indices_window_frames_spreads_across_wider_window() -> None:
+    """A lighter model spans the same real-world window as the reference model."""
+    assert sample_frame_indices(100, 4, window_frames=20) == (42, 47, 52, 57)
+
+
+def test_sample_frame_indices_window_frames_falls_back_for_short_video() -> None:
+    """A window wider than the whole video degrades to the short-video repeat path."""
+    assert sample_frame_indices(5, 8, window_frames=20) == (0, 0, 1, 2, 2, 3, 4, 4)
+
+
 def test_read_video_frames_and_sample_clip(tmp_path: Path) -> None:
     video_path = _write_tiny_video(tmp_path / "sample.mp4", frame_count=5)
 
