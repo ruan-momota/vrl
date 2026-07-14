@@ -12,6 +12,7 @@ dependencies = [
     "numpy>=1.26,<3",
     "pillow>=10.0,<13",
     "protobuf>=4.25,<7",
+    "pytorchvideo>=0.1.5,<1",
     "sentencepiece>=0.1.99,<1",
     "torch>=2.3,<3",
     "torchvision>=0.18,<1",
