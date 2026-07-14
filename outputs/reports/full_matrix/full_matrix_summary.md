@@ -66,15 +66,85 @@ Quality audit overall status across all cells: `True`.
 have the full 8-perturbation matrix, matching this table; entries show
 `n/a` only if a cell genuinely lacks that specific artifact.)
 
+## Motion vs Appearance Bias
+
+Raw accuracy drop and raw cosine distance are each confounded by something
+that has nothing to do with motion/appearance bias: accuracy drop is capped
+by how much original accuracy there was to lose (e.g. VideoMAE x Diving48
+starts at 7.5%, so it cannot show a large drop regardless of sensitivity),
+and cosine distance magnitude is set by each model's own embedding
+geometry (SlowFast's 9216-d space produces larger raw distances than
+DINOv2's 768-d space at the same nominal perturbation strength). The two
+columns below correct for that, using only the matched motion/appearance
+pair at the same nominal strength (temporal-shuffle-mid vs
+spatial-blur-mid) within each cell:
+
+- **Behavioral bias** = `correct_to_incorrect_rate(shuffle) -
+  correct_to_incorrect_rate(blur)`. This rate already conditions on
+  originally-correct predictions, so it stays meaningful even for
+  low-accuracy cells. Positive => losing temporal order flips more
+  originally-correct predictions than blurring appearance does.
+- **Representational bias** = `log2(mean_cosine_distance(shuffle) /
+  mean_cosine_distance(blur))`, computed within one cell's own embedding
+  space so the arbitrary per-model distance scale cancels out. Positive =>
+  shuffling frame order moves the representation further than blurring
+  does. Clipped to +-10 (1024x) since a couple of cells hit a true zero.
+
+| Model | Dataset | Motion flip rate (shuffle) | Appearance flip rate (blur) | Behavioral bias (motion - appearance) | Repr. log2(motion/appearance), mid |
+| --- | --- | --- | --- | --- | --- |
+| SlowFast R50 8x8 | SSV2 | 0.2333 | 0.0647 | 0.1687 | 1.5428 |
+| V-JEPA2 | Kinetics | 0.2333 | 0.0860 | 0.1473 | -0.2105 |
+| VideoMAE | Kinetics | 0.1913 | 0.0573 | 0.1340 | 2.7789 |
+| DisMo | Kinetics | 0.1680 | 0.0393 | 0.1287 | 5.3939 |
+| VideoMAE | SSV2 | 0.1973 | 0.0833 | 0.1140 | 1.8304 |
+| SlowFast R50 8x8 | Diving48 | 0.0708 | 0.0104 | 0.0604 | 5.2648 |
+| V-JEPA2 | HMDB51 | 0.2323 | 0.1877 | 0.0446 | -0.6977 |
+| SlowFast R50 8x8 | UCF101 | 0.0487 | 0.0160 | 0.0327 | 1.4077 |
+| VideoMAE | Diving48 | 0.0583 | 0.0271 | 0.0312 | 6.2328 |
+| DINOv2 frame-mean | UCF101 | 0.0000 | 0.0040 | -0.0040 | -10.0000 |
+| DINOv2 frame-mean | Diving48 | 0.0000 | 0.0104 | -0.0104 | -10.0000 |
+| VideoMAE | UCF101 | 0.2800 | 0.3133 | -0.0333 | 0.3714 |
+| DINOv2 frame-mean | SSV2 | 0.0000 | 0.0373 | -0.0373 | -10.0000 |
+
+DINOv2 frame-mean's `0.0000` motion columns are not a rounding artifact:
+frame-mean pooling averages per-frame features, and a mean is exactly
+invariant to the order the frames are averaged in, so temporal-shuffle
+cannot move that representation at all by construction -- this is a
+property of the pooling operation, not evidence that DINOv2's *frame-level*
+features are appearance-only.
+
+Model averages (unweighted mean across the datasets each model was run on
+-- coverage differs by model, e.g. DisMo only has a Kinetics cell, so these
+are not fully apples-to-apples across rows):
+
+| Model | Datasets averaged | Mean behavioral bias | Mean repr. log2 ratio, mid |
+| --- | --- | --- | --- |
+| DisMo | Kinetics | 0.1287 | 5.3939 |
+| V-JEPA2 | HMDB51, Kinetics | 0.0960 | -0.4541 |
+| SlowFast R50 8x8 | Diving48, SSV2, UCF101 | 0.0873 | 2.7384 |
+| VideoMAE | Diving48, Kinetics, SSV2, UCF101 | 0.0615 | 2.8034 |
+| DINOv2 frame-mean | Diving48, SSV2, UCF101 | -0.0172 | -10.0000 |
+
+Cells where representational and behavioral bias disagree in sign -- a
+larger embedding shift from one perturbation type does not always mean the
+frozen linear probe's decision is more sensitive to it:
+
+- VideoMAE x UCF101: representation shifts more from motion (log2 ratio 0.37), but behaviorally the linear probe flips more predictions from appearance (bias -0.0333).
+- V-JEPA2 x HMDB51: representation shifts more from appearance (log2 ratio -0.70), but behaviorally the linear probe flips more predictions from motion (bias 0.0446).
+- V-JEPA2 x Kinetics: representation shifts more from appearance (log2 ratio -0.21), but behaviorally the linear probe flips more predictions from motion (bias 0.1473).
+
 ## Figures
 
 - `outputs/plots/full_matrix/matrix_fixed_mid_accuracy_drop.svg`
 - `outputs/plots/full_matrix/matrix_fixed_mid_representation_shift.svg`
 - `outputs/plots/full_matrix/matrix_strength_curves_accuracy_drop.svg`
 - `outputs/plots/full_matrix/matrix_strength_curves_representation_shift.svg`
+- `outputs/plots/full_matrix/matrix_motion_appearance_scatter.svg`
+- `outputs/plots/full_matrix/matrix_motion_appearance_bias_ratio.svg`
 
 ## Full data
 
 - `outputs/reports/full_matrix/matrix_baselines.csv`
 - `outputs/reports/full_matrix/matrix_perturbation_summary.csv` (includes freeze_tail/color_transform strength curves for every cell that has them)
 - `outputs/reports/full_matrix/matrix_quality_summary.csv`
+- `outputs/reports/full_matrix/matrix_motion_appearance_bias.csv`

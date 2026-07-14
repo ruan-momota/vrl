@@ -27,6 +27,7 @@ from __future__ import annotations
 import csv
 import html
 import json
+import math
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -118,10 +119,12 @@ def main() -> int:
     baseline_rows = build_baseline_rows()
     perturbation_rows = build_perturbation_rows()
     quality_rows = build_quality_rows()
+    bias_rows = build_bias_rows(perturbation_rows)
 
     write_csv(REPORT_DIR / "matrix_baselines.csv", baseline_rows)
     write_csv(REPORT_DIR / "matrix_perturbation_summary.csv", perturbation_rows)
     write_csv(REPORT_DIR / "matrix_quality_summary.csv", quality_rows)
+    write_csv(REPORT_DIR / "matrix_motion_appearance_bias.csv", bias_rows)
 
     write_fixed_mid_bar_chart(
         perturbation_rows,
@@ -151,12 +154,81 @@ def main() -> int:
         title="Strength curves: mean cosine distance",
         y_label="Mean cosine distance",
     )
+    write_bias_scatter_chart(
+        bias_rows,
+        output_path=PLOT_DIR / "matrix_motion_appearance_scatter.svg",
+    )
+    write_bias_ratio_bar_chart(
+        bias_rows,
+        output_path=PLOT_DIR / "matrix_motion_appearance_bias_ratio.svg",
+    )
 
     (REPORT_DIR / "full_matrix_summary.md").write_text(
-        build_summary_markdown(baseline_rows, perturbation_rows, quality_rows),
+        build_summary_markdown(baseline_rows, perturbation_rows, quality_rows, bias_rows),
         encoding="utf-8",
     )
     return 0
+
+
+def build_bias_rows(perturbation_rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Per-cell motion-vs-appearance bias, contrasting matched perturbation pairs.
+
+    Two complementary metrics, since neither is comparable across cells alone:
+
+    - Behavioral: correct_to_incorrect_rate for temporal-shuffle-mid vs
+      spatial-blur-mid. This conditions on originally-correct predictions,
+      so it stays meaningful even for cells with a low original accuracy
+      (e.g. VideoMAE x Diving48 at 7.5%), unlike raw accuracy drop which is
+      capped by how much accuracy there was to lose.
+    - Representational: mean_cosine_distance for the same pair, expressed as
+      log2(motion / appearance). Raw cosine distance is not comparable
+      across embedding spaces (SlowFast's 9216-d space produces much larger
+      distances than DINOv2's 768-d space for the same nominal strength),
+      but the *ratio* within one cell's own embedding space is.
+    """
+    rows: list[dict[str, Any]] = []
+    for cell in CELLS:
+        shuffle = find_perturbation_optional(perturbation_rows, cell.model, cell.dataset, "temporal-shuffle-mid")
+        blur = find_perturbation_optional(perturbation_rows, cell.model, cell.dataset, "spatial-blur-mid")
+        freeze_high = find_perturbation_optional(perturbation_rows, cell.model, cell.dataset, "freeze-tail-high")
+        color_high = find_perturbation_optional(perturbation_rows, cell.model, cell.dataset, "color-high")
+        if shuffle is None or blur is None:
+            continue
+        motion_flip = float(shuffle["correct_to_incorrect_rate"])
+        appearance_flip = float(blur["correct_to_incorrect_rate"])
+        row = {
+            "model": cell.model,
+            "dataset": cell.dataset,
+            "dataset_role": cell.dataset_role,
+            "motion_flip_rate": motion_flip,
+            "appearance_flip_rate": appearance_flip,
+            "behavioral_bias_diff": motion_flip - appearance_flip,
+            "motion_mean_cosine_distance": float(shuffle["mean_cosine_distance"]),
+            "appearance_mean_cosine_distance": float(blur["mean_cosine_distance"]),
+            "repr_bias_log2_ratio": log2_ratio(
+                float(shuffle["mean_cosine_distance"]), float(blur["mean_cosine_distance"])
+            ),
+        }
+        if freeze_high is not None and color_high is not None:
+            row["repr_bias_log2_ratio_strong"] = log2_ratio(
+                float(freeze_high["mean_cosine_distance"]), float(color_high["mean_cosine_distance"])
+            )
+        else:
+            row["repr_bias_log2_ratio_strong"] = ""
+        rows.append(row)
+    return rows
+
+
+def log2_ratio(motion_value: float, appearance_value: float, *, eps: float = 1e-9) -> float:
+    """log2(motion/appearance), clipped to +-10 (1024x) so a near-zero value
+
+    from genuine order-invariance (e.g. DINOv2 frame-mean pooling makes
+    temporal-shuffle cosine distance exactly 0.0) doesn't blow up the scale
+    -- the clipped value still reads as "as motion-insensitive as this chart
+    can show," which is the correct qualitative signal.
+    """
+    ratio = (motion_value + eps) / (appearance_value + eps)
+    return max(-10.0, min(10.0, math.log2(ratio)))
 
 
 def build_baseline_rows() -> list[dict[str, Any]]:
@@ -414,6 +486,123 @@ def write_curve_panel(
         parts.append(text(legend_x + 24, y + 4, label, size=10))
 
 
+def write_bias_scatter_chart(bias_rows: list[dict[str, Any]], *, output_path: Path) -> None:
+    width, height = 900, 820
+    left, right, top, bottom = 90, 260, 55, 90
+    plot_width = width - left - right
+    plot_height = height - top - bottom
+
+    parts = svg_header(width, height)
+    parts.append(
+        text(
+            width / 2, 28,
+            "Motion vs appearance flip rate (correct-to-incorrect)",
+            size=18, weight="700", anchor="middle",
+        )
+    )
+    axis_max = max(
+        0.05,
+        max(row["motion_flip_rate"] for row in bias_rows),
+        max(row["appearance_flip_rate"] for row in bias_rows),
+    ) * 1.1
+
+    def x_for(value: float) -> float:
+        return left + value / axis_max * plot_width
+
+    def y_for(value: float) -> float:
+        return top + (axis_max - value) / axis_max * plot_height
+
+    parts.append(
+        f'<line x1="{left}" y1="{top + plot_height}" x2="{left + plot_width}" y2="{top + plot_height}" '
+        'stroke="#111827" stroke-width="1" />'
+    )
+    parts.append(
+        f'<line x1="{left}" y1="{top}" x2="{left}" y2="{top + plot_height}" stroke="#111827" stroke-width="1" />'
+    )
+    parts.append(
+        f'<line x1="{x_for(0):.2f}" y1="{y_for(0):.2f}" x2="{x_for(axis_max):.2f}" y2="{y_for(axis_max):.2f}" '
+        'stroke="#9ca3af" stroke-dasharray="5 5" />'
+    )
+    parts.append(text(left + plot_width / 2, height - 45, "Appearance flip rate (spatial-blur-mid)", size=12, anchor="middle"))
+    parts.append(text(28, top + plot_height / 2, "Motion flip rate (temporal-shuffle-mid)", size=12, anchor="middle", rotate=-90))
+    parts.append(text(left + plot_width - 10, y_for(axis_max) + 14, "motion-biased side", size=11, anchor="end", weight="600"))
+    parts.append(text(left + 10, y_for(0) - 8, "appearance-biased side", size=11, anchor="start", weight="600"))
+
+    ticks = 5
+    for i in range(ticks + 1):
+        value = axis_max * i / ticks
+        parts.append(text(x_for(value), top + plot_height + 18, f"{value:.2f}", size=10, anchor="middle"))
+        parts.append(text(left - 8, y_for(value) + 4, f"{value:.2f}", size=10, anchor="end"))
+
+    for row in bias_rows:
+        label = row["model"] + " x " + row["dataset"]
+        color = CELL_COLORS[label]
+        cx = x_for(row["appearance_flip_rate"])
+        cy = y_for(row["motion_flip_rate"])
+        parts.append(f'<circle cx="{cx:.2f}" cy="{cy:.2f}" r="7" fill="{color}" stroke="#111827" stroke-width="0.8" />')
+
+    legend_x = width - right + 25
+    legend_y = top + 10
+    for idx, cell in enumerate(CELLS):
+        label = cell.short_label
+        y = legend_y + idx * 20
+        color = CELL_COLORS[label]
+        parts.append(f'<circle cx="{legend_x}" cy="{y}" r="5.5" fill="{color}" stroke="#111827" stroke-width="0.8" />')
+        parts.append(text(legend_x + 12, y + 4, label, size=10))
+
+    parts.append("</svg>\n")
+    output_path.write_text("\n".join(parts), encoding="utf-8")
+
+
+def write_bias_ratio_bar_chart(bias_rows: list[dict[str, Any]], *, output_path: Path) -> None:
+    ordered = sorted(bias_rows, key=lambda row: row["repr_bias_log2_ratio"], reverse=True)
+    labels = [f'{row["model"]} x {row["dataset"]}' for row in ordered]
+
+    width = max(1000, 70 * len(labels))
+    height = 620
+    left, right, top, bottom = 60, 30, 70, 190
+    plot_width = width - left - right
+    plot_height = height - top - bottom
+    y_min, y_max = -10.5, 10.5
+
+    def x_for_group(index: int) -> float:
+        return left + (index + 0.5) * plot_width / len(labels)
+
+    def y_for(value: float) -> float:
+        return top + (y_max - value) / (y_max - y_min) * plot_height
+
+    zero_y = y_for(0.0)
+    bar_width = min(46.0, plot_width / len(labels) * 0.6)
+
+    parts = svg_header(width, height)
+    parts.append(
+        text(
+            width / 2, 26,
+            "Representation-shift bias: log2(motion cos. dist. / appearance cos. dist.), mid strength",
+            size=15, weight="700", anchor="middle",
+        )
+    )
+    parts.append(text(16, top + plot_height / 2, "log2 ratio (motion / appearance)", size=11, anchor="middle", rotate=-90))
+    parts.extend(axis_parts(left, top, plot_width, plot_height, y_min, y_max, y_for))
+    parts.append(text(left + plot_width - 5, top + 14, "motion-dominant", size=10, anchor="end", weight="600"))
+    parts.append(text(left + plot_width - 5, top + plot_height - 6, "appearance-dominant", size=10, anchor="end", weight="600"))
+
+    for index, row in enumerate(ordered):
+        value = row["repr_bias_log2_ratio"]
+        center = x_for_group(index)
+        color = "#2563eb" if value >= 0 else "#ea580c"
+        y = min(y_for(value), zero_y)
+        bar_height = abs(y_for(value) - zero_y)
+        parts.append(
+            f'<rect x="{center - bar_width / 2:.2f}" y="{y:.2f}" width="{bar_width:.2f}" '
+            f'height="{max(bar_height, 1.0):.2f}" fill="{color}" />'
+        )
+        parts.append(text(center, height - 130, labels[index], size=10, anchor="end", rotate=-40))
+
+    parts.append("</svg>\n")
+    output_path.write_text("\n".join(parts), encoding="utf-8")
+
+
 def axis_parts(
     left: int,
     top: int,
@@ -459,6 +648,7 @@ def build_summary_markdown(
     baselines: list[dict[str, Any]],
     perturbations: list[dict[str, Any]],
     quality_rows: list[dict[str, Any]],
+    bias_rows: list[dict[str, Any]],
 ) -> str:
     baseline_table = markdown_table(
         ["Model", "Dataset", "Train n", "Heldout n", "Embedding dim",
@@ -496,6 +686,54 @@ def build_summary_markdown(
         fixed_rows,
     )
     quality_ok = all(row["quality_ok"] in {True, "True", "true"} for row in quality_rows)
+
+    bias_table = markdown_table(
+        [
+            "Model", "Dataset", "Motion flip rate (shuffle)", "Appearance flip rate (blur)",
+            "Behavioral bias (motion - appearance)", "Repr. log2(motion/appearance), mid",
+        ],
+        [
+            [
+                row["model"], row["dataset"],
+                fmt_float(row["motion_flip_rate"]),
+                fmt_float(row["appearance_flip_rate"]),
+                fmt_float(row["behavioral_bias_diff"]),
+                fmt_float(row["repr_bias_log2_ratio"]),
+            ]
+            for row in sorted(bias_rows, key=lambda r: r["behavioral_bias_diff"], reverse=True)
+        ],
+    )
+
+    model_bias_table = markdown_table(
+        ["Model", "Datasets averaged", "Mean behavioral bias", "Mean repr. log2 ratio, mid"],
+        model_bias_rows(bias_rows),
+    )
+
+    divergent = [
+        row for row in bias_rows
+        if row["behavioral_bias_diff"] * row["repr_bias_log2_ratio"] < 0
+        and abs(row["behavioral_bias_diff"]) > 0.01
+    ]
+    if divergent:
+        divergent_lines = "\n".join(
+            f'- {row["model"]} x {row["dataset"]}: representation shifts more from '
+            f'{"appearance" if row["repr_bias_log2_ratio"] < 0 else "motion"} '
+            f'(log2 ratio {row["repr_bias_log2_ratio"]:.2f}), but behaviorally the linear '
+            f'probe flips more predictions from '
+            f'{"motion" if row["behavioral_bias_diff"] > 0 else "appearance"} '
+            f'(bias {row["behavioral_bias_diff"]:.4f}).'
+            for row in divergent
+        )
+        divergent_block = f"""
+Cells where representational and behavioral bias disagree in sign -- a
+larger embedding shift from one perturbation type does not always mean the
+frozen linear probe's decision is more sensitive to it:
+
+{divergent_lines}
+"""
+    else:
+        divergent_block = ""
+
     return f"""# Full Model x Dataset Matrix Summary
 
 This summary reads the {len(CELLS)} completed run reports from both branches
@@ -524,18 +762,60 @@ Quality audit overall status across all cells: `{quality_ok}`.
 have the full 8-perturbation matrix, matching this table; entries show
 `n/a` only if a cell genuinely lacks that specific artifact.)
 
+## Motion vs Appearance Bias
+
+Raw accuracy drop and raw cosine distance are each confounded by something
+that has nothing to do with motion/appearance bias: accuracy drop is capped
+by how much original accuracy there was to lose (e.g. VideoMAE x Diving48
+starts at 7.5%, so it cannot show a large drop regardless of sensitivity),
+and cosine distance magnitude is set by each model's own embedding
+geometry (SlowFast's 9216-d space produces larger raw distances than
+DINOv2's 768-d space at the same nominal perturbation strength). The two
+columns below correct for that, using only the matched motion/appearance
+pair at the same nominal strength (temporal-shuffle-mid vs
+spatial-blur-mid) within each cell:
+
+- **Behavioral bias** = `correct_to_incorrect_rate(shuffle) -
+  correct_to_incorrect_rate(blur)`. This rate already conditions on
+  originally-correct predictions, so it stays meaningful even for
+  low-accuracy cells. Positive => losing temporal order flips more
+  originally-correct predictions than blurring appearance does.
+- **Representational bias** = `log2(mean_cosine_distance(shuffle) /
+  mean_cosine_distance(blur))`, computed within one cell's own embedding
+  space so the arbitrary per-model distance scale cancels out. Positive =>
+  shuffling frame order moves the representation further than blurring
+  does. Clipped to +-10 (1024x) since a couple of cells hit a true zero.
+
+{bias_table}
+
+DINOv2 frame-mean's `0.0000` motion columns are not a rounding artifact:
+frame-mean pooling averages per-frame features, and a mean is exactly
+invariant to the order the frames are averaged in, so temporal-shuffle
+cannot move that representation at all by construction -- this is a
+property of the pooling operation, not evidence that DINOv2's *frame-level*
+features are appearance-only.
+
+Model averages (unweighted mean across the datasets each model was run on
+-- coverage differs by model, e.g. DisMo only has a Kinetics cell, so these
+are not fully apples-to-apples across rows):
+
+{model_bias_table}
+{divergent_block}
 ## Figures
 
 - `outputs/plots/full_matrix/matrix_fixed_mid_accuracy_drop.svg`
 - `outputs/plots/full_matrix/matrix_fixed_mid_representation_shift.svg`
 - `outputs/plots/full_matrix/matrix_strength_curves_accuracy_drop.svg`
 - `outputs/plots/full_matrix/matrix_strength_curves_representation_shift.svg`
+- `outputs/plots/full_matrix/matrix_motion_appearance_scatter.svg`
+- `outputs/plots/full_matrix/matrix_motion_appearance_bias_ratio.svg`
 
 ## Full data
 
 - `outputs/reports/full_matrix/matrix_baselines.csv`
 - `outputs/reports/full_matrix/matrix_perturbation_summary.csv` (includes freeze_tail/color_transform strength curves for every cell that has them)
 - `outputs/reports/full_matrix/matrix_quality_summary.csv`
+- `outputs/reports/full_matrix/matrix_motion_appearance_bias.csv`
 """
 
 
@@ -563,6 +843,20 @@ def find_perturbation_optional(
         ):
             return row
     return None
+
+
+def model_bias_rows(bias_rows: list[dict[str, Any]]) -> list[list[Any]]:
+    by_model: dict[str, list[dict[str, Any]]] = {}
+    for row in bias_rows:
+        by_model.setdefault(row["model"], []).append(row)
+    rows = []
+    for model, cells in by_model.items():
+        datasets = ", ".join(sorted(row["dataset"] for row in cells))
+        mean_behavioral = sum(row["behavioral_bias_diff"] for row in cells) / len(cells)
+        mean_repr = sum(row["repr_bias_log2_ratio"] for row in cells) / len(cells)
+        rows.append([model, datasets, fmt_float(mean_behavioral), fmt_float(mean_repr)])
+    rows.sort(key=lambda row: float(row[2]), reverse=True)
+    return rows
 
 
 def knn_k_accuracy(knn: dict[str, Any], *, k: int) -> float:
