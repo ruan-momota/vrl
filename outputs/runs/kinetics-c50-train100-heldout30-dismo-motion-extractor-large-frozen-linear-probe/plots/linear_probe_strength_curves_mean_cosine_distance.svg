@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560">
+<rect width="100%" height="100%" fill="white"/>
+<text x="480.00" y="30.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700">Kinetics dismo frozen-linear-probe strength curves: mean cosine distance</text>
+<line x1="80" y1="490" x2="740" y2="490" stroke="#444" stroke-width="1"/>
+<line x1="80" y1="58" x2="80" y2="490" stroke="#444" stroke-width="1"/>
+<polyline points="80.00,490.00 410.00,488.63 740.00,476.25" fill="none" stroke="#4c78a8" stroke-width="2.5"/>
+<circle cx="80.00" cy="490.00" r="4" fill="#4c78a8"/>
+<text x="80.00" y="482.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="400">low</text>
+<circle cx="410.00" cy="488.63" r="4" fill="#4c78a8"/>
+<text x="410.00" y="480.63" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="400">mid</text>
+<circle cx="740.00" cy="476.25" r="4" fill="#4c78a8"/>
+<text x="740.00" y="468.25" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="400">high</text>
+<rect x="764" y="48" width="14" height="14" fill="#4c78a8"/>
+<text x="784.00" y="60.00" text-anchor="start" font-family="Arial, sans-serif" font-size="13" font-weight="400">color_transform</text>
+<polyline points="80.00,481.59 410.00,352.67 740.00,58.00" fill="none" stroke="#f58518" stroke-width="2.5"/>
+<circle cx="80.00" cy="481.59" r="4" fill="#f58518"/>
+<text x="80.00" y="473.59" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="400">low</text>
+<circle cx="410.00" cy="352.67" r="4" fill="#f58518"/>
+<text x="410.00" y="344.67" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="400">mid</text>
+<circle cx="740.00" cy="58.00" r="4" fill="#f58518"/>
+<text x="740.00" y="50.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="400">high</text>
+<rect x="764" y="72" width="14" height="14" fill="#f58518"/>
+<text x="784.00" y="84.00" text-anchor="start" font-family="Arial, sans-serif" font-size="13" font-weight="400">freeze_tail</text>
+<text x="410.00" y="538.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="400">sweep value</text>
+<text x="18.00" y="274.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="400" transform="rotate(-90 18.00 274.00)">mean cosine distance</text>
+</svg>
