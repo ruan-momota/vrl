@@ -122,6 +122,24 @@ CELL_COLORS = {
     "DisMo x Kinetics": "#db2777",
 }
 
+# For the strength-curve chart: one color per model, one dash pattern per
+# dataset, so lines for the same model (different datasets) read as "the
+# same series, different condition" instead of needing 13 unrelated colors.
+MODEL_COLORS = {
+    "VideoMAE": "#2563eb",
+    "SlowFast R50 8x8": "#dc2626",
+    "DINOv2 frame-mean": "#7c3aed",
+    "V-JEPA2": "#334155",
+    "DisMo": "#db2777",
+}
+DATASET_DASH = {
+    "SSV2": None,
+    "UCF101": "12 5",
+    "Diving48": "1 4",
+    "HMDB51": "9 3 2 3",
+    "Kinetics": "5 3",
+}
+
 
 def main() -> int:
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
@@ -473,7 +491,9 @@ def write_curve_panel(
         label = cell.short_label
         if label not in rows_by_cell:
             continue
-        color = CELL_COLORS[label]
+        color = MODEL_COLORS[cell.model]
+        dash = DATASET_DASH[cell.dataset]
+        dash_attr = f' stroke-dasharray="{dash}"' if dash else ""
         points = [
             (x_for(strength), y_for(float(rows_by_cell[label][strength][metric])))
             for strength in strengths
@@ -481,7 +501,7 @@ def write_curve_panel(
         point_data = " ".join(f"{x:.2f},{y:.2f}" for x, y in points)
         parts.append(
             f'<polyline points="{point_data}" fill="none" stroke="{color}" '
-            'stroke-width="2.3" stroke-linejoin="round" />'
+            f'stroke-width="2.3" stroke-linejoin="round"{dash_attr} />'
         )
         for x, y in points:
             parts.append(f'<circle cx="{x:.2f}" cy="{y:.2f}" r="3.8" fill="{color}" />')
@@ -497,8 +517,13 @@ def write_curve_panel(
         if label not in rows_by_cell:
             continue
         y = legend_y + idx * 20
-        color = CELL_COLORS[label]
-        parts.append(f'<line x1="{legend_x}" y1="{y}" x2="{legend_x + 18}" y2="{y}" stroke="{color}" stroke-width="3" />')
+        color = MODEL_COLORS[cell.model]
+        dash = DATASET_DASH[cell.dataset]
+        dash_attr = f' stroke-dasharray="{dash}"' if dash else ""
+        parts.append(
+            f'<line x1="{legend_x}" y1="{y}" x2="{legend_x + 18}" y2="{y}" '
+            f'stroke="{color}" stroke-width="3"{dash_attr} />'
+        )
         parts.append(text(legend_x + 24, y + 4, label, size=10))
 
 
