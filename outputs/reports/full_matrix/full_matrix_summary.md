@@ -141,6 +141,10 @@ frozen linear probe's decision is more sensitive to it:
 - `outputs/plots/full_matrix/matrix_strength_curves_representation_shift.svg`
 - `outputs/plots/full_matrix/matrix_motion_appearance_scatter.svg`
 - `outputs/plots/full_matrix/matrix_motion_appearance_bias_ratio.svg`
+- `outputs/plots/full_matrix/matrix_per_cell_grid.svg` -- one small chart per
+  model x dataset cell (dataset rows x model columns, blank = not run),
+  each showing all 8 perturbation artifacts on a shared y-axis so bar
+  heights are comparable across the whole grid, not just within a cell.
 
 ## Full data
 

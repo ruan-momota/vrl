@@ -95,6 +95,17 @@ CELLS = (
 )
 
 
+DATASET_ORDER = ("SSV2", "UCF101", "Diving48", "HMDB51", "Kinetics")
+MODEL_ORDER = ("VideoMAE", "SlowFast R50 8x8", "DINOv2 frame-mean", "V-JEPA2", "DisMo")
+ARTIFACT_ORDER = (
+    "temporal-shuffle-mid",
+    "freeze-tail-low", "freeze-tail-mid", "freeze-tail-high",
+    "color-low", "color-mid", "color-high",
+    "spatial-blur-mid",
+)
+GROUP_COLORS = {"motion": "#2563eb", "appearance": "#ea580c"}
+
+
 CELL_COLORS = {
     "VideoMAE x SSV2": "#3b82f6",
     "VideoMAE x UCF101": "#0f766e",
@@ -161,6 +172,11 @@ def main() -> int:
     write_bias_ratio_bar_chart(
         bias_rows,
         output_path=PLOT_DIR / "matrix_motion_appearance_bias_ratio.svg",
+    )
+    write_matrix_grid_chart(
+        perturbation_rows,
+        baseline_rows,
+        output_path=PLOT_DIR / "matrix_per_cell_grid.svg",
     )
 
     (REPORT_DIR / "full_matrix_summary.md").write_text(
@@ -603,6 +619,139 @@ def write_bias_ratio_bar_chart(bias_rows: list[dict[str, Any]], *, output_path: 
     output_path.write_text("\n".join(parts), encoding="utf-8")
 
 
+def write_matrix_grid_chart(
+    perturbation_rows: list[dict[str, Any]],
+    baseline_rows: list[dict[str, Any]],
+    *,
+    output_path: Path,
+) -> None:
+    """One small multiple per model x dataset cell, laid out as a literal grid.
+
+    Rows are datasets, columns are models -- the same axes as the CELLS
+    matrix -- so a blank tile means that combination was never run, and a
+    reader can visually compare either a whole row (one dataset, every
+    model) or a whole column (one model, every dataset). Every tile shares
+    the same y-axis so bar heights are comparable across the entire grid,
+    not just within a tile.
+    """
+    by_cell: dict[tuple[str, str], dict[str, dict[str, Any]]] = {}
+    for row in perturbation_rows:
+        by_cell.setdefault((row["model"], row["dataset"]), {})[row["artifact_label"]] = row
+    baseline_by_cell = {(row["model"], row["dataset"]): row for row in baseline_rows}
+
+    metric = "correct_to_incorrect_rate"
+    all_values = [
+        float(row[metric]) for row in perturbation_rows if row["artifact_label"] in ARTIFACT_ORDER
+    ]
+    y_max = max(all_values) * 1.12
+
+    label_col_w, header_h = 130, 50
+    tile_w, tile_h = 190, 150
+    width = label_col_w + tile_w * len(MODEL_ORDER)
+    height = header_h + tile_h * len(DATASET_ORDER) + 70
+
+    parts = svg_header(width, height)
+    parts.append(
+        text(
+            width / 2, 26,
+            "Per-cell perturbation profile (correct-to-incorrect rate, all 8 artifacts)",
+            size=16, weight="700", anchor="middle",
+        )
+    )
+
+    for col, model in enumerate(MODEL_ORDER):
+        cx = label_col_w + (col + 0.5) * tile_w
+        parts.append(text(cx, header_h + 32, model, size=12, weight="700", anchor="middle"))
+
+    for row_idx, dataset in enumerate(DATASET_ORDER):
+        row_y = header_h + 40 + row_idx * tile_h
+        parts.append(
+            text(label_col_w - 10, row_y + tile_h / 2, dataset, size=12, weight="700", anchor="end")
+        )
+        for col, model in enumerate(MODEL_ORDER):
+            tile_x = label_col_w + col * tile_w
+            parts.append(
+                f'<rect x="{tile_x + 4}" y="{row_y + 4}" width="{tile_w - 8}" height="{tile_h - 8}" '
+                'fill="none" stroke="#e5e7eb" stroke-width="1" />'
+            )
+            cell_key = (model, dataset)
+            if cell_key not in by_cell:
+                parts.append(
+                    text(
+                        tile_x + tile_w / 2, row_y + tile_h / 2, "no run",
+                        size=10, anchor="middle",
+                    )
+                )
+                continue
+            write_grid_tile(
+                parts,
+                artifacts=by_cell[cell_key],
+                baseline=baseline_by_cell.get(cell_key),
+                metric=metric,
+                y_max=y_max,
+                x=tile_x + 4,
+                y=row_y + 4,
+                w=tile_w - 8,
+                h=tile_h - 8,
+            )
+
+    legend_y = height - 22
+    parts.append(f'<rect x="{label_col_w}" y="{legend_y - 10}" width="12" height="12" fill="{GROUP_COLORS["motion"]}" />')
+    parts.append(text(label_col_w + 18, legend_y, "motion perturbation", size=11))
+    parts.append(f'<rect x="{label_col_w + 170}" y="{legend_y - 10}" width="12" height="12" fill="{GROUP_COLORS["appearance"]}" />')
+    parts.append(text(label_col_w + 188, legend_y, "appearance perturbation", size=11))
+    parts.append(
+        text(
+            label_col_w + 400, legend_y,
+            "bar order (left to right): shuffle, freeze-low/mid/high, color-low/mid/high, blur",
+            size=10,
+        )
+    )
+
+    parts.append("</svg>\n")
+    output_path.write_text("\n".join(parts), encoding="utf-8")
+
+
+def write_grid_tile(
+    parts: list[str],
+    *,
+    artifacts: dict[str, dict[str, Any]],
+    baseline: dict[str, Any] | None,
+    metric: str,
+    y_max: float,
+    x: float,
+    y: float,
+    w: float,
+    h: float,
+) -> None:
+    top_pad, bottom_pad = 18, 4
+    plot_h = h - top_pad - bottom_pad
+    baseline_acc = float(baseline["linear_probe_original_accuracy"]) if baseline else None
+    title = f"LP orig. {baseline_acc * 100:.0f}%" if baseline_acc is not None else ""
+    parts.append(text(x + w / 2, y + 12, title, size=9, anchor="middle"))
+
+    n = len(ARTIFACT_ORDER)
+    gap = 2.0
+    bar_w = (w - gap * (n - 1)) / n
+    for i, artifact_label in enumerate(ARTIFACT_ORDER):
+        row = artifacts.get(artifact_label)
+        bx = x + i * (bar_w + gap)
+        baseline_y = y + top_pad + plot_h
+        if row is None:
+            continue
+        value = max(0.0, float(row[metric]))
+        color = GROUP_COLORS.get(row["group"], "#6b7280")
+        bar_h = 0.0 if y_max <= 0 else min(1.0, value / y_max) * plot_h
+        parts.append(
+            f'<rect x="{bx:.2f}" y="{baseline_y - bar_h:.2f}" width="{bar_w:.2f}" '
+            f'height="{max(bar_h, 0.6):.2f}" fill="{color}" />'
+        )
+    parts.append(
+        f'<line x1="{x}" y1="{y + top_pad + plot_h:.2f}" x2="{x + w}" y2="{y + top_pad + plot_h:.2f}" '
+        'stroke="#9ca3af" stroke-width="1" />'
+    )
+
+
 def axis_parts(
     left: int,
     top: int,
@@ -809,6 +958,10 @@ are not fully apples-to-apples across rows):
 - `outputs/plots/full_matrix/matrix_strength_curves_representation_shift.svg`
 - `outputs/plots/full_matrix/matrix_motion_appearance_scatter.svg`
 - `outputs/plots/full_matrix/matrix_motion_appearance_bias_ratio.svg`
+- `outputs/plots/full_matrix/matrix_per_cell_grid.svg` -- one small chart per
+  model x dataset cell (dataset rows x model columns, blank = not run),
+  each showing all 8 perturbation artifacts on a shared y-axis so bar
+  heights are comparable across the whole grid, not just within a cell.
 
 ## Full data
 
