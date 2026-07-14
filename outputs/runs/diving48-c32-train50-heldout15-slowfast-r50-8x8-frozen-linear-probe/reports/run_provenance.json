@@ -1,0 +1,597 @@
+{
+  "artifact_commands": {
+    "embeddings/heldout/original.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_slowfast_linear_probe/diving48_slowfast_c32_heldout_original.json"
+    ],
+    "embeddings/heldout/perturbations/color-high.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_slowfast_linear_probe/diving48_slowfast_c32_heldout_color_high.json"
+    ],
+    "embeddings/heldout/perturbations/color-low.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_slowfast_linear_probe/diving48_slowfast_c32_heldout_color_low.json"
+    ],
+    "embeddings/heldout/perturbations/color-mid.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_slowfast_linear_probe/diving48_slowfast_c32_heldout_color_mid.json"
+    ],
+    "embeddings/heldout/perturbations/freeze-tail-high.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_slowfast_linear_probe/diving48_slowfast_c32_heldout_freeze_tail_high.json"
+    ],
+    "embeddings/heldout/perturbations/freeze-tail-low.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_slowfast_linear_probe/diving48_slowfast_c32_heldout_freeze_tail_low.json"
+    ],
+    "embeddings/heldout/perturbations/freeze-tail-mid.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_slowfast_linear_probe/diving48_slowfast_c32_heldout_freeze_tail_mid.json"
+    ],
+    "embeddings/heldout/perturbations/spatial-blur-mid.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_slowfast_linear_probe/diving48_slowfast_c32_heldout_blur_mid.json"
+    ],
+    "embeddings/heldout/perturbations/temporal-shuffle-mid.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_slowfast_linear_probe/diving48_slowfast_c32_heldout_temporal_shuffle_mid.json"
+    ],
+    "embeddings/train/original.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_slowfast_linear_probe/diving48_slowfast_c32_train_original.json"
+    ]
+  },
+  "artifacts": {
+    "color-high": {
+      "model_metadata": {
+        "checkpoint": "facebookresearch/pytorchvideo:slowfast_r50",
+        "device": "cuda",
+        "encoder_name": "slowfast",
+        "input_spec": {
+          "embedding_source": "last_linear_input",
+          "image_size": 256,
+          "input_layout": "[B, C, T, H, W]",
+          "mean": [
+            0.45,
+            0.45,
+            0.45
+          ],
+          "num_frames": 32,
+          "pathways": {
+            "alpha": 4,
+            "fast": "[B, C, T, H, W]",
+            "slow": "[B, C, T/alpha, H, W]"
+          },
+          "std": [
+            0.225,
+            0.225,
+            0.225
+          ]
+        },
+        "model_source": "pytorchvideo.models.hub:slowfast_r50",
+        "model_type": "slowfast"
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/color-high.pt",
+      "sha256": "acbf54c3ca3acbf981f5e24411520dc7bf107cdaa14baa9a1e4112f2b177a27d",
+      "size_bytes": 18305724,
+      "summary": {
+        "average_batch_seconds": 0.6588709022839491,
+        "batch_count": 480,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          9216
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/color-high.pt",
+        "successful_samples": 480,
+        "total_seconds": 316.3395094619773
+      }
+    },
+    "color-low": {
+      "model_metadata": {
+        "checkpoint": "facebookresearch/pytorchvideo:slowfast_r50",
+        "device": "cuda",
+        "encoder_name": "slowfast",
+        "input_spec": {
+          "embedding_source": "last_linear_input",
+          "image_size": 256,
+          "input_layout": "[B, C, T, H, W]",
+          "mean": [
+            0.45,
+            0.45,
+            0.45
+          ],
+          "num_frames": 32,
+          "pathways": {
+            "alpha": 4,
+            "fast": "[B, C, T, H, W]",
+            "slow": "[B, C, T/alpha, H, W]"
+          },
+          "std": [
+            0.225,
+            0.225,
+            0.225
+          ]
+        },
+        "model_source": "pytorchvideo.models.hub:slowfast_r50",
+        "model_type": "slowfast"
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/color-low.pt",
+      "sha256": "f9a7b9e1b6a88170e79ba83fb8acea1488bf2d60565bb8f3710e0b98a1f3490e",
+      "size_bytes": 18305715,
+      "summary": {
+        "average_batch_seconds": 0.672584391695879,
+        "batch_count": 480,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          9216
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/color-low.pt",
+        "successful_samples": 480,
+        "total_seconds": 322.92309020401444
+      }
+    },
+    "color-mid": {
+      "model_metadata": {
+        "checkpoint": "facebookresearch/pytorchvideo:slowfast_r50",
+        "device": "cuda",
+        "encoder_name": "slowfast",
+        "input_spec": {
+          "embedding_source": "last_linear_input",
+          "image_size": 256,
+          "input_layout": "[B, C, T, H, W]",
+          "mean": [
+            0.45,
+            0.45,
+            0.45
+          ],
+          "num_frames": 32,
+          "pathways": {
+            "alpha": 4,
+            "fast": "[B, C, T, H, W]",
+            "slow": "[B, C, T/alpha, H, W]"
+          },
+          "std": [
+            0.225,
+            0.225,
+            0.225
+          ]
+        },
+        "model_source": "pytorchvideo.models.hub:slowfast_r50",
+        "model_type": "slowfast"
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/color-mid.pt",
+      "sha256": "61b7bf8c3fdb5f674c0a7323889b8ab98fb3715a1de48c16607056ba0a2640c6",
+      "size_bytes": 18305715,
+      "summary": {
+        "average_batch_seconds": 0.6873098843855284,
+        "batch_count": 480,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          9216
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/color-mid.pt",
+        "successful_samples": 480,
+        "total_seconds": 329.98973728498095
+      }
+    },
+    "freeze-tail-high": {
+      "model_metadata": {
+        "checkpoint": "facebookresearch/pytorchvideo:slowfast_r50",
+        "device": "cuda",
+        "encoder_name": "slowfast",
+        "input_spec": {
+          "embedding_source": "last_linear_input",
+          "image_size": 256,
+          "input_layout": "[B, C, T, H, W]",
+          "mean": [
+            0.45,
+            0.45,
+            0.45
+          ],
+          "num_frames": 32,
+          "pathways": {
+            "alpha": 4,
+            "fast": "[B, C, T, H, W]",
+            "slow": "[B, C, T/alpha, H, W]"
+          },
+          "std": [
+            0.225,
+            0.225,
+            0.225
+          ]
+        },
+        "model_source": "pytorchvideo.models.hub:slowfast_r50",
+        "model_type": "slowfast"
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-high.pt",
+      "sha256": "016edfb622cecda893a057dd57e4bf071625c767a876b6640ece8285486d442a",
+      "size_bytes": 18273586,
+      "summary": {
+        "average_batch_seconds": 0.36957513762596744,
+        "batch_count": 480,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          9216
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-high.pt",
+        "successful_samples": 480,
+        "total_seconds": 177.47721493800054
+      }
+    },
+    "freeze-tail-low": {
+      "model_metadata": {
+        "checkpoint": "facebookresearch/pytorchvideo:slowfast_r50",
+        "device": "cuda",
+        "encoder_name": "slowfast",
+        "input_spec": {
+          "embedding_source": "last_linear_input",
+          "image_size": 256,
+          "input_layout": "[B, C, T, H, W]",
+          "mean": [
+            0.45,
+            0.45,
+            0.45
+          ],
+          "num_frames": 32,
+          "pathways": {
+            "alpha": 4,
+            "fast": "[B, C, T, H, W]",
+            "slow": "[B, C, T/alpha, H, W]"
+          },
+          "std": [
+            0.225,
+            0.225,
+            0.225
+          ]
+        },
+        "model_source": "pytorchvideo.models.hub:slowfast_r50",
+        "model_type": "slowfast"
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-low.pt",
+      "sha256": "6dd2e154cd111ea314616a261bd7b2575a6857161cf5eda0c2c07a339e0408db",
+      "size_bytes": 18273577,
+      "summary": {
+        "average_batch_seconds": 0.3665721354876344,
+        "batch_count": 480,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          9216
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-low.pt",
+        "successful_samples": 480,
+        "total_seconds": 176.03591173299355
+      }
+    },
+    "freeze-tail-mid": {
+      "model_metadata": {
+        "checkpoint": "facebookresearch/pytorchvideo:slowfast_r50",
+        "device": "cuda",
+        "encoder_name": "slowfast",
+        "input_spec": {
+          "embedding_source": "last_linear_input",
+          "image_size": 256,
+          "input_layout": "[B, C, T, H, W]",
+          "mean": [
+            0.45,
+            0.45,
+            0.45
+          ],
+          "num_frames": 32,
+          "pathways": {
+            "alpha": 4,
+            "fast": "[B, C, T, H, W]",
+            "slow": "[B, C, T/alpha, H, W]"
+          },
+          "std": [
+            0.225,
+            0.225,
+            0.225
+          ]
+        },
+        "model_source": "pytorchvideo.models.hub:slowfast_r50",
+        "model_type": "slowfast"
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-mid.pt",
+      "sha256": "63faca36af2169f4a5d20ecdcbd201f359db4d351d21d2bd5e61656c49b04fad",
+      "size_bytes": 18273577,
+      "summary": {
+        "average_batch_seconds": 0.36939930734679366,
+        "batch_count": 480,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          9216
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-mid.pt",
+        "successful_samples": 480,
+        "total_seconds": 177.39217069599545
+      }
+    },
+    "heldout_original": {
+      "model_metadata": {
+        "checkpoint": "facebookresearch/pytorchvideo:slowfast_r50",
+        "device": "cuda",
+        "encoder_name": "slowfast",
+        "input_spec": {
+          "embedding_source": "last_linear_input",
+          "image_size": 256,
+          "input_layout": "[B, C, T, H, W]",
+          "mean": [
+            0.45,
+            0.45,
+            0.45
+          ],
+          "num_frames": 32,
+          "pathways": {
+            "alpha": 4,
+            "fast": "[B, C, T, H, W]",
+            "slow": "[B, C, T/alpha, H, W]"
+          },
+          "std": [
+            0.225,
+            0.225,
+            0.225
+          ]
+        },
+        "model_source": "pytorchvideo.models.hub:slowfast_r50",
+        "model_type": "slowfast"
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/original.pt",
+      "sha256": "cb09569e6e06c309ac5d4ebdfe0899644d5aa5c4b617957de506db871cba64ca",
+      "size_bytes": 18225706,
+      "summary": {
+        "average_batch_seconds": 0.3607321379564989,
+        "batch_count": 480,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          9216
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/original.pt",
+        "successful_samples": 480,
+        "total_seconds": 173.23156865200144
+      }
+    },
+    "spatial-blur-mid": {
+      "model_metadata": {
+        "checkpoint": "facebookresearch/pytorchvideo:slowfast_r50",
+        "device": "cuda",
+        "encoder_name": "slowfast",
+        "input_spec": {
+          "embedding_source": "last_linear_input",
+          "image_size": 256,
+          "input_layout": "[B, C, T, H, W]",
+          "mean": [
+            0.45,
+            0.45,
+            0.45
+          ],
+          "num_frames": 32,
+          "pathways": {
+            "alpha": 4,
+            "fast": "[B, C, T, H, W]",
+            "slow": "[B, C, T/alpha, H, W]"
+          },
+          "std": [
+            0.225,
+            0.225,
+            0.225
+          ]
+        },
+        "model_source": "pytorchvideo.models.hub:slowfast_r50",
+        "model_type": "slowfast"
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/spatial-blur-mid.pt",
+      "sha256": "d11ad66712feeee738bfefacd73a6a1509abe6d9336974e4df9817c0317f69f2",
+      "size_bytes": 18281330,
+      "summary": {
+        "average_batch_seconds": 0.7211896505248053,
+        "batch_count": 480,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          9216
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/spatial-blur-mid.pt",
+        "successful_samples": 480,
+        "total_seconds": 346.2519204929995
+      }
+    },
+    "temporal-shuffle-mid": {
+      "model_metadata": {
+        "checkpoint": "facebookresearch/pytorchvideo:slowfast_r50",
+        "device": "cuda",
+        "encoder_name": "slowfast",
+        "input_spec": {
+          "embedding_source": "last_linear_input",
+          "image_size": 256,
+          "input_layout": "[B, C, T, H, W]",
+          "mean": [
+            0.45,
+            0.45,
+            0.45
+          ],
+          "num_frames": 32,
+          "pathways": {
+            "alpha": 4,
+            "fast": "[B, C, T, H, W]",
+            "slow": "[B, C, T/alpha, H, W]"
+          },
+          "std": [
+            0.225,
+            0.225,
+            0.225
+          ]
+        },
+        "model_source": "pytorchvideo.models.hub:slowfast_r50",
+        "model_type": "slowfast"
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/temporal-shuffle-mid.pt",
+      "sha256": "5d50f98b9e24e615155957fd564487e22ac795f1c513e16a1314c4931a6e70a1",
+      "size_bytes": 18307222,
+      "summary": {
+        "average_batch_seconds": 0.36749725211520856,
+        "batch_count": 480,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          9216
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/temporal-shuffle-mid.pt",
+        "successful_samples": 480,
+        "total_seconds": 176.47868776399991
+      }
+    },
+    "train_original": {
+      "model_metadata": {
+        "checkpoint": "facebookresearch/pytorchvideo:slowfast_r50",
+        "device": "cuda",
+        "encoder_name": "slowfast",
+        "input_spec": {
+          "embedding_source": "last_linear_input",
+          "image_size": 256,
+          "input_layout": "[B, C, T, H, W]",
+          "mean": [
+            0.45,
+            0.45,
+            0.45
+          ],
+          "num_frames": 32,
+          "pathways": {
+            "alpha": 4,
+            "fast": "[B, C, T, H, W]",
+            "slow": "[B, C, T/alpha, H, W]"
+          },
+          "std": [
+            0.225,
+            0.225,
+            0.225
+          ]
+        },
+        "model_source": "pytorchvideo.models.hub:slowfast_r50",
+        "model_type": "slowfast"
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe/embeddings/train/original.pt",
+      "sha256": "a73bae8c87d805fc91912c5448971970171f71b821fc986f7b3fb24d02cc493f",
+      "size_bytes": 60745066,
+      "summary": {
+        "average_batch_seconds": 0.46946167789976245,
+        "batch_count": 1600,
+        "dataset_size": 1600,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1600,
+          9216
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1600
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe/embeddings/train/original.pt",
+        "successful_samples": 1600,
+        "total_seconds": 751.4074481569987
+      }
+    }
+  },
+  "code_commit": "dab7e4bdfeecc1735fae82b89819cc542be5a4a7",
+  "created_at_utc": "2026-07-07T10:45:08.826834+00:00",
+  "evaluation_commands": [
+    [
+      "/home/r/ruan/dev/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.evaluate",
+      "--config",
+      "configs/runs/diving48_slowfast_linear_probe/diving48_slowfast_c32_linear_probe_evaluation.json"
+    ]
+  ],
+  "format_version": 1,
+  "hardware": {
+    "environment_recording_policy": "The artifact records the observed encoder device. Scheduler hostnames and GPU model names are intentionally excluded because allocations vary and are not experiment variables.",
+    "note": "The extraction artifact records device at runtime.",
+    "observed_encoder_devices": [
+      "cuda"
+    ]
+  },
+  "manifest_path": "outputs/runs/diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe/manifest.json",
+  "run_id": "diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe"
+}

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="620" viewBox="0 0 1280 620">
+<rect width="100%" height="100%" fill="#ffffff" />
+<style>text { font-family: Arial, Helvetica, sans-serif; fill: #111827; }</style>
+<text x="640.00" y="28.00" font-size="18" font-weight="700" text-anchor="middle">Fixed-mid perturbation: linear-probe accuracy drop</text>
+<text x="18.00" y="257.50" font-size="12" font-weight="400" text-anchor="middle" transform="rotate(-90 18.00 257.50)">Accuracy drop</text>
+<line x1="90" y1="460" x2="1250" y2="460" stroke="#111827" stroke-width="1" />
+<line x1="90" y1="55" x2="90" y2="460" stroke="#111827" stroke-width="1" />
+<line x1="86" y1="460.00" x2="90" y2="460.00" stroke="#111827" />
+<text x="82.00" y="464.00" font-size="10" font-weight="400" text-anchor="end">-0.044</text>
+<line x1="86" y1="379.00" x2="90" y2="379.00" stroke="#111827" />
+<text x="82.00" y="383.00" font-size="10" font-weight="400" text-anchor="end">0.030</text>
+<line x1="90" y1="379.00" x2="1250" y2="379.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="86" y1="298.00" x2="90" y2="298.00" stroke="#111827" />
+<text x="82.00" y="302.00" font-size="10" font-weight="400" text-anchor="end">0.105</text>
+<line x1="90" y1="298.00" x2="1250" y2="298.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="86" y1="217.00" x2="90" y2="217.00" stroke="#111827" />
+<text x="82.00" y="221.00" font-size="10" font-weight="400" text-anchor="end">0.179</text>
+<line x1="90" y1="217.00" x2="1250" y2="217.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="86" y1="136.00" x2="90" y2="136.00" stroke="#111827" />
+<text x="82.00" y="140.00" font-size="10" font-weight="400" text-anchor="end">0.254</text>
+<line x1="90" y1="136.00" x2="1250" y2="136.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="86" y1="55.00" x2="90" y2="55.00" stroke="#111827" />
+<text x="82.00" y="59.00" font-size="10" font-weight="400" text-anchor="end">0.328</text>
+<line x1="90" y1="411.74" x2="1250" y2="411.74" stroke="#6b7280" stroke-dasharray="4 4" />
+<rect x="110.08" y="219.62" width="22.31" height="192.13" fill="#2563eb" />
+<rect x="136.85" y="382.02" width="22.31" height="29.73" fill="#ea580c" />
+<text x="134.62" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 134.62 520.00)">VideoMAE x SSV2</text>
+<rect x="199.31" y="140.59" width="22.31" height="271.15" fill="#2563eb" />
+<rect x="226.08" y="94.19" width="22.31" height="317.55" fill="#ea580c" />
+<text x="223.85" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 223.85 520.00)">VideoMAE x UCF101</text>
+<rect x="288.54" y="370.96" width="22.31" height="40.78" fill="#2563eb" />
+<rect x="315.31" y="391.35" width="22.31" height="20.39" fill="#ea580c" />
+<text x="313.08" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 313.08 520.00)">VideoMAE x Diving48</text>
+<rect x="377.77" y="188.44" width="22.31" height="223.30" fill="#2563eb" />
+<rect x="404.54" y="411.02" width="22.31" height="0.73" fill="#ea580c" />
+<text x="402.31" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 402.31 520.00)">SlowFast R50 8x8 x SSV2</text>
+<rect x="467.00" y="361.72" width="22.31" height="50.03" fill="#2563eb" />
+<rect x="493.77" y="396.52" width="22.31" height="15.23" fill="#ea580c" />
+<text x="491.54" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 491.54 520.00)">SlowFast R50 8x8 x UCF101</text>
+<rect x="556.23" y="391.35" width="22.31" height="20.39" fill="#2563eb" />
+<rect x="583.00" y="411.74" width="22.31" height="9.06" fill="#ea580c" />
+<text x="580.77" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 580.77 520.00)">SlowFast R50 8x8 x Diving48</text>
+<rect x="645.46" y="411.74" width="22.31" height="0.00" fill="#2563eb" />
+<rect x="672.23" y="404.49" width="22.31" height="7.25" fill="#ea580c" />
+<text x="670.00" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 670.00 520.00)">DINOv2 frame-mean x SSV2</text>
+<rect x="734.69" y="411.74" width="22.31" height="0.00" fill="#2563eb" />
+<rect x="761.46" y="409.57" width="22.31" height="2.18" fill="#ea580c" />
+<text x="759.23" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 759.23 520.00)">DINOv2 frame-mean x UCF101</text>
+<rect x="823.92" y="411.74" width="22.31" height="0.00" fill="#2563eb" />
+<rect x="850.69" y="409.48" width="22.31" height="2.27" fill="#ea580c" />
+<text x="848.46" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 848.46 520.00)">DINOv2 frame-mean x Diving48</text>
+<rect x="913.15" y="211.23" width="22.31" height="200.52" fill="#2563eb" />
+<rect x="939.92" y="259.04" width="22.31" height="152.71" fill="#ea580c" />
+<text x="937.69" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 937.69 520.00)">V-JEPA2 x HMDB51</text>
+<rect x="1002.38" y="250.79" width="22.31" height="160.95" fill="#2563eb" />
+<rect x="1029.15" y="384.19" width="22.31" height="27.55" fill="#ea580c" />
+<text x="1026.92" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1026.92 520.00)">VideoMAE x Kinetics</text>
+<rect x="1091.62" y="295.02" width="22.31" height="116.73" fill="#2563eb" />
+<rect x="1118.38" y="393.62" width="22.31" height="18.13" fill="#ea580c" />
+<text x="1116.15" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1116.15 520.00)">DisMo x Kinetics</text>
+<rect x="1180.85" y="192.07" width="22.31" height="219.68" fill="#2563eb" />
+<rect x="1207.62" y="360.27" width="22.31" height="51.48" fill="#ea580c" />
+<text x="1205.38" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1205.38 520.00)">V-JEPA2 x Kinetics</text>
+<rect x="102" y="38" width="12" height="12" fill="#2563eb" />
+<text x="120.00" y="48.00" font-size="12" font-weight="400" text-anchor="start">temporal-shuffle-mid</text>
+<rect x="102" y="58" width="12" height="12" fill="#ea580c" />
+<text x="120.00" y="68.00" font-size="12" font-weight="400" text-anchor="start">spatial-blur-mid</text>
+</svg>

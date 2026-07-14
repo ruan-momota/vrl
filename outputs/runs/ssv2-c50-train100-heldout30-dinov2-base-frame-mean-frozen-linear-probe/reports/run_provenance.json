@@ -1,0 +1,777 @@
+{
+  "artifact_commands": {
+    "embeddings/train/original.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python3",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/ssv2_dinov2_linear_probe/ssv2_dinov2_c50_train_original.json"
+    ],
+    "embeddings/validation/original.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python3",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/ssv2_dinov2_linear_probe/ssv2_dinov2_c50_heldout_original.json"
+    ],
+    "embeddings/validation/perturbations/color-high.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python3",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/ssv2_dinov2_linear_probe/ssv2_dinov2_c50_heldout_color_high.json"
+    ],
+    "embeddings/validation/perturbations/color-low.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python3",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/ssv2_dinov2_linear_probe/ssv2_dinov2_c50_heldout_color_low.json"
+    ],
+    "embeddings/validation/perturbations/color-mid.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python3",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/ssv2_dinov2_linear_probe/ssv2_dinov2_c50_heldout_color_mid.json"
+    ],
+    "embeddings/validation/perturbations/freeze-tail-high.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python3",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/ssv2_dinov2_linear_probe/ssv2_dinov2_c50_heldout_freeze_tail_high.json"
+    ],
+    "embeddings/validation/perturbations/freeze-tail-low.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python3",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/ssv2_dinov2_linear_probe/ssv2_dinov2_c50_heldout_freeze_tail_low.json"
+    ],
+    "embeddings/validation/perturbations/freeze-tail-mid.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python3",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/ssv2_dinov2_linear_probe/ssv2_dinov2_c50_heldout_freeze_tail_mid.json"
+    ],
+    "embeddings/validation/perturbations/spatial-blur-mid.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python3",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/ssv2_dinov2_linear_probe/ssv2_dinov2_c50_heldout_blur_mid.json"
+    ],
+    "embeddings/validation/perturbations/temporal-shuffle-mid.pt": [
+      "/home/r/ruan/dev/vrl/.venv/bin/python3",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/ssv2_dinov2_linear_probe/ssv2_dinov2_c50_heldout_temporal_shuffle_mid.json"
+    ]
+  },
+  "artifacts": {
+    "color-high": {
+      "model_metadata": {
+        "checkpoint": "facebook/dinov2-base",
+        "device": "cuda",
+        "encoder_name": "dinov2",
+        "feature_source": "last_hidden_state_cls_token",
+        "frame_aggregation": "mean",
+        "hidden_size": 768,
+        "image_size": 518,
+        "input_spec": {
+          "feature_source": "last_hidden_state_cls_token",
+          "frame_aggregation": "mean",
+          "frame_encoder_layout": "[B*T, C, H, W]",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "model_source": "transformers.Dinov2Model",
+        "model_type": "dinov2",
+        "num_hidden_layers": 12,
+        "patch_size": 14,
+        "preprocess": {
+          "image_size": 224,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415"
+      },
+      "path": "outputs/runs/ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/embeddings/validation/perturbations/color-high.pt",
+      "sha256": "a4a6c0dbe1cea301109f3992384da0ad3e9e5bbace512aff977429f7dc64ce4e",
+      "size_bytes": 5982140,
+      "summary": {
+        "average_batch_seconds": 0.31725976402125283,
+        "batch_count": 1500,
+        "dataset_size": 1500,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1500,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1500
+        ],
+        "output_path": "outputs/runs/ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/embeddings/validation/perturbations/color-high.pt",
+        "successful_samples": 1500,
+        "total_seconds": 476.1366682939988
+      }
+    },
+    "color-low": {
+      "model_metadata": {
+        "checkpoint": "facebook/dinov2-base",
+        "device": "cuda",
+        "encoder_name": "dinov2",
+        "feature_source": "last_hidden_state_cls_token",
+        "frame_aggregation": "mean",
+        "hidden_size": 768,
+        "image_size": 518,
+        "input_spec": {
+          "feature_source": "last_hidden_state_cls_token",
+          "frame_aggregation": "mean",
+          "frame_encoder_layout": "[B*T, C, H, W]",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "model_source": "transformers.Dinov2Model",
+        "model_type": "dinov2",
+        "num_hidden_layers": 12,
+        "patch_size": 14,
+        "preprocess": {
+          "image_size": 224,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415"
+      },
+      "path": "outputs/runs/ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/embeddings/validation/perturbations/color-low.pt",
+      "sha256": "9304b49a0483281d439aff71abb716b448cccc20c26ece293907083122e2a0c2",
+      "size_bytes": 5982067,
+      "summary": {
+        "average_batch_seconds": 0.3166055952651659,
+        "batch_count": 1500,
+        "dataset_size": 1500,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1500,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1500
+        ],
+        "output_path": "outputs/runs/ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/embeddings/validation/perturbations/color-low.pt",
+        "successful_samples": 1500,
+        "total_seconds": 475.15391922800336
+      }
+    },
+    "color-mid": {
+      "model_metadata": {
+        "checkpoint": "facebook/dinov2-base",
+        "device": "cuda",
+        "encoder_name": "dinov2",
+        "feature_source": "last_hidden_state_cls_token",
+        "frame_aggregation": "mean",
+        "hidden_size": 768,
+        "image_size": 518,
+        "input_spec": {
+          "feature_source": "last_hidden_state_cls_token",
+          "frame_aggregation": "mean",
+          "frame_encoder_layout": "[B*T, C, H, W]",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "model_source": "transformers.Dinov2Model",
+        "model_type": "dinov2",
+        "num_hidden_layers": 12,
+        "patch_size": 14,
+        "preprocess": {
+          "image_size": 224,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415"
+      },
+      "path": "outputs/runs/ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/embeddings/validation/perturbations/color-mid.pt",
+      "sha256": "af0e941bea69ea13f6e1dbb4c1ceeebc96fa520736bc1045f1b9e8932dc89bf0",
+      "size_bytes": 5982067,
+      "summary": {
+        "average_batch_seconds": 0.3169397373278237,
+        "batch_count": 1500,
+        "dataset_size": 1500,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1500,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1500
+        ],
+        "output_path": "outputs/runs/ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/embeddings/validation/perturbations/color-mid.pt",
+        "successful_samples": 1500,
+        "total_seconds": 475.6549331610004
+      }
+    },
+    "freeze-tail-high": {
+      "model_metadata": {
+        "checkpoint": "facebook/dinov2-base",
+        "device": "cuda",
+        "encoder_name": "dinov2",
+        "feature_source": "last_hidden_state_cls_token",
+        "frame_aggregation": "mean",
+        "hidden_size": 768,
+        "image_size": 518,
+        "input_spec": {
+          "feature_source": "last_hidden_state_cls_token",
+          "frame_aggregation": "mean",
+          "frame_encoder_layout": "[B*T, C, H, W]",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "model_source": "transformers.Dinov2Model",
+        "model_type": "dinov2",
+        "num_hidden_layers": 12,
+        "patch_size": 14,
+        "preprocess": {
+          "image_size": 224,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415"
+      },
+      "path": "outputs/runs/ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/embeddings/validation/perturbations/freeze-tail-high.pt",
+      "sha256": "ed7c4e60afa6cb5d93b524e9dd2c007054aadf5f7658bd31948ea3ad907cf77e",
+      "size_bytes": 5881650,
+      "summary": {
+        "average_batch_seconds": 0.27782331680264905,
+        "batch_count": 1500,
+        "dataset_size": 1500,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1500,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1500
+        ],
+        "output_path": "outputs/runs/ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/embeddings/validation/perturbations/freeze-tail-high.pt",
+        "successful_samples": 1500,
+        "total_seconds": 416.9788398449891
+      }
+    },
+    "freeze-tail-low": {
+      "model_metadata": {
+        "checkpoint": "facebook/dinov2-base",
+        "device": "cuda",
+        "encoder_name": "dinov2",
+        "feature_source": "last_hidden_state_cls_token",
+        "frame_aggregation": "mean",
+        "hidden_size": 768,
+        "image_size": 518,
+        "input_spec": {
+          "feature_source": "last_hidden_state_cls_token",
+          "frame_aggregation": "mean",
+          "frame_encoder_layout": "[B*T, C, H, W]",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "model_source": "transformers.Dinov2Model",
+        "model_type": "dinov2",
+        "num_hidden_layers": 12,
+        "patch_size": 14,
+        "preprocess": {
+          "image_size": 224,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415"
+      },
+      "path": "outputs/runs/ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/embeddings/validation/perturbations/freeze-tail-low.pt",
+      "sha256": "d8e26c8a9bd706ad8a868b3aabdc1ef64e4a7480dad0cb1723a4d8158b041eea",
+      "size_bytes": 5881641,
+      "summary": {
+        "average_batch_seconds": 0.27741657225524735,
+        "batch_count": 1500,
+        "dataset_size": 1500,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1500,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1500
+        ],
+        "output_path": "outputs/runs/ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/embeddings/validation/perturbations/freeze-tail-low.pt",
+        "successful_samples": 1500,
+        "total_seconds": 416.3716282020032
+      }
+    },
+    "freeze-tail-mid": {
+      "model_metadata": {
+        "checkpoint": "facebook/dinov2-base",
+        "device": "cuda",
+        "encoder_name": "dinov2",
+        "feature_source": "last_hidden_state_cls_token",
+        "frame_aggregation": "mean",
+        "hidden_size": 768,
+        "image_size": 518,
+        "input_spec": {
+          "feature_source": "last_hidden_state_cls_token",
+          "frame_aggregation": "mean",
+          "frame_encoder_layout": "[B*T, C, H, W]",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "model_source": "transformers.Dinov2Model",
+        "model_type": "dinov2",
+        "num_hidden_layers": 12,
+        "patch_size": 14,
+        "preprocess": {
+          "image_size": 224,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415"
+      },
+      "path": "outputs/runs/ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/embeddings/validation/perturbations/freeze-tail-mid.pt",
+      "sha256": "72c9dcd7e21959bf5d6c4007360e257eddfb8f7a604a28526dd36b7eee1c86da",
+      "size_bytes": 5881641,
+      "summary": {
+        "average_batch_seconds": 0.2802350483276629,
+        "batch_count": 1500,
+        "dataset_size": 1500,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1500,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1500
+        ],
+        "output_path": "outputs/runs/ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/embeddings/validation/perturbations/freeze-tail-mid.pt",
+        "successful_samples": 1500,
+        "total_seconds": 420.5987438789889
+      }
+    },
+    "heldout_original": {
+      "model_metadata": {
+        "checkpoint": "facebook/dinov2-base",
+        "device": "cuda",
+        "encoder_name": "dinov2",
+        "feature_source": "last_hidden_state_cls_token",
+        "frame_aggregation": "mean",
+        "hidden_size": 768,
+        "image_size": 518,
+        "input_spec": {
+          "feature_source": "last_hidden_state_cls_token",
+          "frame_aggregation": "mean",
+          "frame_encoder_layout": "[B*T, C, H, W]",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "model_source": "transformers.Dinov2Model",
+        "model_type": "dinov2",
+        "num_hidden_layers": 12,
+        "patch_size": 14,
+        "preprocess": {
+          "image_size": 224,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415"
+      },
+      "path": "outputs/runs/ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/embeddings/validation/original.pt",
+      "sha256": "f958ee0c203ea1540dd5c20bd8b9c98b66b599369d0e43f9ec471951b3d4dbcb",
+      "size_bytes": 5732778,
+      "summary": {
+        "average_batch_seconds": 0.288170349382679,
+        "batch_count": 1500,
+        "dataset_size": 1500,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1500,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1500
+        ],
+        "output_path": "outputs/runs/ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/embeddings/validation/original.pt",
+        "successful_samples": 1500,
+        "total_seconds": 432.49944571701053
+      }
+    },
+    "spatial-blur-mid": {
+      "model_metadata": {
+        "checkpoint": "facebook/dinov2-base",
+        "device": "cuda",
+        "encoder_name": "dinov2",
+        "feature_source": "last_hidden_state_cls_token",
+        "frame_aggregation": "mean",
+        "hidden_size": 768,
+        "image_size": 518,
+        "input_spec": {
+          "feature_source": "last_hidden_state_cls_token",
+          "frame_aggregation": "mean",
+          "frame_encoder_layout": "[B*T, C, H, W]",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "model_source": "transformers.Dinov2Model",
+        "model_type": "dinov2",
+        "num_hidden_layers": 12,
+        "patch_size": 14,
+        "preprocess": {
+          "image_size": 224,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415"
+      },
+      "path": "outputs/runs/ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/embeddings/validation/perturbations/spatial-blur-mid.pt",
+      "sha256": "f7a6f35c1b9420d8e3b944964381febbb4372991508d67264345b0be765391e5",
+      "size_bytes": 5905650,
+      "summary": {
+        "average_batch_seconds": 0.32559247199304325,
+        "batch_count": 1500,
+        "dataset_size": 1500,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1500,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1500
+        ],
+        "output_path": "outputs/runs/ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/embeddings/validation/perturbations/spatial-blur-mid.pt",
+        "successful_samples": 1500,
+        "total_seconds": 488.6297946499981
+      }
+    },
+    "temporal-shuffle-mid": {
+      "model_metadata": {
+        "checkpoint": "facebook/dinov2-base",
+        "device": "cuda",
+        "encoder_name": "dinov2",
+        "feature_source": "last_hidden_state_cls_token",
+        "frame_aggregation": "mean",
+        "hidden_size": 768,
+        "image_size": 518,
+        "input_spec": {
+          "feature_source": "last_hidden_state_cls_token",
+          "frame_aggregation": "mean",
+          "frame_encoder_layout": "[B*T, C, H, W]",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "model_source": "transformers.Dinov2Model",
+        "model_type": "dinov2",
+        "num_hidden_layers": 12,
+        "patch_size": 14,
+        "preprocess": {
+          "image_size": 224,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415"
+      },
+      "path": "outputs/runs/ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/embeddings/validation/perturbations/temporal-shuffle-mid.pt",
+      "sha256": "743d09f7379a57e9d5a3c454f55f6a5d64075196ed711f4a6d39f2c05a56d03b",
+      "size_bytes": 5938646,
+      "summary": {
+        "average_batch_seconds": 0.27868697858946206,
+        "batch_count": 1500,
+        "dataset_size": 1500,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1500,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1500
+        ],
+        "output_path": "outputs/runs/ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/embeddings/validation/perturbations/temporal-shuffle-mid.pt",
+        "successful_samples": 1500,
+        "total_seconds": 418.2735161219898
+      }
+    },
+    "train_original": {
+      "model_metadata": {
+        "checkpoint": "facebook/dinov2-base",
+        "device": "cuda",
+        "encoder_name": "dinov2",
+        "feature_source": "last_hidden_state_cls_token",
+        "frame_aggregation": "mean",
+        "hidden_size": 768,
+        "image_size": 518,
+        "input_spec": {
+          "feature_source": "last_hidden_state_cls_token",
+          "frame_aggregation": "mean",
+          "frame_encoder_layout": "[B*T, C, H, W]",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "model_source": "transformers.Dinov2Model",
+        "model_type": "dinov2",
+        "num_hidden_layers": 12,
+        "patch_size": 14,
+        "preprocess": {
+          "image_size": 224,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415"
+      },
+      "path": "outputs/runs/ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/embeddings/train/original.pt",
+      "sha256": "1f02c7495a6fcd0a83814096b6b6e153c768c5c67b56f2e3819bd347de98f44b",
+      "size_bytes": 19036074,
+      "summary": {
+        "average_batch_seconds": 0.2973496090307279,
+        "batch_count": 5000,
+        "dataset_size": 5000,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          5000,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          5000
+        ],
+        "output_path": "outputs/runs/ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/embeddings/train/original.pt",
+        "successful_samples": 5000,
+        "total_seconds": 1487.5938615119958
+      }
+    }
+  },
+  "code_commit": "51f21524927022902c2d2ec94ec4e61e9b8cc78d",
+  "created_at_utc": "2026-07-06T08:52:55.823574+00:00",
+  "evaluation_commands": [
+    [
+      "/home/r/ruan/dev/vrl/.venv/bin/python3",
+      "-m",
+      "src.pipeline.evaluate",
+      "--config",
+      "configs/runs/ssv2_dinov2_linear_probe/ssv2_dinov2_c50_linear_probe_evaluation.json"
+    ]
+  ],
+  "format_version": 1,
+  "hardware": {
+    "environment_recording_policy": "The artifact records the observed encoder device. Scheduler hostnames and GPU model names are intentionally excluded because allocations vary and are not experiment variables.",
+    "note": "The extraction artifact records device at runtime.",
+    "observed_encoder_devices": [
+      "cuda"
+    ]
+  },
+  "manifest_path": "outputs/runs/ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe/manifest.json",
+  "run_id": "ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe"
+}
