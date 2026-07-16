@@ -57,6 +57,48 @@
       "artifact": "embeddings/heldout/perturbations/spatial-blur-mid.pt",
       "group": "appearance",
       "role": "fixed_mid"
+    },
+    {
+      "name": "rgb_quantization",
+      "artifact": "embeddings/heldout/perturbations/rgb-quantization-low.pt",
+      "group": "appearance",
+      "role": "curve",
+      "strength": "low"
+    },
+    {
+      "name": "rgb_quantization",
+      "artifact": "embeddings/heldout/perturbations/rgb-quantization-mid.pt",
+      "group": "appearance",
+      "role": "curve",
+      "strength": "mid"
+    },
+    {
+      "name": "rgb_quantization",
+      "artifact": "embeddings/heldout/perturbations/rgb-quantization-high.pt",
+      "group": "appearance",
+      "role": "curve",
+      "strength": "high"
+    },
+    {
+      "name": "solarization",
+      "artifact": "embeddings/heldout/perturbations/solarization-low.pt",
+      "group": "appearance",
+      "role": "curve",
+      "strength": "low"
+    },
+    {
+      "name": "solarization",
+      "artifact": "embeddings/heldout/perturbations/solarization-mid.pt",
+      "group": "appearance",
+      "role": "curve",
+      "strength": "mid"
+    },
+    {
+      "name": "solarization",
+      "artifact": "embeddings/heldout/perturbations/solarization-high.pt",
+      "group": "appearance",
+      "role": "curve",
+      "strength": "high"
     }
   ],
   "linear_probe": {

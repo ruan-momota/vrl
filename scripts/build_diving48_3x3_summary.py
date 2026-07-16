@@ -4,6 +4,7 @@ import csv
 import html
 import json
 from dataclasses import dataclass
+from datetime import date
 from pathlib import Path
 from typing import Any
 
@@ -255,14 +256,14 @@ def write_fixed_mid_bar_chart(
     title: str,
     y_label: str,
 ) -> None:
-    fixed_rows = [
-        row for row in rows if row["artifact_label"] in {"temporal-shuffle-mid", "spatial-blur-mid"}
-    ]
-    labels = [cell.short_label for cell in CELLS]
     series = {
         "temporal-shuffle-mid": "#2563eb",
         "spatial-blur-mid": "#ea580c",
+        "rgb-quantization-mid": "#16a34a",
+        "solarization-mid": "#9333ea",
     }
+    fixed_rows = [row for row in rows if row["artifact_label"] in series]
+    labels = [cell.short_label for cell in CELLS]
     values_by_label = {
         (row["model"] + " x " + row["dataset"], row["artifact_label"]): float(row[metric])
         for row in fixed_rows
@@ -271,8 +272,8 @@ def write_fixed_mid_bar_chart(
     min_value = min(0.0, min(values))
     max_value = max(values)
 
-    width, height = 1280, 560
-    left, right, top, bottom = 90, 30, 55, 120
+    width, height = 1280, 620
+    left, right, top, bottom = 90, 30, 105, 120
     plot_width = width - left - right
     plot_height = height - top - bottom
     y_min, y_max = padded_range(min_value, max_value)
@@ -284,7 +285,7 @@ def write_fixed_mid_bar_chart(
         return top + (y_max - value) / (y_max - y_min) * plot_height
 
     zero_y = y_for(0.0)
-    bar_width = min(44.0, plot_width / len(labels) / 4.0)
+    bar_width = min(24.0, plot_width / len(labels) / (len(series) + 2.0))
     parts = svg_header(width, height)
     parts.append(text(width / 2, 28, title, size=18, weight="700", anchor="middle"))
     parts.append(text(18, top + plot_height / 2, y_label, size=12, anchor="middle", rotate=-90))
@@ -292,9 +293,10 @@ def write_fixed_mid_bar_chart(
 
     for index, label in enumerate(labels):
         group_center = x_for_group(index)
+        center_offset = (len(series) - 1) / 2.0
         for offset, (artifact_label, color) in enumerate(series.items()):
             value = values_by_label[(label, artifact_label)]
-            x = group_center + (offset - 0.5) * bar_width * 1.2
+            x = group_center + (offset - center_offset) * bar_width * 1.12
             y = min(y_for(value), zero_y)
             bar_height = abs(y_for(value) - zero_y)
             parts.append(
@@ -304,11 +306,11 @@ def write_fixed_mid_bar_chart(
         parts.append(text(group_center, height - 38, label, size=10, anchor="end", rotate=-35))
 
     legend_x = left + 12
-    legend_y = 48
+    legend_y = 68
     for idx, (artifact_label, color) in enumerate(series.items()):
-        y = legend_y + idx * 20
-        parts.append(f'<rect x="{legend_x}" y="{y - 10}" width="12" height="12" fill="{color}" />')
-        parts.append(text(legend_x + 18, y, artifact_label, size=12))
+        x = legend_x + idx * 270
+        parts.append(f'<rect x="{x}" y="{legend_y - 10}" width="12" height="12" fill="{color}" />')
+        parts.append(text(x + 18, legend_y, artifact_label, size=12))
     parts.append("</svg>\n")
     output_path.write_text("\n".join(parts), encoding="utf-8")
 
@@ -321,12 +323,14 @@ def write_strength_curve_chart(
     title: str,
     y_label: str,
 ) -> None:
-    width, height = 1280, 790
+    width, height = 1280, 1490
     parts = svg_header(width, height)
     parts.append(text(width / 2, 28, title, size=18, weight="700", anchor="middle"))
     panel_specs = (
         ("freeze_tail", "Freeze-tail low -> mid -> high", 55),
         ("color_transform", "Color transform low -> mid -> high", 405),
+        ("rgb_quantization", "RGB quantization low -> mid -> high", 755),
+        ("solarization", "Solarization low -> mid -> high", 1105),
     )
     for perturbation, subtitle, top in panel_specs:
         curve_rows = [
@@ -475,7 +479,7 @@ This note summarizes the completed `3 models x 3 datasets` matrix. The added Div
 
 ## Status
 
-- All nine cells have 2 original artifacts and 8 held-out perturbation artifacts.
+- All nine cells have 2 original artifacts and 14 held-out perturbation artifacts.
 - Quality audit overall status: `{quality_ok}`; all three Diving48 runs have 0 failed samples.
 - Diving48 original LP accuracy: VideoMAE {pct(diving_videomae['linear_probe_original_accuracy'])}, SlowFast {pct(diving_slowfast['linear_probe_original_accuracy'])}, DINOv2 {pct(diving_dino['linear_probe_original_accuracy'])}.
 
@@ -503,6 +507,7 @@ This matches the frame-mean DINOv2 expectation: when the same frame set is prese
 - DINOv2 results cannot prove or disprove motion understanding; they mainly quantify how readable the current subsets are from static frame-level representations.
 - The low Diving48 baseline is an important result and should not be optimized away by post-hoc class or quota changes.
 - Representation shift and label-related drop should be reported separately.
+- RGB quantization and solarization results must be interpreted together with the train-only pixel audit; model accuracy was not used to choose their strengths.
 """
 
 
@@ -530,8 +535,12 @@ def build_summary_markdown(
             cell.dataset,
             fmt_float(find_perturbation(perturbations, cell.model, cell.dataset, "temporal-shuffle-mid")["linear_probe_accuracy_drop"]),
             fmt_float(find_perturbation(perturbations, cell.model, cell.dataset, "spatial-blur-mid")["linear_probe_accuracy_drop"]),
+            fmt_float(find_perturbation(perturbations, cell.model, cell.dataset, "rgb-quantization-mid")["linear_probe_accuracy_drop"]),
+            fmt_float(find_perturbation(perturbations, cell.model, cell.dataset, "solarization-mid")["linear_probe_accuracy_drop"]),
             fmt_float(find_perturbation(perturbations, cell.model, cell.dataset, "temporal-shuffle-mid")["mean_cosine_distance"]),
             fmt_float(find_perturbation(perturbations, cell.model, cell.dataset, "spatial-blur-mid")["mean_cosine_distance"]),
+            fmt_float(find_perturbation(perturbations, cell.model, cell.dataset, "rgb-quantization-mid")["mean_cosine_distance"]),
+            fmt_float(find_perturbation(perturbations, cell.model, cell.dataset, "solarization-mid")["mean_cosine_distance"]),
         ]
         for cell in CELLS
     ]
@@ -541,19 +550,32 @@ def build_summary_markdown(
             "Dataset",
             "Temporal shuffle LP drop",
             "Spatial blur LP drop",
+            "RGB quant. LP drop",
+            "Solarization LP drop",
             "Temporal shuffle mean cos.",
             "Spatial blur mean cos.",
+            "RGB quant. mean cos.",
+            "Solarization mean cos.",
         ],
         fixed_rows,
     )
     curve_table = markdown_table(
-        ["Model", "Dataset", "Freeze-tail LP drop low->mid->high", "Color LP drop low->mid->high"],
+        [
+            "Model",
+            "Dataset",
+            "Freeze-tail LP drop low->mid->high",
+            "Color LP drop low->mid->high",
+            "RGB quant. LP drop low->mid->high",
+            "Solarization LP drop low->mid->high",
+        ],
         [
             [
                 cell.model,
                 cell.dataset,
                 curve_string(perturbations, cell.model, cell.dataset, "freeze_tail"),
                 curve_string(perturbations, cell.model, cell.dataset, "color_transform"),
+                curve_string(perturbations, cell.model, cell.dataset, "rgb_quantization"),
+                curve_string(perturbations, cell.model, cell.dataset, "solarization"),
             ]
             for cell in CELLS
         ],
@@ -568,7 +590,7 @@ def build_summary_markdown(
     quality_ok = all(row["quality_ok"] in {True, "True", "true"} for row in quality_rows)
     return f"""# Diving48 3 x 3 Summary
 
-Generated: 2026-07-07
+Generated: {date.today().isoformat()}
 
 This summary reads the nine completed run reports and does not re-extract embeddings. The matrix covers three models, VideoMAE, SlowFast R50 8x8, and DINOv2 frame-mean, across three datasets: SSV2 C50, UCF101 C50, and Diving48 C32.
 
@@ -600,7 +622,7 @@ On Diving48, SlowFast temporal-shuffle representation shift is {fmt_float(diving
 
 {curve_table}
 
-DINOv2 `freeze-tail` changes the frame-content distribution, but that does not imply temporal modeling. `color_transform` mainly increases representation shift, while label drops are usually small. Diving48 strength curves should be read together with the low baseline rather than interpreted from individual drop values alone.
+DINOv2 `freeze-tail` changes the frame-content distribution, but that does not imply temporal modeling. RGB quantization and solarization are stronger photometric interventions whose parameters were frozen using the train-only pixel audit, not model accuracy. Diving48 strength curves should be read together with the low baseline rather than interpreted from individual drop values alone.
 
 ## Figures
 
@@ -608,6 +630,7 @@ DINOv2 `freeze-tail` changes the frame-content distribution, but that does not i
 - `outputs/plots/diving48_3x3/matrix_fixed_mid_representation_shift.svg`
 - `outputs/plots/diving48_3x3/matrix_strength_curves_accuracy_drop.svg`
 - `outputs/plots/diving48_3x3/matrix_strength_curves_representation_shift.svg`
+- `outputs/reports/diving48_3x3/quan_solar_pixel_audit.csv`
 
 ## Conclusions
 

@@ -29,3 +29,16 @@ uv run python -m src.pipeline.extract --run-config configs/runs/diving48_dinov2_
 uv run python -m src.pipeline.extract --run-config configs/runs/diving48_dinov2_linear_probe/diving48_dinov2_c32_heldout_blur_mid.json
 uv run python -m src.pipeline.evaluate --config configs/runs/diving48_dinov2_linear_probe/diving48_dinov2_c32_linear_probe_evaluation.json
 ```
+
+## RGB quantization and solarization
+
+Run these only after the train-only pixel audit freezes the strengths:
+
+```bash
+uv run python -m src.pipeline.extract --run-config configs/runs/diving48_dinov2_linear_probe/diving48_dinov2_c32_heldout_rgb_quantization_low.json
+uv run python -m src.pipeline.extract --run-config configs/runs/diving48_dinov2_linear_probe/diving48_dinov2_c32_heldout_rgb_quantization_mid.json
+uv run python -m src.pipeline.extract --run-config configs/runs/diving48_dinov2_linear_probe/diving48_dinov2_c32_heldout_rgb_quantization_high.json
+uv run python -m src.pipeline.extract --run-config configs/runs/diving48_dinov2_linear_probe/diving48_dinov2_c32_heldout_solarization_low.json
+uv run python -m src.pipeline.extract --run-config configs/runs/diving48_dinov2_linear_probe/diving48_dinov2_c32_heldout_solarization_mid.json
+uv run python -m src.pipeline.extract --run-config configs/runs/diving48_dinov2_linear_probe/diving48_dinov2_c32_heldout_solarization_high.json
+```

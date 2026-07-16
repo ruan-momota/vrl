@@ -47,6 +47,12 @@ PERTURBATION_LABELS = {
     "color-mid",
     "color-high",
     "spatial-blur-mid",
+    "rgb-quantization-low",
+    "rgb-quantization-mid",
+    "rgb-quantization-high",
+    "solarization-low",
+    "solarization-mid",
+    "solarization-high",
 }
 
 
@@ -54,7 +60,7 @@ def test_diving48_extraction_configs_are_complete_and_model_specific() -> None:
     for model_name, expected in MODEL_CONFIGS.items():
         configs = _extraction_configs(expected["directory"], model_name)
 
-        assert len(configs) == 10
+        assert len(configs) == 16
         assert {config.dataset_name for config in configs} == {"diving48"}
         assert {config.subset_id for config in configs} == {SUBSET_ID}
         assert {config.subset_summary_path for config in configs} == {SUBSET_SUMMARY}
@@ -75,14 +81,14 @@ def test_diving48_extraction_configs_are_complete_and_model_specific() -> None:
         train_configs = [config for config in configs if config.split == "train"]
         heldout_configs = [config for config in configs if config.split == "heldout"]
         assert len(train_configs) == 1
-        assert len(heldout_configs) == 9
+        assert len(heldout_configs) == 15
         assert train_configs[0].index_path == TRAIN_INDEX
         assert {config.index_path for config in heldout_configs} == {HELDOUT_INDEX}
 
         perturbation_configs = [
             config for config in configs if config.perturbation["name"] != "none"
         ]
-        assert len(perturbation_configs) == 8
+        assert len(perturbation_configs) == 14
         assert {
             config.perturbation["artifact_label"] for config in perturbation_configs
         } == PERTURBATION_LABELS
@@ -92,7 +98,7 @@ def test_diving48_smoke_configs_are_separate_from_full_runs() -> None:
     for model_name, expected in MODEL_CONFIGS.items():
         smoke_configs = _smoke_configs(expected["directory"], model_name)
 
-        assert len(smoke_configs) == 4
+        assert len(smoke_configs) == 6
         assert {config.dataset_name for config in smoke_configs} == {"diving48"}
         assert {config.subset_id for config in smoke_configs} == {
             "c32_train50_heldout15_smoke"
@@ -109,7 +115,7 @@ def test_diving48_smoke_configs_are_separate_from_full_runs() -> None:
         } == {HELDOUT_INDEX}
 
 
-def test_diving48_evaluation_configs_match_the_eight_heldout_artifacts() -> None:
+def test_diving48_evaluation_configs_match_the_heldout_artifacts() -> None:
     for model_name, expected in MODEL_CONFIGS.items():
         config = RunEvaluationConfig.from_file(
             expected["directory"] / f"diving48_{model_name}_c32_linear_probe_evaluation.json"
@@ -119,7 +125,7 @@ def test_diving48_evaluation_configs_match_the_eight_heldout_artifacts() -> None
         assert config.output_root == "outputs/runs"
         assert config.train_original == "embeddings/train/original.pt"
         assert config.heldout_original == "embeddings/heldout/original.pt"
-        assert len(config.perturbations) == 8
+        assert len(config.perturbations) == 14
         assert config.knn == {"metric": "cosine", "k_values": [5]}
         assert {spec.group for spec in config.perturbations} == {"motion", "appearance"}
         assert {spec.name for spec in config.perturbations} == {
@@ -127,6 +133,8 @@ def test_diving48_evaluation_configs_match_the_eight_heldout_artifacts() -> None
             "freeze_tail",
             "color_transform",
             "spatial_blur",
+            "rgb_quantization",
+            "solarization",
         }
         assert {spec.role for spec in config.perturbations} == {"fixed_mid", "curve"}
         assert {

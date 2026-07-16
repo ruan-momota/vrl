@@ -48,3 +48,16 @@ done
 uv run python -m src.pipeline.evaluate \
   --config configs/runs/ssv2_slowfast_linear_probe/ssv2_slowfast_c50_linear_probe_evaluation.json
 ```
+
+## RGB quantization and solarization
+
+Run these only after the train-only pixel audit freezes the strengths:
+
+```bash
+uv run python -m src.pipeline.extract --run-config configs/runs/ssv2_slowfast_linear_probe/ssv2_slowfast_c50_heldout_rgb_quantization_low.json
+uv run python -m src.pipeline.extract --run-config configs/runs/ssv2_slowfast_linear_probe/ssv2_slowfast_c50_heldout_rgb_quantization_mid.json
+uv run python -m src.pipeline.extract --run-config configs/runs/ssv2_slowfast_linear_probe/ssv2_slowfast_c50_heldout_rgb_quantization_high.json
+uv run python -m src.pipeline.extract --run-config configs/runs/ssv2_slowfast_linear_probe/ssv2_slowfast_c50_heldout_solarization_low.json
+uv run python -m src.pipeline.extract --run-config configs/runs/ssv2_slowfast_linear_probe/ssv2_slowfast_c50_heldout_solarization_mid.json
+uv run python -m src.pipeline.extract --run-config configs/runs/ssv2_slowfast_linear_probe/ssv2_slowfast_c50_heldout_solarization_high.json
+```

@@ -34,7 +34,7 @@ Completed:
 | SlowFast R50 8x8 x Diving48 C32 | Complete | `outputs/runs/diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe/` |
 | DINOv2 frame-mean x Diving48 C32 | Complete | `outputs/runs/diving48-c32-train50-heldout15-dinov2-base-frame-mean-frozen-linear-probe/` |
 
-Latest verification, 2026-07-07:
+Matrix artifact verification, 2026-07-07:
 
 - the primary `3 models x 3 datasets` matrix is complete;
 - all Diving48 full artifacts passed paired alignment checks, with 1,600 train
@@ -42,7 +42,18 @@ Latest verification, 2026-07-07:
 - quality audits report successful extraction and 0 failed samples for the
   Diving48 cells;
 - matrix summary Markdown files in `outputs/reports/diving48_3x3/` are now written in English;
-- full test suite passed: `121 passed`.
+
+Appearance-perturbation extension prepared on 2026-07-17:
+
+- deterministic RGB quantization and solarization implementations and configs
+  have been added;
+- strengths are fixed at 16/8/4 RGB levels and solarization thresholds
+  192/128/64, subject only to the train-only pixel manipulation check;
+- the 54 new held-out embedding artifacts have not yet been extracted, so the
+  results snapshot below still reports the original eight perturbations;
+- CPU/GPU-intensive audit, extraction, and evaluation commands are staged in
+  `sh/quan_solar_slurm.sh` and must run on a compute node.
+- current lightweight verification passed: `123 passed` on 2026-07-17.
 
 Next:
 
@@ -90,6 +101,8 @@ For each completed cell:
   independently at image size 224 before averaging frame CLS embeddings;
 - train artifact: original train embeddings only;
 - held-out artifacts: original held-out plus eight perturbations;
+- extension target: original held-out plus fourteen perturbations after the six
+  RGB-quantization/solarization artifacts are extracted;
 - classifier: train-only frozen linear probe with stratified train/probe-val
   split for L2 selection, then full-train refit;
 - statistics: video-level paired bootstrap with 1,000 resamples and fixed seed;
@@ -103,6 +116,8 @@ Held-out perturbations:
 | motion | `freeze_tail` | low, mid, high |
 | appearance | `color_transform` | low, mid, high |
 | appearance | `spatial_blur` | fixed mid |
+| appearance | `rgb_quantization` | low, mid, high (pending extraction) |
+| appearance | `solarization` | low, mid, high (pending extraction) |
 
 Original and perturbed held-out artifacts must share video IDs, labels, sample
 order, and sampled frame indices.

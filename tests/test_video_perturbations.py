@@ -161,6 +161,86 @@ def test_spatial_blur_preserves_timeline_shape_dtype_and_input() -> None:
     assert result.metadata["blur_kernel_size"] == 3
 
 
+def test_rgb_quantization_uses_uniform_clip_global_levels_and_preserves_input() -> None:
+    frames = np.array(
+        [[[[0, 42, 43], [127, 128, 170], [212, 213, 255]]]],
+        dtype=np.uint8,
+    )
+    original = frames.copy()
+    config = VideoPerturbationConfig(name="rgb_quantization", rgb_levels=4)
+
+    first = apply_video_perturbation(frames, config, video_id="sample")
+    second = apply_video_perturbation(frames, config, video_id="sample")
+
+    expected = np.array(
+        [[[[0, 0, 85], [85, 170, 170], [170, 255, 255]]]],
+        dtype=np.uint8,
+    )
+    assert np.array_equal(first.frames, expected)
+    assert np.array_equal(first.frames, second.frames)
+    assert np.array_equal(frames, original)
+    assert first.frames.shape == frames.shape
+    assert first.frames.dtype == frames.dtype
+    assert first.frames.flags.c_contiguous
+    assert first.metadata["constant_across_frames"] is True
+    assert first.metadata["rgb_levels"] == 4
+
+
+def test_solarization_uses_one_threshold_and_preserves_input() -> None:
+    frames = np.array(
+        [[[[63, 64, 65], [127, 128, 255]]]],
+        dtype=np.uint8,
+    )
+    original = frames.copy()
+    config = VideoPerturbationConfig(name="solarization", solarization_threshold=128)
+
+    result = apply_video_perturbation(frames, config)
+
+    expected = np.array(
+        [[[[63, 64, 65], [127, 127, 0]]]],
+        dtype=np.uint8,
+    )
+    assert np.array_equal(result.frames, expected)
+    assert np.array_equal(frames, original)
+    assert result.frames.shape == frames.shape
+    assert result.frames.dtype == frames.dtype
+    assert result.frames.flags.c_contiguous
+    assert result.metadata["constant_across_frames"] is True
+    assert result.metadata["solarization_threshold"] == 128
+
+
+def test_quantization_and_solarization_strength_increase_rgb_deviation() -> None:
+    gradient = np.arange(256, dtype=np.uint8).reshape(1, 16, 16, 1)
+    frames = np.repeat(gradient, 3, axis=-1)
+
+    quantization_distances = [
+        _mean_rgb_distance(
+            apply_video_perturbation(
+                frames,
+                VideoPerturbationConfig(name="rgb_quantization", rgb_levels=levels),
+            ).frames,
+            frames,
+        )
+        for levels in (16, 8, 4)
+    ]
+    solarization_distances = [
+        _mean_rgb_distance(
+            apply_video_perturbation(
+                frames,
+                VideoPerturbationConfig(
+                    name="solarization",
+                    solarization_threshold=threshold,
+                ),
+            ).frames,
+            frames,
+        )
+        for threshold in (192, 128, 64)
+    ]
+
+    assert quantization_distances[0] < quantization_distances[1] < quantization_distances[2]
+    assert solarization_distances[0] < solarization_distances[1] < solarization_distances[2]
+
+
 @pytest.mark.parametrize(
     ("config", "message"),
     [
@@ -175,6 +255,25 @@ def test_spatial_blur_preserves_timeline_shape_dtype_and_input() -> None:
         (
             VideoPerturbationConfig(name="spatial_blur", blur_kernel_size=2),
             "blur_kernel_size",
+        ),
+        (
+            VideoPerturbationConfig(name="rgb_quantization", rgb_levels=1),
+            "rgb_levels",
+        ),
+        (
+            VideoPerturbationConfig(name="rgb_quantization", rgb_levels=8.5),  # type: ignore[arg-type]
+            "rgb_levels",
+        ),
+        (
+            VideoPerturbationConfig(name="solarization", solarization_threshold=256),
+            "solarization_threshold",
+        ),
+        (
+            VideoPerturbationConfig(
+                name="solarization",
+                solarization_threshold=127.5,  # type: ignore[arg-type]
+            ),
+            "solarization_threshold",
         ),
     ],
 )
@@ -216,6 +315,35 @@ def test_dataset_can_return_perturbed_and_original_clips(tmp_path: Path) -> None
     assert batch["label_ids"].tolist() == [7]
 
 
+def test_dataset_applies_rgb_quantization_without_changing_frame_indices(
+    tmp_path: Path,
+) -> None:
+    video_path = _write_tiny_video(tmp_path / "sample.mp4", frame_count=5)
+    index_path = tmp_path / "index.jsonl"
+    index_path.write_text(
+        '{"video_id": "sample", "video_path": "'
+        + str(video_path)
+        + '", "label_id": 7, "label_name": "Example", "split": "train"}\n',
+        encoding="utf-8",
+    )
+    dataset = IndexedVideoDataset(
+        index_path,
+        num_frames=4,
+        perturbation=VideoPerturbation(
+            VideoPerturbationConfig(name="rgb_quantization", rgb_levels=4)
+        ),
+        include_original_clip=True,
+    )
+
+    item = dataset[0]
+
+    assert item["metadata"]["perturbation"]["name"] == "rgb_quantization"
+    assert item["metadata"]["perturbation"]["rgb_levels"] == 4
+    assert item["metadata"]["frame_indices"] == item["frame_indices"].tolist()
+    assert item["pixel_values"].shape == item["original_pixel_values"].shape
+    assert set(torch.unique(item["pixel_values"]).tolist()) <= {0, 85, 170, 255}
+
+
 def test_dataset_failure_includes_sample_and_perturbation_context(tmp_path: Path) -> None:
     missing_video_path = tmp_path / "missing.mp4"
     index_path = tmp_path / "index.jsonl"
@@ -251,3 +379,7 @@ def _toy_frames(*, frame_count: int) -> np.ndarray:
 
 def _to_channel_mean_tensor(frames: np.ndarray) -> torch.Tensor:
     return torch.from_numpy(frames.mean(axis=(1, 2, 3)).astype(np.float32))
+
+
+def _mean_rgb_distance(first: np.ndarray, second: np.ndarray) -> float:
+    return float(np.abs(first.astype(np.int16) - second.astype(np.int16)).mean())

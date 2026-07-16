@@ -17,11 +17,11 @@ def test_ucf101_extraction_configs_share_one_run_identity() -> None:
         if "smoke" not in path.name and "evaluation" not in path.name
     ]
 
-    assert len(configs) == 10
+    assert len(configs) == 16
     assert {config.dataset_name for config in configs} == {"ucf101"}
     assert {config.resolved_run_id for config in configs} == {RUN_ID}
     assert {config.split for config in configs} == {"train", "heldout"}
-    assert sum(config.perturbation["name"] != "none" for config in configs) == 8
+    assert sum(config.perturbation["name"] != "none" for config in configs) == 14
     assert all(
         config.subset_summary_path
         == "data/ucf101/subsets/c50_train100_heldout30/summary.json"
@@ -29,7 +29,7 @@ def test_ucf101_extraction_configs_share_one_run_identity() -> None:
     )
 
 
-def test_ucf101_evaluation_config_matches_the_eight_heldout_artifacts() -> None:
+def test_ucf101_evaluation_config_matches_the_heldout_artifacts() -> None:
     config = RunEvaluationConfig.from_file(
         CONFIG_DIR / "ucf101_videomae_c50_linear_probe_evaluation.json"
     )
@@ -37,6 +37,6 @@ def test_ucf101_evaluation_config_matches_the_eight_heldout_artifacts() -> None:
     assert config.run_id == RUN_ID
     assert config.train_original == "embeddings/train/original.pt"
     assert config.heldout_original == "embeddings/heldout/original.pt"
-    assert len(config.perturbations) == 8
+    assert len(config.perturbations) == 14
     assert config.knn == {"metric": "cosine", "k_values": [5]}
     assert {spec.group for spec in config.perturbations} == {"motion", "appearance"}

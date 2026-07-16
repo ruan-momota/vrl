@@ -20,6 +20,9 @@ choice needed to reproduce one embedding artifact:
 - `perturbation`: one deterministic intervention plus its serializable
   parameters. `artifact_label` distinguishes repeated variants of the same
   intervention in one run.
+  The quantization extension uses `rgb_levels` (16/8/4 for low/mid/high), and
+  solarization uses `solarization_threshold` (192/128/64). Both mappings are
+  fixed across every frame in a clip.
 - `output_root` and `run_id`: run-scoped artifact location and shared
   experiment identity. Split/index/perturbation are artifact-specific and do
   not create a new run ID.
@@ -29,8 +32,9 @@ choice needed to reproduce one embedding artifact:
 The SSV2 × VideoMAE frozen-linear-probe sensitivity configs are in
 `configs/runs/ssv2_videomae_linear_probe/`:
 
-- two original-artifact configs and eight held-out perturbation configs for
-  SSV2 C50 × frozen VideoMAE;
+- two original-artifact configs and fourteen held-out perturbation configs for
+  SSV2 C50 × frozen VideoMAE; the six quantization/solarization artifacts are
+  pending compute-node extraction;
 - `ssv2_videomae_c50_linear_probe_evaluation.json` configures the train-only linear
   probe, paired bootstrap, auxiliary KNN k=5, and run-scoped reporting.
 
