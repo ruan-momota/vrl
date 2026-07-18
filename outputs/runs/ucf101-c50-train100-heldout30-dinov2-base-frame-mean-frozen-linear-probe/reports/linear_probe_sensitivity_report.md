@@ -14,6 +14,12 @@ This report measures sensitivity to specific interventions. It does not by itsel
 | color-mid | appearance | curve | mid | 0.000745 | 0.000707 | 0.000781 | 0.000000 | 0.000000 | 0.000000 | 0.000000 | 0.000000 |
 | color-high | appearance | curve | high | 0.007478 | 0.007120 | 0.007851 | 0.002000 | 0.000000 | 0.004667 | 0.002000 | -0.000667 |
 | spatial-blur-mid | appearance | fixed_mid |  | 0.039373 | 0.037947 | 0.040932 | 0.002000 | -0.001333 | 0.006000 | 0.004000 | 0.004667 |
+| rgb-quantization-low | appearance | curve | low | 0.021192 | 0.019987 | 0.022414 | 0.000667 | -0.002667 | 0.004000 | 0.002667 | 0.004000 |
+| rgb-quantization-mid | appearance | curve | mid | 0.081287 | 0.077985 | 0.084563 | 0.011333 | 0.004667 | 0.018000 | 0.014000 | 0.008000 |
+| rgb-quantization-high | appearance | curve | high | 0.243048 | 0.236219 | 0.249647 | 0.064667 | 0.051983 | 0.077333 | 0.066667 | 0.034000 |
+| solarization-low | appearance | curve | low | 0.110982 | 0.106594 | 0.115630 | 0.012667 | 0.005333 | 0.020000 | 0.016667 | 0.008000 |
+| solarization-mid | appearance | curve | mid | 0.123449 | 0.118873 | 0.128201 | 0.017333 | 0.009333 | 0.024667 | 0.020000 | 0.007333 |
+| solarization-high | appearance | curve | high | 0.313513 | 0.306568 | 0.320614 | 0.116000 | 0.100667 | 0.133333 | 0.118000 | 0.079333 |
 
 KNN is reported only as an auxiliary cosine k=5 neighbourhood diagnostic. The frozen linear probe is the primary label-related metric.
 
@@ -23,21 +29,21 @@ Largest representation shifts:
 
 | artifact_label | video_id | label_name | cosine_distance | original_prediction | perturbed_prediction | correct_to_incorrect |
 | --- | --- | --- | --- | --- | --- | --- |
-| spatial-blur-mid | v_SalsaSpin_g08_c01 | SalsaSpin | 0.335810 | 39 | 39 | False |
-| spatial-blur-mid | v_JumpRope_g04_c01 | JumpRope | 0.225290 | 24 | 24 | False |
-| spatial-blur-mid | v_Archery_g14_c04 | Archery | 0.213725 | 1 | 1 | False |
-| freeze-tail-high | v_CliffDiving_g02_c01 | CliffDiving | 0.195767 | 14 | 14 | False |
-| spatial-blur-mid | v_Archery_g11_c06 | Archery | 0.191828 | 1 | 1 | False |
+| solarization-high | v_FrontCrawl_g14_c02 | FrontCrawl | 0.840537 | 19 | 14 | True |
+| solarization-high | v_Mixing_g01_c01 | Mixing | 0.824508 | 27 | 18 | True |
+| solarization-high | v_FrontCrawl_g13_c01 | FrontCrawl | 0.816223 | 19 | 14 | True |
+| solarization-high | v_FrontCrawl_g14_c05 | FrontCrawl | 0.801174 | 19 | 17 | True |
+| solarization-high | v_CliffDiving_g19_c06 | CliffDiving | 0.794752 | 14 | 14 | False |
 
 Correct-to-incorrect examples:
 
 | artifact_label | video_id | label_name | cosine_distance | original_prediction | perturbed_prediction |
 | --- | --- | --- | --- | --- | --- |
-| freeze-tail-high | v_Basketball_g06_c04 | Basketball | 0.119759 | 5 | 35 |
-| freeze-tail-high | v_Shotput_g21_c01 | Shotput | 0.110130 | 41 | 26 |
-| spatial-blur-mid | v_HammerThrow_g03_c01 | HammerThrow | 0.087475 | 21 | 42 |
-| spatial-blur-mid | v_PlayingFlute_g18_c02 | PlayingFlute | 0.083627 | 32 | 24 |
-| freeze-tail-high | v_FrontCrawl_g23_c03 | FrontCrawl | 0.079259 | 19 | 17 |
+| solarization-high | v_FrontCrawl_g14_c02 | FrontCrawl | 0.840537 | 19 | 14 |
+| solarization-high | v_Mixing_g01_c01 | Mixing | 0.824508 | 27 | 18 |
+| solarization-high | v_FrontCrawl_g13_c01 | FrontCrawl | 0.816223 | 19 | 14 |
+| solarization-high | v_FrontCrawl_g14_c05 | FrontCrawl | 0.801174 | 19 | 17 |
+| solarization-high | v_BenchPress_g23_c03 | BenchPress | 0.793141 | 7 | 18 |
 
 ## Data quality and failures
 
@@ -56,6 +62,12 @@ All sampled frame-index and sampling-strategy checks passed: True.
 | color-mid | 1500 | 1500 | 0 |
 | color-high | 1500 | 1500 | 0 |
 | spatial-blur-mid | 1500 | 1500 | 0 |
+| rgb-quantization-low | 1500 | 1500 | 0 |
+| rgb-quantization-mid | 1500 | 1500 | 0 |
+| rgb-quantization-high | 1500 | 1500 | 0 |
+| solarization-low | 1500 | 1500 | 0 |
+| solarization-mid | 1500 | 1500 | 0 |
+| solarization-high | 1500 | 1500 | 0 |
 
 ## Interpretation boundaries
 

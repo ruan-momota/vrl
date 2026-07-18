@@ -19,6 +19,8 @@ PerturbationName = Literal[
     "center_occlusion",
     "color_transform",
     "spatial_blur",
+    "rgb_quantization",
+    "solarization",
 ]
 
 
@@ -32,6 +34,8 @@ class VideoPerturbationConfig:
     occlusion_fill_value: int = 0
     color_strength: float = 0.0
     blur_kernel_size: int = 1
+    rgb_levels: int = 0
+    solarization_threshold: int = -1
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -107,6 +111,12 @@ def apply_video_perturbation(
     if config.name == "spatial_blur":
         return _spatial_blur(frames, config)
 
+    if config.name == "rgb_quantization":
+        return _rgb_quantization(frames, config)
+
+    if config.name == "solarization":
+        return _solarization(frames, config)
+
     raise ValueError(f"Unsupported video perturbation: {config.name}")
 
 
@@ -129,6 +139,8 @@ def parse_perturbation_name(value: str) -> PerturbationName:
         "center_occlusion",
         "color_transform",
         "spatial_blur",
+        "rgb_quantization",
+        "solarization",
     }
     if value not in names:
         raise ValueError(f"Unsupported video perturbation: {value}")
@@ -267,6 +279,49 @@ def _spatial_blur(frames: np.ndarray, config: VideoPerturbationConfig) -> Pertur
         blur_kernel_size=kernel_size,
         blur_type="separable_box",
         constant_across_frames=True,
+    )
+
+
+def _rgb_quantization(
+    frames: np.ndarray,
+    config: VideoPerturbationConfig,
+) -> PerturbationResult:
+    """Uniformly quantize each RGB channel with one clip-global mapping."""
+    levels = int(config.rgb_levels)
+    if levels != config.rgb_levels or not 2 <= levels <= 256:
+        raise ValueError("rgb_levels must be an integer between 2 and 256")
+
+    step = 255.0 / float(levels - 1)
+    quantized = np.rint(frames.astype(np.float32) / step) * step
+    perturbed = _restore_frame_dtype(quantized, frames.dtype)
+    return _result(
+        perturbed,
+        config,
+        operation="rgb_quantization",
+        constant_across_frames=True,
+        rgb_levels=levels,
+        quantization_step=step,
+    )
+
+
+def _solarization(
+    frames: np.ndarray,
+    config: VideoPerturbationConfig,
+) -> PerturbationResult:
+    """Invert RGB values at or above one clip-global 8-bit threshold."""
+    threshold = int(config.solarization_threshold)
+    if threshold != config.solarization_threshold or not 0 <= threshold <= 255:
+        raise ValueError("solarization_threshold must be an integer between 0 and 255")
+
+    frames_float = frames.astype(np.float32)
+    solarized = np.where(frames_float < threshold, frames_float, 255.0 - frames_float)
+    perturbed = _restore_frame_dtype(solarized, frames.dtype)
+    return _result(
+        perturbed,
+        config,
+        operation="solarization",
+        constant_across_frames=True,
+        solarization_threshold=threshold,
     )
 
 

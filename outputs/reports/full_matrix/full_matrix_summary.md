@@ -32,15 +32,15 @@ Quality audit overall status across all cells: `True`.
 
 | Model | Dataset | Train n | Heldout n | Embedding dim | LP original acc. | KNN k=5 acc. | Quality OK |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| VideoMAE | SSV2 | 5000 | 1500 | 768 | 25.1% | 9.9% | True |
+| VideoMAE | SSV2 | 5000 | 1500 | 768 | 24.6% | 9.9% | True |
 | VideoMAE | UCF101 | 5000 | 1500 | 768 | 85.3% | 83.6% | True |
-| VideoMAE | Diving48 | 1600 | 480 | 768 | 7.5% | 3.8% | True |
+| VideoMAE | Diving48 | 1600 | 480 | 768 | 7.3% | 3.8% | True |
 | SlowFast R50 8x8 | SSV2 | 5000 | 1500 | 9216 | 33.9% | 20.3% | True |
 | SlowFast R50 8x8 | UCF101 | 5000 | 1500 | 9216 | 99.4% | 99.3% | True |
-| SlowFast R50 8x8 | Diving48 | 1600 | 480 | 9216 | 9.0% | 7.3% | True |
+| SlowFast R50 8x8 | Diving48 | 1600 | 480 | 9216 | 9.4% | 7.3% | True |
 | DINOv2 frame-mean | SSV2 | 5000 | 1500 | 768 | 29.7% | 19.4% | True |
 | DINOv2 frame-mean | UCF101 | 5000 | 1500 | 768 | 99.0% | 97.7% | True |
-| DINOv2 frame-mean | Diving48 | 1600 | 480 | 768 | 8.7% | 9.0% | True |
+| DINOv2 frame-mean | Diving48 | 1600 | 480 | 768 | 9.6% | 9.0% | True |
 | V-JEPA2 | HMDB51 | 3551 | 1524 | 1024 | 62.8% | 46.9% | True |
 | VideoMAE | HMDB51 | 3551 | 1524 | 768 | 36.0% | 16.8% | True |
 | SlowFast R50 8x8 | HMDB51 | 3551 | 1524 | 9216 | 71.9% | 61.4% | True |
@@ -52,15 +52,15 @@ Quality audit overall status across all cells: `True`.
 
 | Model | Dataset | Temporal shuffle LP drop | Spatial blur LP drop | Temporal shuffle mean cos. | Spatial blur mean cos. |
 | --- | --- | --- | --- | --- | --- |
-| VideoMAE | SSV2 | 0.1767 | 0.0273 | 0.0230 | 0.0065 |
+| VideoMAE | SSV2 | 0.1800 | 0.0333 | 0.0230 | 0.0065 |
 | VideoMAE | UCF101 | 0.2493 | 0.2920 | 0.0122 | 0.0094 |
-| VideoMAE | Diving48 | 0.0375 | 0.0188 | 0.0802 | 0.0011 |
+| VideoMAE | Diving48 | 0.0354 | 0.0146 | 0.0802 | 0.0011 |
 | SlowFast R50 8x8 | SSV2 | 0.2053 | 0.0007 | 0.2218 | 0.0761 |
 | SlowFast R50 8x8 | UCF101 | 0.0460 | 0.0140 | 0.1614 | 0.0608 |
-| SlowFast R50 8x8 | Diving48 | 0.0188 | -0.0083 | 0.2053 | 0.0053 |
+| SlowFast R50 8x8 | Diving48 | 0.0229 | -0.0042 | 0.2053 | 0.0053 |
 | DINOv2 frame-mean | SSV2 | 0.0000 | 0.0067 | 3.79e-08 | 0.0483 |
 | DINOv2 frame-mean | UCF101 | 0.0000 | 0.0020 | 3.20e-08 | 0.0394 |
-| DINOv2 frame-mean | Diving48 | 0.0000 | 0.0021 | 3.71e-08 | 0.0033 |
+| DINOv2 frame-mean | Diving48 | 0.0000 | 0.0042 | 3.71e-08 | 0.0033 |
 | V-JEPA2 | HMDB51 | 0.1844 | 0.1404 | 0.0907 | 0.1470 |
 | VideoMAE | HMDB51 | 0.1496 | 0.1437 | 0.0143 | 0.0091 |
 | SlowFast R50 8x8 | HMDB51 | 0.1732 | 0.0433 | 0.2407 | 0.0666 |
@@ -103,11 +103,11 @@ spatial-blur-mid) within each cell:
 | VideoMAE | Kinetics | 0.1913 | 0.0573 | 0.1340 | 2.7789 |
 | DisMo | Kinetics | 0.1680 | 0.0393 | 0.1287 | 5.3939 |
 | SlowFast R50 8x8 | HMDB51 | 0.2113 | 0.0833 | 0.1280 | 1.8530 |
-| VideoMAE | SSV2 | 0.1973 | 0.0833 | 0.1140 | 1.8304 |
-| SlowFast R50 8x8 | Diving48 | 0.0708 | 0.0104 | 0.0604 | 5.2648 |
+| VideoMAE | SSV2 | 0.2027 | 0.0840 | 0.1187 | 1.8304 |
+| SlowFast R50 8x8 | Diving48 | 0.0729 | 0.0125 | 0.0604 | 5.2648 |
 | V-JEPA2 | HMDB51 | 0.2323 | 0.1877 | 0.0446 | -0.6977 |
+| VideoMAE | Diving48 | 0.0562 | 0.0229 | 0.0333 | 6.2328 |
 | SlowFast R50 8x8 | UCF101 | 0.0487 | 0.0160 | 0.0327 | 1.4077 |
-| VideoMAE | Diving48 | 0.0583 | 0.0271 | 0.0312 | 6.2328 |
 | VideoMAE | HMDB51 | 0.1916 | 0.1870 | 0.0046 | 0.6494 |
 | DINOv2 frame-mean | UCF101 | 0.0000 | 0.0040 | -0.0040 | -10.0000 |
 | DINOv2 frame-mean | Diving48 | 0.0000 | 0.0104 | -0.0104 | -10.0000 |
@@ -130,7 +130,7 @@ are not fully apples-to-apples across rows):
 | DisMo | Kinetics | 0.1287 | 5.3939 |
 | SlowFast R50 8x8 | Diving48, HMDB51, SSV2, UCF101 | 0.0974 | 2.5171 |
 | V-JEPA2 | HMDB51, Kinetics | 0.0960 | -0.4541 |
-| VideoMAE | Diving48, HMDB51, Kinetics, SSV2, UCF101 | 0.0501 | 2.3726 |
+| VideoMAE | Diving48, HMDB51, Kinetics, SSV2, UCF101 | 0.0515 | 2.3726 |
 | DINOv2 frame-mean | Diving48, SSV2, UCF101 | -0.0172 | -10.0000 |
 
 Cells where representational and behavioral bias disagree in sign -- a

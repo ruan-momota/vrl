@@ -1,7 +1,6 @@
 # Experiment configs
 
-Legacy extraction configs at this directory's root use the original schema. New
-run-scoped extraction configs live under `configs/runs/` and record every
+Run-scoped extraction configs live under `configs/runs/` and record every
 choice needed to reproduce one embedding artifact:
 
 - `dataset_name`: dataset identifier, for example `ssv2`.
@@ -21,22 +20,21 @@ choice needed to reproduce one embedding artifact:
 - `perturbation`: one deterministic intervention plus its serializable
   parameters. `artifact_label` distinguishes repeated variants of the same
   intervention in one run.
+  The quantization extension uses `rgb_levels` (16/8/4 for low/mid/high), and
+  solarization uses `solarization_threshold` (192/128/64). Both mappings are
+  fixed across every frame in a clip.
 - `output_root` and `run_id`: run-scoped artifact location and shared
   experiment identity. Split/index/perturbation are artifact-specific and do
   not create a new run ID.
 - `seed`: random seed.
 - `deterministic`: whether deterministic behavior is requested.
 
-Additional experiment matrices:
-
-- `ssv2_videomae_perturbation_matrix.json`: first-round validation perturbations
-  and selected strength sweeps for the VideoMAE + local SSV2 experiment.
-
 The SSV2 × VideoMAE frozen-linear-probe sensitivity configs are in
 `configs/runs/ssv2_videomae_linear_probe/`:
 
-- two original-artifact configs and eight held-out perturbation configs for
-  SSV2 C50 × frozen VideoMAE;
+- two original-artifact configs and fourteen held-out perturbation configs for
+  SSV2 C50 × frozen VideoMAE; all six quantization/solarization artifacts have
+  been extracted and evaluated;
 - `ssv2_videomae_c50_linear_probe_evaluation.json` configures the train-only linear
   probe, paired bootstrap, auxiliary KNN k=5, and run-scoped reporting.
 

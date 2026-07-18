@@ -20,11 +20,6 @@ from src.evaluation.knn import (
 from src.evaluation.sensitivity import compute_embedding_distances
 
 
-DEFAULT_MATRIX_PATH = Path("configs/ssv2_videomae_50c_perturbation_matrix.json")
-DEFAULT_OUTPUT_DIR = Path("outputs/logs")
-DEFAULT_REPORT_BASENAME = "ssv2_50c_train100_val30_videomae_base_16f"
-
-
 def evaluate_knn_perturbation_drop(
     *,
     train_artifact: dict[str, Any],
@@ -217,10 +212,10 @@ def build_all_perturbations_knn_drop_summary(
 
 def run_matrix_knn_perturbation_analysis(
     *,
-    matrix_path: str | Path = DEFAULT_MATRIX_PATH,
+    matrix_path: str | Path,
     train_artifact_path: str | Path | None = None,
     original_validation_artifact_path: str | Path | None = None,
-    output_dir: str | Path = DEFAULT_OUTPUT_DIR,
+    output_dir: str | Path,
     metric: DistanceMetric | None = None,
     k_values: list[int] | tuple[int, ...] | None = None,
     query_batch_size: int = 1024,
@@ -297,17 +292,20 @@ def save_json_report(
 
 
 def _report_basename(matrix: dict[str, Any]) -> str:
-    return str(matrix.get("report_basename", DEFAULT_REPORT_BASENAME))
+    value = matrix.get("report_basename") or matrix.get("matrix_name")
+    if value is None:
+        raise ValueError("Matrix must define report_basename or matrix_name")
+    return str(value)
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Compute KNN accuracy drop for first-round perturbation artifacts."
     )
-    parser.add_argument("--matrix", type=Path, default=DEFAULT_MATRIX_PATH)
+    parser.add_argument("--matrix", type=Path, required=True)
     parser.add_argument("--train-artifact", type=Path, default=None)
     parser.add_argument("--original-validation-artifact", type=Path, default=None)
-    parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
+    parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--metric", choices=["cosine", "l2"], default=None)
     parser.add_argument("--k", type=int, nargs="+", default=None)
     parser.add_argument("--query-batch-size", type=int, default=1024)

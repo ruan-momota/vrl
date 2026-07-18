@@ -1,0 +1,3971 @@
+{
+  "decode_failures": [],
+  "policy": {
+    "num_frames": [
+      16,
+      32
+    ],
+    "parameters_frozen_before_model_inference": true,
+    "samples_per_class": 5,
+    "selection": "first decodable samples by stable label_id/video_id order",
+    "split": "train-only"
+  },
+  "rows": [
+    {
+      "affected_value_ratio": 0.0,
+      "artifact_label": "rgb-quantization-high",
+      "changed_value_ratio": 0.9744395200941298,
+      "clips": 160,
+      "dataset": "diving48",
+      "mean_absolute_rgb_difference": 21.68800975672404,
+      "normalized_mean_absolute_rgb_difference": 0.08505101865381975,
+      "num_frames": 16,
+      "output_levels_b": 4,
+      "output_levels_g": 4,
+      "output_levels_r": 4,
+      "perturbation": "rgb_quantization",
+      "rgb_levels": 4,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": -1,
+      "strength": "high"
+    },
+    {
+      "affected_value_ratio": 0.0,
+      "artifact_label": "rgb-quantization-low",
+      "changed_value_ratio": 0.9267669559054904,
+      "clips": 160,
+      "dataset": "diving48",
+      "mean_absolute_rgb_difference": 4.1236553603278265,
+      "normalized_mean_absolute_rgb_difference": 0.016171197491481673,
+      "num_frames": 16,
+      "output_levels_b": 16,
+      "output_levels_g": 16,
+      "output_levels_r": 16,
+      "perturbation": "rgb_quantization",
+      "rgb_levels": 16,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": -1,
+      "strength": "low"
+    },
+    {
+      "affected_value_ratio": 0.0,
+      "artifact_label": "rgb-quantization-mid",
+      "changed_value_ratio": 0.9573971790737575,
+      "clips": 160,
+      "dataset": "diving48",
+      "mean_absolute_rgb_difference": 8.821606973859998,
+      "normalized_mean_absolute_rgb_difference": 0.03459453715239215,
+      "num_frames": 16,
+      "output_levels_b": 8,
+      "output_levels_g": 8,
+      "output_levels_r": 8,
+      "perturbation": "rgb_quantization",
+      "rgb_levels": 8,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": -1,
+      "strength": "mid"
+    },
+    {
+      "affected_value_ratio": 0.7359077440897623,
+      "artifact_label": "solarization-high",
+      "changed_value_ratio": 0.7359077440897623,
+      "clips": 160,
+      "dataset": "diving48",
+      "mean_absolute_rgb_difference": 63.36238937081231,
+      "normalized_mean_absolute_rgb_difference": 0.24847995831691103,
+      "num_frames": 16,
+      "output_levels_b": 192,
+      "output_levels_g": 192,
+      "output_levels_r": 192,
+      "perturbation": "solarization",
+      "rgb_levels": 0,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": 64,
+      "strength": "high"
+    },
+    {
+      "affected_value_ratio": 0.12411593839857313,
+      "artifact_label": "solarization-low",
+      "changed_value_ratio": 0.12411593839857313,
+      "clips": 160,
+      "dataset": "diving48",
+      "mean_absolute_rgb_difference": 25.208133987850612,
+      "normalized_mean_absolute_rgb_difference": 0.09885542740333574,
+      "num_frames": 16,
+      "output_levels_b": 192,
+      "output_levels_g": 192,
+      "output_levels_r": 192,
+      "perturbation": "solarization",
+      "rgb_levels": 0,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": 192,
+      "strength": "low"
+    },
+    {
+      "affected_value_ratio": 0.33991552522447377,
+      "artifact_label": "solarization-mid",
+      "changed_value_ratio": 0.33991552522447377,
+      "clips": 160,
+      "dataset": "diving48",
+      "mean_absolute_rgb_difference": 36.99997203530206,
+      "normalized_mean_absolute_rgb_difference": 0.14509792955020415,
+      "num_frames": 16,
+      "output_levels_b": 128,
+      "output_levels_g": 128,
+      "output_levels_r": 128,
+      "perturbation": "solarization",
+      "rgb_levels": 0,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": 128,
+      "strength": "mid"
+    },
+    {
+      "affected_value_ratio": 0.0,
+      "artifact_label": "rgb-quantization-high",
+      "changed_value_ratio": 0.9743788513607449,
+      "clips": 160,
+      "dataset": "diving48",
+      "mean_absolute_rgb_difference": 21.733962868584527,
+      "normalized_mean_absolute_rgb_difference": 0.0852312269356256,
+      "num_frames": 32,
+      "output_levels_b": 4,
+      "output_levels_g": 4,
+      "output_levels_r": 4,
+      "perturbation": "rgb_quantization",
+      "rgb_levels": 4,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": -1,
+      "strength": "high"
+    },
+    {
+      "affected_value_ratio": 0.0,
+      "artifact_label": "rgb-quantization-low",
+      "changed_value_ratio": 0.9265461224450006,
+      "clips": 160,
+      "dataset": "diving48",
+      "mean_absolute_rgb_difference": 4.123021116256714,
+      "normalized_mean_absolute_rgb_difference": 0.01616871025983025,
+      "num_frames": 32,
+      "output_levels_b": 16,
+      "output_levels_g": 16,
+      "output_levels_r": 16,
+      "perturbation": "rgb_quantization",
+      "rgb_levels": 16,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": -1,
+      "strength": "low"
+    },
+    {
+      "affected_value_ratio": 0.0,
+      "artifact_label": "rgb-quantization-mid",
+      "changed_value_ratio": 0.9571137909359402,
+      "clips": 160,
+      "dataset": "diving48",
+      "mean_absolute_rgb_difference": 8.817983920839097,
+      "normalized_mean_absolute_rgb_difference": 0.03458032910132979,
+      "num_frames": 32,
+      "output_levels_b": 8,
+      "output_levels_g": 8,
+      "output_levels_r": 8,
+      "perturbation": "rgb_quantization",
+      "rgb_levels": 8,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": -1,
+      "strength": "mid"
+    },
+    {
+      "affected_value_ratio": 0.7391765335930718,
+      "artifact_label": "solarization-high",
+      "changed_value_ratio": 0.7391765335930718,
+      "clips": 160,
+      "dataset": "diving48",
+      "mean_absolute_rgb_difference": 63.47437964079115,
+      "normalized_mean_absolute_rgb_difference": 0.2489191358462398,
+      "num_frames": 32,
+      "output_levels_b": 192,
+      "output_levels_g": 192,
+      "output_levels_r": 192,
+      "perturbation": "solarization",
+      "rgb_levels": 0,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": 64,
+      "strength": "high"
+    },
+    {
+      "affected_value_ratio": 0.12572157287597657,
+      "artifact_label": "solarization-low",
+      "changed_value_ratio": 0.12572157287597657,
+      "clips": 160,
+      "dataset": "diving48",
+      "mean_absolute_rgb_difference": 25.458055999332004,
+      "normalized_mean_absolute_rgb_difference": 0.0998355137228706,
+      "num_frames": 32,
+      "output_levels_b": 192,
+      "output_levels_g": 192,
+      "output_levels_r": 192,
+      "perturbation": "solarization",
+      "rgb_levels": 0,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": 192,
+      "strength": "low"
+    },
+    {
+      "affected_value_ratio": 0.3463197337256538,
+      "artifact_label": "solarization-mid",
+      "changed_value_ratio": 0.3463197337256538,
+      "clips": 160,
+      "dataset": "diving48",
+      "mean_absolute_rgb_difference": 37.514452956093685,
+      "normalized_mean_absolute_rgb_difference": 0.1471155017886027,
+      "num_frames": 32,
+      "output_levels_b": 128,
+      "output_levels_g": 128,
+      "output_levels_r": 128,
+      "perturbation": "solarization",
+      "rgb_levels": 0,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": 128,
+      "strength": "mid"
+    },
+    {
+      "affected_value_ratio": 0.0,
+      "artifact_label": "rgb-quantization-high",
+      "changed_value_ratio": 0.9441190283469082,
+      "clips": 250,
+      "dataset": "ssv2",
+      "mean_absolute_rgb_difference": 20.41138303685857,
+      "normalized_mean_absolute_rgb_difference": 0.0800446393602297,
+      "num_frames": 16,
+      "output_levels_b": 4,
+      "output_levels_g": 4,
+      "output_levels_r": 4,
+      "perturbation": "rgb_quantization",
+      "rgb_levels": 4,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": -1,
+      "strength": "high"
+    },
+    {
+      "affected_value_ratio": 0.0,
+      "artifact_label": "rgb-quantization-low",
+      "changed_value_ratio": 0.8982525071598005,
+      "clips": 250,
+      "dataset": "ssv2",
+      "mean_absolute_rgb_difference": 4.045088070289708,
+      "normalized_mean_absolute_rgb_difference": 0.015863090471724347,
+      "num_frames": 16,
+      "output_levels_b": 16,
+      "output_levels_g": 16,
+      "output_levels_r": 16,
+      "perturbation": "rgb_quantization",
+      "rgb_levels": 16,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": -1,
+      "strength": "low"
+    },
+    {
+      "affected_value_ratio": 0.0,
+      "artifact_label": "rgb-quantization-mid",
+      "changed_value_ratio": 0.9283471707545685,
+      "clips": 250,
+      "dataset": "ssv2",
+      "mean_absolute_rgb_difference": 8.690028532929462,
+      "normalized_mean_absolute_rgb_difference": 0.034078543266390045,
+      "num_frames": 16,
+      "output_levels_b": 8,
+      "output_levels_g": 8,
+      "output_levels_r": 8,
+      "perturbation": "rgb_quantization",
+      "rgb_levels": 8,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": -1,
+      "strength": "mid"
+    },
+    {
+      "affected_value_ratio": 0.6967015338063439,
+      "artifact_label": "solarization-high",
+      "changed_value_ratio": 0.6967015338063439,
+      "clips": 250,
+      "dataset": "ssv2",
+      "mean_absolute_rgb_difference": 59.512890589429354,
+      "normalized_mean_absolute_rgb_difference": 0.23338388466442883,
+      "num_frames": 16,
+      "output_levels_b": 192,
+      "output_levels_g": 192,
+      "output_levels_r": 192,
+      "perturbation": "solarization",
+      "rgb_levels": 0,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": 64,
+      "strength": "high"
+    },
+    {
+      "affected_value_ratio": 0.13696066553824274,
+      "artifact_label": "solarization-low",
+      "changed_value_ratio": 0.13696066553824274,
+      "clips": 250,
+      "dataset": "ssv2",
+      "mean_absolute_rgb_difference": 25.347770121744716,
+      "normalized_mean_absolute_rgb_difference": 0.0994030200852734,
+      "num_frames": 16,
+      "output_levels_b": 192,
+      "output_levels_g": 192,
+      "output_levels_r": 192,
+      "perturbation": "solarization",
+      "rgb_levels": 0,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": 192,
+      "strength": "low"
+    },
+    {
+      "affected_value_ratio": 0.4280356386275105,
+      "artifact_label": "solarization-mid",
+      "changed_value_ratio": 0.4280356386275105,
+      "clips": 250,
+      "dataset": "ssv2",
+      "mean_absolute_rgb_difference": 43.012672512373314,
+      "normalized_mean_absolute_rgb_difference": 0.16867714710734633,
+      "num_frames": 16,
+      "output_levels_b": 128,
+      "output_levels_g": 128,
+      "output_levels_r": 128,
+      "perturbation": "solarization",
+      "rgb_levels": 0,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": 128,
+      "strength": "mid"
+    },
+    {
+      "affected_value_ratio": 0.0,
+      "artifact_label": "rgb-quantization-high",
+      "changed_value_ratio": 0.944888637522976,
+      "clips": 250,
+      "dataset": "ssv2",
+      "mean_absolute_rgb_difference": 20.476393515707997,
+      "normalized_mean_absolute_rgb_difference": 0.08029958241454116,
+      "num_frames": 32,
+      "output_levels_b": 4,
+      "output_levels_g": 4,
+      "output_levels_r": 4,
+      "perturbation": "rgb_quantization",
+      "rgb_levels": 4,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": -1,
+      "strength": "high"
+    },
+    {
+      "affected_value_ratio": 0.0,
+      "artifact_label": "rgb-quantization-low",
+      "changed_value_ratio": 0.8989055236561497,
+      "clips": 250,
+      "dataset": "ssv2",
+      "mean_absolute_rgb_difference": 4.046909193053939,
+      "normalized_mean_absolute_rgb_difference": 0.015870232129623293,
+      "num_frames": 32,
+      "output_levels_b": 16,
+      "output_levels_g": 16,
+      "output_levels_r": 16,
+      "perturbation": "rgb_quantization",
+      "rgb_levels": 16,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": -1,
+      "strength": "low"
+    },
+    {
+      "affected_value_ratio": 0.0,
+      "artifact_label": "rgb-quantization-mid",
+      "changed_value_ratio": 0.9290652718756851,
+      "clips": 250,
+      "dataset": "ssv2",
+      "mean_absolute_rgb_difference": 8.702999539689465,
+      "normalized_mean_absolute_rgb_difference": 0.03412940995956653,
+      "num_frames": 32,
+      "output_levels_b": 8,
+      "output_levels_g": 8,
+      "output_levels_r": 8,
+      "perturbation": "rgb_quantization",
+      "rgb_levels": 8,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": -1,
+      "strength": "mid"
+    },
+    {
+      "affected_value_ratio": 0.6967747149254088,
+      "artifact_label": "solarization-high",
+      "changed_value_ratio": 0.6967747149254088,
+      "clips": 250,
+      "dataset": "ssv2",
+      "mean_absolute_rgb_difference": 59.33017954526132,
+      "normalized_mean_absolute_rgb_difference": 0.23266737076573069,
+      "num_frames": 32,
+      "output_levels_b": 192,
+      "output_levels_g": 192,
+      "output_levels_r": 192,
+      "perturbation": "solarization",
+      "rgb_levels": 0,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": 64,
+      "strength": "high"
+    },
+    {
+      "affected_value_ratio": 0.13647019680317363,
+      "artifact_label": "solarization-low",
+      "changed_value_ratio": 0.13647019680317363,
+      "clips": 250,
+      "dataset": "ssv2",
+      "mean_absolute_rgb_difference": 25.137996321643676,
+      "normalized_mean_absolute_rgb_difference": 0.09858037773193598,
+      "num_frames": 32,
+      "output_levels_b": 192,
+      "output_levels_g": 192,
+      "output_levels_r": 192,
+      "perturbation": "solarization",
+      "rgb_levels": 0,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": 192,
+      "strength": "low"
+    },
+    {
+      "affected_value_ratio": 0.4291053406737098,
+      "artifact_label": "solarization-mid",
+      "changed_value_ratio": 0.4291053406737098,
+      "clips": 250,
+      "dataset": "ssv2",
+      "mean_absolute_rgb_difference": 42.945647830647175,
+      "normalized_mean_absolute_rgb_difference": 0.1684143052182242,
+      "num_frames": 32,
+      "output_levels_b": 128,
+      "output_levels_g": 128,
+      "output_levels_r": 128,
+      "perturbation": "solarization",
+      "rgb_levels": 0,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": 128,
+      "strength": "mid"
+    },
+    {
+      "affected_value_ratio": 0.0,
+      "artifact_label": "rgb-quantization-high",
+      "changed_value_ratio": 0.871426171875,
+      "clips": 250,
+      "dataset": "ucf101",
+      "mean_absolute_rgb_difference": 18.592199835069444,
+      "normalized_mean_absolute_rgb_difference": 0.07291058758850762,
+      "num_frames": 16,
+      "output_levels_b": 4,
+      "output_levels_g": 4,
+      "output_levels_r": 4,
+      "perturbation": "rgb_quantization",
+      "rgb_levels": 4,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": -1,
+      "strength": "high"
+    },
+    {
+      "affected_value_ratio": 0.0,
+      "artifact_label": "rgb-quantization-low",
+      "changed_value_ratio": 0.8303105859375,
+      "clips": 250,
+      "dataset": "ucf101",
+      "mean_absolute_rgb_difference": 3.7080870301649305,
+      "normalized_mean_absolute_rgb_difference": 0.014541517765352669,
+      "num_frames": 16,
+      "output_levels_b": 16,
+      "output_levels_g": 16,
+      "output_levels_r": 16,
+      "perturbation": "rgb_quantization",
+      "rgb_levels": 16,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": -1,
+      "strength": "low"
+    },
+    {
+      "affected_value_ratio": 0.0,
+      "artifact_label": "rgb-quantization-mid",
+      "changed_value_ratio": 0.8576716710069444,
+      "clips": 250,
+      "dataset": "ucf101",
+      "mean_absolute_rgb_difference": 7.99938916015625,
+      "normalized_mean_absolute_rgb_difference": 0.031370153569240194,
+      "num_frames": 16,
+      "output_levels_b": 8,
+      "output_levels_g": 8,
+      "output_levels_r": 8,
+      "perturbation": "rgb_quantization",
+      "rgb_levels": 8,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": -1,
+      "strength": "mid"
+    },
+    {
+      "affected_value_ratio": 0.6505086848958334,
+      "artifact_label": "solarization-high",
+      "changed_value_ratio": 0.6505086848958334,
+      "clips": 250,
+      "dataset": "ucf101",
+      "mean_absolute_rgb_difference": 54.479977491319445,
+      "normalized_mean_absolute_rgb_difference": 0.2136469705541939,
+      "num_frames": 16,
+      "output_levels_b": 192,
+      "output_levels_g": 192,
+      "output_levels_r": 192,
+      "perturbation": "solarization",
+      "rgb_levels": 0,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": 64,
+      "strength": "high"
+    },
+    {
+      "affected_value_ratio": 0.11477658637152778,
+      "artifact_label": "solarization-low",
+      "changed_value_ratio": 0.11477658637152778,
+      "clips": 250,
+      "dataset": "ucf101",
+      "mean_absolute_rgb_difference": 22.806572526041666,
+      "normalized_mean_absolute_rgb_difference": 0.08943753931781045,
+      "num_frames": 16,
+      "output_levels_b": 192,
+      "output_levels_g": 192,
+      "output_levels_r": 192,
+      "perturbation": "solarization",
+      "rgb_levels": 0,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": 192,
+      "strength": "low"
+    },
+    {
+      "affected_value_ratio": 0.34185619466145833,
+      "artifact_label": "solarization-mid",
+      "changed_value_ratio": 0.34185619466145833,
+      "clips": 250,
+      "dataset": "ucf101",
+      "mean_absolute_rgb_difference": 34.82790333875868,
+      "normalized_mean_absolute_rgb_difference": 0.1365800130931713,
+      "num_frames": 16,
+      "output_levels_b": 128,
+      "output_levels_g": 128,
+      "output_levels_r": 128,
+      "perturbation": "solarization",
+      "rgb_levels": 0,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": 128,
+      "strength": "mid"
+    },
+    {
+      "affected_value_ratio": 0.0,
+      "artifact_label": "rgb-quantization-high",
+      "changed_value_ratio": 0.87154498046875,
+      "clips": 250,
+      "dataset": "ucf101",
+      "mean_absolute_rgb_difference": 18.596285468207466,
+      "normalized_mean_absolute_rgb_difference": 0.07292660967924497,
+      "num_frames": 32,
+      "output_levels_b": 4,
+      "output_levels_g": 4,
+      "output_levels_r": 4,
+      "perturbation": "rgb_quantization",
+      "rgb_levels": 4,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": -1,
+      "strength": "high"
+    },
+    {
+      "affected_value_ratio": 0.0,
+      "artifact_label": "rgb-quantization-low",
+      "changed_value_ratio": 0.8303796397569444,
+      "clips": 250,
+      "dataset": "ucf101",
+      "mean_absolute_rgb_difference": 3.7080454909939236,
+      "normalized_mean_absolute_rgb_difference": 0.014541354866642837,
+      "num_frames": 32,
+      "output_levels_b": 16,
+      "output_levels_g": 16,
+      "output_levels_r": 16,
+      "perturbation": "rgb_quantization",
+      "rgb_levels": 16,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": -1,
+      "strength": "low"
+    },
+    {
+      "affected_value_ratio": 0.0,
+      "artifact_label": "rgb-quantization-mid",
+      "changed_value_ratio": 0.8578139567057291,
+      "clips": 250,
+      "dataset": "ucf101",
+      "mean_absolute_rgb_difference": 8.004024132486979,
+      "normalized_mean_absolute_rgb_difference": 0.031388329931321485,
+      "num_frames": 32,
+      "output_levels_b": 8,
+      "output_levels_g": 8,
+      "output_levels_r": 8,
+      "perturbation": "rgb_quantization",
+      "rgb_levels": 8,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": -1,
+      "strength": "mid"
+    },
+    {
+      "affected_value_ratio": 0.6494459391276042,
+      "artifact_label": "solarization-high",
+      "changed_value_ratio": 0.6494459391276042,
+      "clips": 250,
+      "dataset": "ucf101",
+      "mean_absolute_rgb_difference": 54.318275281575524,
+      "normalized_mean_absolute_rgb_difference": 0.21301284424147265,
+      "num_frames": 32,
+      "output_levels_b": 192,
+      "output_levels_g": 192,
+      "output_levels_r": 192,
+      "perturbation": "solarization",
+      "rgb_levels": 0,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": 64,
+      "strength": "high"
+    },
+    {
+      "affected_value_ratio": 0.113847314453125,
+      "artifact_label": "solarization-low",
+      "changed_value_ratio": 0.113847314453125,
+      "clips": 250,
+      "dataset": "ucf101",
+      "mean_absolute_rgb_difference": 22.621667662760416,
+      "normalized_mean_absolute_rgb_difference": 0.08871242220690359,
+      "num_frames": 32,
+      "output_levels_b": 192,
+      "output_levels_g": 192,
+      "output_levels_r": 192,
+      "perturbation": "solarization",
+      "rgb_levels": 0,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": 192,
+      "strength": "low"
+    },
+    {
+      "affected_value_ratio": 0.3409429855685764,
+      "artifact_label": "solarization-mid",
+      "changed_value_ratio": 0.3409429855685764,
+      "clips": 250,
+      "dataset": "ucf101",
+      "mean_absolute_rgb_difference": 34.653155483398436,
+      "normalized_mean_absolute_rgb_difference": 0.1358947273858762,
+      "num_frames": 32,
+      "output_levels_b": 128,
+      "output_levels_g": 128,
+      "output_levels_r": 128,
+      "perturbation": "solarization",
+      "rgb_levels": 0,
+      "shape_dtype_timeline_ok": true,
+      "solarization_threshold": 128,
+      "strength": "mid"
+    }
+  ],
+  "selected_samples": {
+    "diving48": [
+      {
+        "label_id": 0,
+        "video_id": "train_00_5V-dKBtmKLI_00086",
+        "video_path": "data/diving48/videos/train/00_oldlabel_00_Back_15som_05Twis_FREE/5V-dKBtmKLI_00086.mp4"
+      },
+      {
+        "label_id": 0,
+        "video_id": "train_00_D8YKHC5hmUs_00172",
+        "video_path": "data/diving48/videos/train/00_oldlabel_00_Back_15som_05Twis_FREE/D8YKHC5hmUs_00172.mp4"
+      },
+      {
+        "label_id": 0,
+        "video_id": "train_00_D8YKHC5hmUs_00175",
+        "video_path": "data/diving48/videos/train/00_oldlabel_00_Back_15som_05Twis_FREE/D8YKHC5hmUs_00175.mp4"
+      },
+      {
+        "label_id": 0,
+        "video_id": "train_00_D8YKHC5hmUs_00214",
+        "video_path": "data/diving48/videos/train/00_oldlabel_00_Back_15som_05Twis_FREE/D8YKHC5hmUs_00214.mp4"
+      },
+      {
+        "label_id": 0,
+        "video_id": "train_00_JzOshOJgofw_00078",
+        "video_path": "data/diving48/videos/train/00_oldlabel_00_Back_15som_05Twis_FREE/JzOshOJgofw_00078.mp4"
+      },
+      {
+        "label_id": 1,
+        "video_id": "train_01_3qq031609lA_00032",
+        "video_path": "data/diving48/videos/train/01_oldlabel_01_Back_15som_15Twis_FREE/3qq031609lA_00032.mp4"
+      },
+      {
+        "label_id": 1,
+        "video_id": "train_01_5i1begTTucc_00077",
+        "video_path": "data/diving48/videos/train/01_oldlabel_01_Back_15som_15Twis_FREE/5i1begTTucc_00077.mp4"
+      },
+      {
+        "label_id": 1,
+        "video_id": "train_01_9jZYYtzYqwE_00090",
+        "video_path": "data/diving48/videos/train/01_oldlabel_01_Back_15som_15Twis_FREE/9jZYYtzYqwE_00090.mp4"
+      },
+      {
+        "label_id": 1,
+        "video_id": "train_01_D8YKHC5hmUs_00250",
+        "video_path": "data/diving48/videos/train/01_oldlabel_01_Back_15som_15Twis_FREE/D8YKHC5hmUs_00250.mp4"
+      },
+      {
+        "label_id": 1,
+        "video_id": "train_01_D8YKHC5hmUs_00251",
+        "video_path": "data/diving48/videos/train/01_oldlabel_01_Back_15som_15Twis_FREE/D8YKHC5hmUs_00251.mp4"
+      },
+      {
+        "label_id": 2,
+        "video_id": "train_02_-mmq0PT-u8k_00052",
+        "video_path": "data/diving48/videos/train/02_oldlabel_03_Back_15som_NoTwis_PIKE/-mmq0PT-u8k_00052.mp4"
+      },
+      {
+        "label_id": 2,
+        "video_id": "train_02_-mmq0PT-u8k_00063",
+        "video_path": "data/diving48/videos/train/02_oldlabel_03_Back_15som_NoTwis_PIKE/-mmq0PT-u8k_00063.mp4"
+      },
+      {
+        "label_id": 2,
+        "video_id": "train_02_-mmq0PT-u8k_00068",
+        "video_path": "data/diving48/videos/train/02_oldlabel_03_Back_15som_NoTwis_PIKE/-mmq0PT-u8k_00068.mp4"
+      },
+      {
+        "label_id": 2,
+        "video_id": "train_02_-mmq0PT-u8k_00070",
+        "video_path": "data/diving48/videos/train/02_oldlabel_03_Back_15som_NoTwis_PIKE/-mmq0PT-u8k_00070.mp4"
+      },
+      {
+        "label_id": 2,
+        "video_id": "train_02_-mmq0PT-u8k_00082",
+        "video_path": "data/diving48/videos/train/02_oldlabel_03_Back_15som_NoTwis_PIKE/-mmq0PT-u8k_00082.mp4"
+      },
+      {
+        "label_id": 3,
+        "video_id": "train_03_3N1kUtqJ25A_00237",
+        "video_path": "data/diving48/videos/train/03_oldlabel_05_Back_25som_15Twis_PIKE/3N1kUtqJ25A_00237.mp4"
+      },
+      {
+        "label_id": 3,
+        "video_id": "train_03_3N1kUtqJ25A_00253",
+        "video_path": "data/diving48/videos/train/03_oldlabel_05_Back_25som_15Twis_PIKE/3N1kUtqJ25A_00253.mp4"
+      },
+      {
+        "label_id": 3,
+        "video_id": "train_03_3PLiUG_DuC8_00071",
+        "video_path": "data/diving48/videos/train/03_oldlabel_05_Back_25som_15Twis_PIKE/3PLiUG_DuC8_00071.mp4"
+      },
+      {
+        "label_id": 3,
+        "video_id": "train_03_5V-dKBtmKLI_00036",
+        "video_path": "data/diving48/videos/train/03_oldlabel_05_Back_25som_15Twis_PIKE/5V-dKBtmKLI_00036.mp4"
+      },
+      {
+        "label_id": 3,
+        "video_id": "train_03_D6zILEKIJbk_00163",
+        "video_path": "data/diving48/videos/train/03_oldlabel_05_Back_25som_15Twis_PIKE/D6zILEKIJbk_00163.mp4"
+      },
+      {
+        "label_id": 4,
+        "video_id": "train_04_5V-dKBtmKLI_00070",
+        "video_path": "data/diving48/videos/train/04_oldlabel_06_Back_25som_25Twis_PIKE/5V-dKBtmKLI_00070.mp4"
+      },
+      {
+        "label_id": 4,
+        "video_id": "train_04_LNMISxO35S0_00165",
+        "video_path": "data/diving48/videos/train/04_oldlabel_06_Back_25som_25Twis_PIKE/LNMISxO35S0_00165.mp4"
+      },
+      {
+        "label_id": 4,
+        "video_id": "train_04_LNMISxO35S0_00168",
+        "video_path": "data/diving48/videos/train/04_oldlabel_06_Back_25som_25Twis_PIKE/LNMISxO35S0_00168.mp4"
+      },
+      {
+        "label_id": 4,
+        "video_id": "train_04_Q--70-ELqLw_00154",
+        "video_path": "data/diving48/videos/train/04_oldlabel_06_Back_25som_25Twis_PIKE/Q--70-ELqLw_00154.mp4"
+      },
+      {
+        "label_id": 4,
+        "video_id": "train_04_Q--70-ELqLw_00167",
+        "video_path": "data/diving48/videos/train/04_oldlabel_06_Back_25som_25Twis_PIKE/Q--70-ELqLw_00167.mp4"
+      },
+      {
+        "label_id": 5,
+        "video_id": "train_05_3PLiUG_DuC8_00059",
+        "video_path": "data/diving48/videos/train/05_oldlabel_07_Back_25som_NoTwis_PIKE/3PLiUG_DuC8_00059.mp4"
+      },
+      {
+        "label_id": 5,
+        "video_id": "train_05_3PLiUG_DuC8_00076",
+        "video_path": "data/diving48/videos/train/05_oldlabel_07_Back_25som_NoTwis_PIKE/3PLiUG_DuC8_00076.mp4"
+      },
+      {
+        "label_id": 5,
+        "video_id": "train_05_3PLiUG_DuC8_00242",
+        "video_path": "data/diving48/videos/train/05_oldlabel_07_Back_25som_NoTwis_PIKE/3PLiUG_DuC8_00242.mp4"
+      },
+      {
+        "label_id": 5,
+        "video_id": "train_05_6wVdnLa3Tes_00161",
+        "video_path": "data/diving48/videos/train/05_oldlabel_07_Back_25som_NoTwis_PIKE/6wVdnLa3Tes_00161.mp4"
+      },
+      {
+        "label_id": 5,
+        "video_id": "train_05_9BC6ssCjyfg_00045",
+        "video_path": "data/diving48/videos/train/05_oldlabel_07_Back_25som_NoTwis_PIKE/9BC6ssCjyfg_00045.mp4"
+      },
+      {
+        "label_id": 6,
+        "video_id": "train_06_3N1kUtqJ25A_00089",
+        "video_path": "data/diving48/videos/train/06_oldlabel_08_Back_25som_NoTwis_TUCK/3N1kUtqJ25A_00089.mp4"
+      },
+      {
+        "label_id": 6,
+        "video_id": "train_06_5hXbclLNSNA_00031",
+        "video_path": "data/diving48/videos/train/06_oldlabel_08_Back_25som_NoTwis_TUCK/5hXbclLNSNA_00031.mp4"
+      },
+      {
+        "label_id": 6,
+        "video_id": "train_06_5hXbclLNSNA_00040",
+        "video_path": "data/diving48/videos/train/06_oldlabel_08_Back_25som_NoTwis_TUCK/5hXbclLNSNA_00040.mp4"
+      },
+      {
+        "label_id": 6,
+        "video_id": "train_06_5i1begTTucc_00042",
+        "video_path": "data/diving48/videos/train/06_oldlabel_08_Back_25som_NoTwis_TUCK/5i1begTTucc_00042.mp4"
+      },
+      {
+        "label_id": 6,
+        "video_id": "train_06_5i1begTTucc_00043",
+        "video_path": "data/diving48/videos/train/06_oldlabel_08_Back_25som_NoTwis_TUCK/5i1begTTucc_00043.mp4"
+      },
+      {
+        "label_id": 7,
+        "video_id": "train_07_LNMISxO35S0_00127",
+        "video_path": "data/diving48/videos/train/07_oldlabel_10_Back_2som_25Twis_FREE/LNMISxO35S0_00127.mp4"
+      },
+      {
+        "label_id": 7,
+        "video_id": "train_07_LNMISxO35S0_00161",
+        "video_path": "data/diving48/videos/train/07_oldlabel_10_Back_2som_25Twis_FREE/LNMISxO35S0_00161.mp4"
+      },
+      {
+        "label_id": 7,
+        "video_id": "train_07_LNMISxO35S0_00195",
+        "video_path": "data/diving48/videos/train/07_oldlabel_10_Back_2som_25Twis_FREE/LNMISxO35S0_00195.mp4"
+      },
+      {
+        "label_id": 7,
+        "video_id": "train_07_Q--70-ELqLw_00115",
+        "video_path": "data/diving48/videos/train/07_oldlabel_10_Back_2som_25Twis_FREE/Q--70-ELqLw_00115.mp4"
+      },
+      {
+        "label_id": 7,
+        "video_id": "train_07_Q--70-ELqLw_00116",
+        "video_path": "data/diving48/videos/train/07_oldlabel_10_Back_2som_25Twis_FREE/Q--70-ELqLw_00116.mp4"
+      },
+      {
+        "label_id": 8,
+        "video_id": "train_08_5V-dKBtmKLI_00107",
+        "video_path": "data/diving48/videos/train/08_oldlabel_11_Back_35som_NoTwis_PIKE/5V-dKBtmKLI_00107.mp4"
+      },
+      {
+        "label_id": 8,
+        "video_id": "train_08_LNMISxO35S0_00106",
+        "video_path": "data/diving48/videos/train/08_oldlabel_11_Back_35som_NoTwis_PIKE/LNMISxO35S0_00106.mp4"
+      },
+      {
+        "label_id": 8,
+        "video_id": "train_08_LNMISxO35S0_00110",
+        "video_path": "data/diving48/videos/train/08_oldlabel_11_Back_35som_NoTwis_PIKE/LNMISxO35S0_00110.mp4"
+      },
+      {
+        "label_id": 8,
+        "video_id": "train_08_LNMISxO35S0_00112",
+        "video_path": "data/diving48/videos/train/08_oldlabel_11_Back_35som_NoTwis_PIKE/LNMISxO35S0_00112.mp4"
+      },
+      {
+        "label_id": 8,
+        "video_id": "train_08_LNMISxO35S0_00231",
+        "video_path": "data/diving48/videos/train/08_oldlabel_11_Back_35som_NoTwis_PIKE/LNMISxO35S0_00231.mp4"
+      },
+      {
+        "label_id": 9,
+        "video_id": "train_09_3PLiUG_DuC8_00136",
+        "video_path": "data/diving48/videos/train/09_oldlabel_12_Back_35som_NoTwis_TUCK/3PLiUG_DuC8_00136.mp4"
+      },
+      {
+        "label_id": 9,
+        "video_id": "train_09_5V-dKBtmKLI_00103",
+        "video_path": "data/diving48/videos/train/09_oldlabel_12_Back_35som_NoTwis_TUCK/5V-dKBtmKLI_00103.mp4"
+      },
+      {
+        "label_id": 9,
+        "video_id": "train_09_9BC6ssCjyfg_00137",
+        "video_path": "data/diving48/videos/train/09_oldlabel_12_Back_35som_NoTwis_TUCK/9BC6ssCjyfg_00137.mp4"
+      },
+      {
+        "label_id": 9,
+        "video_id": "train_09_D6zILEKIJbk_00113",
+        "video_path": "data/diving48/videos/train/09_oldlabel_12_Back_35som_NoTwis_TUCK/D6zILEKIJbk_00113.mp4"
+      },
+      {
+        "label_id": 9,
+        "video_id": "train_09_D6zILEKIJbk_00133",
+        "video_path": "data/diving48/videos/train/09_oldlabel_12_Back_35som_NoTwis_TUCK/D6zILEKIJbk_00133.mp4"
+      },
+      {
+        "label_id": 10,
+        "video_id": "train_10_2x00lRzlTVQ_00004",
+        "video_path": "data/diving48/videos/train/10_oldlabel_15_Back_Dive_NoTwis_PIKE/2x00lRzlTVQ_00004.mp4"
+      },
+      {
+        "label_id": 10,
+        "video_id": "train_10_3qq031609lA_00001",
+        "video_path": "data/diving48/videos/train/10_oldlabel_15_Back_Dive_NoTwis_PIKE/3qq031609lA_00001.mp4"
+      },
+      {
+        "label_id": 10,
+        "video_id": "train_10_9BC6ssCjyfg_00189",
+        "video_path": "data/diving48/videos/train/10_oldlabel_15_Back_Dive_NoTwis_PIKE/9BC6ssCjyfg_00189.mp4"
+      },
+      {
+        "label_id": 10,
+        "video_id": "train_10_9jZYYtzYqwE_00014",
+        "video_path": "data/diving48/videos/train/10_oldlabel_15_Back_Dive_NoTwis_PIKE/9jZYYtzYqwE_00014.mp4"
+      },
+      {
+        "label_id": 10,
+        "video_id": "train_10_D8YKHC5hmUs_00037",
+        "video_path": "data/diving48/videos/train/10_oldlabel_15_Back_Dive_NoTwis_PIKE/D8YKHC5hmUs_00037.mp4"
+      },
+      {
+        "label_id": 11,
+        "video_id": "train_11_D8YKHC5hmUs_00040",
+        "video_path": "data/diving48/videos/train/11_oldlabel_16_Back_Dive_NoTwis_TUCK/D8YKHC5hmUs_00040.mp4"
+      },
+      {
+        "label_id": 11,
+        "video_id": "train_11_D8YKHC5hmUs_00041",
+        "video_path": "data/diving48/videos/train/11_oldlabel_16_Back_Dive_NoTwis_TUCK/D8YKHC5hmUs_00041.mp4"
+      },
+      {
+        "label_id": 11,
+        "video_id": "train_11_D8YKHC5hmUs_00045",
+        "video_path": "data/diving48/videos/train/11_oldlabel_16_Back_Dive_NoTwis_TUCK/D8YKHC5hmUs_00045.mp4"
+      },
+      {
+        "label_id": 11,
+        "video_id": "train_11_D8YKHC5hmUs_00061",
+        "video_path": "data/diving48/videos/train/11_oldlabel_16_Back_Dive_NoTwis_TUCK/D8YKHC5hmUs_00061.mp4"
+      },
+      {
+        "label_id": 11,
+        "video_id": "train_11_D8YKHC5hmUs_00083",
+        "video_path": "data/diving48/videos/train/11_oldlabel_16_Back_Dive_NoTwis_TUCK/D8YKHC5hmUs_00083.mp4"
+      },
+      {
+        "label_id": 12,
+        "video_id": "train_12_-mmq0PT-u8k_00134",
+        "video_path": "data/diving48/videos/train/12_oldlabel_17_Forward_15som_1Twis_FREE/-mmq0PT-u8k_00134.mp4"
+      },
+      {
+        "label_id": 12,
+        "video_id": "train_12_-mmq0PT-u8k_00139",
+        "video_path": "data/diving48/videos/train/12_oldlabel_17_Forward_15som_1Twis_FREE/-mmq0PT-u8k_00139.mp4"
+      },
+      {
+        "label_id": 12,
+        "video_id": "train_12_-mmq0PT-u8k_00140",
+        "video_path": "data/diving48/videos/train/12_oldlabel_17_Forward_15som_1Twis_FREE/-mmq0PT-u8k_00140.mp4"
+      },
+      {
+        "label_id": 12,
+        "video_id": "train_12_JzOshOJgofw_00110",
+        "video_path": "data/diving48/videos/train/12_oldlabel_17_Forward_15som_1Twis_FREE/JzOshOJgofw_00110.mp4"
+      },
+      {
+        "label_id": 12,
+        "video_id": "train_12_JzOshOJgofw_00124",
+        "video_path": "data/diving48/videos/train/12_oldlabel_17_Forward_15som_1Twis_FREE/JzOshOJgofw_00124.mp4"
+      },
+      {
+        "label_id": 13,
+        "video_id": "train_13_5V-dKBtmKLI_00009",
+        "video_path": "data/diving48/videos/train/13_oldlabel_19_Forward_15som_NoTwis_PIKE/5V-dKBtmKLI_00009.mp4"
+      },
+      {
+        "label_id": 13,
+        "video_id": "train_13_5V-dKBtmKLI_00118",
+        "video_path": "data/diving48/videos/train/13_oldlabel_19_Forward_15som_NoTwis_PIKE/5V-dKBtmKLI_00118.mp4"
+      },
+      {
+        "label_id": 13,
+        "video_id": "train_13_D8YKHC5hmUs_00004",
+        "video_path": "data/diving48/videos/train/13_oldlabel_19_Forward_15som_NoTwis_PIKE/D8YKHC5hmUs_00004.mp4"
+      },
+      {
+        "label_id": 13,
+        "video_id": "train_13_D8YKHC5hmUs_00012",
+        "video_path": "data/diving48/videos/train/13_oldlabel_19_Forward_15som_NoTwis_PIKE/D8YKHC5hmUs_00012.mp4"
+      },
+      {
+        "label_id": 13,
+        "video_id": "train_13_D8YKHC5hmUs_00226",
+        "video_path": "data/diving48/videos/train/13_oldlabel_19_Forward_15som_NoTwis_PIKE/D8YKHC5hmUs_00226.mp4"
+      },
+      {
+        "label_id": 14,
+        "video_id": "train_14_D8YKHC5hmUs_00124",
+        "video_path": "data/diving48/videos/train/14_oldlabel_20_Forward_1som_NoTwis_PIKE/D8YKHC5hmUs_00124.mp4"
+      },
+      {
+        "label_id": 14,
+        "video_id": "train_14_D8YKHC5hmUs_00125",
+        "video_path": "data/diving48/videos/train/14_oldlabel_20_Forward_1som_NoTwis_PIKE/D8YKHC5hmUs_00125.mp4"
+      },
+      {
+        "label_id": 14,
+        "video_id": "train_14_D8YKHC5hmUs_00128",
+        "video_path": "data/diving48/videos/train/14_oldlabel_20_Forward_1som_NoTwis_PIKE/D8YKHC5hmUs_00128.mp4"
+      },
+      {
+        "label_id": 14,
+        "video_id": "train_14_D8YKHC5hmUs_00148",
+        "video_path": "data/diving48/videos/train/14_oldlabel_20_Forward_1som_NoTwis_PIKE/D8YKHC5hmUs_00148.mp4"
+      },
+      {
+        "label_id": 14,
+        "video_id": "train_14_D8YKHC5hmUs_00149",
+        "video_path": "data/diving48/videos/train/14_oldlabel_20_Forward_1som_NoTwis_PIKE/D8YKHC5hmUs_00149.mp4"
+      },
+      {
+        "label_id": 15,
+        "video_id": "train_15_3N1kUtqJ25A_00018",
+        "video_path": "data/diving48/videos/train/15_oldlabel_21_Forward_25som_1Twis_PIKE/3N1kUtqJ25A_00018.mp4"
+      },
+      {
+        "label_id": 15,
+        "video_id": "train_15_3N1kUtqJ25A_00023",
+        "video_path": "data/diving48/videos/train/15_oldlabel_21_Forward_25som_1Twis_PIKE/3N1kUtqJ25A_00023.mp4"
+      },
+      {
+        "label_id": 15,
+        "video_id": "train_15_3N1kUtqJ25A_00078",
+        "video_path": "data/diving48/videos/train/15_oldlabel_21_Forward_25som_1Twis_PIKE/3N1kUtqJ25A_00078.mp4"
+      },
+      {
+        "label_id": 15,
+        "video_id": "train_15_3N1kUtqJ25A_00137",
+        "video_path": "data/diving48/videos/train/15_oldlabel_21_Forward_25som_1Twis_PIKE/3N1kUtqJ25A_00137.mp4"
+      },
+      {
+        "label_id": 15,
+        "video_id": "train_15_6wVdnLa3Tes_00057",
+        "video_path": "data/diving48/videos/train/15_oldlabel_21_Forward_25som_1Twis_PIKE/6wVdnLa3Tes_00057.mp4"
+      },
+      {
+        "label_id": 16,
+        "video_id": "train_16_2x00lRzlTVQ_00076",
+        "video_path": "data/diving48/videos/train/16_oldlabel_22_Forward_25som_2Twis_PIKE/2x00lRzlTVQ_00076.mp4"
+      },
+      {
+        "label_id": 16,
+        "video_id": "train_16_2x00lRzlTVQ_00078",
+        "video_path": "data/diving48/videos/train/16_oldlabel_22_Forward_25som_2Twis_PIKE/2x00lRzlTVQ_00078.mp4"
+      },
+      {
+        "label_id": 16,
+        "video_id": "train_16_2x00lRzlTVQ_00118",
+        "video_path": "data/diving48/videos/train/16_oldlabel_22_Forward_25som_2Twis_PIKE/2x00lRzlTVQ_00118.mp4"
+      },
+      {
+        "label_id": 16,
+        "video_id": "train_16_3PLiUG_DuC8_00024",
+        "video_path": "data/diving48/videos/train/16_oldlabel_22_Forward_25som_2Twis_PIKE/3PLiUG_DuC8_00024.mp4"
+      },
+      {
+        "label_id": 16,
+        "video_id": "train_16_3PLiUG_DuC8_00036",
+        "video_path": "data/diving48/videos/train/16_oldlabel_22_Forward_25som_2Twis_PIKE/3PLiUG_DuC8_00036.mp4"
+      },
+      {
+        "label_id": 17,
+        "video_id": "train_17_-mmq0PT-u8k_00043",
+        "video_path": "data/diving48/videos/train/17_oldlabel_24_Forward_25som_NoTwis_PIKE/-mmq0PT-u8k_00043.mp4"
+      },
+      {
+        "label_id": 17,
+        "video_id": "train_17_-mmq0PT-u8k_00044",
+        "video_path": "data/diving48/videos/train/17_oldlabel_24_Forward_25som_NoTwis_PIKE/-mmq0PT-u8k_00044.mp4"
+      },
+      {
+        "label_id": 17,
+        "video_id": "train_17_-mmq0PT-u8k_00046",
+        "video_path": "data/diving48/videos/train/17_oldlabel_24_Forward_25som_NoTwis_PIKE/-mmq0PT-u8k_00046.mp4"
+      },
+      {
+        "label_id": 17,
+        "video_id": "train_17_-mmq0PT-u8k_00123",
+        "video_path": "data/diving48/videos/train/17_oldlabel_24_Forward_25som_NoTwis_PIKE/-mmq0PT-u8k_00123.mp4"
+      },
+      {
+        "label_id": 17,
+        "video_id": "train_17_3qq031609lA_00017",
+        "video_path": "data/diving48/videos/train/17_oldlabel_24_Forward_25som_NoTwis_PIKE/3qq031609lA_00017.mp4"
+      },
+      {
+        "label_id": 18,
+        "video_id": "train_18_2x00lRzlTVQ_00051",
+        "video_path": "data/diving48/videos/train/18_oldlabel_26_Forward_35som_NoTwis_PIKE/2x00lRzlTVQ_00051.mp4"
+      },
+      {
+        "label_id": 18,
+        "video_id": "train_18_3N1kUtqJ25A_00051",
+        "video_path": "data/diving48/videos/train/18_oldlabel_26_Forward_35som_NoTwis_PIKE/3N1kUtqJ25A_00051.mp4"
+      },
+      {
+        "label_id": 18,
+        "video_id": "train_18_3N1kUtqJ25A_00054",
+        "video_path": "data/diving48/videos/train/18_oldlabel_26_Forward_35som_NoTwis_PIKE/3N1kUtqJ25A_00054.mp4"
+      },
+      {
+        "label_id": 18,
+        "video_id": "train_18_3N1kUtqJ25A_00058",
+        "video_path": "data/diving48/videos/train/18_oldlabel_26_Forward_35som_NoTwis_PIKE/3N1kUtqJ25A_00058.mp4"
+      },
+      {
+        "label_id": 18,
+        "video_id": "train_18_3N1kUtqJ25A_00192",
+        "video_path": "data/diving48/videos/train/18_oldlabel_26_Forward_35som_NoTwis_PIKE/3N1kUtqJ25A_00192.mp4"
+      },
+      {
+        "label_id": 19,
+        "video_id": "train_19_3N1kUtqJ25A_00210",
+        "video_path": "data/diving48/videos/train/19_oldlabel_27_Forward_35som_NoTwis_TUCK/3N1kUtqJ25A_00210.mp4"
+      },
+      {
+        "label_id": 19,
+        "video_id": "train_19_3PLiUG_DuC8_00172",
+        "video_path": "data/diving48/videos/train/19_oldlabel_27_Forward_35som_NoTwis_TUCK/3PLiUG_DuC8_00172.mp4"
+      },
+      {
+        "label_id": 19,
+        "video_id": "train_19_5hXbclLNSNA_00002",
+        "video_path": "data/diving48/videos/train/19_oldlabel_27_Forward_35som_NoTwis_TUCK/5hXbclLNSNA_00002.mp4"
+      },
+      {
+        "label_id": 19,
+        "video_id": "train_19_5hXbclLNSNA_00017",
+        "video_path": "data/diving48/videos/train/19_oldlabel_27_Forward_35som_NoTwis_TUCK/5hXbclLNSNA_00017.mp4"
+      },
+      {
+        "label_id": 19,
+        "video_id": "train_19_6wVdnLa3Tes_00066",
+        "video_path": "data/diving48/videos/train/19_oldlabel_27_Forward_35som_NoTwis_TUCK/6wVdnLa3Tes_00066.mp4"
+      },
+      {
+        "label_id": 20,
+        "video_id": "train_20_3PLiUG_DuC8_00209",
+        "video_path": "data/diving48/videos/train/20_oldlabel_28_Forward_45som_NoTwis_TUCK/3PLiUG_DuC8_00209.mp4"
+      },
+      {
+        "label_id": 20,
+        "video_id": "train_20_3PLiUG_DuC8_00214",
+        "video_path": "data/diving48/videos/train/20_oldlabel_28_Forward_45som_NoTwis_TUCK/3PLiUG_DuC8_00214.mp4"
+      },
+      {
+        "label_id": 20,
+        "video_id": "train_20_3PLiUG_DuC8_00219",
+        "video_path": "data/diving48/videos/train/20_oldlabel_28_Forward_45som_NoTwis_TUCK/3PLiUG_DuC8_00219.mp4"
+      },
+      {
+        "label_id": 20,
+        "video_id": "train_20_5V-dKBtmKLI_00098",
+        "video_path": "data/diving48/videos/train/20_oldlabel_28_Forward_45som_NoTwis_TUCK/5V-dKBtmKLI_00098.mp4"
+      },
+      {
+        "label_id": 20,
+        "video_id": "train_20_9BC6ssCjyfg_00160",
+        "video_path": "data/diving48/videos/train/20_oldlabel_28_Forward_45som_NoTwis_TUCK/9BC6ssCjyfg_00160.mp4"
+      },
+      {
+        "label_id": 21,
+        "video_id": "train_21_2x00lRzlTVQ_00023",
+        "video_path": "data/diving48/videos/train/21_oldlabel_29_Forward_Dive_NoTwis_PIKE/2x00lRzlTVQ_00023.mp4"
+      },
+      {
+        "label_id": 21,
+        "video_id": "train_21_5V-dKBtmKLI_00012",
+        "video_path": "data/diving48/videos/train/21_oldlabel_29_Forward_Dive_NoTwis_PIKE/5V-dKBtmKLI_00012.mp4"
+      },
+      {
+        "label_id": 21,
+        "video_id": "train_21_5V-dKBtmKLI_00074",
+        "video_path": "data/diving48/videos/train/21_oldlabel_29_Forward_Dive_NoTwis_PIKE/5V-dKBtmKLI_00074.mp4"
+      },
+      {
+        "label_id": 21,
+        "video_id": "train_21_9BC6ssCjyfg_00199",
+        "video_path": "data/diving48/videos/train/21_oldlabel_29_Forward_Dive_NoTwis_PIKE/9BC6ssCjyfg_00199.mp4"
+      },
+      {
+        "label_id": 21,
+        "video_id": "train_21_D8YKHC5hmUs_00058",
+        "video_path": "data/diving48/videos/train/21_oldlabel_29_Forward_Dive_NoTwis_PIKE/D8YKHC5hmUs_00058.mp4"
+      },
+      {
+        "label_id": 22,
+        "video_id": "train_22_-mmq0PT-u8k_00003",
+        "video_path": "data/diving48/videos/train/22_oldlabel_31_Inward_15som_NoTwis_PIKE/-mmq0PT-u8k_00003.mp4"
+      },
+      {
+        "label_id": 22,
+        "video_id": "train_22_-mmq0PT-u8k_00019",
+        "video_path": "data/diving48/videos/train/22_oldlabel_31_Inward_15som_NoTwis_PIKE/-mmq0PT-u8k_00019.mp4"
+      },
+      {
+        "label_id": 22,
+        "video_id": "train_22_-mmq0PT-u8k_00021",
+        "video_path": "data/diving48/videos/train/22_oldlabel_31_Inward_15som_NoTwis_PIKE/-mmq0PT-u8k_00021.mp4"
+      },
+      {
+        "label_id": 22,
+        "video_id": "train_22_2x00lRzlTVQ_00012",
+        "video_path": "data/diving48/videos/train/22_oldlabel_31_Inward_15som_NoTwis_PIKE/2x00lRzlTVQ_00012.mp4"
+      },
+      {
+        "label_id": 22,
+        "video_id": "train_22_9jZYYtzYqwE_00039",
+        "video_path": "data/diving48/videos/train/22_oldlabel_31_Inward_15som_NoTwis_PIKE/9jZYYtzYqwE_00039.mp4"
+      },
+      {
+        "label_id": 23,
+        "video_id": "train_23_D8YKHC5hmUs_00136",
+        "video_path": "data/diving48/videos/train/23_oldlabel_32_Inward_15som_NoTwis_TUCK/D8YKHC5hmUs_00136.mp4"
+      },
+      {
+        "label_id": 23,
+        "video_id": "train_23_D8YKHC5hmUs_00137",
+        "video_path": "data/diving48/videos/train/23_oldlabel_32_Inward_15som_NoTwis_TUCK/D8YKHC5hmUs_00137.mp4"
+      },
+      {
+        "label_id": 23,
+        "video_id": "train_23_D8YKHC5hmUs_00141",
+        "video_path": "data/diving48/videos/train/23_oldlabel_32_Inward_15som_NoTwis_TUCK/D8YKHC5hmUs_00141.mp4"
+      },
+      {
+        "label_id": 23,
+        "video_id": "train_23_D8YKHC5hmUs_00142",
+        "video_path": "data/diving48/videos/train/23_oldlabel_32_Inward_15som_NoTwis_TUCK/D8YKHC5hmUs_00142.mp4"
+      },
+      {
+        "label_id": 23,
+        "video_id": "train_23_D8YKHC5hmUs_00146",
+        "video_path": "data/diving48/videos/train/23_oldlabel_32_Inward_15som_NoTwis_TUCK/D8YKHC5hmUs_00146.mp4"
+      },
+      {
+        "label_id": 24,
+        "video_id": "train_24_3N1kUtqJ25A_00110",
+        "video_path": "data/diving48/videos/train/24_oldlabel_33_Inward_25som_NoTwis_PIKE/3N1kUtqJ25A_00110.mp4"
+      },
+      {
+        "label_id": 24,
+        "video_id": "train_24_3N1kUtqJ25A_00119",
+        "video_path": "data/diving48/videos/train/24_oldlabel_33_Inward_25som_NoTwis_PIKE/3N1kUtqJ25A_00119.mp4"
+      },
+      {
+        "label_id": 24,
+        "video_id": "train_24_3N1kUtqJ25A_00175",
+        "video_path": "data/diving48/videos/train/24_oldlabel_33_Inward_25som_NoTwis_PIKE/3N1kUtqJ25A_00175.mp4"
+      },
+      {
+        "label_id": 24,
+        "video_id": "train_24_3PLiUG_DuC8_00020",
+        "video_path": "data/diving48/videos/train/24_oldlabel_33_Inward_25som_NoTwis_PIKE/3PLiUG_DuC8_00020.mp4"
+      },
+      {
+        "label_id": 24,
+        "video_id": "train_24_3PLiUG_DuC8_00021",
+        "video_path": "data/diving48/videos/train/24_oldlabel_33_Inward_25som_NoTwis_PIKE/3PLiUG_DuC8_00021.mp4"
+      },
+      {
+        "label_id": 25,
+        "video_id": "train_25_3N1kUtqJ25A_00130",
+        "video_path": "data/diving48/videos/train/25_oldlabel_34_Inward_25som_NoTwis_TUCK/3N1kUtqJ25A_00130.mp4"
+      },
+      {
+        "label_id": 25,
+        "video_id": "train_25_5hXbclLNSNA_00007",
+        "video_path": "data/diving48/videos/train/25_oldlabel_34_Inward_25som_NoTwis_TUCK/5hXbclLNSNA_00007.mp4"
+      },
+      {
+        "label_id": 25,
+        "video_id": "train_25_9jZYYtzYqwE_00056",
+        "video_path": "data/diving48/videos/train/25_oldlabel_34_Inward_25som_NoTwis_TUCK/9jZYYtzYqwE_00056.mp4"
+      },
+      {
+        "label_id": 25,
+        "video_id": "train_25_9jZYYtzYqwE_00095",
+        "video_path": "data/diving48/videos/train/25_oldlabel_34_Inward_25som_NoTwis_TUCK/9jZYYtzYqwE_00095.mp4"
+      },
+      {
+        "label_id": 25,
+        "video_id": "train_25_9jZYYtzYqwE_00103",
+        "video_path": "data/diving48/videos/train/25_oldlabel_34_Inward_25som_NoTwis_TUCK/9jZYYtzYqwE_00103.mp4"
+      },
+      {
+        "label_id": 26,
+        "video_id": "train_26_2x00lRzlTVQ_00066",
+        "video_path": "data/diving48/videos/train/26_oldlabel_35_Inward_35som_NoTwis_TUCK/2x00lRzlTVQ_00066.mp4"
+      },
+      {
+        "label_id": 26,
+        "video_id": "train_26_2x00lRzlTVQ_00103",
+        "video_path": "data/diving48/videos/train/26_oldlabel_35_Inward_35som_NoTwis_TUCK/2x00lRzlTVQ_00103.mp4"
+      },
+      {
+        "label_id": 26,
+        "video_id": "train_26_3PLiUG_DuC8_00357",
+        "video_path": "data/diving48/videos/train/26_oldlabel_35_Inward_35som_NoTwis_TUCK/3PLiUG_DuC8_00357.mp4"
+      },
+      {
+        "label_id": 26,
+        "video_id": "train_26_9BC6ssCjyfg_00095",
+        "video_path": "data/diving48/videos/train/26_oldlabel_35_Inward_35som_NoTwis_TUCK/9BC6ssCjyfg_00095.mp4"
+      },
+      {
+        "label_id": 26,
+        "video_id": "train_26_Bb0ZiYVNtDs_00063",
+        "video_path": "data/diving48/videos/train/26_oldlabel_35_Inward_35som_NoTwis_TUCK/Bb0ZiYVNtDs_00063.mp4"
+      },
+      {
+        "label_id": 27,
+        "video_id": "train_27_5V-dKBtmKLI_00095",
+        "video_path": "data/diving48/videos/train/27_oldlabel_36_Inward_Dive_NoTwis_PIKE/5V-dKBtmKLI_00095.mp4"
+      },
+      {
+        "label_id": 27,
+        "video_id": "train_27_9BC6ssCjyfg_00181",
+        "video_path": "data/diving48/videos/train/27_oldlabel_36_Inward_Dive_NoTwis_PIKE/9BC6ssCjyfg_00181.mp4"
+      },
+      {
+        "label_id": 27,
+        "video_id": "train_27_9jZYYtzYqwE_00025",
+        "video_path": "data/diving48/videos/train/27_oldlabel_36_Inward_Dive_NoTwis_PIKE/9jZYYtzYqwE_00025.mp4"
+      },
+      {
+        "label_id": 27,
+        "video_id": "train_27_D8YKHC5hmUs_00113",
+        "video_path": "data/diving48/videos/train/27_oldlabel_36_Inward_Dive_NoTwis_PIKE/D8YKHC5hmUs_00113.mp4"
+      },
+      {
+        "label_id": 27,
+        "video_id": "train_27_D8YKHC5hmUs_00138",
+        "video_path": "data/diving48/videos/train/27_oldlabel_36_Inward_Dive_NoTwis_PIKE/D8YKHC5hmUs_00138.mp4"
+      },
+      {
+        "label_id": 28,
+        "video_id": "train_28_5hXbclLNSNA_00025",
+        "video_path": "data/diving48/videos/train/28_oldlabel_44_Reverse_25som_NoTwis_TUCK/5hXbclLNSNA_00025.mp4"
+      },
+      {
+        "label_id": 28,
+        "video_id": "train_28_DB4lpBDPnTY_00035",
+        "video_path": "data/diving48/videos/train/28_oldlabel_44_Reverse_25som_NoTwis_TUCK/DB4lpBDPnTY_00035.mp4"
+      },
+      {
+        "label_id": 28,
+        "video_id": "train_28_JzOshOJgofw_00210",
+        "video_path": "data/diving48/videos/train/28_oldlabel_44_Reverse_25som_NoTwis_TUCK/JzOshOJgofw_00210.mp4"
+      },
+      {
+        "label_id": 28,
+        "video_id": "train_28_JzOshOJgofw_00237",
+        "video_path": "data/diving48/videos/train/28_oldlabel_44_Reverse_25som_NoTwis_TUCK/JzOshOJgofw_00237.mp4"
+      },
+      {
+        "label_id": 28,
+        "video_id": "train_28_LNMISxO35S0_00034",
+        "video_path": "data/diving48/videos/train/28_oldlabel_44_Reverse_25som_NoTwis_TUCK/LNMISxO35S0_00034.mp4"
+      },
+      {
+        "label_id": 29,
+        "video_id": "train_29_2x00lRzlTVQ_00092",
+        "video_path": "data/diving48/videos/train/29_oldlabel_45_Reverse_35som_NoTwis_TUCK/2x00lRzlTVQ_00092.mp4"
+      },
+      {
+        "label_id": 29,
+        "video_id": "train_29_3PLiUG_DuC8_00114",
+        "video_path": "data/diving48/videos/train/29_oldlabel_45_Reverse_35som_NoTwis_TUCK/3PLiUG_DuC8_00114.mp4"
+      },
+      {
+        "label_id": 29,
+        "video_id": "train_29_3PLiUG_DuC8_00358",
+        "video_path": "data/diving48/videos/train/29_oldlabel_45_Reverse_35som_NoTwis_TUCK/3PLiUG_DuC8_00358.mp4"
+      },
+      {
+        "label_id": 29,
+        "video_id": "train_29_9BC6ssCjyfg_00132",
+        "video_path": "data/diving48/videos/train/29_oldlabel_45_Reverse_35som_NoTwis_TUCK/9BC6ssCjyfg_00132.mp4"
+      },
+      {
+        "label_id": 29,
+        "video_id": "train_29_9BC6ssCjyfg_00134",
+        "video_path": "data/diving48/videos/train/29_oldlabel_45_Reverse_35som_NoTwis_TUCK/9BC6ssCjyfg_00134.mp4"
+      },
+      {
+        "label_id": 30,
+        "video_id": "train_30_2x00lRzlTVQ_00041",
+        "video_path": "data/diving48/videos/train/30_oldlabel_46_Reverse_Dive_NoTwis_PIKE/2x00lRzlTVQ_00041.mp4"
+      },
+      {
+        "label_id": 30,
+        "video_id": "train_30_9BC6ssCjyfg_00197",
+        "video_path": "data/diving48/videos/train/30_oldlabel_46_Reverse_Dive_NoTwis_PIKE/9BC6ssCjyfg_00197.mp4"
+      },
+      {
+        "label_id": 30,
+        "video_id": "train_30_9BC6ssCjyfg_00204",
+        "video_path": "data/diving48/videos/train/30_oldlabel_46_Reverse_Dive_NoTwis_PIKE/9BC6ssCjyfg_00204.mp4"
+      },
+      {
+        "label_id": 30,
+        "video_id": "train_30_D8YKHC5hmUs_00071",
+        "video_path": "data/diving48/videos/train/30_oldlabel_46_Reverse_Dive_NoTwis_PIKE/D8YKHC5hmUs_00071.mp4"
+      },
+      {
+        "label_id": 30,
+        "video_id": "train_30_D8YKHC5hmUs_00072",
+        "video_path": "data/diving48/videos/train/30_oldlabel_46_Reverse_Dive_NoTwis_PIKE/D8YKHC5hmUs_00072.mp4"
+      },
+      {
+        "label_id": 31,
+        "video_id": "train_31_2x00lRzlTVQ_00034",
+        "video_path": "data/diving48/videos/train/31_oldlabel_47_Reverse_Dive_NoTwis_TUCK/2x00lRzlTVQ_00034.mp4"
+      },
+      {
+        "label_id": 31,
+        "video_id": "train_31_2x00lRzlTVQ_00035",
+        "video_path": "data/diving48/videos/train/31_oldlabel_47_Reverse_Dive_NoTwis_TUCK/2x00lRzlTVQ_00035.mp4"
+      },
+      {
+        "label_id": 31,
+        "video_id": "train_31_D8YKHC5hmUs_00042",
+        "video_path": "data/diving48/videos/train/31_oldlabel_47_Reverse_Dive_NoTwis_TUCK/D8YKHC5hmUs_00042.mp4"
+      },
+      {
+        "label_id": 31,
+        "video_id": "train_31_D8YKHC5hmUs_00043",
+        "video_path": "data/diving48/videos/train/31_oldlabel_47_Reverse_Dive_NoTwis_TUCK/D8YKHC5hmUs_00043.mp4"
+      },
+      {
+        "label_id": 31,
+        "video_id": "train_31_D8YKHC5hmUs_00068",
+        "video_path": "data/diving48/videos/train/31_oldlabel_47_Reverse_Dive_NoTwis_TUCK/D8YKHC5hmUs_00068.mp4"
+      }
+    ],
+    "ssv2": [
+      {
+        "label_id": 0,
+        "video_id": "105336",
+        "video_path": "data/ssv2/videos/train/105336.webm"
+      },
+      {
+        "label_id": 0,
+        "video_id": "111016",
+        "video_path": "data/ssv2/videos/train/111016.webm"
+      },
+      {
+        "label_id": 0,
+        "video_id": "111140",
+        "video_path": "data/ssv2/videos/train/111140.webm"
+      },
+      {
+        "label_id": 0,
+        "video_id": "113335",
+        "video_path": "data/ssv2/videos/train/113335.webm"
+      },
+      {
+        "label_id": 0,
+        "video_id": "11560",
+        "video_path": "data/ssv2/videos/train/11560.webm"
+      },
+      {
+        "label_id": 1,
+        "video_id": "101244",
+        "video_path": "data/ssv2/videos/train/101244.webm"
+      },
+      {
+        "label_id": 1,
+        "video_id": "10304",
+        "video_path": "data/ssv2/videos/train/10304.webm"
+      },
+      {
+        "label_id": 1,
+        "video_id": "106298",
+        "video_path": "data/ssv2/videos/train/106298.webm"
+      },
+      {
+        "label_id": 1,
+        "video_id": "108619",
+        "video_path": "data/ssv2/videos/train/108619.webm"
+      },
+      {
+        "label_id": 1,
+        "video_id": "11233",
+        "video_path": "data/ssv2/videos/train/11233.webm"
+      },
+      {
+        "label_id": 2,
+        "video_id": "10140",
+        "video_path": "data/ssv2/videos/train/10140.webm"
+      },
+      {
+        "label_id": 2,
+        "video_id": "102487",
+        "video_path": "data/ssv2/videos/train/102487.webm"
+      },
+      {
+        "label_id": 2,
+        "video_id": "103012",
+        "video_path": "data/ssv2/videos/train/103012.webm"
+      },
+      {
+        "label_id": 2,
+        "video_id": "103030",
+        "video_path": "data/ssv2/videos/train/103030.webm"
+      },
+      {
+        "label_id": 2,
+        "video_id": "107419",
+        "video_path": "data/ssv2/videos/train/107419.webm"
+      },
+      {
+        "label_id": 3,
+        "video_id": "100128",
+        "video_path": "data/ssv2/videos/train/100128.webm"
+      },
+      {
+        "label_id": 3,
+        "video_id": "107248",
+        "video_path": "data/ssv2/videos/train/107248.webm"
+      },
+      {
+        "label_id": 3,
+        "video_id": "111182",
+        "video_path": "data/ssv2/videos/train/111182.webm"
+      },
+      {
+        "label_id": 3,
+        "video_id": "111675",
+        "video_path": "data/ssv2/videos/train/111675.webm"
+      },
+      {
+        "label_id": 3,
+        "video_id": "117361",
+        "video_path": "data/ssv2/videos/train/117361.webm"
+      },
+      {
+        "label_id": 4,
+        "video_id": "101225",
+        "video_path": "data/ssv2/videos/train/101225.webm"
+      },
+      {
+        "label_id": 4,
+        "video_id": "105006",
+        "video_path": "data/ssv2/videos/train/105006.webm"
+      },
+      {
+        "label_id": 4,
+        "video_id": "108553",
+        "video_path": "data/ssv2/videos/train/108553.webm"
+      },
+      {
+        "label_id": 4,
+        "video_id": "109298",
+        "video_path": "data/ssv2/videos/train/109298.webm"
+      },
+      {
+        "label_id": 4,
+        "video_id": "112752",
+        "video_path": "data/ssv2/videos/train/112752.webm"
+      },
+      {
+        "label_id": 5,
+        "video_id": "103317",
+        "video_path": "data/ssv2/videos/train/103317.webm"
+      },
+      {
+        "label_id": 5,
+        "video_id": "104798",
+        "video_path": "data/ssv2/videos/train/104798.webm"
+      },
+      {
+        "label_id": 5,
+        "video_id": "105696",
+        "video_path": "data/ssv2/videos/train/105696.webm"
+      },
+      {
+        "label_id": 5,
+        "video_id": "106498",
+        "video_path": "data/ssv2/videos/train/106498.webm"
+      },
+      {
+        "label_id": 5,
+        "video_id": "107733",
+        "video_path": "data/ssv2/videos/train/107733.webm"
+      },
+      {
+        "label_id": 6,
+        "video_id": "100572",
+        "video_path": "data/ssv2/videos/train/100572.webm"
+      },
+      {
+        "label_id": 6,
+        "video_id": "105139",
+        "video_path": "data/ssv2/videos/train/105139.webm"
+      },
+      {
+        "label_id": 6,
+        "video_id": "105874",
+        "video_path": "data/ssv2/videos/train/105874.webm"
+      },
+      {
+        "label_id": 6,
+        "video_id": "107094",
+        "video_path": "data/ssv2/videos/train/107094.webm"
+      },
+      {
+        "label_id": 6,
+        "video_id": "113488",
+        "video_path": "data/ssv2/videos/train/113488.webm"
+      },
+      {
+        "label_id": 7,
+        "video_id": "100173",
+        "video_path": "data/ssv2/videos/train/100173.webm"
+      },
+      {
+        "label_id": 7,
+        "video_id": "105403",
+        "video_path": "data/ssv2/videos/train/105403.webm"
+      },
+      {
+        "label_id": 7,
+        "video_id": "106770",
+        "video_path": "data/ssv2/videos/train/106770.webm"
+      },
+      {
+        "label_id": 7,
+        "video_id": "108760",
+        "video_path": "data/ssv2/videos/train/108760.webm"
+      },
+      {
+        "label_id": 7,
+        "video_id": "109146",
+        "video_path": "data/ssv2/videos/train/109146.webm"
+      },
+      {
+        "label_id": 8,
+        "video_id": "100591",
+        "video_path": "data/ssv2/videos/train/100591.webm"
+      },
+      {
+        "label_id": 8,
+        "video_id": "104654",
+        "video_path": "data/ssv2/videos/train/104654.webm"
+      },
+      {
+        "label_id": 8,
+        "video_id": "107826",
+        "video_path": "data/ssv2/videos/train/107826.webm"
+      },
+      {
+        "label_id": 8,
+        "video_id": "109542",
+        "video_path": "data/ssv2/videos/train/109542.webm"
+      },
+      {
+        "label_id": 8,
+        "video_id": "109675",
+        "video_path": "data/ssv2/videos/train/109675.webm"
+      },
+      {
+        "label_id": 9,
+        "video_id": "102074",
+        "video_path": "data/ssv2/videos/train/102074.webm"
+      },
+      {
+        "label_id": 9,
+        "video_id": "103306",
+        "video_path": "data/ssv2/videos/train/103306.webm"
+      },
+      {
+        "label_id": 9,
+        "video_id": "104407",
+        "video_path": "data/ssv2/videos/train/104407.webm"
+      },
+      {
+        "label_id": 9,
+        "video_id": "104986",
+        "video_path": "data/ssv2/videos/train/104986.webm"
+      },
+      {
+        "label_id": 9,
+        "video_id": "108863",
+        "video_path": "data/ssv2/videos/train/108863.webm"
+      },
+      {
+        "label_id": 10,
+        "video_id": "101021",
+        "video_path": "data/ssv2/videos/train/101021.webm"
+      },
+      {
+        "label_id": 10,
+        "video_id": "104100",
+        "video_path": "data/ssv2/videos/train/104100.webm"
+      },
+      {
+        "label_id": 10,
+        "video_id": "104396",
+        "video_path": "data/ssv2/videos/train/104396.webm"
+      },
+      {
+        "label_id": 10,
+        "video_id": "105345",
+        "video_path": "data/ssv2/videos/train/105345.webm"
+      },
+      {
+        "label_id": 10,
+        "video_id": "106182",
+        "video_path": "data/ssv2/videos/train/106182.webm"
+      },
+      {
+        "label_id": 11,
+        "video_id": "102146",
+        "video_path": "data/ssv2/videos/train/102146.webm"
+      },
+      {
+        "label_id": 11,
+        "video_id": "106538",
+        "video_path": "data/ssv2/videos/train/106538.webm"
+      },
+      {
+        "label_id": 11,
+        "video_id": "107481",
+        "video_path": "data/ssv2/videos/train/107481.webm"
+      },
+      {
+        "label_id": 11,
+        "video_id": "107778",
+        "video_path": "data/ssv2/videos/train/107778.webm"
+      },
+      {
+        "label_id": 11,
+        "video_id": "114137",
+        "video_path": "data/ssv2/videos/train/114137.webm"
+      },
+      {
+        "label_id": 12,
+        "video_id": "10239",
+        "video_path": "data/ssv2/videos/train/10239.webm"
+      },
+      {
+        "label_id": 12,
+        "video_id": "10708",
+        "video_path": "data/ssv2/videos/train/10708.webm"
+      },
+      {
+        "label_id": 12,
+        "video_id": "107451",
+        "video_path": "data/ssv2/videos/train/107451.webm"
+      },
+      {
+        "label_id": 12,
+        "video_id": "111811",
+        "video_path": "data/ssv2/videos/train/111811.webm"
+      },
+      {
+        "label_id": 12,
+        "video_id": "113675",
+        "video_path": "data/ssv2/videos/train/113675.webm"
+      },
+      {
+        "label_id": 13,
+        "video_id": "103951",
+        "video_path": "data/ssv2/videos/train/103951.webm"
+      },
+      {
+        "label_id": 13,
+        "video_id": "109374",
+        "video_path": "data/ssv2/videos/train/109374.webm"
+      },
+      {
+        "label_id": 13,
+        "video_id": "111354",
+        "video_path": "data/ssv2/videos/train/111354.webm"
+      },
+      {
+        "label_id": 13,
+        "video_id": "114286",
+        "video_path": "data/ssv2/videos/train/114286.webm"
+      },
+      {
+        "label_id": 13,
+        "video_id": "117514",
+        "video_path": "data/ssv2/videos/train/117514.webm"
+      },
+      {
+        "label_id": 14,
+        "video_id": "101138",
+        "video_path": "data/ssv2/videos/train/101138.webm"
+      },
+      {
+        "label_id": 14,
+        "video_id": "101547",
+        "video_path": "data/ssv2/videos/train/101547.webm"
+      },
+      {
+        "label_id": 14,
+        "video_id": "104332",
+        "video_path": "data/ssv2/videos/train/104332.webm"
+      },
+      {
+        "label_id": 14,
+        "video_id": "104814",
+        "video_path": "data/ssv2/videos/train/104814.webm"
+      },
+      {
+        "label_id": 14,
+        "video_id": "106907",
+        "video_path": "data/ssv2/videos/train/106907.webm"
+      },
+      {
+        "label_id": 15,
+        "video_id": "106618",
+        "video_path": "data/ssv2/videos/train/106618.webm"
+      },
+      {
+        "label_id": 15,
+        "video_id": "106929",
+        "video_path": "data/ssv2/videos/train/106929.webm"
+      },
+      {
+        "label_id": 15,
+        "video_id": "107096",
+        "video_path": "data/ssv2/videos/train/107096.webm"
+      },
+      {
+        "label_id": 15,
+        "video_id": "108244",
+        "video_path": "data/ssv2/videos/train/108244.webm"
+      },
+      {
+        "label_id": 15,
+        "video_id": "108359",
+        "video_path": "data/ssv2/videos/train/108359.webm"
+      },
+      {
+        "label_id": 16,
+        "video_id": "106874",
+        "video_path": "data/ssv2/videos/train/106874.webm"
+      },
+      {
+        "label_id": 16,
+        "video_id": "11494",
+        "video_path": "data/ssv2/videos/train/11494.webm"
+      },
+      {
+        "label_id": 16,
+        "video_id": "117760",
+        "video_path": "data/ssv2/videos/train/117760.webm"
+      },
+      {
+        "label_id": 16,
+        "video_id": "118015",
+        "video_path": "data/ssv2/videos/train/118015.webm"
+      },
+      {
+        "label_id": 16,
+        "video_id": "120229",
+        "video_path": "data/ssv2/videos/train/120229.webm"
+      },
+      {
+        "label_id": 17,
+        "video_id": "10252",
+        "video_path": "data/ssv2/videos/train/10252.webm"
+      },
+      {
+        "label_id": 17,
+        "video_id": "107228",
+        "video_path": "data/ssv2/videos/train/107228.webm"
+      },
+      {
+        "label_id": 17,
+        "video_id": "11429",
+        "video_path": "data/ssv2/videos/train/11429.webm"
+      },
+      {
+        "label_id": 17,
+        "video_id": "115097",
+        "video_path": "data/ssv2/videos/train/115097.webm"
+      },
+      {
+        "label_id": 17,
+        "video_id": "115743",
+        "video_path": "data/ssv2/videos/train/115743.webm"
+      },
+      {
+        "label_id": 18,
+        "video_id": "101833",
+        "video_path": "data/ssv2/videos/train/101833.webm"
+      },
+      {
+        "label_id": 18,
+        "video_id": "107528",
+        "video_path": "data/ssv2/videos/train/107528.webm"
+      },
+      {
+        "label_id": 18,
+        "video_id": "110381",
+        "video_path": "data/ssv2/videos/train/110381.webm"
+      },
+      {
+        "label_id": 18,
+        "video_id": "111852",
+        "video_path": "data/ssv2/videos/train/111852.webm"
+      },
+      {
+        "label_id": 18,
+        "video_id": "116120",
+        "video_path": "data/ssv2/videos/train/116120.webm"
+      },
+      {
+        "label_id": 19,
+        "video_id": "101325",
+        "video_path": "data/ssv2/videos/train/101325.webm"
+      },
+      {
+        "label_id": 19,
+        "video_id": "101330",
+        "video_path": "data/ssv2/videos/train/101330.webm"
+      },
+      {
+        "label_id": 19,
+        "video_id": "101371",
+        "video_path": "data/ssv2/videos/train/101371.webm"
+      },
+      {
+        "label_id": 19,
+        "video_id": "106461",
+        "video_path": "data/ssv2/videos/train/106461.webm"
+      },
+      {
+        "label_id": 19,
+        "video_id": "107042",
+        "video_path": "data/ssv2/videos/train/107042.webm"
+      },
+      {
+        "label_id": 20,
+        "video_id": "101522",
+        "video_path": "data/ssv2/videos/train/101522.webm"
+      },
+      {
+        "label_id": 20,
+        "video_id": "105136",
+        "video_path": "data/ssv2/videos/train/105136.webm"
+      },
+      {
+        "label_id": 20,
+        "video_id": "106077",
+        "video_path": "data/ssv2/videos/train/106077.webm"
+      },
+      {
+        "label_id": 20,
+        "video_id": "10673",
+        "video_path": "data/ssv2/videos/train/10673.webm"
+      },
+      {
+        "label_id": 20,
+        "video_id": "108598",
+        "video_path": "data/ssv2/videos/train/108598.webm"
+      },
+      {
+        "label_id": 21,
+        "video_id": "101961",
+        "video_path": "data/ssv2/videos/train/101961.webm"
+      },
+      {
+        "label_id": 21,
+        "video_id": "102951",
+        "video_path": "data/ssv2/videos/train/102951.webm"
+      },
+      {
+        "label_id": 21,
+        "video_id": "107472",
+        "video_path": "data/ssv2/videos/train/107472.webm"
+      },
+      {
+        "label_id": 21,
+        "video_id": "107509",
+        "video_path": "data/ssv2/videos/train/107509.webm"
+      },
+      {
+        "label_id": 21,
+        "video_id": "108523",
+        "video_path": "data/ssv2/videos/train/108523.webm"
+      },
+      {
+        "label_id": 22,
+        "video_id": "102967",
+        "video_path": "data/ssv2/videos/train/102967.webm"
+      },
+      {
+        "label_id": 22,
+        "video_id": "1038",
+        "video_path": "data/ssv2/videos/train/1038.webm"
+      },
+      {
+        "label_id": 22,
+        "video_id": "10605",
+        "video_path": "data/ssv2/videos/train/10605.webm"
+      },
+      {
+        "label_id": 22,
+        "video_id": "106899",
+        "video_path": "data/ssv2/videos/train/106899.webm"
+      },
+      {
+        "label_id": 22,
+        "video_id": "107726",
+        "video_path": "data/ssv2/videos/train/107726.webm"
+      },
+      {
+        "label_id": 23,
+        "video_id": "101847",
+        "video_path": "data/ssv2/videos/train/101847.webm"
+      },
+      {
+        "label_id": 23,
+        "video_id": "104019",
+        "video_path": "data/ssv2/videos/train/104019.webm"
+      },
+      {
+        "label_id": 23,
+        "video_id": "106556",
+        "video_path": "data/ssv2/videos/train/106556.webm"
+      },
+      {
+        "label_id": 23,
+        "video_id": "111845",
+        "video_path": "data/ssv2/videos/train/111845.webm"
+      },
+      {
+        "label_id": 23,
+        "video_id": "112553",
+        "video_path": "data/ssv2/videos/train/112553.webm"
+      },
+      {
+        "label_id": 24,
+        "video_id": "102113",
+        "video_path": "data/ssv2/videos/train/102113.webm"
+      },
+      {
+        "label_id": 24,
+        "video_id": "106415",
+        "video_path": "data/ssv2/videos/train/106415.webm"
+      },
+      {
+        "label_id": 24,
+        "video_id": "106864",
+        "video_path": "data/ssv2/videos/train/106864.webm"
+      },
+      {
+        "label_id": 24,
+        "video_id": "111456",
+        "video_path": "data/ssv2/videos/train/111456.webm"
+      },
+      {
+        "label_id": 24,
+        "video_id": "112483",
+        "video_path": "data/ssv2/videos/train/112483.webm"
+      },
+      {
+        "label_id": 25,
+        "video_id": "101355",
+        "video_path": "data/ssv2/videos/train/101355.webm"
+      },
+      {
+        "label_id": 25,
+        "video_id": "107410",
+        "video_path": "data/ssv2/videos/train/107410.webm"
+      },
+      {
+        "label_id": 25,
+        "video_id": "108487",
+        "video_path": "data/ssv2/videos/train/108487.webm"
+      },
+      {
+        "label_id": 25,
+        "video_id": "113711",
+        "video_path": "data/ssv2/videos/train/113711.webm"
+      },
+      {
+        "label_id": 25,
+        "video_id": "119999",
+        "video_path": "data/ssv2/videos/train/119999.webm"
+      },
+      {
+        "label_id": 26,
+        "video_id": "100311",
+        "video_path": "data/ssv2/videos/train/100311.webm"
+      },
+      {
+        "label_id": 26,
+        "video_id": "100945",
+        "video_path": "data/ssv2/videos/train/100945.webm"
+      },
+      {
+        "label_id": 26,
+        "video_id": "101387",
+        "video_path": "data/ssv2/videos/train/101387.webm"
+      },
+      {
+        "label_id": 26,
+        "video_id": "10429",
+        "video_path": "data/ssv2/videos/train/10429.webm"
+      },
+      {
+        "label_id": 26,
+        "video_id": "107616",
+        "video_path": "data/ssv2/videos/train/107616.webm"
+      },
+      {
+        "label_id": 27,
+        "video_id": "10459",
+        "video_path": "data/ssv2/videos/train/10459.webm"
+      },
+      {
+        "label_id": 27,
+        "video_id": "105020",
+        "video_path": "data/ssv2/videos/train/105020.webm"
+      },
+      {
+        "label_id": 27,
+        "video_id": "106212",
+        "video_path": "data/ssv2/videos/train/106212.webm"
+      },
+      {
+        "label_id": 27,
+        "video_id": "110689",
+        "video_path": "data/ssv2/videos/train/110689.webm"
+      },
+      {
+        "label_id": 27,
+        "video_id": "115174",
+        "video_path": "data/ssv2/videos/train/115174.webm"
+      },
+      {
+        "label_id": 28,
+        "video_id": "100439",
+        "video_path": "data/ssv2/videos/train/100439.webm"
+      },
+      {
+        "label_id": 28,
+        "video_id": "100815",
+        "video_path": "data/ssv2/videos/train/100815.webm"
+      },
+      {
+        "label_id": 28,
+        "video_id": "102449",
+        "video_path": "data/ssv2/videos/train/102449.webm"
+      },
+      {
+        "label_id": 28,
+        "video_id": "103194",
+        "video_path": "data/ssv2/videos/train/103194.webm"
+      },
+      {
+        "label_id": 28,
+        "video_id": "104659",
+        "video_path": "data/ssv2/videos/train/104659.webm"
+      },
+      {
+        "label_id": 29,
+        "video_id": "10286",
+        "video_path": "data/ssv2/videos/train/10286.webm"
+      },
+      {
+        "label_id": 29,
+        "video_id": "105309",
+        "video_path": "data/ssv2/videos/train/105309.webm"
+      },
+      {
+        "label_id": 29,
+        "video_id": "107785",
+        "video_path": "data/ssv2/videos/train/107785.webm"
+      },
+      {
+        "label_id": 29,
+        "video_id": "108916",
+        "video_path": "data/ssv2/videos/train/108916.webm"
+      },
+      {
+        "label_id": 29,
+        "video_id": "108975",
+        "video_path": "data/ssv2/videos/train/108975.webm"
+      },
+      {
+        "label_id": 30,
+        "video_id": "100146",
+        "video_path": "data/ssv2/videos/train/100146.webm"
+      },
+      {
+        "label_id": 30,
+        "video_id": "10383",
+        "video_path": "data/ssv2/videos/train/10383.webm"
+      },
+      {
+        "label_id": 30,
+        "video_id": "103989",
+        "video_path": "data/ssv2/videos/train/103989.webm"
+      },
+      {
+        "label_id": 30,
+        "video_id": "105413",
+        "video_path": "data/ssv2/videos/train/105413.webm"
+      },
+      {
+        "label_id": 30,
+        "video_id": "10694",
+        "video_path": "data/ssv2/videos/train/10694.webm"
+      },
+      {
+        "label_id": 31,
+        "video_id": "100275",
+        "video_path": "data/ssv2/videos/train/100275.webm"
+      },
+      {
+        "label_id": 31,
+        "video_id": "10627",
+        "video_path": "data/ssv2/videos/train/10627.webm"
+      },
+      {
+        "label_id": 31,
+        "video_id": "107893",
+        "video_path": "data/ssv2/videos/train/107893.webm"
+      },
+      {
+        "label_id": 31,
+        "video_id": "108067",
+        "video_path": "data/ssv2/videos/train/108067.webm"
+      },
+      {
+        "label_id": 31,
+        "video_id": "110182",
+        "video_path": "data/ssv2/videos/train/110182.webm"
+      },
+      {
+        "label_id": 32,
+        "video_id": "103188",
+        "video_path": "data/ssv2/videos/train/103188.webm"
+      },
+      {
+        "label_id": 32,
+        "video_id": "108334",
+        "video_path": "data/ssv2/videos/train/108334.webm"
+      },
+      {
+        "label_id": 32,
+        "video_id": "109292",
+        "video_path": "data/ssv2/videos/train/109292.webm"
+      },
+      {
+        "label_id": 32,
+        "video_id": "114653",
+        "video_path": "data/ssv2/videos/train/114653.webm"
+      },
+      {
+        "label_id": 32,
+        "video_id": "115084",
+        "video_path": "data/ssv2/videos/train/115084.webm"
+      },
+      {
+        "label_id": 33,
+        "video_id": "104131",
+        "video_path": "data/ssv2/videos/train/104131.webm"
+      },
+      {
+        "label_id": 33,
+        "video_id": "104373",
+        "video_path": "data/ssv2/videos/train/104373.webm"
+      },
+      {
+        "label_id": 33,
+        "video_id": "104520",
+        "video_path": "data/ssv2/videos/train/104520.webm"
+      },
+      {
+        "label_id": 33,
+        "video_id": "109314",
+        "video_path": "data/ssv2/videos/train/109314.webm"
+      },
+      {
+        "label_id": 33,
+        "video_id": "111541",
+        "video_path": "data/ssv2/videos/train/111541.webm"
+      },
+      {
+        "label_id": 34,
+        "video_id": "1012",
+        "video_path": "data/ssv2/videos/train/1012.webm"
+      },
+      {
+        "label_id": 34,
+        "video_id": "104054",
+        "video_path": "data/ssv2/videos/train/104054.webm"
+      },
+      {
+        "label_id": 34,
+        "video_id": "10528",
+        "video_path": "data/ssv2/videos/train/10528.webm"
+      },
+      {
+        "label_id": 34,
+        "video_id": "11016",
+        "video_path": "data/ssv2/videos/train/11016.webm"
+      },
+      {
+        "label_id": 34,
+        "video_id": "112246",
+        "video_path": "data/ssv2/videos/train/112246.webm"
+      },
+      {
+        "label_id": 35,
+        "video_id": "100577",
+        "video_path": "data/ssv2/videos/train/100577.webm"
+      },
+      {
+        "label_id": 35,
+        "video_id": "102515",
+        "video_path": "data/ssv2/videos/train/102515.webm"
+      },
+      {
+        "label_id": 35,
+        "video_id": "103601",
+        "video_path": "data/ssv2/videos/train/103601.webm"
+      },
+      {
+        "label_id": 35,
+        "video_id": "105279",
+        "video_path": "data/ssv2/videos/train/105279.webm"
+      },
+      {
+        "label_id": 35,
+        "video_id": "113131",
+        "video_path": "data/ssv2/videos/train/113131.webm"
+      },
+      {
+        "label_id": 36,
+        "video_id": "100482",
+        "video_path": "data/ssv2/videos/train/100482.webm"
+      },
+      {
+        "label_id": 36,
+        "video_id": "101277",
+        "video_path": "data/ssv2/videos/train/101277.webm"
+      },
+      {
+        "label_id": 36,
+        "video_id": "105472",
+        "video_path": "data/ssv2/videos/train/105472.webm"
+      },
+      {
+        "label_id": 36,
+        "video_id": "105598",
+        "video_path": "data/ssv2/videos/train/105598.webm"
+      },
+      {
+        "label_id": 36,
+        "video_id": "107171",
+        "video_path": "data/ssv2/videos/train/107171.webm"
+      },
+      {
+        "label_id": 37,
+        "video_id": "102130",
+        "video_path": "data/ssv2/videos/train/102130.webm"
+      },
+      {
+        "label_id": 37,
+        "video_id": "104306",
+        "video_path": "data/ssv2/videos/train/104306.webm"
+      },
+      {
+        "label_id": 37,
+        "video_id": "106826",
+        "video_path": "data/ssv2/videos/train/106826.webm"
+      },
+      {
+        "label_id": 37,
+        "video_id": "110867",
+        "video_path": "data/ssv2/videos/train/110867.webm"
+      },
+      {
+        "label_id": 37,
+        "video_id": "111902",
+        "video_path": "data/ssv2/videos/train/111902.webm"
+      },
+      {
+        "label_id": 38,
+        "video_id": "101932",
+        "video_path": "data/ssv2/videos/train/101932.webm"
+      },
+      {
+        "label_id": 38,
+        "video_id": "102107",
+        "video_path": "data/ssv2/videos/train/102107.webm"
+      },
+      {
+        "label_id": 38,
+        "video_id": "102299",
+        "video_path": "data/ssv2/videos/train/102299.webm"
+      },
+      {
+        "label_id": 38,
+        "video_id": "102624",
+        "video_path": "data/ssv2/videos/train/102624.webm"
+      },
+      {
+        "label_id": 38,
+        "video_id": "105895",
+        "video_path": "data/ssv2/videos/train/105895.webm"
+      },
+      {
+        "label_id": 39,
+        "video_id": "101805",
+        "video_path": "data/ssv2/videos/train/101805.webm"
+      },
+      {
+        "label_id": 39,
+        "video_id": "101879",
+        "video_path": "data/ssv2/videos/train/101879.webm"
+      },
+      {
+        "label_id": 39,
+        "video_id": "103600",
+        "video_path": "data/ssv2/videos/train/103600.webm"
+      },
+      {
+        "label_id": 39,
+        "video_id": "105979",
+        "video_path": "data/ssv2/videos/train/105979.webm"
+      },
+      {
+        "label_id": 39,
+        "video_id": "110973",
+        "video_path": "data/ssv2/videos/train/110973.webm"
+      },
+      {
+        "label_id": 40,
+        "video_id": "101531",
+        "video_path": "data/ssv2/videos/train/101531.webm"
+      },
+      {
+        "label_id": 40,
+        "video_id": "104406",
+        "video_path": "data/ssv2/videos/train/104406.webm"
+      },
+      {
+        "label_id": 40,
+        "video_id": "105286",
+        "video_path": "data/ssv2/videos/train/105286.webm"
+      },
+      {
+        "label_id": 40,
+        "video_id": "109277",
+        "video_path": "data/ssv2/videos/train/109277.webm"
+      },
+      {
+        "label_id": 40,
+        "video_id": "109612",
+        "video_path": "data/ssv2/videos/train/109612.webm"
+      },
+      {
+        "label_id": 41,
+        "video_id": "100301",
+        "video_path": "data/ssv2/videos/train/100301.webm"
+      },
+      {
+        "label_id": 41,
+        "video_id": "101249",
+        "video_path": "data/ssv2/videos/train/101249.webm"
+      },
+      {
+        "label_id": 41,
+        "video_id": "101331",
+        "video_path": "data/ssv2/videos/train/101331.webm"
+      },
+      {
+        "label_id": 41,
+        "video_id": "102128",
+        "video_path": "data/ssv2/videos/train/102128.webm"
+      },
+      {
+        "label_id": 41,
+        "video_id": "113555",
+        "video_path": "data/ssv2/videos/train/113555.webm"
+      },
+      {
+        "label_id": 42,
+        "video_id": "100468",
+        "video_path": "data/ssv2/videos/train/100468.webm"
+      },
+      {
+        "label_id": 42,
+        "video_id": "101447",
+        "video_path": "data/ssv2/videos/train/101447.webm"
+      },
+      {
+        "label_id": 42,
+        "video_id": "102313",
+        "video_path": "data/ssv2/videos/train/102313.webm"
+      },
+      {
+        "label_id": 42,
+        "video_id": "104288",
+        "video_path": "data/ssv2/videos/train/104288.webm"
+      },
+      {
+        "label_id": 42,
+        "video_id": "107763",
+        "video_path": "data/ssv2/videos/train/107763.webm"
+      },
+      {
+        "label_id": 43,
+        "video_id": "101866",
+        "video_path": "data/ssv2/videos/train/101866.webm"
+      },
+      {
+        "label_id": 43,
+        "video_id": "101881",
+        "video_path": "data/ssv2/videos/train/101881.webm"
+      },
+      {
+        "label_id": 43,
+        "video_id": "101898",
+        "video_path": "data/ssv2/videos/train/101898.webm"
+      },
+      {
+        "label_id": 43,
+        "video_id": "105662",
+        "video_path": "data/ssv2/videos/train/105662.webm"
+      },
+      {
+        "label_id": 43,
+        "video_id": "105838",
+        "video_path": "data/ssv2/videos/train/105838.webm"
+      },
+      {
+        "label_id": 44,
+        "video_id": "100067",
+        "video_path": "data/ssv2/videos/train/100067.webm"
+      },
+      {
+        "label_id": 44,
+        "video_id": "101717",
+        "video_path": "data/ssv2/videos/train/101717.webm"
+      },
+      {
+        "label_id": 44,
+        "video_id": "102039",
+        "video_path": "data/ssv2/videos/train/102039.webm"
+      },
+      {
+        "label_id": 44,
+        "video_id": "105763",
+        "video_path": "data/ssv2/videos/train/105763.webm"
+      },
+      {
+        "label_id": 44,
+        "video_id": "106590",
+        "video_path": "data/ssv2/videos/train/106590.webm"
+      },
+      {
+        "label_id": 45,
+        "video_id": "101910",
+        "video_path": "data/ssv2/videos/train/101910.webm"
+      },
+      {
+        "label_id": 45,
+        "video_id": "102734",
+        "video_path": "data/ssv2/videos/train/102734.webm"
+      },
+      {
+        "label_id": 45,
+        "video_id": "103630",
+        "video_path": "data/ssv2/videos/train/103630.webm"
+      },
+      {
+        "label_id": 45,
+        "video_id": "10475",
+        "video_path": "data/ssv2/videos/train/10475.webm"
+      },
+      {
+        "label_id": 45,
+        "video_id": "106199",
+        "video_path": "data/ssv2/videos/train/106199.webm"
+      },
+      {
+        "label_id": 46,
+        "video_id": "105710",
+        "video_path": "data/ssv2/videos/train/105710.webm"
+      },
+      {
+        "label_id": 46,
+        "video_id": "105900",
+        "video_path": "data/ssv2/videos/train/105900.webm"
+      },
+      {
+        "label_id": 46,
+        "video_id": "117700",
+        "video_path": "data/ssv2/videos/train/117700.webm"
+      },
+      {
+        "label_id": 46,
+        "video_id": "118885",
+        "video_path": "data/ssv2/videos/train/118885.webm"
+      },
+      {
+        "label_id": 46,
+        "video_id": "118973",
+        "video_path": "data/ssv2/videos/train/118973.webm"
+      },
+      {
+        "label_id": 47,
+        "video_id": "100332",
+        "video_path": "data/ssv2/videos/train/100332.webm"
+      },
+      {
+        "label_id": 47,
+        "video_id": "101876",
+        "video_path": "data/ssv2/videos/train/101876.webm"
+      },
+      {
+        "label_id": 47,
+        "video_id": "103613",
+        "video_path": "data/ssv2/videos/train/103613.webm"
+      },
+      {
+        "label_id": 47,
+        "video_id": "104490",
+        "video_path": "data/ssv2/videos/train/104490.webm"
+      },
+      {
+        "label_id": 47,
+        "video_id": "105820",
+        "video_path": "data/ssv2/videos/train/105820.webm"
+      },
+      {
+        "label_id": 48,
+        "video_id": "103437",
+        "video_path": "data/ssv2/videos/train/103437.webm"
+      },
+      {
+        "label_id": 48,
+        "video_id": "107535",
+        "video_path": "data/ssv2/videos/train/107535.webm"
+      },
+      {
+        "label_id": 48,
+        "video_id": "108277",
+        "video_path": "data/ssv2/videos/train/108277.webm"
+      },
+      {
+        "label_id": 48,
+        "video_id": "110246",
+        "video_path": "data/ssv2/videos/train/110246.webm"
+      },
+      {
+        "label_id": 48,
+        "video_id": "110385",
+        "video_path": "data/ssv2/videos/train/110385.webm"
+      },
+      {
+        "label_id": 49,
+        "video_id": "101654",
+        "video_path": "data/ssv2/videos/train/101654.webm"
+      },
+      {
+        "label_id": 49,
+        "video_id": "105206",
+        "video_path": "data/ssv2/videos/train/105206.webm"
+      },
+      {
+        "label_id": 49,
+        "video_id": "105586",
+        "video_path": "data/ssv2/videos/train/105586.webm"
+      },
+      {
+        "label_id": 49,
+        "video_id": "106183",
+        "video_path": "data/ssv2/videos/train/106183.webm"
+      },
+      {
+        "label_id": 49,
+        "video_id": "110154",
+        "video_path": "data/ssv2/videos/train/110154.webm"
+      }
+    ],
+    "ucf101": [
+      {
+        "label_id": 0,
+        "video_id": "v_ApplyEyeMakeup_g01_c01",
+        "video_path": "data/ucf101/videos/train/ApplyEyeMakeup/v_ApplyEyeMakeup_g01_c01.avi"
+      },
+      {
+        "label_id": 0,
+        "video_id": "v_ApplyEyeMakeup_g01_c02",
+        "video_path": "data/ucf101/videos/train/ApplyEyeMakeup/v_ApplyEyeMakeup_g01_c02.avi"
+      },
+      {
+        "label_id": 0,
+        "video_id": "v_ApplyEyeMakeup_g01_c05",
+        "video_path": "data/ucf101/videos/train/ApplyEyeMakeup/v_ApplyEyeMakeup_g01_c05.avi"
+      },
+      {
+        "label_id": 0,
+        "video_id": "v_ApplyEyeMakeup_g01_c06",
+        "video_path": "data/ucf101/videos/train/ApplyEyeMakeup/v_ApplyEyeMakeup_g01_c06.avi"
+      },
+      {
+        "label_id": 0,
+        "video_id": "v_ApplyEyeMakeup_g02_c01",
+        "video_path": "data/ucf101/videos/train/ApplyEyeMakeup/v_ApplyEyeMakeup_g02_c01.avi"
+      },
+      {
+        "label_id": 1,
+        "video_id": "v_Archery_g01_c01",
+        "video_path": "data/ucf101/videos/train/Archery/v_Archery_g01_c01.avi"
+      },
+      {
+        "label_id": 1,
+        "video_id": "v_Archery_g01_c02",
+        "video_path": "data/ucf101/videos/train/Archery/v_Archery_g01_c02.avi"
+      },
+      {
+        "label_id": 1,
+        "video_id": "v_Archery_g01_c03",
+        "video_path": "data/ucf101/videos/train/Archery/v_Archery_g01_c03.avi"
+      },
+      {
+        "label_id": 1,
+        "video_id": "v_Archery_g01_c04",
+        "video_path": "data/ucf101/videos/train/Archery/v_Archery_g01_c04.avi"
+      },
+      {
+        "label_id": 1,
+        "video_id": "v_Archery_g01_c06",
+        "video_path": "data/ucf101/videos/train/Archery/v_Archery_g01_c06.avi"
+      },
+      {
+        "label_id": 2,
+        "video_id": "v_BabyCrawling_g01_c01",
+        "video_path": "data/ucf101/videos/train/BabyCrawling/v_BabyCrawling_g01_c01.avi"
+      },
+      {
+        "label_id": 2,
+        "video_id": "v_BabyCrawling_g01_c02",
+        "video_path": "data/ucf101/videos/train/BabyCrawling/v_BabyCrawling_g01_c02.avi"
+      },
+      {
+        "label_id": 2,
+        "video_id": "v_BabyCrawling_g01_c03",
+        "video_path": "data/ucf101/videos/train/BabyCrawling/v_BabyCrawling_g01_c03.avi"
+      },
+      {
+        "label_id": 2,
+        "video_id": "v_BabyCrawling_g01_c04",
+        "video_path": "data/ucf101/videos/train/BabyCrawling/v_BabyCrawling_g01_c04.avi"
+      },
+      {
+        "label_id": 2,
+        "video_id": "v_BabyCrawling_g02_c01",
+        "video_path": "data/ucf101/videos/train/BabyCrawling/v_BabyCrawling_g02_c01.avi"
+      },
+      {
+        "label_id": 3,
+        "video_id": "v_BandMarching_g01_c02",
+        "video_path": "data/ucf101/videos/train/BandMarching/v_BandMarching_g01_c02.avi"
+      },
+      {
+        "label_id": 3,
+        "video_id": "v_BandMarching_g01_c03",
+        "video_path": "data/ucf101/videos/train/BandMarching/v_BandMarching_g01_c03.avi"
+      },
+      {
+        "label_id": 3,
+        "video_id": "v_BandMarching_g01_c04",
+        "video_path": "data/ucf101/videos/train/BandMarching/v_BandMarching_g01_c04.avi"
+      },
+      {
+        "label_id": 3,
+        "video_id": "v_BandMarching_g01_c06",
+        "video_path": "data/ucf101/videos/train/BandMarching/v_BandMarching_g01_c06.avi"
+      },
+      {
+        "label_id": 3,
+        "video_id": "v_BandMarching_g01_c07",
+        "video_path": "data/ucf101/videos/train/BandMarching/v_BandMarching_g01_c07.avi"
+      },
+      {
+        "label_id": 4,
+        "video_id": "v_BaseballPitch_g01_c01",
+        "video_path": "data/ucf101/videos/train/BaseballPitch/v_BaseballPitch_g01_c01.avi"
+      },
+      {
+        "label_id": 4,
+        "video_id": "v_BaseballPitch_g01_c02",
+        "video_path": "data/ucf101/videos/train/BaseballPitch/v_BaseballPitch_g01_c02.avi"
+      },
+      {
+        "label_id": 4,
+        "video_id": "v_BaseballPitch_g01_c03",
+        "video_path": "data/ucf101/videos/train/BaseballPitch/v_BaseballPitch_g01_c03.avi"
+      },
+      {
+        "label_id": 4,
+        "video_id": "v_BaseballPitch_g01_c04",
+        "video_path": "data/ucf101/videos/train/BaseballPitch/v_BaseballPitch_g01_c04.avi"
+      },
+      {
+        "label_id": 4,
+        "video_id": "v_BaseballPitch_g01_c06",
+        "video_path": "data/ucf101/videos/train/BaseballPitch/v_BaseballPitch_g01_c06.avi"
+      },
+      {
+        "label_id": 5,
+        "video_id": "v_Basketball_g01_c01",
+        "video_path": "data/ucf101/videos/train/Basketball/v_Basketball_g01_c01.avi"
+      },
+      {
+        "label_id": 5,
+        "video_id": "v_Basketball_g01_c02",
+        "video_path": "data/ucf101/videos/train/Basketball/v_Basketball_g01_c02.avi"
+      },
+      {
+        "label_id": 5,
+        "video_id": "v_Basketball_g01_c04",
+        "video_path": "data/ucf101/videos/train/Basketball/v_Basketball_g01_c04.avi"
+      },
+      {
+        "label_id": 5,
+        "video_id": "v_Basketball_g01_c05",
+        "video_path": "data/ucf101/videos/train/Basketball/v_Basketball_g01_c05.avi"
+      },
+      {
+        "label_id": 5,
+        "video_id": "v_Basketball_g01_c06",
+        "video_path": "data/ucf101/videos/train/Basketball/v_Basketball_g01_c06.avi"
+      },
+      {
+        "label_id": 6,
+        "video_id": "v_BasketballDunk_g01_c01",
+        "video_path": "data/ucf101/videos/train/BasketballDunk/v_BasketballDunk_g01_c01.avi"
+      },
+      {
+        "label_id": 6,
+        "video_id": "v_BasketballDunk_g01_c02",
+        "video_path": "data/ucf101/videos/train/BasketballDunk/v_BasketballDunk_g01_c02.avi"
+      },
+      {
+        "label_id": 6,
+        "video_id": "v_BasketballDunk_g01_c03",
+        "video_path": "data/ucf101/videos/train/BasketballDunk/v_BasketballDunk_g01_c03.avi"
+      },
+      {
+        "label_id": 6,
+        "video_id": "v_BasketballDunk_g01_c05",
+        "video_path": "data/ucf101/videos/train/BasketballDunk/v_BasketballDunk_g01_c05.avi"
+      },
+      {
+        "label_id": 6,
+        "video_id": "v_BasketballDunk_g01_c06",
+        "video_path": "data/ucf101/videos/train/BasketballDunk/v_BasketballDunk_g01_c06.avi"
+      },
+      {
+        "label_id": 7,
+        "video_id": "v_BenchPress_g01_c01",
+        "video_path": "data/ucf101/videos/train/BenchPress/v_BenchPress_g01_c01.avi"
+      },
+      {
+        "label_id": 7,
+        "video_id": "v_BenchPress_g01_c03",
+        "video_path": "data/ucf101/videos/train/BenchPress/v_BenchPress_g01_c03.avi"
+      },
+      {
+        "label_id": 7,
+        "video_id": "v_BenchPress_g01_c04",
+        "video_path": "data/ucf101/videos/train/BenchPress/v_BenchPress_g01_c04.avi"
+      },
+      {
+        "label_id": 7,
+        "video_id": "v_BenchPress_g01_c05",
+        "video_path": "data/ucf101/videos/train/BenchPress/v_BenchPress_g01_c05.avi"
+      },
+      {
+        "label_id": 7,
+        "video_id": "v_BenchPress_g02_c01",
+        "video_path": "data/ucf101/videos/train/BenchPress/v_BenchPress_g02_c01.avi"
+      },
+      {
+        "label_id": 8,
+        "video_id": "v_Biking_g01_c01",
+        "video_path": "data/ucf101/videos/train/Biking/v_Biking_g01_c01.avi"
+      },
+      {
+        "label_id": 8,
+        "video_id": "v_Biking_g01_c03",
+        "video_path": "data/ucf101/videos/train/Biking/v_Biking_g01_c03.avi"
+      },
+      {
+        "label_id": 8,
+        "video_id": "v_Biking_g01_c04",
+        "video_path": "data/ucf101/videos/train/Biking/v_Biking_g01_c04.avi"
+      },
+      {
+        "label_id": 8,
+        "video_id": "v_Biking_g02_c02",
+        "video_path": "data/ucf101/videos/train/Biking/v_Biking_g02_c02.avi"
+      },
+      {
+        "label_id": 8,
+        "video_id": "v_Biking_g02_c04",
+        "video_path": "data/ucf101/videos/train/Biking/v_Biking_g02_c04.avi"
+      },
+      {
+        "label_id": 9,
+        "video_id": "v_BlowDryHair_g01_c04",
+        "video_path": "data/ucf101/videos/train/BlowDryHair/v_BlowDryHair_g01_c04.avi"
+      },
+      {
+        "label_id": 9,
+        "video_id": "v_BlowDryHair_g02_c01",
+        "video_path": "data/ucf101/videos/train/BlowDryHair/v_BlowDryHair_g02_c01.avi"
+      },
+      {
+        "label_id": 9,
+        "video_id": "v_BlowDryHair_g02_c04",
+        "video_path": "data/ucf101/videos/train/BlowDryHair/v_BlowDryHair_g02_c04.avi"
+      },
+      {
+        "label_id": 9,
+        "video_id": "v_BlowDryHair_g02_c05",
+        "video_path": "data/ucf101/videos/train/BlowDryHair/v_BlowDryHair_g02_c05.avi"
+      },
+      {
+        "label_id": 9,
+        "video_id": "v_BlowDryHair_g03_c01",
+        "video_path": "data/ucf101/videos/train/BlowDryHair/v_BlowDryHair_g03_c01.avi"
+      },
+      {
+        "label_id": 10,
+        "video_id": "v_Bowling_g01_c01",
+        "video_path": "data/ucf101/videos/train/Bowling/v_Bowling_g01_c01.avi"
+      },
+      {
+        "label_id": 10,
+        "video_id": "v_Bowling_g01_c02",
+        "video_path": "data/ucf101/videos/train/Bowling/v_Bowling_g01_c02.avi"
+      },
+      {
+        "label_id": 10,
+        "video_id": "v_Bowling_g01_c04",
+        "video_path": "data/ucf101/videos/train/Bowling/v_Bowling_g01_c04.avi"
+      },
+      {
+        "label_id": 10,
+        "video_id": "v_Bowling_g02_c02",
+        "video_path": "data/ucf101/videos/train/Bowling/v_Bowling_g02_c02.avi"
+      },
+      {
+        "label_id": 10,
+        "video_id": "v_Bowling_g02_c03",
+        "video_path": "data/ucf101/videos/train/Bowling/v_Bowling_g02_c03.avi"
+      },
+      {
+        "label_id": 11,
+        "video_id": "v_BoxingPunchingBag_g01_c02",
+        "video_path": "data/ucf101/videos/train/BoxingPunchingBag/v_BoxingPunchingBag_g01_c02.avi"
+      },
+      {
+        "label_id": 11,
+        "video_id": "v_BoxingPunchingBag_g01_c03",
+        "video_path": "data/ucf101/videos/train/BoxingPunchingBag/v_BoxingPunchingBag_g01_c03.avi"
+      },
+      {
+        "label_id": 11,
+        "video_id": "v_BoxingPunchingBag_g01_c06",
+        "video_path": "data/ucf101/videos/train/BoxingPunchingBag/v_BoxingPunchingBag_g01_c06.avi"
+      },
+      {
+        "label_id": 11,
+        "video_id": "v_BoxingPunchingBag_g02_c04",
+        "video_path": "data/ucf101/videos/train/BoxingPunchingBag/v_BoxingPunchingBag_g02_c04.avi"
+      },
+      {
+        "label_id": 11,
+        "video_id": "v_BoxingPunchingBag_g02_c06",
+        "video_path": "data/ucf101/videos/train/BoxingPunchingBag/v_BoxingPunchingBag_g02_c06.avi"
+      },
+      {
+        "label_id": 12,
+        "video_id": "v_BoxingSpeedBag_g01_c02",
+        "video_path": "data/ucf101/videos/train/BoxingSpeedBag/v_BoxingSpeedBag_g01_c02.avi"
+      },
+      {
+        "label_id": 12,
+        "video_id": "v_BoxingSpeedBag_g01_c03",
+        "video_path": "data/ucf101/videos/train/BoxingSpeedBag/v_BoxingSpeedBag_g01_c03.avi"
+      },
+      {
+        "label_id": 12,
+        "video_id": "v_BoxingSpeedBag_g02_c02",
+        "video_path": "data/ucf101/videos/train/BoxingSpeedBag/v_BoxingSpeedBag_g02_c02.avi"
+      },
+      {
+        "label_id": 12,
+        "video_id": "v_BoxingSpeedBag_g02_c03",
+        "video_path": "data/ucf101/videos/train/BoxingSpeedBag/v_BoxingSpeedBag_g02_c03.avi"
+      },
+      {
+        "label_id": 12,
+        "video_id": "v_BoxingSpeedBag_g02_c04",
+        "video_path": "data/ucf101/videos/train/BoxingSpeedBag/v_BoxingSpeedBag_g02_c04.avi"
+      },
+      {
+        "label_id": 13,
+        "video_id": "v_BrushingTeeth_g01_c02",
+        "video_path": "data/ucf101/videos/train/BrushingTeeth/v_BrushingTeeth_g01_c02.avi"
+      },
+      {
+        "label_id": 13,
+        "video_id": "v_BrushingTeeth_g01_c04",
+        "video_path": "data/ucf101/videos/train/BrushingTeeth/v_BrushingTeeth_g01_c04.avi"
+      },
+      {
+        "label_id": 13,
+        "video_id": "v_BrushingTeeth_g02_c01",
+        "video_path": "data/ucf101/videos/train/BrushingTeeth/v_BrushingTeeth_g02_c01.avi"
+      },
+      {
+        "label_id": 13,
+        "video_id": "v_BrushingTeeth_g02_c02",
+        "video_path": "data/ucf101/videos/train/BrushingTeeth/v_BrushingTeeth_g02_c02.avi"
+      },
+      {
+        "label_id": 13,
+        "video_id": "v_BrushingTeeth_g02_c03",
+        "video_path": "data/ucf101/videos/train/BrushingTeeth/v_BrushingTeeth_g02_c03.avi"
+      },
+      {
+        "label_id": 14,
+        "video_id": "v_CliffDiving_g01_c02",
+        "video_path": "data/ucf101/videos/train/CliffDiving/v_CliffDiving_g01_c02.avi"
+      },
+      {
+        "label_id": 14,
+        "video_id": "v_CliffDiving_g01_c03",
+        "video_path": "data/ucf101/videos/train/CliffDiving/v_CliffDiving_g01_c03.avi"
+      },
+      {
+        "label_id": 14,
+        "video_id": "v_CliffDiving_g01_c04",
+        "video_path": "data/ucf101/videos/train/CliffDiving/v_CliffDiving_g01_c04.avi"
+      },
+      {
+        "label_id": 14,
+        "video_id": "v_CliffDiving_g01_c05",
+        "video_path": "data/ucf101/videos/train/CliffDiving/v_CliffDiving_g01_c05.avi"
+      },
+      {
+        "label_id": 14,
+        "video_id": "v_CliffDiving_g01_c06",
+        "video_path": "data/ucf101/videos/train/CliffDiving/v_CliffDiving_g01_c06.avi"
+      },
+      {
+        "label_id": 15,
+        "video_id": "v_CricketBowling_g01_c02",
+        "video_path": "data/ucf101/videos/train/CricketBowling/v_CricketBowling_g01_c02.avi"
+      },
+      {
+        "label_id": 15,
+        "video_id": "v_CricketBowling_g01_c03",
+        "video_path": "data/ucf101/videos/train/CricketBowling/v_CricketBowling_g01_c03.avi"
+      },
+      {
+        "label_id": 15,
+        "video_id": "v_CricketBowling_g01_c04",
+        "video_path": "data/ucf101/videos/train/CricketBowling/v_CricketBowling_g01_c04.avi"
+      },
+      {
+        "label_id": 15,
+        "video_id": "v_CricketBowling_g01_c05",
+        "video_path": "data/ucf101/videos/train/CricketBowling/v_CricketBowling_g01_c05.avi"
+      },
+      {
+        "label_id": 15,
+        "video_id": "v_CricketBowling_g01_c07",
+        "video_path": "data/ucf101/videos/train/CricketBowling/v_CricketBowling_g01_c07.avi"
+      },
+      {
+        "label_id": 16,
+        "video_id": "v_CricketShot_g01_c01",
+        "video_path": "data/ucf101/videos/train/CricketShot/v_CricketShot_g01_c01.avi"
+      },
+      {
+        "label_id": 16,
+        "video_id": "v_CricketShot_g01_c02",
+        "video_path": "data/ucf101/videos/train/CricketShot/v_CricketShot_g01_c02.avi"
+      },
+      {
+        "label_id": 16,
+        "video_id": "v_CricketShot_g01_c03",
+        "video_path": "data/ucf101/videos/train/CricketShot/v_CricketShot_g01_c03.avi"
+      },
+      {
+        "label_id": 16,
+        "video_id": "v_CricketShot_g01_c04",
+        "video_path": "data/ucf101/videos/train/CricketShot/v_CricketShot_g01_c04.avi"
+      },
+      {
+        "label_id": 16,
+        "video_id": "v_CricketShot_g01_c07",
+        "video_path": "data/ucf101/videos/train/CricketShot/v_CricketShot_g01_c07.avi"
+      },
+      {
+        "label_id": 17,
+        "video_id": "v_Diving_g01_c01",
+        "video_path": "data/ucf101/videos/train/Diving/v_Diving_g01_c01.avi"
+      },
+      {
+        "label_id": 17,
+        "video_id": "v_Diving_g01_c03",
+        "video_path": "data/ucf101/videos/train/Diving/v_Diving_g01_c03.avi"
+      },
+      {
+        "label_id": 17,
+        "video_id": "v_Diving_g01_c04",
+        "video_path": "data/ucf101/videos/train/Diving/v_Diving_g01_c04.avi"
+      },
+      {
+        "label_id": 17,
+        "video_id": "v_Diving_g01_c06",
+        "video_path": "data/ucf101/videos/train/Diving/v_Diving_g01_c06.avi"
+      },
+      {
+        "label_id": 17,
+        "video_id": "v_Diving_g01_c07",
+        "video_path": "data/ucf101/videos/train/Diving/v_Diving_g01_c07.avi"
+      },
+      {
+        "label_id": 18,
+        "video_id": "v_Drumming_g01_c02",
+        "video_path": "data/ucf101/videos/train/Drumming/v_Drumming_g01_c02.avi"
+      },
+      {
+        "label_id": 18,
+        "video_id": "v_Drumming_g01_c03",
+        "video_path": "data/ucf101/videos/train/Drumming/v_Drumming_g01_c03.avi"
+      },
+      {
+        "label_id": 18,
+        "video_id": "v_Drumming_g01_c04",
+        "video_path": "data/ucf101/videos/train/Drumming/v_Drumming_g01_c04.avi"
+      },
+      {
+        "label_id": 18,
+        "video_id": "v_Drumming_g01_c07",
+        "video_path": "data/ucf101/videos/train/Drumming/v_Drumming_g01_c07.avi"
+      },
+      {
+        "label_id": 18,
+        "video_id": "v_Drumming_g02_c01",
+        "video_path": "data/ucf101/videos/train/Drumming/v_Drumming_g02_c01.avi"
+      },
+      {
+        "label_id": 19,
+        "video_id": "v_FrontCrawl_g01_c01",
+        "video_path": "data/ucf101/videos/train/FrontCrawl/v_FrontCrawl_g01_c01.avi"
+      },
+      {
+        "label_id": 19,
+        "video_id": "v_FrontCrawl_g01_c02",
+        "video_path": "data/ucf101/videos/train/FrontCrawl/v_FrontCrawl_g01_c02.avi"
+      },
+      {
+        "label_id": 19,
+        "video_id": "v_FrontCrawl_g01_c04",
+        "video_path": "data/ucf101/videos/train/FrontCrawl/v_FrontCrawl_g01_c04.avi"
+      },
+      {
+        "label_id": 19,
+        "video_id": "v_FrontCrawl_g03_c01",
+        "video_path": "data/ucf101/videos/train/FrontCrawl/v_FrontCrawl_g03_c01.avi"
+      },
+      {
+        "label_id": 19,
+        "video_id": "v_FrontCrawl_g03_c02",
+        "video_path": "data/ucf101/videos/train/FrontCrawl/v_FrontCrawl_g03_c02.avi"
+      },
+      {
+        "label_id": 20,
+        "video_id": "v_GolfSwing_g01_c01",
+        "video_path": "data/ucf101/videos/train/GolfSwing/v_GolfSwing_g01_c01.avi"
+      },
+      {
+        "label_id": 20,
+        "video_id": "v_GolfSwing_g01_c03",
+        "video_path": "data/ucf101/videos/train/GolfSwing/v_GolfSwing_g01_c03.avi"
+      },
+      {
+        "label_id": 20,
+        "video_id": "v_GolfSwing_g01_c05",
+        "video_path": "data/ucf101/videos/train/GolfSwing/v_GolfSwing_g01_c05.avi"
+      },
+      {
+        "label_id": 20,
+        "video_id": "v_GolfSwing_g01_c06",
+        "video_path": "data/ucf101/videos/train/GolfSwing/v_GolfSwing_g01_c06.avi"
+      },
+      {
+        "label_id": 20,
+        "video_id": "v_GolfSwing_g02_c01",
+        "video_path": "data/ucf101/videos/train/GolfSwing/v_GolfSwing_g02_c01.avi"
+      },
+      {
+        "label_id": 21,
+        "video_id": "v_HammerThrow_g01_c02",
+        "video_path": "data/ucf101/videos/train/HammerThrow/v_HammerThrow_g01_c02.avi"
+      },
+      {
+        "label_id": 21,
+        "video_id": "v_HammerThrow_g01_c03",
+        "video_path": "data/ucf101/videos/train/HammerThrow/v_HammerThrow_g01_c03.avi"
+      },
+      {
+        "label_id": 21,
+        "video_id": "v_HammerThrow_g01_c04",
+        "video_path": "data/ucf101/videos/train/HammerThrow/v_HammerThrow_g01_c04.avi"
+      },
+      {
+        "label_id": 21,
+        "video_id": "v_HammerThrow_g01_c05",
+        "video_path": "data/ucf101/videos/train/HammerThrow/v_HammerThrow_g01_c05.avi"
+      },
+      {
+        "label_id": 21,
+        "video_id": "v_HammerThrow_g01_c06",
+        "video_path": "data/ucf101/videos/train/HammerThrow/v_HammerThrow_g01_c06.avi"
+      },
+      {
+        "label_id": 22,
+        "video_id": "v_HeadMassage_g01_c01",
+        "video_path": "data/ucf101/videos/train/HeadMassage/v_HeadMassage_g01_c01.avi"
+      },
+      {
+        "label_id": 22,
+        "video_id": "v_HeadMassage_g01_c03",
+        "video_path": "data/ucf101/videos/train/HeadMassage/v_HeadMassage_g01_c03.avi"
+      },
+      {
+        "label_id": 22,
+        "video_id": "v_HeadMassage_g02_c01",
+        "video_path": "data/ucf101/videos/train/HeadMassage/v_HeadMassage_g02_c01.avi"
+      },
+      {
+        "label_id": 22,
+        "video_id": "v_HeadMassage_g02_c03",
+        "video_path": "data/ucf101/videos/train/HeadMassage/v_HeadMassage_g02_c03.avi"
+      },
+      {
+        "label_id": 22,
+        "video_id": "v_HeadMassage_g02_c05",
+        "video_path": "data/ucf101/videos/train/HeadMassage/v_HeadMassage_g02_c05.avi"
+      },
+      {
+        "label_id": 23,
+        "video_id": "v_IceDancing_g01_c01",
+        "video_path": "data/ucf101/videos/train/IceDancing/v_IceDancing_g01_c01.avi"
+      },
+      {
+        "label_id": 23,
+        "video_id": "v_IceDancing_g01_c03",
+        "video_path": "data/ucf101/videos/train/IceDancing/v_IceDancing_g01_c03.avi"
+      },
+      {
+        "label_id": 23,
+        "video_id": "v_IceDancing_g01_c04",
+        "video_path": "data/ucf101/videos/train/IceDancing/v_IceDancing_g01_c04.avi"
+      },
+      {
+        "label_id": 23,
+        "video_id": "v_IceDancing_g01_c05",
+        "video_path": "data/ucf101/videos/train/IceDancing/v_IceDancing_g01_c05.avi"
+      },
+      {
+        "label_id": 23,
+        "video_id": "v_IceDancing_g01_c06",
+        "video_path": "data/ucf101/videos/train/IceDancing/v_IceDancing_g01_c06.avi"
+      },
+      {
+        "label_id": 24,
+        "video_id": "v_JumpRope_g01_c03",
+        "video_path": "data/ucf101/videos/train/JumpRope/v_JumpRope_g01_c03.avi"
+      },
+      {
+        "label_id": 24,
+        "video_id": "v_JumpRope_g02_c01",
+        "video_path": "data/ucf101/videos/train/JumpRope/v_JumpRope_g02_c01.avi"
+      },
+      {
+        "label_id": 24,
+        "video_id": "v_JumpRope_g02_c03",
+        "video_path": "data/ucf101/videos/train/JumpRope/v_JumpRope_g02_c03.avi"
+      },
+      {
+        "label_id": 24,
+        "video_id": "v_JumpRope_g02_c05",
+        "video_path": "data/ucf101/videos/train/JumpRope/v_JumpRope_g02_c05.avi"
+      },
+      {
+        "label_id": 24,
+        "video_id": "v_JumpRope_g02_c06",
+        "video_path": "data/ucf101/videos/train/JumpRope/v_JumpRope_g02_c06.avi"
+      },
+      {
+        "label_id": 25,
+        "video_id": "v_Kayaking_g01_c02",
+        "video_path": "data/ucf101/videos/train/Kayaking/v_Kayaking_g01_c02.avi"
+      },
+      {
+        "label_id": 25,
+        "video_id": "v_Kayaking_g01_c03",
+        "video_path": "data/ucf101/videos/train/Kayaking/v_Kayaking_g01_c03.avi"
+      },
+      {
+        "label_id": 25,
+        "video_id": "v_Kayaking_g01_c04",
+        "video_path": "data/ucf101/videos/train/Kayaking/v_Kayaking_g01_c04.avi"
+      },
+      {
+        "label_id": 25,
+        "video_id": "v_Kayaking_g01_c05",
+        "video_path": "data/ucf101/videos/train/Kayaking/v_Kayaking_g01_c05.avi"
+      },
+      {
+        "label_id": 25,
+        "video_id": "v_Kayaking_g01_c06",
+        "video_path": "data/ucf101/videos/train/Kayaking/v_Kayaking_g01_c06.avi"
+      },
+      {
+        "label_id": 26,
+        "video_id": "v_LongJump_g01_c01",
+        "video_path": "data/ucf101/videos/train/LongJump/v_LongJump_g01_c01.avi"
+      },
+      {
+        "label_id": 26,
+        "video_id": "v_LongJump_g01_c02",
+        "video_path": "data/ucf101/videos/train/LongJump/v_LongJump_g01_c02.avi"
+      },
+      {
+        "label_id": 26,
+        "video_id": "v_LongJump_g01_c03",
+        "video_path": "data/ucf101/videos/train/LongJump/v_LongJump_g01_c03.avi"
+      },
+      {
+        "label_id": 26,
+        "video_id": "v_LongJump_g01_c04",
+        "video_path": "data/ucf101/videos/train/LongJump/v_LongJump_g01_c04.avi"
+      },
+      {
+        "label_id": 26,
+        "video_id": "v_LongJump_g01_c05",
+        "video_path": "data/ucf101/videos/train/LongJump/v_LongJump_g01_c05.avi"
+      },
+      {
+        "label_id": 27,
+        "video_id": "v_Mixing_g01_c02",
+        "video_path": "data/ucf101/videos/train/Mixing/v_Mixing_g01_c02.avi"
+      },
+      {
+        "label_id": 27,
+        "video_id": "v_Mixing_g01_c03",
+        "video_path": "data/ucf101/videos/train/Mixing/v_Mixing_g01_c03.avi"
+      },
+      {
+        "label_id": 27,
+        "video_id": "v_Mixing_g01_c04",
+        "video_path": "data/ucf101/videos/train/Mixing/v_Mixing_g01_c04.avi"
+      },
+      {
+        "label_id": 27,
+        "video_id": "v_Mixing_g01_c05",
+        "video_path": "data/ucf101/videos/train/Mixing/v_Mixing_g01_c05.avi"
+      },
+      {
+        "label_id": 27,
+        "video_id": "v_Mixing_g01_c06",
+        "video_path": "data/ucf101/videos/train/Mixing/v_Mixing_g01_c06.avi"
+      },
+      {
+        "label_id": 28,
+        "video_id": "v_Nunchucks_g01_c01",
+        "video_path": "data/ucf101/videos/train/Nunchucks/v_Nunchucks_g01_c01.avi"
+      },
+      {
+        "label_id": 28,
+        "video_id": "v_Nunchucks_g01_c02",
+        "video_path": "data/ucf101/videos/train/Nunchucks/v_Nunchucks_g01_c02.avi"
+      },
+      {
+        "label_id": 28,
+        "video_id": "v_Nunchucks_g01_c03",
+        "video_path": "data/ucf101/videos/train/Nunchucks/v_Nunchucks_g01_c03.avi"
+      },
+      {
+        "label_id": 28,
+        "video_id": "v_Nunchucks_g01_c04",
+        "video_path": "data/ucf101/videos/train/Nunchucks/v_Nunchucks_g01_c04.avi"
+      },
+      {
+        "label_id": 28,
+        "video_id": "v_Nunchucks_g02_c01",
+        "video_path": "data/ucf101/videos/train/Nunchucks/v_Nunchucks_g02_c01.avi"
+      },
+      {
+        "label_id": 29,
+        "video_id": "v_PlayingCello_g01_c01",
+        "video_path": "data/ucf101/videos/train/PlayingCello/v_PlayingCello_g01_c01.avi"
+      },
+      {
+        "label_id": 29,
+        "video_id": "v_PlayingCello_g01_c02",
+        "video_path": "data/ucf101/videos/train/PlayingCello/v_PlayingCello_g01_c02.avi"
+      },
+      {
+        "label_id": 29,
+        "video_id": "v_PlayingCello_g01_c03",
+        "video_path": "data/ucf101/videos/train/PlayingCello/v_PlayingCello_g01_c03.avi"
+      },
+      {
+        "label_id": 29,
+        "video_id": "v_PlayingCello_g01_c04",
+        "video_path": "data/ucf101/videos/train/PlayingCello/v_PlayingCello_g01_c04.avi"
+      },
+      {
+        "label_id": 29,
+        "video_id": "v_PlayingCello_g02_c01",
+        "video_path": "data/ucf101/videos/train/PlayingCello/v_PlayingCello_g02_c01.avi"
+      },
+      {
+        "label_id": 30,
+        "video_id": "v_PlayingDaf_g01_c01",
+        "video_path": "data/ucf101/videos/train/PlayingDaf/v_PlayingDaf_g01_c01.avi"
+      },
+      {
+        "label_id": 30,
+        "video_id": "v_PlayingDaf_g01_c03",
+        "video_path": "data/ucf101/videos/train/PlayingDaf/v_PlayingDaf_g01_c03.avi"
+      },
+      {
+        "label_id": 30,
+        "video_id": "v_PlayingDaf_g01_c04",
+        "video_path": "data/ucf101/videos/train/PlayingDaf/v_PlayingDaf_g01_c04.avi"
+      },
+      {
+        "label_id": 30,
+        "video_id": "v_PlayingDaf_g02_c01",
+        "video_path": "data/ucf101/videos/train/PlayingDaf/v_PlayingDaf_g02_c01.avi"
+      },
+      {
+        "label_id": 30,
+        "video_id": "v_PlayingDaf_g02_c05",
+        "video_path": "data/ucf101/videos/train/PlayingDaf/v_PlayingDaf_g02_c05.avi"
+      },
+      {
+        "label_id": 31,
+        "video_id": "v_PlayingDhol_g01_c01",
+        "video_path": "data/ucf101/videos/train/PlayingDhol/v_PlayingDhol_g01_c01.avi"
+      },
+      {
+        "label_id": 31,
+        "video_id": "v_PlayingDhol_g01_c02",
+        "video_path": "data/ucf101/videos/train/PlayingDhol/v_PlayingDhol_g01_c02.avi"
+      },
+      {
+        "label_id": 31,
+        "video_id": "v_PlayingDhol_g01_c03",
+        "video_path": "data/ucf101/videos/train/PlayingDhol/v_PlayingDhol_g01_c03.avi"
+      },
+      {
+        "label_id": 31,
+        "video_id": "v_PlayingDhol_g01_c04",
+        "video_path": "data/ucf101/videos/train/PlayingDhol/v_PlayingDhol_g01_c04.avi"
+      },
+      {
+        "label_id": 31,
+        "video_id": "v_PlayingDhol_g01_c06",
+        "video_path": "data/ucf101/videos/train/PlayingDhol/v_PlayingDhol_g01_c06.avi"
+      },
+      {
+        "label_id": 32,
+        "video_id": "v_PlayingFlute_g01_c01",
+        "video_path": "data/ucf101/videos/train/PlayingFlute/v_PlayingFlute_g01_c01.avi"
+      },
+      {
+        "label_id": 32,
+        "video_id": "v_PlayingFlute_g01_c03",
+        "video_path": "data/ucf101/videos/train/PlayingFlute/v_PlayingFlute_g01_c03.avi"
+      },
+      {
+        "label_id": 32,
+        "video_id": "v_PlayingFlute_g01_c06",
+        "video_path": "data/ucf101/videos/train/PlayingFlute/v_PlayingFlute_g01_c06.avi"
+      },
+      {
+        "label_id": 32,
+        "video_id": "v_PlayingFlute_g01_c07",
+        "video_path": "data/ucf101/videos/train/PlayingFlute/v_PlayingFlute_g01_c07.avi"
+      },
+      {
+        "label_id": 32,
+        "video_id": "v_PlayingFlute_g02_c02",
+        "video_path": "data/ucf101/videos/train/PlayingFlute/v_PlayingFlute_g02_c02.avi"
+      },
+      {
+        "label_id": 33,
+        "video_id": "v_PlayingGuitar_g01_c02",
+        "video_path": "data/ucf101/videos/train/PlayingGuitar/v_PlayingGuitar_g01_c02.avi"
+      },
+      {
+        "label_id": 33,
+        "video_id": "v_PlayingGuitar_g01_c05",
+        "video_path": "data/ucf101/videos/train/PlayingGuitar/v_PlayingGuitar_g01_c05.avi"
+      },
+      {
+        "label_id": 33,
+        "video_id": "v_PlayingGuitar_g01_c06",
+        "video_path": "data/ucf101/videos/train/PlayingGuitar/v_PlayingGuitar_g01_c06.avi"
+      },
+      {
+        "label_id": 33,
+        "video_id": "v_PlayingGuitar_g02_c01",
+        "video_path": "data/ucf101/videos/train/PlayingGuitar/v_PlayingGuitar_g02_c01.avi"
+      },
+      {
+        "label_id": 33,
+        "video_id": "v_PlayingGuitar_g02_c02",
+        "video_path": "data/ucf101/videos/train/PlayingGuitar/v_PlayingGuitar_g02_c02.avi"
+      },
+      {
+        "label_id": 34,
+        "video_id": "v_PlayingSitar_g01_c02",
+        "video_path": "data/ucf101/videos/train/PlayingSitar/v_PlayingSitar_g01_c02.avi"
+      },
+      {
+        "label_id": 34,
+        "video_id": "v_PlayingSitar_g01_c04",
+        "video_path": "data/ucf101/videos/train/PlayingSitar/v_PlayingSitar_g01_c04.avi"
+      },
+      {
+        "label_id": 34,
+        "video_id": "v_PlayingSitar_g02_c01",
+        "video_path": "data/ucf101/videos/train/PlayingSitar/v_PlayingSitar_g02_c01.avi"
+      },
+      {
+        "label_id": 34,
+        "video_id": "v_PlayingSitar_g02_c02",
+        "video_path": "data/ucf101/videos/train/PlayingSitar/v_PlayingSitar_g02_c02.avi"
+      },
+      {
+        "label_id": 34,
+        "video_id": "v_PlayingSitar_g02_c05",
+        "video_path": "data/ucf101/videos/train/PlayingSitar/v_PlayingSitar_g02_c05.avi"
+      },
+      {
+        "label_id": 35,
+        "video_id": "v_PoleVault_g01_c01",
+        "video_path": "data/ucf101/videos/train/PoleVault/v_PoleVault_g01_c01.avi"
+      },
+      {
+        "label_id": 35,
+        "video_id": "v_PoleVault_g01_c03",
+        "video_path": "data/ucf101/videos/train/PoleVault/v_PoleVault_g01_c03.avi"
+      },
+      {
+        "label_id": 35,
+        "video_id": "v_PoleVault_g01_c04",
+        "video_path": "data/ucf101/videos/train/PoleVault/v_PoleVault_g01_c04.avi"
+      },
+      {
+        "label_id": 35,
+        "video_id": "v_PoleVault_g01_c05",
+        "video_path": "data/ucf101/videos/train/PoleVault/v_PoleVault_g01_c05.avi"
+      },
+      {
+        "label_id": 35,
+        "video_id": "v_PoleVault_g02_c01",
+        "video_path": "data/ucf101/videos/train/PoleVault/v_PoleVault_g02_c01.avi"
+      },
+      {
+        "label_id": 36,
+        "video_id": "v_Punch_g01_c01",
+        "video_path": "data/ucf101/videos/train/Punch/v_Punch_g01_c01.avi"
+      },
+      {
+        "label_id": 36,
+        "video_id": "v_Punch_g01_c02",
+        "video_path": "data/ucf101/videos/train/Punch/v_Punch_g01_c02.avi"
+      },
+      {
+        "label_id": 36,
+        "video_id": "v_Punch_g01_c04",
+        "video_path": "data/ucf101/videos/train/Punch/v_Punch_g01_c04.avi"
+      },
+      {
+        "label_id": 36,
+        "video_id": "v_Punch_g01_c05",
+        "video_path": "data/ucf101/videos/train/Punch/v_Punch_g01_c05.avi"
+      },
+      {
+        "label_id": 36,
+        "video_id": "v_Punch_g02_c01",
+        "video_path": "data/ucf101/videos/train/Punch/v_Punch_g02_c01.avi"
+      },
+      {
+        "label_id": 37,
+        "video_id": "v_RockClimbingIndoor_g01_c01",
+        "video_path": "data/ucf101/videos/train/RockClimbingIndoor/v_RockClimbingIndoor_g01_c01.avi"
+      },
+      {
+        "label_id": 37,
+        "video_id": "v_RockClimbingIndoor_g01_c05",
+        "video_path": "data/ucf101/videos/train/RockClimbingIndoor/v_RockClimbingIndoor_g01_c05.avi"
+      },
+      {
+        "label_id": 37,
+        "video_id": "v_RockClimbingIndoor_g02_c02",
+        "video_path": "data/ucf101/videos/train/RockClimbingIndoor/v_RockClimbingIndoor_g02_c02.avi"
+      },
+      {
+        "label_id": 37,
+        "video_id": "v_RockClimbingIndoor_g02_c03",
+        "video_path": "data/ucf101/videos/train/RockClimbingIndoor/v_RockClimbingIndoor_g02_c03.avi"
+      },
+      {
+        "label_id": 37,
+        "video_id": "v_RockClimbingIndoor_g02_c04",
+        "video_path": "data/ucf101/videos/train/RockClimbingIndoor/v_RockClimbingIndoor_g02_c04.avi"
+      },
+      {
+        "label_id": 38,
+        "video_id": "v_Rowing_g01_c02",
+        "video_path": "data/ucf101/videos/train/Rowing/v_Rowing_g01_c02.avi"
+      },
+      {
+        "label_id": 38,
+        "video_id": "v_Rowing_g01_c03",
+        "video_path": "data/ucf101/videos/train/Rowing/v_Rowing_g01_c03.avi"
+      },
+      {
+        "label_id": 38,
+        "video_id": "v_Rowing_g01_c04",
+        "video_path": "data/ucf101/videos/train/Rowing/v_Rowing_g01_c04.avi"
+      },
+      {
+        "label_id": 38,
+        "video_id": "v_Rowing_g02_c02",
+        "video_path": "data/ucf101/videos/train/Rowing/v_Rowing_g02_c02.avi"
+      },
+      {
+        "label_id": 38,
+        "video_id": "v_Rowing_g02_c04",
+        "video_path": "data/ucf101/videos/train/Rowing/v_Rowing_g02_c04.avi"
+      },
+      {
+        "label_id": 39,
+        "video_id": "v_SalsaSpin_g01_c01",
+        "video_path": "data/ucf101/videos/train/SalsaSpin/v_SalsaSpin_g01_c01.avi"
+      },
+      {
+        "label_id": 39,
+        "video_id": "v_SalsaSpin_g01_c02",
+        "video_path": "data/ucf101/videos/train/SalsaSpin/v_SalsaSpin_g01_c02.avi"
+      },
+      {
+        "label_id": 39,
+        "video_id": "v_SalsaSpin_g01_c03",
+        "video_path": "data/ucf101/videos/train/SalsaSpin/v_SalsaSpin_g01_c03.avi"
+      },
+      {
+        "label_id": 39,
+        "video_id": "v_SalsaSpin_g01_c04",
+        "video_path": "data/ucf101/videos/train/SalsaSpin/v_SalsaSpin_g01_c04.avi"
+      },
+      {
+        "label_id": 39,
+        "video_id": "v_SalsaSpin_g01_c05",
+        "video_path": "data/ucf101/videos/train/SalsaSpin/v_SalsaSpin_g01_c05.avi"
+      },
+      {
+        "label_id": 40,
+        "video_id": "v_ShavingBeard_g01_c02",
+        "video_path": "data/ucf101/videos/train/ShavingBeard/v_ShavingBeard_g01_c02.avi"
+      },
+      {
+        "label_id": 40,
+        "video_id": "v_ShavingBeard_g01_c03",
+        "video_path": "data/ucf101/videos/train/ShavingBeard/v_ShavingBeard_g01_c03.avi"
+      },
+      {
+        "label_id": 40,
+        "video_id": "v_ShavingBeard_g02_c01",
+        "video_path": "data/ucf101/videos/train/ShavingBeard/v_ShavingBeard_g02_c01.avi"
+      },
+      {
+        "label_id": 40,
+        "video_id": "v_ShavingBeard_g02_c02",
+        "video_path": "data/ucf101/videos/train/ShavingBeard/v_ShavingBeard_g02_c02.avi"
+      },
+      {
+        "label_id": 40,
+        "video_id": "v_ShavingBeard_g02_c06",
+        "video_path": "data/ucf101/videos/train/ShavingBeard/v_ShavingBeard_g02_c06.avi"
+      },
+      {
+        "label_id": 41,
+        "video_id": "v_Shotput_g01_c01",
+        "video_path": "data/ucf101/videos/train/Shotput/v_Shotput_g01_c01.avi"
+      },
+      {
+        "label_id": 41,
+        "video_id": "v_Shotput_g01_c05",
+        "video_path": "data/ucf101/videos/train/Shotput/v_Shotput_g01_c05.avi"
+      },
+      {
+        "label_id": 41,
+        "video_id": "v_Shotput_g01_c06",
+        "video_path": "data/ucf101/videos/train/Shotput/v_Shotput_g01_c06.avi"
+      },
+      {
+        "label_id": 41,
+        "video_id": "v_Shotput_g01_c07",
+        "video_path": "data/ucf101/videos/train/Shotput/v_Shotput_g01_c07.avi"
+      },
+      {
+        "label_id": 41,
+        "video_id": "v_Shotput_g02_c03",
+        "video_path": "data/ucf101/videos/train/Shotput/v_Shotput_g02_c03.avi"
+      },
+      {
+        "label_id": 42,
+        "video_id": "v_Skiing_g01_c02",
+        "video_path": "data/ucf101/videos/train/Skiing/v_Skiing_g01_c02.avi"
+      },
+      {
+        "label_id": 42,
+        "video_id": "v_Skiing_g01_c03",
+        "video_path": "data/ucf101/videos/train/Skiing/v_Skiing_g01_c03.avi"
+      },
+      {
+        "label_id": 42,
+        "video_id": "v_Skiing_g01_c04",
+        "video_path": "data/ucf101/videos/train/Skiing/v_Skiing_g01_c04.avi"
+      },
+      {
+        "label_id": 42,
+        "video_id": "v_Skiing_g01_c05",
+        "video_path": "data/ucf101/videos/train/Skiing/v_Skiing_g01_c05.avi"
+      },
+      {
+        "label_id": 42,
+        "video_id": "v_Skiing_g02_c02",
+        "video_path": "data/ucf101/videos/train/Skiing/v_Skiing_g02_c02.avi"
+      },
+      {
+        "label_id": 43,
+        "video_id": "v_SoccerJuggling_g01_c05",
+        "video_path": "data/ucf101/videos/train/SoccerJuggling/v_SoccerJuggling_g01_c05.avi"
+      },
+      {
+        "label_id": 43,
+        "video_id": "v_SoccerJuggling_g02_c01",
+        "video_path": "data/ucf101/videos/train/SoccerJuggling/v_SoccerJuggling_g02_c01.avi"
+      },
+      {
+        "label_id": 43,
+        "video_id": "v_SoccerJuggling_g02_c02",
+        "video_path": "data/ucf101/videos/train/SoccerJuggling/v_SoccerJuggling_g02_c02.avi"
+      },
+      {
+        "label_id": 43,
+        "video_id": "v_SoccerJuggling_g02_c03",
+        "video_path": "data/ucf101/videos/train/SoccerJuggling/v_SoccerJuggling_g02_c03.avi"
+      },
+      {
+        "label_id": 43,
+        "video_id": "v_SoccerJuggling_g02_c04",
+        "video_path": "data/ucf101/videos/train/SoccerJuggling/v_SoccerJuggling_g02_c04.avi"
+      },
+      {
+        "label_id": 44,
+        "video_id": "v_SoccerPenalty_g01_c01",
+        "video_path": "data/ucf101/videos/train/SoccerPenalty/v_SoccerPenalty_g01_c01.avi"
+      },
+      {
+        "label_id": 44,
+        "video_id": "v_SoccerPenalty_g01_c04",
+        "video_path": "data/ucf101/videos/train/SoccerPenalty/v_SoccerPenalty_g01_c04.avi"
+      },
+      {
+        "label_id": 44,
+        "video_id": "v_SoccerPenalty_g01_c05",
+        "video_path": "data/ucf101/videos/train/SoccerPenalty/v_SoccerPenalty_g01_c05.avi"
+      },
+      {
+        "label_id": 44,
+        "video_id": "v_SoccerPenalty_g01_c06",
+        "video_path": "data/ucf101/videos/train/SoccerPenalty/v_SoccerPenalty_g01_c06.avi"
+      },
+      {
+        "label_id": 44,
+        "video_id": "v_SoccerPenalty_g02_c01",
+        "video_path": "data/ucf101/videos/train/SoccerPenalty/v_SoccerPenalty_g02_c01.avi"
+      },
+      {
+        "label_id": 45,
+        "video_id": "v_Swing_g01_c02",
+        "video_path": "data/ucf101/videos/train/Swing/v_Swing_g01_c02.avi"
+      },
+      {
+        "label_id": 45,
+        "video_id": "v_Swing_g01_c03",
+        "video_path": "data/ucf101/videos/train/Swing/v_Swing_g01_c03.avi"
+      },
+      {
+        "label_id": 45,
+        "video_id": "v_Swing_g02_c01",
+        "video_path": "data/ucf101/videos/train/Swing/v_Swing_g02_c01.avi"
+      },
+      {
+        "label_id": 45,
+        "video_id": "v_Swing_g02_c02",
+        "video_path": "data/ucf101/videos/train/Swing/v_Swing_g02_c02.avi"
+      },
+      {
+        "label_id": 45,
+        "video_id": "v_Swing_g02_c03",
+        "video_path": "data/ucf101/videos/train/Swing/v_Swing_g02_c03.avi"
+      },
+      {
+        "label_id": 46,
+        "video_id": "v_TableTennisShot_g01_c01",
+        "video_path": "data/ucf101/videos/train/TableTennisShot/v_TableTennisShot_g01_c01.avi"
+      },
+      {
+        "label_id": 46,
+        "video_id": "v_TableTennisShot_g01_c04",
+        "video_path": "data/ucf101/videos/train/TableTennisShot/v_TableTennisShot_g01_c04.avi"
+      },
+      {
+        "label_id": 46,
+        "video_id": "v_TableTennisShot_g02_c01",
+        "video_path": "data/ucf101/videos/train/TableTennisShot/v_TableTennisShot_g02_c01.avi"
+      },
+      {
+        "label_id": 46,
+        "video_id": "v_TableTennisShot_g02_c02",
+        "video_path": "data/ucf101/videos/train/TableTennisShot/v_TableTennisShot_g02_c02.avi"
+      },
+      {
+        "label_id": 46,
+        "video_id": "v_TableTennisShot_g02_c03",
+        "video_path": "data/ucf101/videos/train/TableTennisShot/v_TableTennisShot_g02_c03.avi"
+      },
+      {
+        "label_id": 47,
+        "video_id": "v_TennisSwing_g01_c04",
+        "video_path": "data/ucf101/videos/train/TennisSwing/v_TennisSwing_g01_c04.avi"
+      },
+      {
+        "label_id": 47,
+        "video_id": "v_TennisSwing_g01_c05",
+        "video_path": "data/ucf101/videos/train/TennisSwing/v_TennisSwing_g01_c05.avi"
+      },
+      {
+        "label_id": 47,
+        "video_id": "v_TennisSwing_g01_c06",
+        "video_path": "data/ucf101/videos/train/TennisSwing/v_TennisSwing_g01_c06.avi"
+      },
+      {
+        "label_id": 47,
+        "video_id": "v_TennisSwing_g02_c01",
+        "video_path": "data/ucf101/videos/train/TennisSwing/v_TennisSwing_g02_c01.avi"
+      },
+      {
+        "label_id": 47,
+        "video_id": "v_TennisSwing_g02_c02",
+        "video_path": "data/ucf101/videos/train/TennisSwing/v_TennisSwing_g02_c02.avi"
+      },
+      {
+        "label_id": 48,
+        "video_id": "v_Typing_g01_c01",
+        "video_path": "data/ucf101/videos/train/Typing/v_Typing_g01_c01.avi"
+      },
+      {
+        "label_id": 48,
+        "video_id": "v_Typing_g01_c02",
+        "video_path": "data/ucf101/videos/train/Typing/v_Typing_g01_c02.avi"
+      },
+      {
+        "label_id": 48,
+        "video_id": "v_Typing_g01_c04",
+        "video_path": "data/ucf101/videos/train/Typing/v_Typing_g01_c04.avi"
+      },
+      {
+        "label_id": 48,
+        "video_id": "v_Typing_g01_c05",
+        "video_path": "data/ucf101/videos/train/Typing/v_Typing_g01_c05.avi"
+      },
+      {
+        "label_id": 48,
+        "video_id": "v_Typing_g01_c07",
+        "video_path": "data/ucf101/videos/train/Typing/v_Typing_g01_c07.avi"
+      },
+      {
+        "label_id": 49,
+        "video_id": "v_WritingOnBoard_g01_c01",
+        "video_path": "data/ucf101/videos/train/WritingOnBoard/v_WritingOnBoard_g01_c01.avi"
+      },
+      {
+        "label_id": 49,
+        "video_id": "v_WritingOnBoard_g01_c03",
+        "video_path": "data/ucf101/videos/train/WritingOnBoard/v_WritingOnBoard_g01_c03.avi"
+      },
+      {
+        "label_id": 49,
+        "video_id": "v_WritingOnBoard_g01_c05",
+        "video_path": "data/ucf101/videos/train/WritingOnBoard/v_WritingOnBoard_g01_c05.avi"
+      },
+      {
+        "label_id": 49,
+        "video_id": "v_WritingOnBoard_g01_c06",
+        "video_path": "data/ucf101/videos/train/WritingOnBoard/v_WritingOnBoard_g01_c06.avi"
+      },
+      {
+        "label_id": 49,
+        "video_id": "v_WritingOnBoard_g01_c07",
+        "video_path": "data/ucf101/videos/train/WritingOnBoard/v_WritingOnBoard_g01_c07.avi"
+      }
+    ]
+  }
+}

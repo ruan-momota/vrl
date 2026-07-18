@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Any
 
 from src.models.base import VideoEncoder
+from src.models.dinov2 import DINOv2Encoder
 from src.models.dismo import DisMoEncoder
 from src.models.slowfast import SlowFastEncoder
 from src.models.videomae import VideoMAEEncoder
@@ -10,6 +11,8 @@ from src.models.vjepa import VJEPA2Encoder
 
 
 def load_video_encoder(name: str, **kwargs: Any) -> VideoEncoder:
+    if name == "dinov2":
+        return DINOv2Encoder.from_pretrained(**kwargs)
     if name == "videomae":
         return VideoMAEEncoder.from_pretrained(**kwargs)
     if name == "slowfast":
@@ -18,9 +21,9 @@ def load_video_encoder(name: str, **kwargs: Any) -> VideoEncoder:
         return DisMoEncoder.from_pretrained(**kwargs)
     if name == "vjepa":
         return VJEPA2Encoder.from_pretrained(**kwargs)
-    raise ValueError(
-        f"Unsupported video encoder {name!r}; supported: dismo, slowfast, videomae, vjepa")
+    supported = ", ".join(supported_video_encoders())
+    raise ValueError(f"Unsupported video encoder {name!r}; supported: {supported}")
 
 
 def supported_video_encoders() -> tuple[str, ...]:
-    return ("dismo", "slowfast", "videomae", "vjepa")
+    return ("dinov2", "dismo", "slowfast", "videomae", "vjepa")

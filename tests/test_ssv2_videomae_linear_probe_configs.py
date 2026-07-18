@@ -17,20 +17,20 @@ def test_linear_probe_extraction_configs_share_one_run_identity() -> None:
         if "smoke" not in path.name and "evaluation" not in path.name
     ]
 
-    assert len(configs) == 10
+    assert len(configs) == 16
     assert {config.resolved_run_id for config in configs} == {LINEAR_PROBE_RUN_ID}
     assert {config.split for config in configs} == {"train", "validation"}
-    assert sum(config.perturbation["name"] != "none" for config in configs) == 8
+    assert sum(config.perturbation["name"] != "none" for config in configs) == 14
     assert all(config.subset_summary_path == "data/ssv2/index/summary.json" for config in configs)
 
 
-def test_linear_probe_evaluation_config_matches_the_eight_heldout_artifacts() -> None:
+def test_linear_probe_evaluation_config_matches_the_heldout_artifacts() -> None:
     config = RunEvaluationConfig.from_file(
         LINEAR_PROBE_CONFIG_DIR / "ssv2_videomae_c50_linear_probe_evaluation.json"
     )
 
     assert config.run_id == LINEAR_PROBE_RUN_ID
-    assert len(config.perturbations) == 8
+    assert len(config.perturbations) == 14
     assert config.knn == {"metric": "cosine", "k_values": [5]}
     assert {spec.group for spec in config.perturbations} == {"motion", "appearance"}
     assert {spec.name for spec in config.perturbations} == {
@@ -38,4 +38,6 @@ def test_linear_probe_evaluation_config_matches_the_eight_heldout_artifacts() ->
         "freeze_tail",
         "color_transform",
         "spatial_blur",
+        "rgb_quantization",
+        "solarization",
     }

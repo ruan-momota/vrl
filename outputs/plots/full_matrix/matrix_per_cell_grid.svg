@@ -10,14 +10,14 @@
 <text x="120.00" y="165.00" font-size="12" font-weight="700" text-anchor="end">SSV2</text>
 <rect x="134" y="94" width="182" height="142" fill="none" stroke="#e5e7eb" stroke-width="1" />
 <text x="225.00" y="106.00" font-size="9" font-weight="400" text-anchor="middle">LP orig. 25%</text>
-<rect x="134.00" y="164.52" width="21.00" height="67.48" fill="#2563eb" />
-<rect x="157.00" y="218.32" width="21.00" height="13.68" fill="#2563eb" />
-<rect x="180.00" y="202.14" width="21.00" height="29.86" fill="#2563eb" />
-<rect x="203.00" y="179.80" width="21.00" height="52.20" fill="#2563eb" />
+<rect x="134.00" y="162.70" width="21.00" height="69.30" fill="#2563eb" />
+<rect x="157.00" y="217.64" width="21.00" height="14.36" fill="#2563eb" />
+<rect x="180.00" y="200.31" width="21.00" height="31.69" fill="#2563eb" />
+<rect x="203.00" y="178.43" width="21.00" height="53.57" fill="#2563eb" />
 <rect x="226.00" y="231.09" width="21.00" height="0.91" fill="#ea580c" />
-<rect x="249.00" y="229.49" width="21.00" height="2.51" fill="#ea580c" />
-<rect x="272.00" y="221.51" width="21.00" height="10.49" fill="#ea580c" />
-<rect x="295.00" y="203.50" width="21.00" height="28.50" fill="#ea580c" />
+<rect x="249.00" y="229.26" width="21.00" height="2.74" fill="#ea580c" />
+<rect x="272.00" y="222.88" width="21.00" height="9.12" fill="#ea580c" />
+<rect x="295.00" y="203.28" width="21.00" height="28.72" fill="#ea580c" />
 <line x1="134" y1="232.00" x2="316" y2="232.00" stroke="#9ca3af" stroke-width="1" />
 <rect x="324" y="94" width="182" height="142" fill="none" stroke="#e5e7eb" stroke-width="1" />
 <text x="415.00" y="106.00" font-size="9" font-weight="400" text-anchor="middle">LP orig. 34%</text>
@@ -85,36 +85,36 @@
 <text x="985.00" y="315.00" font-size="10" font-weight="400" text-anchor="middle">no run</text>
 <text x="120.00" y="465.00" font-size="12" font-weight="700" text-anchor="end">Diving48</text>
 <rect x="134" y="394" width="182" height="142" fill="none" stroke="#e5e7eb" stroke-width="1" />
-<text x="225.00" y="406.00" font-size="9" font-weight="400" text-anchor="middle">LP orig. 8%</text>
-<rect x="134.00" y="512.05" width="21.00" height="19.95" fill="#2563eb" />
-<rect x="157.00" y="525.59" width="21.00" height="6.41" fill="#2563eb" />
-<rect x="180.00" y="520.60" width="21.00" height="11.40" fill="#2563eb" />
+<text x="225.00" y="406.00" font-size="9" font-weight="400" text-anchor="middle">LP orig. 7%</text>
+<rect x="134.00" y="512.77" width="21.00" height="19.23" fill="#2563eb" />
+<rect x="157.00" y="527.01" width="21.00" height="4.99" fill="#2563eb" />
+<rect x="180.00" y="522.03" width="21.00" height="9.97" fill="#2563eb" />
 <rect x="203.00" y="510.63" width="21.00" height="21.37" fill="#2563eb" />
 <rect x="226.00" y="532.00" width="21.00" height="0.60" fill="#ea580c" />
-<rect x="249.00" y="527.73" width="21.00" height="4.27" fill="#ea580c" />
-<rect x="272.00" y="526.30" width="21.00" height="5.70" fill="#ea580c" />
-<rect x="295.00" y="522.74" width="21.00" height="9.26" fill="#ea580c" />
+<rect x="249.00" y="529.86" width="21.00" height="2.14" fill="#ea580c" />
+<rect x="272.00" y="528.44" width="21.00" height="3.56" fill="#ea580c" />
+<rect x="295.00" y="524.16" width="21.00" height="7.84" fill="#ea580c" />
 <line x1="134" y1="532.00" x2="316" y2="532.00" stroke="#9ca3af" stroke-width="1" />
 <rect x="324" y="394" width="182" height="142" fill="none" stroke="#e5e7eb" stroke-width="1" />
 <text x="415.00" y="406.00" font-size="9" font-weight="400" text-anchor="middle">LP orig. 9%</text>
-<rect x="324.00" y="507.78" width="21.00" height="24.22" fill="#2563eb" />
-<rect x="347.00" y="519.18" width="21.00" height="12.82" fill="#2563eb" />
-<rect x="370.00" y="508.49" width="21.00" height="23.51" fill="#2563eb" />
-<rect x="393.00" y="507.07" width="21.00" height="24.93" fill="#2563eb" />
+<rect x="324.00" y="507.07" width="21.00" height="24.93" fill="#2563eb" />
+<rect x="347.00" y="517.75" width="21.00" height="14.25" fill="#2563eb" />
+<rect x="370.00" y="506.35" width="21.00" height="25.65" fill="#2563eb" />
+<rect x="393.00" y="505.64" width="21.00" height="26.36" fill="#2563eb" />
 <rect x="416.00" y="531.29" width="21.00" height="0.71" fill="#ea580c" />
-<rect x="439.00" y="530.58" width="21.00" height="1.42" fill="#ea580c" />
-<rect x="462.00" y="525.59" width="21.00" height="6.41" fill="#ea580c" />
-<rect x="485.00" y="528.44" width="21.00" height="3.56" fill="#ea580c" />
+<rect x="439.00" y="529.86" width="21.00" height="2.14" fill="#ea580c" />
+<rect x="462.00" y="523.45" width="21.00" height="8.55" fill="#ea580c" />
+<rect x="485.00" y="527.73" width="21.00" height="4.27" fill="#ea580c" />
 <line x1="324" y1="532.00" x2="506" y2="532.00" stroke="#9ca3af" stroke-width="1" />
 <rect x="514" y="394" width="182" height="142" fill="none" stroke="#e5e7eb" stroke-width="1" />
-<text x="605.00" y="406.00" font-size="9" font-weight="400" text-anchor="middle">LP orig. 9%</text>
+<text x="605.00" y="406.00" font-size="9" font-weight="400" text-anchor="middle">LP orig. 10%</text>
 <rect x="514.00" y="532.00" width="21.00" height="0.60" fill="#2563eb" />
-<rect x="537.00" y="529.15" width="21.00" height="2.85" fill="#2563eb" />
-<rect x="560.00" y="527.73" width="21.00" height="4.27" fill="#2563eb" />
-<rect x="583.00" y="523.45" width="21.00" height="8.55" fill="#2563eb" />
-<rect x="606.00" y="532.00" width="21.00" height="0.60" fill="#ea580c" />
-<rect x="629.00" y="532.00" width="21.00" height="0.60" fill="#ea580c" />
-<rect x="652.00" y="529.86" width="21.00" height="2.14" fill="#ea580c" />
+<rect x="537.00" y="528.44" width="21.00" height="3.56" fill="#2563eb" />
+<rect x="560.00" y="521.31" width="21.00" height="10.69" fill="#2563eb" />
+<rect x="583.00" y="512.77" width="21.00" height="19.23" fill="#2563eb" />
+<rect x="606.00" y="531.29" width="21.00" height="0.71" fill="#ea580c" />
+<rect x="629.00" y="530.58" width="21.00" height="1.42" fill="#ea580c" />
+<rect x="652.00" y="527.73" width="21.00" height="4.27" fill="#ea580c" />
 <rect x="675.00" y="528.44" width="21.00" height="3.56" fill="#ea580c" />
 <line x1="514" y1="532.00" x2="696" y2="532.00" stroke="#9ca3af" stroke-width="1" />
 <rect x="704" y="394" width="182" height="142" fill="none" stroke="#e5e7eb" stroke-width="1" />

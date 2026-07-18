@@ -15,7 +15,7 @@ UCF101_RUN_ID = "ucf101-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-pr
 def test_ssv2_slowfast_extraction_configs_share_one_run_identity() -> None:
     configs = _extraction_configs(SSV2_CONFIG_DIR, "ssv2_slowfast_c50_*.json")
 
-    assert len(configs) == 10
+    assert len(configs) == 16
     assert {config.dataset_name for config in configs} == {"ssv2"}
     assert {config.model_name for config in configs} == {"slowfast"}
     assert {config.model_checkpoint for config in configs} == {
@@ -25,14 +25,14 @@ def test_ssv2_slowfast_extraction_configs_share_one_run_identity() -> None:
     assert {config.split for config in configs} == {"train", "validation"}
     assert {config.num_frames for config in configs} == {32}
     assert {config.image_size for config in configs} == {256}
-    assert sum(config.perturbation["name"] != "none" for config in configs) == 8
+    assert sum(config.perturbation["name"] != "none" for config in configs) == 14
     assert all(config.subset_summary_path == "data/ssv2/index/summary.json" for config in configs)
 
 
 def test_ucf101_slowfast_extraction_configs_share_one_run_identity() -> None:
     configs = _extraction_configs(UCF101_CONFIG_DIR, "ucf101_slowfast_c50_*.json")
 
-    assert len(configs) == 10
+    assert len(configs) == 16
     assert {config.dataset_name for config in configs} == {"ucf101"}
     assert {config.model_name for config in configs} == {"slowfast"}
     assert {config.model_checkpoint for config in configs} == {
@@ -42,7 +42,7 @@ def test_ucf101_slowfast_extraction_configs_share_one_run_identity() -> None:
     assert {config.split for config in configs} == {"train", "heldout"}
     assert {config.num_frames for config in configs} == {32}
     assert {config.image_size for config in configs} == {256}
-    assert sum(config.perturbation["name"] != "none" for config in configs) == 8
+    assert sum(config.perturbation["name"] != "none" for config in configs) == 14
     assert all(
         config.subset_summary_path
         == "data/ucf101/subsets/c50_train100_heldout30/summary.json"
@@ -50,7 +50,7 @@ def test_ucf101_slowfast_extraction_configs_share_one_run_identity() -> None:
     )
 
 
-def test_slowfast_evaluation_configs_match_the_eight_heldout_artifacts() -> None:
+def test_slowfast_evaluation_configs_match_the_heldout_artifacts() -> None:
     ssv2 = RunEvaluationConfig.from_file(
         SSV2_CONFIG_DIR / "ssv2_slowfast_c50_linear_probe_evaluation.json"
     )
@@ -65,7 +65,7 @@ def test_slowfast_evaluation_configs_match_the_eight_heldout_artifacts() -> None
     assert ucf101.train_original == "embeddings/train/original.pt"
     assert ucf101.heldout_original == "embeddings/heldout/original.pt"
     for config in (ssv2, ucf101):
-        assert len(config.perturbations) == 8
+        assert len(config.perturbations) == 14
         assert config.knn == {"metric": "cosine", "k_values": [5]}
         assert {spec.group for spec in config.perturbations} == {"motion", "appearance"}
         assert {spec.name for spec in config.perturbations} == {
@@ -73,6 +73,8 @@ def test_slowfast_evaluation_configs_match_the_eight_heldout_artifacts() -> None
             "freeze_tail",
             "color_transform",
             "spatial_blur",
+            "rgb_quantization",
+            "solarization",
         }
 
 

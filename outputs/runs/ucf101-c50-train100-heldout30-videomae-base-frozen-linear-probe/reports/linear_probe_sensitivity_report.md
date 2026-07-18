@@ -14,6 +14,12 @@ This report measures sensitivity to specific interventions. It does not by itsel
 | color-mid | appearance | curve | mid | 0.000048 | 0.000046 | 0.000050 | 0.010000 | 0.003333 | 0.018000 | 0.016667 | 0.000000 |
 | color-high | appearance | curve | high | 0.000478 | 0.000462 | 0.000493 | 0.056667 | 0.042667 | 0.070667 | 0.069333 | 0.008667 |
 | spatial-blur-mid | appearance | fixed_mid |  | 0.009448 | 0.009282 | 0.009602 | 0.292000 | 0.267333 | 0.318017 | 0.313333 | 0.252000 |
+| rgb-quantization-low | appearance | curve | low | 0.003098 | 0.002974 | 0.003215 | 0.129333 | 0.110667 | 0.148667 | 0.150000 | 0.054000 |
+| rgb-quantization-mid | appearance | curve | mid | 0.008380 | 0.008139 | 0.008621 | 0.341333 | 0.314000 | 0.367350 | 0.357333 | 0.266667 |
+| rgb-quantization-high | appearance | curve | high | 0.017310 | 0.016928 | 0.017725 | 0.565333 | 0.540650 | 0.591333 | 0.574667 | 0.497333 |
+| solarization-low | appearance | curve | low | 0.005709 | 0.005377 | 0.006048 | 0.194000 | 0.170667 | 0.214667 | 0.212667 | 0.170000 |
+| solarization-mid | appearance | curve | mid | 0.006742 | 0.006425 | 0.007076 | 0.254000 | 0.231333 | 0.278683 | 0.269333 | 0.179333 |
+| solarization-high | appearance | curve | high | 0.013412 | 0.013002 | 0.013804 | 0.466000 | 0.440650 | 0.491350 | 0.478000 | 0.426667 |
 
 KNN is reported only as an auxiliary cosine k=5 neighbourhood diagnostic. The frozen linear probe is the primary label-related metric.
 
@@ -56,6 +62,12 @@ All sampled frame-index and sampling-strategy checks passed: True.
 | color-mid | 1500 | 1500 | 0 |
 | color-high | 1500 | 1500 | 0 |
 | spatial-blur-mid | 1500 | 1500 | 0 |
+| rgb-quantization-low | 1500 | 1500 | 0 |
+| rgb-quantization-mid | 1500 | 1500 | 0 |
+| rgb-quantization-high | 1500 | 1500 | 0 |
+| solarization-low | 1500 | 1500 | 0 |
+| solarization-mid | 1500 | 1500 | 0 |
+| solarization-high | 1500 | 1500 | 0 |
 
 ## Interpretation boundaries
 

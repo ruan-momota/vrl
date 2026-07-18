@@ -15,10 +15,7 @@ from src.evaluation.alignment import check_paired_embedding_alignment
 from src.evaluation.bootstrap import BootstrapConfig, paired_bootstrap_summary
 
 
-DEFAULT_MATRIX_PATH = Path("configs/ssv2_videomae_50c_perturbation_matrix.json")
-DEFAULT_OUTPUT_DIR = Path("outputs/logs")
 EPSILON = 1e-12
-DEFAULT_REPORT_BASENAME = "ssv2_50c_train100_val30_videomae_base_16f"
 
 
 def compute_embedding_distances(
@@ -279,9 +276,9 @@ def build_class_sensitivity_report(
 
 def run_matrix_sensitivity(
     *,
-    matrix_path: str | Path = DEFAULT_MATRIX_PATH,
+    matrix_path: str | Path,
     original_artifact_path: str | Path | None = None,
-    output_dir: str | Path = DEFAULT_OUTPUT_DIR,
+    output_dir: str | Path,
     overwrite: bool = False,
 ) -> dict[str, Any]:
     matrix = _load_json(Path(matrix_path))
@@ -345,16 +342,19 @@ def save_json_report(
 
 
 def _report_basename(matrix: dict[str, Any]) -> str:
-    return str(matrix.get("report_basename", DEFAULT_REPORT_BASENAME))
+    value = matrix.get("report_basename") or matrix.get("matrix_name")
+    if value is None:
+        raise ValueError("Matrix must define report_basename or matrix_name")
+    return str(value)
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Compute original-vs-perturbed embedding sensitivity reports."
     )
-    parser.add_argument("--matrix", type=Path, default=DEFAULT_MATRIX_PATH)
+    parser.add_argument("--matrix", type=Path, required=True)
     parser.add_argument("--original-artifact", type=Path, default=None)
-    parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
+    parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--overwrite", action="store_true")
     return parser.parse_args()
 

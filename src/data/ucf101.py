@@ -14,12 +14,7 @@ from src.video.perturbations import VideoPerturbation
 
 @dataclass(frozen=True)
 class UCF101DatasetAdapter:
-    """UCF101 adapter for the already-normalized JSONL index format.
-
-    Like the other dataset adapters, this owns no model- or UCF101-specific
-    decoding logic. It only points the generic ``IndexedVideoDataset`` at a
-    normalized index produced by ``src.data.ucf101_index``.
-    """
+    """UCF101 adapter for the normalized JSONL index format."""
 
     name: str = "ucf101"
 

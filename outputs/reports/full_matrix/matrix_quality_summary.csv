@@ -9,6 +9,12 @@ SSV2,VideoMAE,ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe,colo
 SSV2,VideoMAE,ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe,color-mid,1500,1500,0,True
 SSV2,VideoMAE,ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe,color-high,1500,1500,0,True
 SSV2,VideoMAE,ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe,spatial-blur-mid,1500,1500,0,True
+SSV2,VideoMAE,ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe,rgb-quantization-low,1500,1500,0,True
+SSV2,VideoMAE,ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe,rgb-quantization-mid,1500,1500,0,True
+SSV2,VideoMAE,ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe,rgb-quantization-high,1500,1500,0,True
+SSV2,VideoMAE,ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe,solarization-low,1500,1500,0,True
+SSV2,VideoMAE,ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe,solarization-mid,1500,1500,0,True
+SSV2,VideoMAE,ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe,solarization-high,1500,1500,0,True
 UCF101,VideoMAE,ucf101-c50-train100-heldout30-videomae-base-frozen-linear-probe,train_original,5000,5000,0,True
 UCF101,VideoMAE,ucf101-c50-train100-heldout30-videomae-base-frozen-linear-probe,heldout_original,1500,1500,0,True
 UCF101,VideoMAE,ucf101-c50-train100-heldout30-videomae-base-frozen-linear-probe,temporal-shuffle-mid,1500,1500,0,True
@@ -19,6 +25,12 @@ UCF101,VideoMAE,ucf101-c50-train100-heldout30-videomae-base-frozen-linear-probe,
 UCF101,VideoMAE,ucf101-c50-train100-heldout30-videomae-base-frozen-linear-probe,color-mid,1500,1500,0,True
 UCF101,VideoMAE,ucf101-c50-train100-heldout30-videomae-base-frozen-linear-probe,color-high,1500,1500,0,True
 UCF101,VideoMAE,ucf101-c50-train100-heldout30-videomae-base-frozen-linear-probe,spatial-blur-mid,1500,1500,0,True
+UCF101,VideoMAE,ucf101-c50-train100-heldout30-videomae-base-frozen-linear-probe,rgb-quantization-low,1500,1500,0,True
+UCF101,VideoMAE,ucf101-c50-train100-heldout30-videomae-base-frozen-linear-probe,rgb-quantization-mid,1500,1500,0,True
+UCF101,VideoMAE,ucf101-c50-train100-heldout30-videomae-base-frozen-linear-probe,rgb-quantization-high,1500,1500,0,True
+UCF101,VideoMAE,ucf101-c50-train100-heldout30-videomae-base-frozen-linear-probe,solarization-low,1500,1500,0,True
+UCF101,VideoMAE,ucf101-c50-train100-heldout30-videomae-base-frozen-linear-probe,solarization-mid,1500,1500,0,True
+UCF101,VideoMAE,ucf101-c50-train100-heldout30-videomae-base-frozen-linear-probe,solarization-high,1500,1500,0,True
 Diving48,VideoMAE,diving48-c32-train50-heldout15-videomae-base-frozen-linear-probe,train_original,1600,1600,0,True
 Diving48,VideoMAE,diving48-c32-train50-heldout15-videomae-base-frozen-linear-probe,heldout_original,480,480,0,True
 Diving48,VideoMAE,diving48-c32-train50-heldout15-videomae-base-frozen-linear-probe,temporal-shuffle-mid,480,480,0,True
@@ -29,6 +41,12 @@ Diving48,VideoMAE,diving48-c32-train50-heldout15-videomae-base-frozen-linear-pro
 Diving48,VideoMAE,diving48-c32-train50-heldout15-videomae-base-frozen-linear-probe,color-mid,480,480,0,True
 Diving48,VideoMAE,diving48-c32-train50-heldout15-videomae-base-frozen-linear-probe,color-high,480,480,0,True
 Diving48,VideoMAE,diving48-c32-train50-heldout15-videomae-base-frozen-linear-probe,spatial-blur-mid,480,480,0,True
+Diving48,VideoMAE,diving48-c32-train50-heldout15-videomae-base-frozen-linear-probe,rgb-quantization-low,480,480,0,True
+Diving48,VideoMAE,diving48-c32-train50-heldout15-videomae-base-frozen-linear-probe,rgb-quantization-mid,480,480,0,True
+Diving48,VideoMAE,diving48-c32-train50-heldout15-videomae-base-frozen-linear-probe,rgb-quantization-high,480,480,0,True
+Diving48,VideoMAE,diving48-c32-train50-heldout15-videomae-base-frozen-linear-probe,solarization-low,480,480,0,True
+Diving48,VideoMAE,diving48-c32-train50-heldout15-videomae-base-frozen-linear-probe,solarization-mid,480,480,0,True
+Diving48,VideoMAE,diving48-c32-train50-heldout15-videomae-base-frozen-linear-probe,solarization-high,480,480,0,True
 SSV2,SlowFast R50 8x8,ssv2-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,train_original,5000,5000,0,True
 SSV2,SlowFast R50 8x8,ssv2-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,heldout_original,1500,1500,0,True
 SSV2,SlowFast R50 8x8,ssv2-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,temporal-shuffle-mid,1500,1500,0,True
@@ -39,6 +57,12 @@ SSV2,SlowFast R50 8x8,ssv2-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear
 SSV2,SlowFast R50 8x8,ssv2-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,color-mid,1500,1500,0,True
 SSV2,SlowFast R50 8x8,ssv2-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,color-high,1500,1500,0,True
 SSV2,SlowFast R50 8x8,ssv2-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,spatial-blur-mid,1500,1500,0,True
+SSV2,SlowFast R50 8x8,ssv2-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,rgb-quantization-low,1500,1500,0,True
+SSV2,SlowFast R50 8x8,ssv2-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,rgb-quantization-mid,1500,1500,0,True
+SSV2,SlowFast R50 8x8,ssv2-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,rgb-quantization-high,1500,1500,0,True
+SSV2,SlowFast R50 8x8,ssv2-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,solarization-low,1500,1500,0,True
+SSV2,SlowFast R50 8x8,ssv2-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,solarization-mid,1500,1500,0,True
+SSV2,SlowFast R50 8x8,ssv2-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,solarization-high,1500,1500,0,True
 UCF101,SlowFast R50 8x8,ucf101-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,train_original,5000,5000,0,True
 UCF101,SlowFast R50 8x8,ucf101-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,heldout_original,1500,1500,0,True
 UCF101,SlowFast R50 8x8,ucf101-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,temporal-shuffle-mid,1500,1500,0,True
@@ -49,6 +73,12 @@ UCF101,SlowFast R50 8x8,ucf101-c50-train100-heldout30-slowfast-r50-8x8-frozen-li
 UCF101,SlowFast R50 8x8,ucf101-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,color-mid,1500,1500,0,True
 UCF101,SlowFast R50 8x8,ucf101-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,color-high,1500,1500,0,True
 UCF101,SlowFast R50 8x8,ucf101-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,spatial-blur-mid,1500,1500,0,True
+UCF101,SlowFast R50 8x8,ucf101-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,rgb-quantization-low,1500,1500,0,True
+UCF101,SlowFast R50 8x8,ucf101-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,rgb-quantization-mid,1500,1500,0,True
+UCF101,SlowFast R50 8x8,ucf101-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,rgb-quantization-high,1500,1500,0,True
+UCF101,SlowFast R50 8x8,ucf101-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,solarization-low,1500,1500,0,True
+UCF101,SlowFast R50 8x8,ucf101-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,solarization-mid,1500,1500,0,True
+UCF101,SlowFast R50 8x8,ucf101-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,solarization-high,1500,1500,0,True
 Diving48,SlowFast R50 8x8,diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe,train_original,1600,1600,0,True
 Diving48,SlowFast R50 8x8,diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe,heldout_original,480,480,0,True
 Diving48,SlowFast R50 8x8,diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe,temporal-shuffle-mid,480,480,0,True
@@ -59,6 +89,12 @@ Diving48,SlowFast R50 8x8,diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen
 Diving48,SlowFast R50 8x8,diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe,color-mid,480,480,0,True
 Diving48,SlowFast R50 8x8,diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe,color-high,480,480,0,True
 Diving48,SlowFast R50 8x8,diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe,spatial-blur-mid,480,480,0,True
+Diving48,SlowFast R50 8x8,diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe,rgb-quantization-low,480,480,0,True
+Diving48,SlowFast R50 8x8,diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe,rgb-quantization-mid,480,480,0,True
+Diving48,SlowFast R50 8x8,diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe,rgb-quantization-high,480,480,0,True
+Diving48,SlowFast R50 8x8,diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe,solarization-low,480,480,0,True
+Diving48,SlowFast R50 8x8,diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe,solarization-mid,480,480,0,True
+Diving48,SlowFast R50 8x8,diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe,solarization-high,480,480,0,True
 SSV2,DINOv2 frame-mean,ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,train_original,5000,5000,0,True
 SSV2,DINOv2 frame-mean,ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,heldout_original,1500,1500,0,True
 SSV2,DINOv2 frame-mean,ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,temporal-shuffle-mid,1500,1500,0,True
@@ -69,6 +105,12 @@ SSV2,DINOv2 frame-mean,ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen
 SSV2,DINOv2 frame-mean,ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,color-mid,1500,1500,0,True
 SSV2,DINOv2 frame-mean,ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,color-high,1500,1500,0,True
 SSV2,DINOv2 frame-mean,ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,spatial-blur-mid,1500,1500,0,True
+SSV2,DINOv2 frame-mean,ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,rgb-quantization-low,1500,1500,0,True
+SSV2,DINOv2 frame-mean,ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,rgb-quantization-mid,1500,1500,0,True
+SSV2,DINOv2 frame-mean,ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,rgb-quantization-high,1500,1500,0,True
+SSV2,DINOv2 frame-mean,ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,solarization-low,1500,1500,0,True
+SSV2,DINOv2 frame-mean,ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,solarization-mid,1500,1500,0,True
+SSV2,DINOv2 frame-mean,ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,solarization-high,1500,1500,0,True
 UCF101,DINOv2 frame-mean,ucf101-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,train_original,5000,5000,0,True
 UCF101,DINOv2 frame-mean,ucf101-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,heldout_original,1500,1500,0,True
 UCF101,DINOv2 frame-mean,ucf101-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,temporal-shuffle-mid,1500,1500,0,True
@@ -79,6 +121,12 @@ UCF101,DINOv2 frame-mean,ucf101-c50-train100-heldout30-dinov2-base-frame-mean-fr
 UCF101,DINOv2 frame-mean,ucf101-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,color-mid,1500,1500,0,True
 UCF101,DINOv2 frame-mean,ucf101-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,color-high,1500,1500,0,True
 UCF101,DINOv2 frame-mean,ucf101-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,spatial-blur-mid,1500,1500,0,True
+UCF101,DINOv2 frame-mean,ucf101-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,rgb-quantization-low,1500,1500,0,True
+UCF101,DINOv2 frame-mean,ucf101-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,rgb-quantization-mid,1500,1500,0,True
+UCF101,DINOv2 frame-mean,ucf101-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,rgb-quantization-high,1500,1500,0,True
+UCF101,DINOv2 frame-mean,ucf101-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,solarization-low,1500,1500,0,True
+UCF101,DINOv2 frame-mean,ucf101-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,solarization-mid,1500,1500,0,True
+UCF101,DINOv2 frame-mean,ucf101-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,solarization-high,1500,1500,0,True
 Diving48,DINOv2 frame-mean,diving48-c32-train50-heldout15-dinov2-base-frame-mean-frozen-linear-probe,train_original,1600,1600,0,True
 Diving48,DINOv2 frame-mean,diving48-c32-train50-heldout15-dinov2-base-frame-mean-frozen-linear-probe,heldout_original,480,480,0,True
 Diving48,DINOv2 frame-mean,diving48-c32-train50-heldout15-dinov2-base-frame-mean-frozen-linear-probe,temporal-shuffle-mid,480,480,0,True
@@ -89,6 +137,12 @@ Diving48,DINOv2 frame-mean,diving48-c32-train50-heldout15-dinov2-base-frame-mean
 Diving48,DINOv2 frame-mean,diving48-c32-train50-heldout15-dinov2-base-frame-mean-frozen-linear-probe,color-mid,480,480,0,True
 Diving48,DINOv2 frame-mean,diving48-c32-train50-heldout15-dinov2-base-frame-mean-frozen-linear-probe,color-high,480,480,0,True
 Diving48,DINOv2 frame-mean,diving48-c32-train50-heldout15-dinov2-base-frame-mean-frozen-linear-probe,spatial-blur-mid,480,480,0,True
+Diving48,DINOv2 frame-mean,diving48-c32-train50-heldout15-dinov2-base-frame-mean-frozen-linear-probe,rgb-quantization-low,480,480,0,True
+Diving48,DINOv2 frame-mean,diving48-c32-train50-heldout15-dinov2-base-frame-mean-frozen-linear-probe,rgb-quantization-mid,480,480,0,True
+Diving48,DINOv2 frame-mean,diving48-c32-train50-heldout15-dinov2-base-frame-mean-frozen-linear-probe,rgb-quantization-high,480,480,0,True
+Diving48,DINOv2 frame-mean,diving48-c32-train50-heldout15-dinov2-base-frame-mean-frozen-linear-probe,solarization-low,480,480,0,True
+Diving48,DINOv2 frame-mean,diving48-c32-train50-heldout15-dinov2-base-frame-mean-frozen-linear-probe,solarization-mid,480,480,0,True
+Diving48,DINOv2 frame-mean,diving48-c32-train50-heldout15-dinov2-base-frame-mean-frozen-linear-probe,solarization-high,480,480,0,True
 HMDB51,V-JEPA2,hmdb51-full-split1-vjepa2-vitl-fpc64-256-frozen-linear-probe,train_original,3551,3551,0,True
 HMDB51,V-JEPA2,hmdb51-full-split1-vjepa2-vitl-fpc64-256-frozen-linear-probe,heldout_original,1524,1524,0,True
 HMDB51,V-JEPA2,hmdb51-full-split1-vjepa2-vitl-fpc64-256-frozen-linear-probe,temporal-shuffle-mid,1524,1524,0,True

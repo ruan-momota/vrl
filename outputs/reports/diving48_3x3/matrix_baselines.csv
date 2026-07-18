@@ -1,0 +1,10 @@
+dataset,dataset_role,model,checkpoint,run_id,train_n,heldout_n,embedding_dim,linear_probe_original_accuracy,knn_k5_original_accuracy,quality_ok,failed_samples_total
+SSV2,motion-oriented,VideoMAE,MCG-NJU/videomae-base,ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe,5000,1500,768,0.2460000067949295,0.09933333333333333,True,0
+UCF101,appearance-rich / context-correlated contrast,VideoMAE,MCG-NJU/videomae-base,ucf101-c50-train100-heldout30-videomae-base-frozen-linear-probe,5000,1500,768,0.8533333539962769,0.836,True,0
+Diving48,fine-grained motion / pose contrast,VideoMAE,MCG-NJU/videomae-base,diving48-c32-train50-heldout15-videomae-base-frozen-linear-probe,1600,480,768,0.0729166641831398,0.0375,True,0
+SSV2,motion-oriented,SlowFast R50 8x8,facebookresearch/pytorchvideo:slowfast_r50,ssv2-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,5000,1500,9216,0.33933332562446594,0.20333333333333334,True,0
+UCF101,appearance-rich / context-correlated contrast,SlowFast R50 8x8,facebookresearch/pytorchvideo:slowfast_r50,ucf101-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,5000,1500,9216,0.9940000176429749,0.9933333333333333,True,0
+Diving48,fine-grained motion / pose contrast,SlowFast R50 8x8,facebookresearch/pytorchvideo:slowfast_r50,diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe,1600,480,9216,0.09375,0.07291666666666667,True,0
+SSV2,motion-oriented,DINOv2 frame-mean,facebook/dinov2-base,ssv2-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,5000,1500,768,0.29733332991600037,0.194,True,0
+UCF101,appearance-rich / context-correlated contrast,DINOv2 frame-mean,facebook/dinov2-base,ucf101-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,5000,1500,768,0.9900000095367432,0.9773333333333334,True,0
+Diving48,fine-grained motion / pose contrast,DINOv2 frame-mean,facebook/dinov2-base,diving48-c32-train50-heldout15-dinov2-base-frame-mean-frozen-linear-probe,1600,480,768,0.09583333134651184,0.08958333333333333,True,0

@@ -14,6 +14,12 @@ This report measures sensitivity to specific interventions. It does not by itsel
 | color-mid | appearance | curve | mid | 0.001180 | 0.001127 | 0.001240 | 0.000000 | -0.002000 | 0.002000 | 0.000667 | -0.000667 |
 | color-high | appearance | curve | high | 0.010949 | 0.010504 | 0.011422 | 0.000000 | -0.003333 | 0.003333 | 0.002000 | 0.002000 |
 | spatial-blur-mid | appearance | fixed_mid |  | 0.060820 | 0.058867 | 0.062900 | 0.014000 | 0.008000 | 0.021333 | 0.016000 | 0.013333 |
+| rgb-quantization-low | appearance | curve | low | 0.025029 | 0.023647 | 0.026601 | 0.008000 | 0.003333 | 0.013333 | 0.008667 | 0.005333 |
+| rgb-quantization-mid | appearance | curve | mid | 0.095569 | 0.091490 | 0.099596 | 0.038667 | 0.028000 | 0.050000 | 0.042000 | 0.029333 |
+| rgb-quantization-high | appearance | curve | high | 0.255998 | 0.248759 | 0.263048 | 0.178000 | 0.159333 | 0.198667 | 0.180667 | 0.177333 |
+| solarization-low | appearance | curve | low | 0.142013 | 0.136145 | 0.147651 | 0.062667 | 0.049983 | 0.075333 | 0.065333 | 0.050667 |
+| solarization-mid | appearance | curve | mid | 0.155623 | 0.149761 | 0.160762 | 0.075333 | 0.062000 | 0.088667 | 0.078000 | 0.055333 |
+| solarization-high | appearance | curve | high | 0.316851 | 0.310213 | 0.323796 | 0.264667 | 0.244000 | 0.287333 | 0.266000 | 0.266667 |
 
 KNN is reported only as an auxiliary cosine k=5 neighbourhood diagnostic. The frozen linear probe is the primary label-related metric.
 
@@ -23,21 +29,21 @@ Largest representation shifts:
 
 | artifact_label | video_id | label_name | cosine_distance | original_prediction | perturbed_prediction | correct_to_incorrect |
 | --- | --- | --- | --- | --- | --- | --- |
-| temporal-shuffle-mid | v_Archery_g22_c04 | Archery | 0.613315 | 1 | 30 | True |
-| temporal-shuffle-mid | v_Skiing_g19_c06 | Skiing | 0.582202 | 42 | 42 | False |
-| freeze-tail-high | v_BasketballDunk_g05_c03 | BasketballDunk | 0.573309 | 6 | 6 | False |
-| temporal-shuffle-mid | v_SoccerJuggling_g01_c04 | SoccerJuggling | 0.561249 | 43 | 24 | True |
-| temporal-shuffle-mid | v_Swing_g09_c05 | Swing | 0.549620 | 45 | 45 | False |
+| rgb-quantization-high | v_Kayaking_g24_c02 | Kayaking | 0.730678 | 25 | 19 | True |
+| solarization-high | v_SoccerPenalty_g17_c03 | SoccerPenalty | 0.725260 | 44 | 19 | True |
+| rgb-quantization-high | v_Kayaking_g08_c01 | Kayaking | 0.698647 | 25 | 19 | True |
+| rgb-quantization-high | v_Skiing_g07_c04 | Skiing | 0.694392 | 42 | 19 | True |
+| rgb-quantization-high | v_Kayaking_g15_c03 | Kayaking | 0.691227 | 25 | 37 | True |
 
 Correct-to-incorrect examples:
 
 | artifact_label | video_id | label_name | cosine_distance | original_prediction | perturbed_prediction |
 | --- | --- | --- | --- | --- | --- |
-| temporal-shuffle-mid | v_Archery_g22_c04 | Archery | 0.613315 | 1 | 30 |
-| temporal-shuffle-mid | v_SoccerJuggling_g01_c04 | SoccerJuggling | 0.561249 | 43 | 24 |
-| temporal-shuffle-mid | v_TableTennisShot_g11_c04 | TableTennisShot | 0.512720 | 46 | 30 |
-| freeze-tail-high | v_Basketball_g08_c03 | Basketball | 0.477106 | 5 | 43 |
-| temporal-shuffle-mid | v_PlayingDhol_g19_c07 | PlayingDhol | 0.472061 | 31 | 30 |
+| rgb-quantization-high | v_Kayaking_g24_c02 | Kayaking | 0.730678 | 25 | 19 |
+| solarization-high | v_SoccerPenalty_g17_c03 | SoccerPenalty | 0.725260 | 44 | 19 |
+| rgb-quantization-high | v_Kayaking_g08_c01 | Kayaking | 0.698647 | 25 | 19 |
+| rgb-quantization-high | v_Skiing_g07_c04 | Skiing | 0.694392 | 42 | 19 |
+| rgb-quantization-high | v_Kayaking_g15_c03 | Kayaking | 0.691227 | 25 | 37 |
 
 ## Data quality and failures
 
@@ -56,6 +62,12 @@ All sampled frame-index and sampling-strategy checks passed: True.
 | color-mid | 1500 | 1500 | 0 |
 | color-high | 1500 | 1500 | 0 |
 | spatial-blur-mid | 1500 | 1500 | 0 |
+| rgb-quantization-low | 1500 | 1500 | 0 |
+| rgb-quantization-mid | 1500 | 1500 | 0 |
+| rgb-quantization-high | 1500 | 1500 | 0 |
+| solarization-low | 1500 | 1500 | 0 |
+| solarization-mid | 1500 | 1500 | 0 |
+| solarization-high | 1500 | 1500 | 0 |
 
 ## Interpretation boundaries
 
