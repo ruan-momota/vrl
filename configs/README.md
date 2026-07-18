@@ -33,8 +33,8 @@ The SSV2 × VideoMAE frozen-linear-probe sensitivity configs are in
 `configs/runs/ssv2_videomae_linear_probe/`:
 
 - two original-artifact configs and fourteen held-out perturbation configs for
-  SSV2 C50 × frozen VideoMAE; the six quantization/solarization artifacts are
-  pending compute-node extraction;
+  SSV2 C50 × frozen VideoMAE; all six quantization/solarization artifacts have
+  been extracted and evaluated;
 - `ssv2_videomae_c50_linear_probe_evaluation.json` configures the train-only linear
   probe, paired bootstrap, auxiliary KNN k=5, and run-scoped reporting.
 

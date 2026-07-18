@@ -4,7 +4,7 @@ All extraction configs in this directory share the run ID
 `ssv2-c50-train100-heldout30-videomae-base-frozen-linear-probe`. They produce one original
 train artifact, one original held-out artifact, and fourteen held-out
 perturbation artifacts under the same `outputs/runs/{run_id}/` directory. The
-six quantization/solarization artifacts are pending compute-node extraction.
+six quantization/solarization artifacts have been extracted and evaluated.
 
 The strength parameters are fixed before extraction:
 
@@ -43,7 +43,7 @@ uv run python -m src.pipeline.extract \
 ```
 
 Run the original eight held-out perturbation configs and the six additional
-configs below, then evaluate only the complete run:
+configs below, then evaluate the complete 14-perturbation run:
 
 ```bash
 uv run python -m src.pipeline.evaluate \

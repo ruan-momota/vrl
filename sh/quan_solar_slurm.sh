@@ -3,7 +3,15 @@
 
 set -euo pipefail
 
-ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+if [[ -n "${VRL_ROOT:-}" ]]; then
+  ROOT_DIR="${VRL_ROOT}"
+elif [[ -n "${SLURM_SUBMIT_DIR:-}" ]]; then
+  ROOT_DIR="${SLURM_SUBMIT_DIR}"
+else
+  ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+fi
+
+ROOT_DIR="$(cd "${ROOT_DIR}" && pwd)"
 cd "${ROOT_DIR}"
 
 PYTHON="${PYTHON:-${ROOT_DIR}/.venv/bin/python}"

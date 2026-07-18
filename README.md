@@ -34,32 +34,25 @@ Completed:
 | SlowFast R50 8x8 x Diving48 C32 | Complete | `outputs/runs/diving48-c32-train50-heldout15-slowfast-r50-8x8-frozen-linear-probe/` |
 | DINOv2 frame-mean x Diving48 C32 | Complete | `outputs/runs/diving48-c32-train50-heldout15-dinov2-base-frame-mean-frozen-linear-probe/` |
 
-Matrix artifact verification, 2026-07-07:
+Matrix and appearance-extension verification, 2026-07-18:
 
 - the primary `3 models x 3 datasets` matrix is complete;
-- all Diving48 full artifacts passed paired alignment checks, with 1,600 train
-  samples and 480 held-out samples per held-out artifact;
-- quality audits report successful extraction and 0 failed samples for the
-  Diving48 cells;
+- all nine cells contain 2 original artifacts and 14 held-out perturbation
+  artifacts; the six RGB-quantization/solarization artifacts are complete in
+  every cell;
+- all artifacts passed paired alignment checks; quality audits report 0 failed
+  samples in every cell;
+- the train-only pixel audit passed for both 16- and 32-frame profiles and froze
+  RGB levels at 16/8/4 and solarization thresholds at 192/128/64;
+- the matrix summary contains 9 baselines, 126 perturbation rows, and 144
+  artifact-quality rows;
 - matrix summary Markdown files in `outputs/reports/diving48_3x3/` are now written in English;
-
-Appearance-perturbation extension prepared on 2026-07-17:
-
-- deterministic RGB quantization and solarization implementations and configs
-  have been added;
-- strengths are fixed at 16/8/4 RGB levels and solarization thresholds
-  192/128/64, subject only to the train-only pixel manipulation check;
-- the 54 new held-out embedding artifacts have not yet been extracted, so the
-  results snapshot below still reports the original eight perturbations;
-- CPU/GPU-intensive audit, extraction, and evaluation commands are staged in
-  `sh/quan_solar_slurm.sh` and must run on a compute node.
-- current lightweight verification passed: `123 passed` on 2026-07-17.
+- current lightweight verification passed: `123 passed`.
 
 Next:
 
-- use the completed 3 x 3 matrix in the final analysis;
-- write the course report with model, dataset, intervention, and interaction
-  conclusions.
+- review the completed course report and figures; no extraction or evaluation
+  remains for the current matrix.
 
 ## Data
 
@@ -100,9 +93,7 @@ For each completed cell:
   frames at image size 256 and alpha 4, and DINOv2 encodes 16 frames
   independently at image size 224 before averaging frame CLS embeddings;
 - train artifact: original train embeddings only;
-- held-out artifacts: original held-out plus eight perturbations;
-- extension target: original held-out plus fourteen perturbations after the six
-  RGB-quantization/solarization artifacts are extracted;
+- held-out artifacts: original held-out plus fourteen perturbations;
 - classifier: train-only frozen linear probe with stratified train/probe-val
   split for L2 selection, then full-train refit;
 - statistics: video-level paired bootstrap with 1,000 resamples and fixed seed;
@@ -116,8 +107,8 @@ Held-out perturbations:
 | motion | `freeze_tail` | low, mid, high |
 | appearance | `color_transform` | low, mid, high |
 | appearance | `spatial_blur` | fixed mid |
-| appearance | `rgb_quantization` | low, mid, high (pending extraction) |
-| appearance | `solarization` | low, mid, high (pending extraction) |
+| appearance | `rgb_quantization` | low, mid, high; RGB levels 16, 8, 4 |
+| appearance | `solarization` | low, mid, high; thresholds 192, 128, 64 |
 
 Original and perturbed held-out artifacts must share video IDs, labels, sample
 order, and sampled frame indices.
@@ -127,22 +118,23 @@ order, and sampled frame indices.
 Primary label-related metric: linear-probe accuracy drop from original held-out
 to perturbed held-out. KNN is auxiliary.
 
-| Cell | Original LP acc. | Original KNN k=5 acc. | Largest fixed-mid drops |
+| Cell | Original LP acc. | Original KNN k=5 acc. | Selected fixed-mid LP drops |
 | --- | ---: | ---: | --- |
-| VideoMAE x SSV2 | 0.2507 | 0.0993 | `temporal_shuffle`: 0.1767; `spatial_blur`: 0.0273 |
-| VideoMAE x UCF101 | 0.8533 | 0.8360 | `spatial_blur`: 0.2920; `temporal_shuffle`: 0.2493 |
-| SlowFast x SSV2 | 0.3393 | 0.2033 | `temporal_shuffle`: 0.2053; `spatial_blur`: 0.0007 |
-| SlowFast x UCF101 | 0.9940 | 0.9933 | `temporal_shuffle`: 0.0460; `spatial_blur`: 0.0140 |
-| DINOv2 frame-mean x SSV2 | 0.2973 | 0.1940 | `spatial_blur`: 0.0067; `temporal_shuffle`: 0.0000 |
-| DINOv2 frame-mean x UCF101 | 0.9900 | 0.9773 | `spatial_blur`: 0.0020; `temporal_shuffle`: 0.0000 |
-| VideoMAE x Diving48 | 0.0750 | 0.0375 | `temporal_shuffle`: 0.0375; `spatial_blur`: 0.0188 |
-| SlowFast x Diving48 | 0.0896 | 0.0729 | `temporal_shuffle`: 0.0188; `spatial_blur`: -0.0083 |
-| DINOv2 frame-mean x Diving48 | 0.0875 | 0.0896 | `spatial_blur`: 0.0021; `temporal_shuffle`: 0.0000 |
+| VideoMAE x SSV2 | 0.2460 | 0.0993 | shuffle 0.1800; quant. 0.1007; solar. 0.0507 |
+| VideoMAE x UCF101 | 0.8533 | 0.8360 | shuffle 0.2493; quant. 0.3413; solar. 0.2540 |
+| SlowFast x SSV2 | 0.3393 | 0.2033 | shuffle 0.2053; quant. 0.0920; solar. 0.0627 |
+| SlowFast x UCF101 | 0.9940 | 0.9933 | shuffle 0.0460; quant. 0.0387; solar. 0.0753 |
+| DINOv2 frame-mean x SSV2 | 0.2973 | 0.1940 | shuffle 0.0000; quant. 0.0373; solar. 0.0133 |
+| DINOv2 frame-mean x UCF101 | 0.9900 | 0.9773 | shuffle 0.0000; quant. 0.0113; solar. 0.0173 |
+| VideoMAE x Diving48 | 0.0729 | 0.0375 | shuffle 0.0354; quant. 0.0063; solar. 0.0083 |
+| SlowFast x Diving48 | 0.0938 | 0.0729 | shuffle 0.0229; quant. 0.0229; solar. 0.0021 |
+| DINOv2 frame-mean x Diving48 | 0.0958 | 0.0896 | shuffle 0.0000; quant. 0.0188; solar. 0.0083 |
 
-`freeze_tail` shows increasing label effects from low to high strength in the
-completed video-model runs and much smaller label effects for DINOv2.
-`color_transform` generally shows increasing representation shift, with much
-smaller label-related drops. DINOv2 `temporal_shuffle` is a sanity check:
+RGB quantization and solarization produce substantially larger representation
+and label effects than the original color control in most SSV2/UCF101 cells.
+Their pixel strength is monotonic, although LP-drop curves need not be strictly
+monotonic because they measure a downstream decision boundary. DINOv2
+`temporal_shuffle` is a sanity check:
 frame-mean embeddings are effectively invariant to frame order. Diving48
 baselines are low across all three models, which is treated as a fine-grained,
 small-sample model-dataset interaction rather than a reason to change the

@@ -269,7 +269,7 @@ def _validate_strength_order(rows: list[dict[str, Any]]) -> None:
 
 def _write_csv(rows: list[dict[str, Any]], path: Path) -> None:
     with path.open("w", encoding="utf-8", newline="") as file:
-        writer = csv.DictWriter(file, fieldnames=list(rows[0]))
+        writer = csv.DictWriter(file, fieldnames=list(rows[0]), lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 

@@ -243,7 +243,7 @@ def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         raise ValueError(f"cannot write empty CSV: {path}")
     fieldnames = list(rows[0].keys())
     with path.open("w", encoding="utf-8", newline="") as file:
-        writer = csv.DictWriter(file, fieldnames=fieldnames)
+        writer = csv.DictWriter(file, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -472,6 +472,10 @@ def build_interaction_notes(
     videomae_diving_blur = find_perturbation(perturbations, "VideoMAE", "Diving48", "spatial-blur-mid")
     slowfast_diving_blur = find_perturbation(perturbations, "SlowFast R50 8x8", "Diving48", "spatial-blur-mid")
     dino_diving_blur = find_perturbation(perturbations, "DINOv2 frame-mean", "Diving48", "spatial-blur-mid")
+    videomae_ssv2_quant = find_perturbation(perturbations, "VideoMAE", "SSV2", "rgb-quantization-mid")
+    videomae_ssv2_solar = find_perturbation(perturbations, "VideoMAE", "SSV2", "solarization-mid")
+    videomae_ucf_quant = find_perturbation(perturbations, "VideoMAE", "UCF101", "rgb-quantization-mid")
+    videomae_ucf_solar = find_perturbation(perturbations, "VideoMAE", "UCF101", "solarization-mid")
     quality_ok = all(row["quality_ok"] in {True, "True", "true"} for row in quality_rows)
     return f"""# Diving48 3 x 3 Interaction Notes
 
@@ -480,7 +484,8 @@ This note summarizes the completed `3 models x 3 datasets` matrix. The added Div
 ## Status
 
 - All nine cells have 2 original artifacts and 14 held-out perturbation artifacts.
-- Quality audit overall status: `{quality_ok}`; all three Diving48 runs have 0 failed samples.
+- Quality audit overall status: `{quality_ok}`; all nine cells have 0 failed samples.
+- The train-only pixel audit established monotonic low-to-high pixel severity before model inference; no strength was selected from accuracy.
 - Diving48 original LP accuracy: VideoMAE {pct(diving_videomae['linear_probe_original_accuracy'])}, SlowFast {pct(diving_slowfast['linear_probe_original_accuracy'])}, DINOv2 {pct(diving_dino['linear_probe_original_accuracy'])}.
 
 ## DINOv2 sanity check
@@ -499,6 +504,8 @@ This matches the frame-mean DINOv2 expectation: when the same frame set is prese
 - On Diving48, VideoMAE temporal-shuffle LP drop is {fmt_float(videomae_diving_shuffle['linear_probe_accuracy_drop'])}, and SlowFast is {fmt_float(slowfast_diving_shuffle['linear_probe_accuracy_drop'])}. Both are less pronounced than the fixed-mid label effects observed on SSV2/UCF101.
 - SlowFast x Diving48 temporal-shuffle representation shift is {fmt_float(slowfast_diving_shuffle['mean_cosine_distance'])}, much larger than DINOv2's {fmt_float(dino_diving_shuffle['mean_cosine_distance'])}, but the label drop is only {fmt_float(slowfast_diving_shuffle['linear_probe_accuracy_drop'])}. Representation shift and label-related drop must therefore be reported separately.
 - Diving48 spatial-blur LP drops are: VideoMAE {fmt_float(videomae_diving_blur['linear_probe_accuracy_drop'])}, SlowFast {fmt_float(slowfast_diving_blur['linear_probe_accuracy_drop'])}, DINOv2 {fmt_float(dino_diving_blur['linear_probe_accuracy_drop'])}. Current results do not support explaining Diving48 differences as simple static-appearance cue effects.
+- The stronger appearance interventions resolve the weak-control concern. For VideoMAE, fixed-mid RGB quantization / solarization LP drops are {fmt_float(videomae_ssv2_quant['linear_probe_accuracy_drop'])} / {fmt_float(videomae_ssv2_solar['linear_probe_accuracy_drop'])} on SSV2 and {fmt_float(videomae_ucf_quant['linear_probe_accuracy_drop'])} / {fmt_float(videomae_ucf_solar['linear_probe_accuracy_drop'])} on UCF101, substantially above the original color-mid control.
+- Pixel severity is monotonic, but downstream LP drop is not required to be monotonic: the latter depends on which representation directions cross the fitted decision boundary.
 
 ## Writing Boundaries
 
@@ -508,6 +515,7 @@ This matches the frame-mean DINOv2 expectation: when the same frame set is prese
 - The low Diving48 baseline is an important result and should not be optimized away by post-hoc class or quota changes.
 - Representation shift and label-related drop should be reported separately.
 - RGB quantization and solarization results must be interpreted together with the train-only pixel audit; model accuracy was not used to choose their strengths.
+- The final table uses one complete 14-perturbation evaluation per cell. GPU `device=auto` LBFGS refitting caused small baseline variation in four cells relative to the earlier 8-perturbation snapshot (range -0.47 to +0.83 percentage points), while cosine/KNN embedding metrics were unchanged; future extensions should preserve the fitted probe artifact or use a deterministic CPU fit.
 """
 
 
@@ -600,7 +608,7 @@ Diving48 uses the balanced `c32_train50_heldout15` subset: 1,600 train videos, 4
 
 {chr(10).join(f'- `{cell.run_id}`' for cell in CELLS)}
 
-Quality audit overall status: `{quality_ok}`. Extraction succeeded for all nine cells, and all three Diving48 runs have 0 failed samples.
+Quality audit overall status: `{quality_ok}`. Extraction succeeded with 0 failed samples in all nine cells. The train-only pixel audit fixed RGB levels at 16/8/4 and solarization thresholds at 192/128/64 before model inference; normalized pixel MAD increased monotonically from low to high for both interventions on every dataset and frame profile.
 
 ## Baseline
 
@@ -617,6 +625,8 @@ Diving48 baselines are low overall: VideoMAE {pct(diving_videomae["linear_probe_
 DINOv2 `temporal-shuffle-mid` is a sanity check: mean cosine distance is {fmt_float(dino_ssv2_shuffle["mean_cosine_distance"])} on SSV2, {fmt_float(dino_ucf_shuffle["mean_cosine_distance"])} on UCF101, and {fmt_float(dino_diving_shuffle["mean_cosine_distance"])} on Diving48. This matches the frame-mean design, which is insensitive to frame order.
 
 On Diving48, SlowFast temporal-shuffle representation shift is {fmt_float(diving_slowfast_shuffle["mean_cosine_distance"])}, but LP drop is only {fmt_float(diving_slowfast_shuffle["linear_probe_accuracy_drop"])}. This shows that a large embedding shift does not necessarily translate into an equally large label-related drop, especially in a low-baseline, small-sample, fine-grained dataset.
+
+The new appearance interventions are materially stronger than the original color control. At fixed mid strength, VideoMAE LP drops are 0.1007 / 0.0507 for RGB quantization / solarization on SSV2 and 0.3413 / 0.2540 on UCF101. SlowFast and DINOv2 also show clear representation shifts even where label drop is smaller. This supports the intended interpretation: an effective intervention can move embeddings without necessarily crossing the current label boundary.
 
 ## Strength Curves
 
@@ -639,7 +649,8 @@ DINOv2 `freeze-tail` changes the frame-content distribution, but that does not i
 3. SSV2 C50 also contains usable static cues. DINOv2 has a higher SSV2 baseline than VideoMAE, but it does not use frame order, so the SSV2 result should not be equated directly with motion understanding.
 4. Diving48 adds a more fine-grained, lower-sample action/pose contrast. All three models have low baselines, indicating that this subset is harder than the current UCF101 and SSV2 subsets.
 5. Video-model label drops under temporal perturbation provide a useful contrast against DINOv2's near-zero temporal-shuffle drop. However, DINOv2 freeze-tail effects should be interpreted as frame-content distribution changes.
-6. Representation shift and label-related drop are not always synchronized and should be reported separately.
+6. RGB quantization and solarization address the weak-appearance-control concern: they produce much larger pixel and embedding changes than color transform, and often larger label drops, especially on SSV2 and UCF101.
+7. Representation shift and label-related drop are not always synchronized and should be reported separately. Monotonic pixel strength does not imply a strictly monotonic LP-drop curve.
 
 ## Limitations
 
@@ -648,6 +659,7 @@ DINOv2 `freeze-tail` changes the frame-content distribution, but that does not i
 - Perturbation sensitivity is not a clean causal isolation of motion versus appearance.
 - Checkpoint pretraining-overlap risk should remain in the report, especially for UCF101-related claims.
 - The low Diving48 baseline limits the dynamic range of drop metrics, so original accuracy, representation shift, and paired accuracy drop must be reported together.
+- The evaluation config uses GPU `device=auto` for LBFGS probe fitting. A complete rerun changed four baseline accuracies by -0.47 to +0.83 percentage points relative to the earlier 8-perturbation snapshot, although embedding-derived cosine and KNN results were unchanged. The final report consistently uses the single complete 14-perturbation rerun within each cell; future extensions should retain the fitted probe or use a deterministic CPU fit.
 """
 
 

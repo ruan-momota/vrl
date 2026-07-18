@@ -14,6 +14,12 @@ This report measures sensitivity to specific interventions. It does not by itsel
 | color-mid | appearance | curve | mid | 0.000836 | 0.000806 | 0.000867 | -0.001333 | -0.004667 | 0.002000 | 0.002000 | -0.000667 |
 | color-high | appearance | curve | high | 0.007709 | 0.007456 | 0.007961 | -0.004667 | -0.012667 | 0.003333 | 0.011333 | 0.000000 |
 | spatial-blur-mid | appearance | fixed_mid |  | 0.048301 | 0.046690 | 0.049982 | 0.006667 | -0.006000 | 0.019350 | 0.037333 | 0.012000 |
+| rgb-quantization-low | appearance | curve | low | 0.058086 | 0.055495 | 0.060796 | 0.004000 | -0.009333 | 0.018000 | 0.040667 | -0.004667 |
+| rgb-quantization-mid | appearance | curve | mid | 0.170238 | 0.163850 | 0.176062 | 0.037333 | 0.019333 | 0.055333 | 0.084000 | 0.022000 |
+| rgb-quantization-high | appearance | curve | high | 0.397436 | 0.388424 | 0.406367 | 0.114667 | 0.092000 | 0.138683 | 0.163333 | 0.068000 |
+| solarization-low | appearance | curve | low | 0.146863 | 0.140998 | 0.152551 | 0.030667 | 0.010667 | 0.047333 | 0.074000 | 0.016000 |
+| solarization-mid | appearance | curve | mid | 0.124750 | 0.120616 | 0.128961 | 0.013333 | -0.001333 | 0.030667 | 0.060000 | 0.013333 |
+| solarization-high | appearance | curve | high | 0.354163 | 0.347302 | 0.361288 | 0.085333 | 0.062000 | 0.108667 | 0.144000 | 0.046000 |
 
 KNN is reported only as an auxiliary cosine k=5 neighbourhood diagnostic. The frozen linear probe is the primary label-related metric.
 
@@ -23,21 +29,21 @@ Largest representation shifts:
 
 | artifact_label | video_id | label_name | cosine_distance | original_prediction | perturbed_prediction | correct_to_incorrect |
 | --- | --- | --- | --- | --- | --- | --- |
-| freeze-tail-high | 208338 | Pretending or failing to wipe something off of something | 0.417915 | 30 | 24 | False |
-| freeze-tail-high | 37955 | Spinning something that quickly stops spinning | 0.376904 | 30 | 30 | False |
-| freeze-tail-high | 7675 | Pretending to put something onto something | 0.375259 | 20 | 43 | False |
-| freeze-tail-high | 60004 | Putting something underneath something | 0.363095 | 3 | 43 | False |
-| freeze-tail-high | 143160 | Moving something and something away from each other | 0.348994 | 35 | 19 | False |
+| rgb-quantization-high | 177943 | Pouring something out of something | 0.901705 | 20 | 47 | False |
+| rgb-quantization-high | 115405 | Throwing something in the air and letting it fall | 0.885216 | 8 | 47 | False |
+| rgb-quantization-high | 45500 | Pouring something into something | 0.883288 | 23 | 37 | False |
+| rgb-quantization-high | 83567 | Trying to pour something into something, but missing so it spills next to it | 0.880359 | 20 | 47 | False |
+| rgb-quantization-high | 211506 | Moving something and something away from each other | 0.879645 | 35 | 37 | False |
 
 Correct-to-incorrect examples:
 
 | artifact_label | video_id | label_name | cosine_distance | original_prediction | perturbed_prediction |
 | --- | --- | --- | --- | --- | --- |
-| freeze-tail-high | 62508 | Dropping something onto something | 0.257454 | 6 | 4 |
-| freeze-tail-high | 145252 | Pretending or failing to wipe something off of something | 0.251576 | 24 | 30 |
-| freeze-tail-high | 23681 | Putting something onto something else that cannot support it so it falls down | 0.183612 | 34 | 22 |
-| freeze-tail-high | 109320 | Tipping something with something in it over, so something in it falls out | 0.176050 | 43 | 5 |
-| freeze-tail-high | 129049 | Throwing something in the air and letting it fall | 0.173114 | 42 | 37 |
+| rgb-quantization-high | 58339 | Pouring something out of something | 0.860610 | 23 | 37 |
+| rgb-quantization-high | 201535 | Opening something | 0.844737 | 17 | 47 |
+| rgb-quantization-high | 10154 | Turning the camera right while filming something | 0.833264 | 48 | 47 |
+| rgb-quantization-high | 126184 | Putting something that cannot actually stand upright upright on the table, so it falls on its side | 0.826998 | 35 | 37 |
+| rgb-quantization-high | 81747 | Digging something out of something | 0.826724 | 3 | 37 |
 
 ## Data quality and failures
 
@@ -56,6 +62,12 @@ All sampled frame-index and sampling-strategy checks passed: True.
 | color-mid | 1500 | 1500 | 0 |
 | color-high | 1500 | 1500 | 0 |
 | spatial-blur-mid | 1500 | 1500 | 0 |
+| rgb-quantization-low | 1500 | 1500 | 0 |
+| rgb-quantization-mid | 1500 | 1500 | 0 |
+| rgb-quantization-high | 1500 | 1500 | 0 |
+| solarization-low | 1500 | 1500 | 0 |
+| solarization-mid | 1500 | 1500 | 0 |
+| solarization-high | 1500 | 1500 | 0 |
 
 ## Interpretation boundaries
 

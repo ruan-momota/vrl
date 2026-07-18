@@ -780,7 +780,11 @@ def _write_csv(rows: list[dict[str, Any]], path: Path, *, overwrite: bool) -> No
         path.write_text("", encoding="utf-8")
         return
     with path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0].keys()))
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=list(rows[0].keys()),
+            lineterminator="\n",
+        )
         writer.writeheader()
         writer.writerows(rows)
 
