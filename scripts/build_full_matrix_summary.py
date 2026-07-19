@@ -96,6 +96,17 @@ CELLS = (
          "kinetics-c50-train100-heldout30-dismo-motion-extractor-large-frozen-linear-probe"),
     Cell("Kinetics", "large-scale web-video", "V-JEPA2", "facebook/vjepa2-vitl-fpc64-256",
          "kinetics-c50-train100-heldout30-vjepa2-vitl-fpc64-256-frozen-linear-probe"),
+    # --- filled in 2026-07-19: SLURM (LMU IfI CIP pool) + RunPod ---
+    Cell("HMDB51", "action-recognition", "DINOv2 frame-mean", "facebook/dinov2-base",
+         "hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe"),
+    Cell("Kinetics", "large-scale web-video", "DINOv2 frame-mean", "facebook/dinov2-base",
+         "kinetics-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe"),
+    Cell("Kinetics", "large-scale web-video", "SlowFast R50 8x8", "facebookresearch/pytorchvideo:slowfast_r50",
+         "kinetics-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe"),
+    Cell("Diving48", "fine-grained motion / pose contrast", "DisMo", "motion_extractor_large",
+         "diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe"),
+    Cell("Diving48", "fine-grained motion / pose contrast", "V-JEPA2", "facebook/vjepa2-vitl-fpc64-256",
+         "diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe"),
 )
 
 
@@ -125,7 +136,12 @@ CELL_COLORS = {
     "DINOv2 frame-mean x Diving48": "#be123c",
     "V-JEPA2 x HMDB51": "#334155",
     "V-JEPA2 x Kinetics": "#b45309",
+    "V-JEPA2 x Diving48": "#475569",
     "DisMo x Kinetics": "#db2777",
+    "DisMo x Diving48": "#c026d3",
+    "DINOv2 frame-mean x HMDB51": "#a855f7",
+    "DINOv2 frame-mean x Kinetics": "#059669",
+    "SlowFast R50 8x8 x Kinetics": "#ea580c",
 }
 
 # For the strength-curve chart: one color per model, one dash pattern per

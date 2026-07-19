@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560">
+<rect width="100%" height="100%" fill="white"/>
+<text x="480.00" y="30.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700">Kinetics dinov2 frozen-linear-probe strength curves: mean cosine distance</text>
+<line x1="80" y1="490" x2="740" y2="490" stroke="#444" stroke-width="1"/>
+<line x1="80" y1="58" x2="80" y2="490" stroke="#444" stroke-width="1"/>
+<polyline points="80.00,490.00 410.00,489.11 740.00,481.20" fill="none" stroke="#4c78a8" stroke-width="2.5"/>
+<circle cx="80.00" cy="490.00" r="4" fill="#4c78a8"/>
+<text x="80.00" y="482.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="400">low</text>
+<circle cx="410.00" cy="489.11" r="4" fill="#4c78a8"/>
+<text x="410.00" y="481.11" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="400">mid</text>
+<circle cx="740.00" cy="481.20" r="4" fill="#4c78a8"/>
+<text x="740.00" y="473.20" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="400">high</text>
+<rect x="764" y="48" width="14" height="14" fill="#4c78a8"/>
+<text x="784.00" y="60.00" text-anchor="start" font-family="Arial, sans-serif" font-size="13" font-weight="400">color_transform</text>
+<polyline points="80.00,488.15 410.00,477.53 740.00,454.14" fill="none" stroke="#f58518" stroke-width="2.5"/>
+<circle cx="80.00" cy="488.15" r="4" fill="#f58518"/>
+<text x="80.00" y="480.15" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="400">low</text>
+<circle cx="410.00" cy="477.53" r="4" fill="#f58518"/>
+<text x="410.00" y="469.53" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="400">mid</text>
+<circle cx="740.00" cy="454.14" r="4" fill="#f58518"/>
+<text x="740.00" y="446.14" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="400">high</text>
+<rect x="764" y="72" width="14" height="14" fill="#f58518"/>
+<text x="784.00" y="84.00" text-anchor="start" font-family="Arial, sans-serif" font-size="13" font-weight="400">freeze_tail</text>
+<polyline points="80.00,446.52 410.00,336.10 740.00,108.35" fill="none" stroke="#54a24b" stroke-width="2.5"/>
+<circle cx="80.00" cy="446.52" r="4" fill="#54a24b"/>
+<text x="80.00" y="438.52" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="400">low</text>
+<circle cx="410.00" cy="336.10" r="4" fill="#54a24b"/>
+<text x="410.00" y="328.10" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="400">mid</text>
+<circle cx="740.00" cy="108.35" r="4" fill="#54a24b"/>
+<text x="740.00" y="100.35" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="400">high</text>
+<rect x="764" y="96" width="14" height="14" fill="#54a24b"/>
+<text x="784.00" y="108.00" text-anchor="start" font-family="Arial, sans-serif" font-size="13" font-weight="400">rgb_quantization</text>
+<polyline points="80.00,315.12 410.00,334.90 740.00,58.00" fill="none" stroke="#b279a2" stroke-width="2.5"/>
+<circle cx="80.00" cy="315.12" r="4" fill="#b279a2"/>
+<text x="80.00" y="307.12" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="400">low</text>
+<circle cx="410.00" cy="334.90" r="4" fill="#b279a2"/>
+<text x="410.00" y="326.90" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="400">mid</text>
+<circle cx="740.00" cy="58.00" r="4" fill="#b279a2"/>
+<text x="740.00" y="50.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="400">high</text>
+<rect x="764" y="120" width="14" height="14" fill="#b279a2"/>
+<text x="784.00" y="132.00" text-anchor="start" font-family="Arial, sans-serif" font-size="13" font-weight="400">solarization</text>
+<text x="410.00" y="538.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="400">sweep value</text>
+<text x="18.00" y="274.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="400" transform="rotate(-90 18.00 274.00)">mean cosine distance</text>
+</svg>

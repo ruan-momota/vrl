@@ -1,0 +1,747 @@
+{
+  "artifact_commands": {
+    "embeddings/heldout/original.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_dismo_linear_probe/diving48_dismo_c32_heldout_original.json"
+    ],
+    "embeddings/heldout/perturbations/color-high.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_dismo_linear_probe/diving48_dismo_c32_heldout_color_high.json"
+    ],
+    "embeddings/heldout/perturbations/color-low.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_dismo_linear_probe/diving48_dismo_c32_heldout_color_low.json"
+    ],
+    "embeddings/heldout/perturbations/color-mid.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_dismo_linear_probe/diving48_dismo_c32_heldout_color_mid.json"
+    ],
+    "embeddings/heldout/perturbations/freeze-tail-high.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_dismo_linear_probe/diving48_dismo_c32_heldout_freeze_tail_high.json"
+    ],
+    "embeddings/heldout/perturbations/freeze-tail-low.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_dismo_linear_probe/diving48_dismo_c32_heldout_freeze_tail_low.json"
+    ],
+    "embeddings/heldout/perturbations/freeze-tail-mid.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_dismo_linear_probe/diving48_dismo_c32_heldout_freeze_tail_mid.json"
+    ],
+    "embeddings/heldout/perturbations/rgb-quantization-high.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_dismo_linear_probe/diving48_dismo_c32_heldout_rgb_quantization_high.json"
+    ],
+    "embeddings/heldout/perturbations/rgb-quantization-low.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_dismo_linear_probe/diving48_dismo_c32_heldout_rgb_quantization_low.json"
+    ],
+    "embeddings/heldout/perturbations/rgb-quantization-mid.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_dismo_linear_probe/diving48_dismo_c32_heldout_rgb_quantization_mid.json"
+    ],
+    "embeddings/heldout/perturbations/solarization-high.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_dismo_linear_probe/diving48_dismo_c32_heldout_solarization_high.json"
+    ],
+    "embeddings/heldout/perturbations/solarization-low.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_dismo_linear_probe/diving48_dismo_c32_heldout_solarization_low.json"
+    ],
+    "embeddings/heldout/perturbations/solarization-mid.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_dismo_linear_probe/diving48_dismo_c32_heldout_solarization_mid.json"
+    ],
+    "embeddings/heldout/perturbations/spatial-blur-mid.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_dismo_linear_probe/diving48_dismo_c32_heldout_blur_mid.json"
+    ],
+    "embeddings/heldout/perturbations/temporal-shuffle-mid.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_dismo_linear_probe/diving48_dismo_c32_heldout_temporal_shuffle_mid.json"
+    ],
+    "embeddings/train/original.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_dismo_linear_probe/diving48_dismo_c32_train_original.json"
+    ]
+  },
+  "artifacts": {
+    "color-high": {
+      "model_metadata": {
+        "checkpoint": "motion_extractor_large",
+        "device": "cuda",
+        "encoder_name": "dismo",
+        "input_spec": {
+          "embedding_source": "forward_sliding_time_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, H, W, C]",
+          "value_range": [
+            -1.0,
+            1.0
+          ]
+        },
+        "model_source": "torch_hub:CompVis/DisMo:motion_extractor_large",
+        "model_type": "dismo"
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/perturbations/color-high.pt",
+      "sha256": "ac043e554b67bc58c6bc4afdf11807ac6ce2eced2d4f96df09ab5f987e7cbb50",
+      "size_bytes": 826089,
+      "summary": {
+        "average_batch_seconds": 10.912653129547834,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          128
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/perturbations/color-high.pt",
+        "successful_samples": 480,
+        "total_seconds": 655.3432526197284
+      }
+    },
+    "color-low": {
+      "model_metadata": {
+        "checkpoint": "motion_extractor_large",
+        "device": "cuda",
+        "encoder_name": "dismo",
+        "input_spec": {
+          "embedding_source": "forward_sliding_time_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, H, W, C]",
+          "value_range": [
+            -1.0,
+            1.0
+          ]
+        },
+        "model_source": "torch_hub:CompVis/DisMo:motion_extractor_large",
+        "model_type": "dismo"
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/perturbations/color-low.pt",
+      "sha256": "6ca94c5b170e9c76e8815473d6016210fd0cb1d0d63233d436f56c2fba514e06",
+      "size_bytes": 826082,
+      "summary": {
+        "average_batch_seconds": 10.952496721812834,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          128
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/perturbations/color-low.pt",
+        "successful_samples": 480,
+        "total_seconds": 657.5368315689266
+      }
+    },
+    "color-mid": {
+      "model_metadata": {
+        "checkpoint": "motion_extractor_large",
+        "device": "cuda",
+        "encoder_name": "dismo",
+        "input_spec": {
+          "embedding_source": "forward_sliding_time_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, H, W, C]",
+          "value_range": [
+            -1.0,
+            1.0
+          ]
+        },
+        "model_source": "torch_hub:CompVis/DisMo:motion_extractor_large",
+        "model_type": "dismo"
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/perturbations/color-mid.pt",
+      "sha256": "5f6170011ca7af1ad0e35c8765184aaa6d956db03f7fda449410a02049aa784b",
+      "size_bytes": 826082,
+      "summary": {
+        "average_batch_seconds": 10.897994414779047,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          128
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/perturbations/color-mid.pt",
+        "successful_samples": 480,
+        "total_seconds": 654.3338539991528
+      }
+    },
+    "freeze-tail-high": {
+      "model_metadata": {
+        "checkpoint": "motion_extractor_large",
+        "device": "cuda",
+        "encoder_name": "dismo",
+        "input_spec": {
+          "embedding_source": "forward_sliding_time_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, H, W, C]",
+          "value_range": [
+            -1.0,
+            1.0
+          ]
+        },
+        "model_source": "torch_hub:CompVis/DisMo:motion_extractor_large",
+        "model_type": "dismo"
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-high.pt",
+      "sha256": "31a5efca88440663184d684de2d4a8dce34c4e52cb7d889ff537cbc07c583785",
+      "size_bytes": 790931,
+      "summary": {
+        "average_batch_seconds": 10.912082556883494,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          128
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-high.pt",
+        "successful_samples": 480,
+        "total_seconds": 655.0749654956162
+      }
+    },
+    "freeze-tail-low": {
+      "model_metadata": {
+        "checkpoint": "motion_extractor_large",
+        "device": "cuda",
+        "encoder_name": "dismo",
+        "input_spec": {
+          "embedding_source": "forward_sliding_time_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, H, W, C]",
+          "value_range": [
+            -1.0,
+            1.0
+          ]
+        },
+        "model_source": "torch_hub:CompVis/DisMo:motion_extractor_large",
+        "model_type": "dismo"
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-low.pt",
+      "sha256": "a2e1c6d614f7f4050c9ace0bbc5133c5f8cdbc0a33b7cbdf72e97bccec14a8f7",
+      "size_bytes": 790924,
+      "summary": {
+        "average_batch_seconds": 10.905597050270687,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          128
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-low.pt",
+        "successful_samples": 480,
+        "total_seconds": 654.5347815006971
+      }
+    },
+    "freeze-tail-mid": {
+      "model_metadata": {
+        "checkpoint": "motion_extractor_large",
+        "device": "cuda",
+        "encoder_name": "dismo",
+        "input_spec": {
+          "embedding_source": "forward_sliding_time_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, H, W, C]",
+          "value_range": [
+            -1.0,
+            1.0
+          ]
+        },
+        "model_source": "torch_hub:CompVis/DisMo:motion_extractor_large",
+        "model_type": "dismo"
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-mid.pt",
+      "sha256": "b07552df0de76d7dc08b642f9d9ff5df533a9f1676103932acf41b0877be1001",
+      "size_bytes": 790924,
+      "summary": {
+        "average_batch_seconds": 10.89210976017639,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          128
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-mid.pt",
+        "successful_samples": 480,
+        "total_seconds": 653.7851896118373
+      }
+    },
+    "heldout_original": {
+      "model_metadata": {
+        "checkpoint": "motion_extractor_large",
+        "device": "cuda",
+        "encoder_name": "dismo",
+        "input_spec": {
+          "embedding_source": "forward_sliding_time_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, H, W, C]",
+          "value_range": [
+            -1.0,
+            1.0
+          ]
+        },
+        "model_source": "torch_hub:CompVis/DisMo:motion_extractor_large",
+        "model_type": "dismo"
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/original.pt",
+      "sha256": "4cd4eb142cf04d005fc5835ceb84663587fe507b0243f645caae2c0497142dbb",
+      "size_bytes": 721307,
+      "summary": {
+        "average_batch_seconds": 10.952342770279696,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          128
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/original.pt",
+        "successful_samples": 480,
+        "total_seconds": 657.4416303411126
+      }
+    },
+    "rgb-quantization-high": {
+      "model_metadata": {
+        "checkpoint": "motion_extractor_large",
+        "device": "cuda",
+        "encoder_name": "dismo",
+        "input_spec": {
+          "embedding_source": "forward_sliding_time_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, H, W, C]",
+          "value_range": [
+            -1.0,
+            1.0
+          ]
+        },
+        "model_source": "torch_hub:CompVis/DisMo:motion_extractor_large",
+        "model_type": "dismo"
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-high.pt",
+      "sha256": "fd81ae8993c7fa3bdc96ade5b09eb559749f2d380dfb4430ed07a9f2bf5b0004",
+      "size_bytes": 802742,
+      "summary": {
+        "average_batch_seconds": 10.924923211305092,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          128
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-high.pt",
+        "successful_samples": 480,
+        "total_seconds": 655.7320977579802
+      }
+    },
+    "rgb-quantization-low": {
+      "model_metadata": {
+        "checkpoint": "motion_extractor_large",
+        "device": "cuda",
+        "encoder_name": "dismo",
+        "input_spec": {
+          "embedding_source": "forward_sliding_time_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, H, W, C]",
+          "value_range": [
+            -1.0,
+            1.0
+          ]
+        },
+        "model_source": "torch_hub:CompVis/DisMo:motion_extractor_large",
+        "model_type": "dismo"
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-low.pt",
+      "sha256": "b0c9bc4e3ae41bc73450b30edc2f8f3324f1759c5b520b49bf2ad3932c9e93b6",
+      "size_bytes": 802735,
+      "summary": {
+        "average_batch_seconds": 10.917010422454526,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          128
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-low.pt",
+        "successful_samples": 480,
+        "total_seconds": 655.2705325149
+      }
+    },
+    "rgb-quantization-mid": {
+      "model_metadata": {
+        "checkpoint": "motion_extractor_large",
+        "device": "cuda",
+        "encoder_name": "dismo",
+        "input_spec": {
+          "embedding_source": "forward_sliding_time_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, H, W, C]",
+          "value_range": [
+            -1.0,
+            1.0
+          ]
+        },
+        "model_source": "torch_hub:CompVis/DisMo:motion_extractor_large",
+        "model_type": "dismo"
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-mid.pt",
+      "sha256": "eb175001fae4a90540144df255d8d52bbd4814d4f3419470eeeb9213ea70bcd8",
+      "size_bytes": 802735,
+      "summary": {
+        "average_batch_seconds": 10.913420474311957,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          128
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-mid.pt",
+        "successful_samples": 480,
+        "total_seconds": 654.9771870691329
+      }
+    },
+    "solarization-high": {
+      "model_metadata": {
+        "checkpoint": "motion_extractor_large",
+        "device": "cuda",
+        "encoder_name": "dismo",
+        "input_spec": {
+          "embedding_source": "forward_sliding_time_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, H, W, C]",
+          "value_range": [
+            -1.0,
+            1.0
+          ]
+        },
+        "model_source": "torch_hub:CompVis/DisMo:motion_extractor_large",
+        "model_type": "dismo"
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/perturbations/solarization-high.pt",
+      "sha256": "88cd91dd22b7b573c08936995139bd81c6591502d8d491c0936deaad221f492e",
+      "size_bytes": 792730,
+      "summary": {
+        "average_batch_seconds": 10.906567044059436,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          128
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/perturbations/solarization-high.pt",
+        "successful_samples": 480,
+        "total_seconds": 654.5506589431316
+      }
+    },
+    "solarization-low": {
+      "model_metadata": {
+        "checkpoint": "motion_extractor_large",
+        "device": "cuda",
+        "encoder_name": "dismo",
+        "input_spec": {
+          "embedding_source": "forward_sliding_time_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, H, W, C]",
+          "value_range": [
+            -1.0,
+            1.0
+          ]
+        },
+        "model_source": "torch_hub:CompVis/DisMo:motion_extractor_large",
+        "model_type": "dismo"
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/perturbations/solarization-low.pt",
+      "sha256": "4e68e7f6609fefba56d0111cce0fc6ef91425209847fc9c376c85f7949b35b5d",
+      "size_bytes": 792723,
+      "summary": {
+        "average_batch_seconds": 10.884586820285767,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          128
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/perturbations/solarization-low.pt",
+        "successful_samples": 480,
+        "total_seconds": 653.317160287872
+      }
+    },
+    "solarization-mid": {
+      "model_metadata": {
+        "checkpoint": "motion_extractor_large",
+        "device": "cuda",
+        "encoder_name": "dismo",
+        "input_spec": {
+          "embedding_source": "forward_sliding_time_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, H, W, C]",
+          "value_range": [
+            -1.0,
+            1.0
+          ]
+        },
+        "model_source": "torch_hub:CompVis/DisMo:motion_extractor_large",
+        "model_type": "dismo"
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/perturbations/solarization-mid.pt",
+      "sha256": "20e9483e5236ff469cb713520fb26750546e5eee0b6418512a5f3a17953e2151",
+      "size_bytes": 792723,
+      "summary": {
+        "average_batch_seconds": 10.889762525322537,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          128
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/perturbations/solarization-mid.pt",
+        "successful_samples": 480,
+        "total_seconds": 653.5188521388918
+      }
+    },
+    "spatial-blur-mid": {
+      "model_metadata": {
+        "checkpoint": "motion_extractor_large",
+        "device": "cuda",
+        "encoder_name": "dismo",
+        "input_spec": {
+          "embedding_source": "forward_sliding_time_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, H, W, C]",
+          "value_range": [
+            -1.0,
+            1.0
+          ]
+        },
+        "model_source": "torch_hub:CompVis/DisMo:motion_extractor_large",
+        "model_type": "dismo"
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/perturbations/spatial-blur-mid.pt",
+      "sha256": "00759f8a5cc0b3389f2d44442f6a93d90ddb6f019bb4aa3c293198f31b76e594",
+      "size_bytes": 800915,
+      "summary": {
+        "average_batch_seconds": 10.943042865488678,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          128
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/perturbations/spatial-blur-mid.pt",
+        "successful_samples": 480,
+        "total_seconds": 656.6946768723428
+      }
+    },
+    "temporal-shuffle-mid": {
+      "model_metadata": {
+        "checkpoint": "motion_extractor_large",
+        "device": "cuda",
+        "encoder_name": "dismo",
+        "input_spec": {
+          "embedding_source": "forward_sliding_time_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, H, W, C]",
+          "value_range": [
+            -1.0,
+            1.0
+          ]
+        },
+        "model_source": "torch_hub:CompVis/DisMo:motion_extractor_large",
+        "model_type": "dismo"
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/perturbations/temporal-shuffle-mid.pt",
+      "sha256": "2f0cefbbf01aba09d67443da4ad9c2438a22e4f9f666b24aceea5c8ec94d61e8",
+      "size_bytes": 809391,
+      "summary": {
+        "average_batch_seconds": 10.93552843996634,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          128
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/heldout/perturbations/temporal-shuffle-mid.pt",
+        "successful_samples": 480,
+        "total_seconds": 656.3521827682853
+      }
+    },
+    "train_original": {
+      "model_metadata": {
+        "checkpoint": "motion_extractor_large",
+        "device": "cuda",
+        "encoder_name": "dismo",
+        "input_spec": {
+          "embedding_source": "forward_sliding_time_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, H, W, C]",
+          "value_range": [
+            -1.0,
+            1.0
+          ]
+        },
+        "model_source": "torch_hub:CompVis/DisMo:motion_extractor_large",
+        "model_type": "dismo"
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/train/original.pt",
+      "sha256": "74a2084eadd4e58c256b72a4f75d9731bf9e33b0ae5330a91fd25c3d0bac35c6",
+      "size_bytes": 2398619,
+      "summary": {
+        "average_batch_seconds": 10.804138159481809,
+        "batch_count": 200,
+        "dataset_size": 1600,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1600,
+          128
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1600
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/embeddings/train/original.pt",
+        "successful_samples": 1600,
+        "total_seconds": 2161.663962414488
+      }
+    }
+  },
+  "code_commit": null,
+  "created_at_utc": "2026-07-18T21:43:16.674344+00:00",
+  "evaluation_commands": [
+    [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.evaluate",
+      "--config",
+      "configs/runs/diving48_dismo_linear_probe/diving48_dismo_c32_linear_probe_evaluation.json"
+    ]
+  ],
+  "format_version": 1,
+  "hardware": {
+    "environment_recording_policy": "The artifact records the observed encoder device. Scheduler hostnames and GPU model names are intentionally excluded because allocations vary and are not experiment variables.",
+    "note": "The extraction artifact records device at runtime.",
+    "observed_encoder_devices": [
+      "cuda"
+    ]
+  },
+  "manifest_path": "outputs/runs/diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe/manifest.json",
+  "run_id": "diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe"
+}

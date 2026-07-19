@@ -1,6 +1,6 @@
 # Full Model x Dataset Matrix Summary
 
-This summary reads the 15 completed run reports from both branches
+This summary reads the 20 completed run reports from both branches
 and does not re-extract embeddings or fabricate cross-cell interpretation --
 that is left for a follow-up write-up. Perturbation strengths and protocol
 match across all cells (frozen linear probe + KNN baseline, plus 2-8
@@ -25,6 +25,11 @@ perturbation set).
 - `kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe`
 - `kinetics-c50-train100-heldout30-dismo-motion-extractor-large-frozen-linear-probe`
 - `kinetics-c50-train100-heldout30-vjepa2-vitl-fpc64-256-frozen-linear-probe`
+- `hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe`
+- `kinetics-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe`
+- `kinetics-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe`
+- `diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe`
+- `diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe`
 
 Quality audit overall status across all cells: `True`.
 
@@ -47,6 +52,11 @@ Quality audit overall status across all cells: `True`.
 | VideoMAE | Kinetics | 5000 | 1500 | 768 | 45.7% | 19.5% | True |
 | DisMo | Kinetics | 5000 | 1500 | 128 | 34.6% | 20.3% | True |
 | V-JEPA2 | Kinetics | 5000 | 1500 | 1024 | 71.8% | 52.1% | True |
+| DINOv2 frame-mean | HMDB51 | 3551 | 1524 | 768 | 63.3% | 53.0% | True |
+| DINOv2 frame-mean | Kinetics | 5000 | 1500 | 768 | 83.1% | 78.4% | True |
+| SlowFast R50 8x8 | Kinetics | 5000 | 1500 | 9216 | 92.1% | 89.2% | True |
+| DisMo | Diving48 | 1600 | 480 | 128 | 9.8% | 7.3% | True |
+| V-JEPA2 | Diving48 | 1600 | 480 | 1024 | 8.5% | 8.3% | True |
 
 ## Fixed-mid Interventions
 
@@ -67,6 +77,11 @@ Quality audit overall status across all cells: `True`.
 | VideoMAE | Kinetics | 0.1480 | 0.0253 | 0.0181 | 0.0026 |
 | DisMo | Kinetics | 0.1073 | 0.0167 | 0.3773 | 0.0090 |
 | V-JEPA2 | Kinetics | 0.2020 | 0.0473 | 0.0854 | 0.0989 |
+| DINOv2 frame-mean | HMDB51 | 0.0000 | 0.0190 | 3.31e-08 | 0.0379 |
+| DINOv2 frame-mean | Kinetics | 0.0000 | 0.0053 | 3.53e-08 | 0.0149 |
+| SlowFast R50 8x8 | Kinetics | 0.0760 | 0.0180 | 0.1860 | 0.0249 |
+| DisMo | Diving48 | 0.0458 | 0.0083 | 0.7094 | 0.0026 |
+| V-JEPA2 | Diving48 | 0.0229 | 0.0104 | 0.1209 | 0.0585 |
 
 (Not every cell has both fixed-mid perturbations -- HMDB51/Kinetics cells
 have the full 8-perturbation matrix, matching this table; entries show
@@ -104,15 +119,20 @@ spatial-blur-mid) within each cell:
 | DisMo | Kinetics | 0.1680 | 0.0393 | 0.1287 | 5.3939 |
 | SlowFast R50 8x8 | HMDB51 | 0.2113 | 0.0833 | 0.1280 | 1.8530 |
 | VideoMAE | SSV2 | 0.2027 | 0.0840 | 0.1187 | 1.8304 |
+| DisMo | Diving48 | 0.0833 | 0.0125 | 0.0708 | 8.0978 |
+| SlowFast R50 8x8 | Kinetics | 0.0893 | 0.0240 | 0.0653 | 2.8988 |
 | SlowFast R50 8x8 | Diving48 | 0.0729 | 0.0125 | 0.0604 | 5.2648 |
 | V-JEPA2 | HMDB51 | 0.2323 | 0.1877 | 0.0446 | -0.6977 |
 | VideoMAE | Diving48 | 0.0562 | 0.0229 | 0.0333 | 6.2328 |
 | SlowFast R50 8x8 | UCF101 | 0.0487 | 0.0160 | 0.0327 | 1.4077 |
+| V-JEPA2 | Diving48 | 0.0708 | 0.0458 | 0.0250 | 1.0465 |
 | VideoMAE | HMDB51 | 0.1916 | 0.1870 | 0.0046 | 0.6494 |
 | DINOv2 frame-mean | UCF101 | 0.0000 | 0.0040 | -0.0040 | -10.0000 |
 | DINOv2 frame-mean | Diving48 | 0.0000 | 0.0104 | -0.0104 | -10.0000 |
+| DINOv2 frame-mean | Kinetics | 0.0000 | 0.0120 | -0.0120 | -10.0000 |
 | VideoMAE | UCF101 | 0.2800 | 0.3133 | -0.0333 | 0.3714 |
 | DINOv2 frame-mean | SSV2 | 0.0000 | 0.0373 | -0.0373 | -10.0000 |
+| DINOv2 frame-mean | HMDB51 | 0.0000 | 0.0459 | -0.0459 | -10.0000 |
 
 DINOv2 frame-mean's `0.0000` motion columns are not a rounding artifact:
 frame-mean pooling averages per-frame features, and a mean is exactly
@@ -127,11 +147,11 @@ are not fully apples-to-apples across rows):
 
 | Model | Datasets averaged | Mean behavioral bias | Mean repr. log2 ratio, mid |
 | --- | --- | --- | --- |
-| DisMo | Kinetics | 0.1287 | 5.3939 |
-| SlowFast R50 8x8 | Diving48, HMDB51, SSV2, UCF101 | 0.0974 | 2.5171 |
-| V-JEPA2 | HMDB51, Kinetics | 0.0960 | -0.4541 |
+| DisMo | Diving48, Kinetics | 0.0998 | 6.7459 |
+| SlowFast R50 8x8 | Diving48, HMDB51, Kinetics, SSV2, UCF101 | 0.0910 | 2.5934 |
+| V-JEPA2 | Diving48, HMDB51, Kinetics | 0.0723 | 0.0461 |
 | VideoMAE | Diving48, HMDB51, Kinetics, SSV2, UCF101 | 0.0515 | 2.3726 |
-| DINOv2 frame-mean | Diving48, SSV2, UCF101 | -0.0172 | -10.0000 |
+| DINOv2 frame-mean | Diving48, HMDB51, Kinetics, SSV2, UCF101 | -0.0219 | -10.0000 |
 
 Cells where representational and behavioral bias disagree in sign -- a
 larger embedding shift from one perturbation type does not always mean the

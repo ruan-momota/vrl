@@ -1,0 +1,1227 @@
+{
+  "artifact_commands": {
+    "embeddings/heldout/original.pt": [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_dinov2_linear_probe/hmdb51_dinov2_full_split1_heldout_original.json"
+    ],
+    "embeddings/heldout/perturbations/color-high.pt": [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_dinov2_linear_probe/hmdb51_dinov2_full_split1_heldout_color_high.json"
+    ],
+    "embeddings/heldout/perturbations/color-low.pt": [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_dinov2_linear_probe/hmdb51_dinov2_full_split1_heldout_color_low.json"
+    ],
+    "embeddings/heldout/perturbations/color-mid.pt": [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_dinov2_linear_probe/hmdb51_dinov2_full_split1_heldout_color_mid.json"
+    ],
+    "embeddings/heldout/perturbations/freeze-tail-high.pt": [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_dinov2_linear_probe/hmdb51_dinov2_full_split1_heldout_freeze_tail_high.json"
+    ],
+    "embeddings/heldout/perturbations/freeze-tail-low.pt": [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_dinov2_linear_probe/hmdb51_dinov2_full_split1_heldout_freeze_tail_low.json"
+    ],
+    "embeddings/heldout/perturbations/freeze-tail-mid.pt": [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_dinov2_linear_probe/hmdb51_dinov2_full_split1_heldout_freeze_tail_mid.json"
+    ],
+    "embeddings/heldout/perturbations/rgb-quantization-high.pt": [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_dinov2_linear_probe/hmdb51_dinov2_full_split1_heldout_rgb_quantization_high.json"
+    ],
+    "embeddings/heldout/perturbations/rgb-quantization-low.pt": [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_dinov2_linear_probe/hmdb51_dinov2_full_split1_heldout_rgb_quantization_low.json"
+    ],
+    "embeddings/heldout/perturbations/rgb-quantization-mid.pt": [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_dinov2_linear_probe/hmdb51_dinov2_full_split1_heldout_rgb_quantization_mid.json"
+    ],
+    "embeddings/heldout/perturbations/solarization-high.pt": [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_dinov2_linear_probe/hmdb51_dinov2_full_split1_heldout_solarization_high.json"
+    ],
+    "embeddings/heldout/perturbations/solarization-low.pt": [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_dinov2_linear_probe/hmdb51_dinov2_full_split1_heldout_solarization_low.json"
+    ],
+    "embeddings/heldout/perturbations/solarization-mid.pt": [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_dinov2_linear_probe/hmdb51_dinov2_full_split1_heldout_solarization_mid.json"
+    ],
+    "embeddings/heldout/perturbations/spatial-blur-mid.pt": [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_dinov2_linear_probe/hmdb51_dinov2_full_split1_heldout_blur_mid.json"
+    ],
+    "embeddings/heldout/perturbations/temporal-shuffle-mid.pt": [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_dinov2_linear_probe/hmdb51_dinov2_full_split1_heldout_temporal_shuffle_mid.json"
+    ],
+    "embeddings/train/original.pt": [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_dinov2_linear_probe/hmdb51_dinov2_full_split1_train_original.json"
+    ]
+  },
+  "artifacts": {
+    "color-high": {
+      "model_metadata": {
+        "checkpoint": "facebook/dinov2-base",
+        "device": "cuda",
+        "encoder_name": "dinov2",
+        "feature_source": "last_hidden_state_cls_token",
+        "frame_aggregation": "mean",
+        "hidden_size": 768,
+        "image_size": 518,
+        "input_spec": {
+          "feature_source": "last_hidden_state_cls_token",
+          "frame_aggregation": "mean",
+          "frame_encoder_layout": "[B*T, C, H, W]",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "model_source": "transformers.Dinov2Model",
+        "model_type": "dinov2",
+        "num_hidden_layers": 12,
+        "patch_size": 14,
+        "preprocess": {
+          "image_size": 224,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415"
+      },
+      "path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/perturbations/color-high.pt",
+      "sha256": "9c8bdb11f05311cdfe0aab02960faa70ca933a70316a0b709d0cb4753ceb25ae",
+      "size_bytes": 6048636,
+      "summary": {
+        "average_batch_seconds": 0.41799342455967264,
+        "batch_count": 1524,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/perturbations/color-high.pt",
+        "successful_samples": 1524,
+        "total_seconds": 637.3444373530801
+      }
+    },
+    "color-low": {
+      "model_metadata": {
+        "checkpoint": "facebook/dinov2-base",
+        "device": "cuda",
+        "encoder_name": "dinov2",
+        "feature_source": "last_hidden_state_cls_token",
+        "frame_aggregation": "mean",
+        "hidden_size": 768,
+        "image_size": 518,
+        "input_spec": {
+          "feature_source": "last_hidden_state_cls_token",
+          "frame_aggregation": "mean",
+          "frame_encoder_layout": "[B*T, C, H, W]",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "model_source": "transformers.Dinov2Model",
+        "model_type": "dinov2",
+        "num_hidden_layers": 12,
+        "patch_size": 14,
+        "preprocess": {
+          "image_size": 224,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415"
+      },
+      "path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/perturbations/color-low.pt",
+      "sha256": "cbea497eca5411d5c38c5a3000f4cc5dcecd60feca87b4386e0f1645eff7ad6f",
+      "size_bytes": 6048627,
+      "summary": {
+        "average_batch_seconds": 0.41704995526346744,
+        "batch_count": 1524,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/perturbations/color-low.pt",
+        "successful_samples": 1524,
+        "total_seconds": 635.8448253769893
+      }
+    },
+    "color-mid": {
+      "model_metadata": {
+        "checkpoint": "facebook/dinov2-base",
+        "device": "cuda",
+        "encoder_name": "dinov2",
+        "feature_source": "last_hidden_state_cls_token",
+        "frame_aggregation": "mean",
+        "hidden_size": 768,
+        "image_size": 518,
+        "input_spec": {
+          "feature_source": "last_hidden_state_cls_token",
+          "frame_aggregation": "mean",
+          "frame_encoder_layout": "[B*T, C, H, W]",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "model_source": "transformers.Dinov2Model",
+        "model_type": "dinov2",
+        "num_hidden_layers": 12,
+        "patch_size": 14,
+        "preprocess": {
+          "image_size": 224,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415"
+      },
+      "path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/perturbations/color-mid.pt",
+      "sha256": "72b5e7a3ebf29b2cf442552f70b0f0e812114b8714a385e98fed502a3389b8ba",
+      "size_bytes": 6048627,
+      "summary": {
+        "average_batch_seconds": 0.41509580045139166,
+        "batch_count": 1524,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/perturbations/color-mid.pt",
+        "successful_samples": 1524,
+        "total_seconds": 632.8722654220182
+      }
+    },
+    "freeze-tail-high": {
+      "model_metadata": {
+        "checkpoint": "facebook/dinov2-base",
+        "device": "cuda",
+        "encoder_name": "dinov2",
+        "feature_source": "last_hidden_state_cls_token",
+        "frame_aggregation": "mean",
+        "hidden_size": 768,
+        "image_size": 518,
+        "input_spec": {
+          "feature_source": "last_hidden_state_cls_token",
+          "frame_aggregation": "mean",
+          "frame_encoder_layout": "[B*T, C, H, W]",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "model_source": "transformers.Dinov2Model",
+        "model_type": "dinov2",
+        "num_hidden_layers": 12,
+        "patch_size": 14,
+        "preprocess": {
+          "image_size": 224,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415"
+      },
+      "path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-high.pt",
+      "sha256": "a6982e687690296aa022057125af0b25cbaafb9b560da6ecd896ef5bbf373c5b",
+      "size_bytes": 5946546,
+      "summary": {
+        "average_batch_seconds": 0.3815667761971452,
+        "batch_count": 1524,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-high.pt",
+        "successful_samples": 1524,
+        "total_seconds": 581.7224513599649
+      }
+    },
+    "freeze-tail-low": {
+      "model_metadata": {
+        "checkpoint": "facebook/dinov2-base",
+        "device": "cuda",
+        "encoder_name": "dinov2",
+        "feature_source": "last_hidden_state_cls_token",
+        "frame_aggregation": "mean",
+        "hidden_size": 768,
+        "image_size": 518,
+        "input_spec": {
+          "feature_source": "last_hidden_state_cls_token",
+          "frame_aggregation": "mean",
+          "frame_encoder_layout": "[B*T, C, H, W]",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "model_source": "transformers.Dinov2Model",
+        "model_type": "dinov2",
+        "num_hidden_layers": 12,
+        "patch_size": 14,
+        "preprocess": {
+          "image_size": 224,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415"
+      },
+      "path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-low.pt",
+      "sha256": "d2a97df74e59a1260588853207c38b6ba6288d3d372b80a378387c196b5a701f",
+      "size_bytes": 5946537,
+      "summary": {
+        "average_batch_seconds": 0.3825929823734558,
+        "batch_count": 1524,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-low.pt",
+        "successful_samples": 1524,
+        "total_seconds": 583.3062688820064
+      }
+    },
+    "freeze-tail-mid": {
+      "model_metadata": {
+        "checkpoint": "facebook/dinov2-base",
+        "device": "cuda",
+        "encoder_name": "dinov2",
+        "feature_source": "last_hidden_state_cls_token",
+        "frame_aggregation": "mean",
+        "hidden_size": 768,
+        "image_size": 518,
+        "input_spec": {
+          "feature_source": "last_hidden_state_cls_token",
+          "frame_aggregation": "mean",
+          "frame_encoder_layout": "[B*T, C, H, W]",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "model_source": "transformers.Dinov2Model",
+        "model_type": "dinov2",
+        "num_hidden_layers": 12,
+        "patch_size": 14,
+        "preprocess": {
+          "image_size": 224,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415"
+      },
+      "path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-mid.pt",
+      "sha256": "b8b25d305c7952dae7b8efb639e9b6c772d20b192a06d3d3b302544d387b7ced",
+      "size_bytes": 5946537,
+      "summary": {
+        "average_batch_seconds": 0.3794865865380903,
+        "batch_count": 1524,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-mid.pt",
+        "successful_samples": 1524,
+        "total_seconds": 581.459858994931
+      }
+    },
+    "heldout_original": {
+      "model_metadata": {
+        "checkpoint": "facebook/dinov2-base",
+        "device": "cuda",
+        "encoder_name": "dinov2",
+        "feature_source": "last_hidden_state_cls_token",
+        "frame_aggregation": "mean",
+        "hidden_size": 768,
+        "image_size": 518,
+        "input_spec": {
+          "feature_source": "last_hidden_state_cls_token",
+          "frame_aggregation": "mean",
+          "frame_encoder_layout": "[B*T, C, H, W]",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "model_source": "transformers.Dinov2Model",
+        "model_type": "dinov2",
+        "num_hidden_layers": 12,
+        "patch_size": 14,
+        "preprocess": {
+          "image_size": 224,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415"
+      },
+      "path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/original.pt",
+      "sha256": "3aa9bf9c966b8f8ac4589200558db5ea162c7cd6793a22412e42f63c4bb68e69",
+      "size_bytes": 5769386,
+      "summary": {
+        "average_batch_seconds": 0.39947996135761965,
+        "batch_count": 1524,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/original.pt",
+        "successful_samples": 1524,
+        "total_seconds": 609.3362162209814
+      }
+    },
+    "rgb-quantization-high": {
+      "model_metadata": {
+        "checkpoint": "facebook/dinov2-base",
+        "device": "cuda",
+        "encoder_name": "dinov2",
+        "feature_source": "last_hidden_state_cls_token",
+        "frame_aggregation": "mean",
+        "hidden_size": 768,
+        "image_size": 518,
+        "input_spec": {
+          "feature_source": "last_hidden_state_cls_token",
+          "frame_aggregation": "mean",
+          "frame_encoder_layout": "[B*T, C, H, W]",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "model_source": "transformers.Dinov2Model",
+        "model_type": "dinov2",
+        "num_hidden_layers": 12,
+        "patch_size": 14,
+        "preprocess": {
+          "image_size": 224,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415"
+      },
+      "path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-high.pt",
+      "sha256": "779fd91a43ae917afe5a8d53623f3e78854de22ce5e1c7b2e7173328a8281117",
+      "size_bytes": 5977119,
+      "summary": {
+        "average_batch_seconds": 0.3891633326825417,
+        "batch_count": 1524,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-high.pt",
+        "successful_samples": 1524,
+        "total_seconds": 593.3693658150733
+      }
+    },
+    "rgb-quantization-low": {
+      "model_metadata": {
+        "checkpoint": "facebook/dinov2-base",
+        "device": "cuda",
+        "encoder_name": "dinov2",
+        "feature_source": "last_hidden_state_cls_token",
+        "frame_aggregation": "mean",
+        "hidden_size": 768,
+        "image_size": 518,
+        "input_spec": {
+          "feature_source": "last_hidden_state_cls_token",
+          "frame_aggregation": "mean",
+          "frame_encoder_layout": "[B*T, C, H, W]",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "model_source": "transformers.Dinov2Model",
+        "model_type": "dinov2",
+        "num_hidden_layers": 12,
+        "patch_size": 14,
+        "preprocess": {
+          "image_size": 224,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415"
+      },
+      "path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-low.pt",
+      "sha256": "3b07b745b4485c84f1c8e824dea8d44cb17bc6603f63b1ed261b1bada05763fe",
+      "size_bytes": 5977110,
+      "summary": {
+        "average_batch_seconds": 0.38816786340028087,
+        "batch_count": 1524,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-low.pt",
+        "successful_samples": 1524,
+        "total_seconds": 591.7871274680365
+      }
+    },
+    "rgb-quantization-mid": {
+      "model_metadata": {
+        "checkpoint": "facebook/dinov2-base",
+        "device": "cuda",
+        "encoder_name": "dinov2",
+        "feature_source": "last_hidden_state_cls_token",
+        "frame_aggregation": "mean",
+        "hidden_size": 768,
+        "image_size": 518,
+        "input_spec": {
+          "feature_source": "last_hidden_state_cls_token",
+          "frame_aggregation": "mean",
+          "frame_encoder_layout": "[B*T, C, H, W]",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "model_source": "transformers.Dinov2Model",
+        "model_type": "dinov2",
+        "num_hidden_layers": 12,
+        "patch_size": 14,
+        "preprocess": {
+          "image_size": 224,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415"
+      },
+      "path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-mid.pt",
+      "sha256": "4a24ad9d50945a5c548b904587fa5a3556388f1ed79e6feab20434bfe63993fa",
+      "size_bytes": 5977110,
+      "summary": {
+        "average_batch_seconds": 0.38922225014050554,
+        "batch_count": 1524,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-mid.pt",
+        "successful_samples": 1524,
+        "total_seconds": 593.3927066229517
+      }
+    },
+    "solarization-high": {
+      "model_metadata": {
+        "checkpoint": "facebook/dinov2-base",
+        "device": "cuda",
+        "encoder_name": "dinov2",
+        "feature_source": "last_hidden_state_cls_token",
+        "frame_aggregation": "mean",
+        "hidden_size": 768,
+        "image_size": 518,
+        "input_spec": {
+          "feature_source": "last_hidden_state_cls_token",
+          "frame_aggregation": "mean",
+          "frame_encoder_layout": "[B*T, C, H, W]",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "model_source": "transformers.Dinov2Model",
+        "model_type": "dinov2",
+        "num_hidden_layers": 12,
+        "patch_size": 14,
+        "preprocess": {
+          "image_size": 224,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415"
+      },
+      "path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/perturbations/solarization-high.pt",
+      "sha256": "ec0ae251ee052853d33fc53e887817320b66c74fa4328d86078a26a7af349c9e",
+      "size_bytes": 5951163,
+      "summary": {
+        "average_batch_seconds": 0.39008561423075266,
+        "batch_count": 1524,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/perturbations/solarization-high.pt",
+        "successful_samples": 1524,
+        "total_seconds": 603.5807396350428
+      }
+    },
+    "solarization-low": {
+      "model_metadata": {
+        "checkpoint": "facebook/dinov2-base",
+        "device": "cuda",
+        "encoder_name": "dinov2",
+        "feature_source": "last_hidden_state_cls_token",
+        "frame_aggregation": "mean",
+        "hidden_size": 768,
+        "image_size": 518,
+        "input_spec": {
+          "feature_source": "last_hidden_state_cls_token",
+          "frame_aggregation": "mean",
+          "frame_encoder_layout": "[B*T, C, H, W]",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "model_source": "transformers.Dinov2Model",
+        "model_type": "dinov2",
+        "num_hidden_layers": 12,
+        "patch_size": 14,
+        "preprocess": {
+          "image_size": 224,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415"
+      },
+      "path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/perturbations/solarization-low.pt",
+      "sha256": "7454bcab13275a28fb859bb811eebaae018df082abf346fcdfcade136abfbe9b",
+      "size_bytes": 5951154,
+      "summary": {
+        "average_batch_seconds": 0.3925493318090867,
+        "batch_count": 1524,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/perturbations/solarization-low.pt",
+        "successful_samples": 1524,
+        "total_seconds": 598.4624390701065
+      }
+    },
+    "solarization-mid": {
+      "model_metadata": {
+        "checkpoint": "facebook/dinov2-base",
+        "device": "cuda",
+        "encoder_name": "dinov2",
+        "feature_source": "last_hidden_state_cls_token",
+        "frame_aggregation": "mean",
+        "hidden_size": 768,
+        "image_size": 518,
+        "input_spec": {
+          "feature_source": "last_hidden_state_cls_token",
+          "frame_aggregation": "mean",
+          "frame_encoder_layout": "[B*T, C, H, W]",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "model_source": "transformers.Dinov2Model",
+        "model_type": "dinov2",
+        "num_hidden_layers": 12,
+        "patch_size": 14,
+        "preprocess": {
+          "image_size": 224,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415"
+      },
+      "path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/perturbations/solarization-mid.pt",
+      "sha256": "6ba3c64fbc81655f1b59dc9928519322c7fce2ef49c6db6dd5287f573a3254b8",
+      "size_bytes": 5951154,
+      "summary": {
+        "average_batch_seconds": 0.3895223495167597,
+        "batch_count": 1524,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/perturbations/solarization-mid.pt",
+        "successful_samples": 1524,
+        "total_seconds": 593.858011075994
+      }
+    },
+    "spatial-blur-mid": {
+      "model_metadata": {
+        "checkpoint": "facebook/dinov2-base",
+        "device": "cuda",
+        "encoder_name": "dinov2",
+        "feature_source": "last_hidden_state_cls_token",
+        "frame_aggregation": "mean",
+        "hidden_size": 768,
+        "image_size": 518,
+        "input_spec": {
+          "feature_source": "last_hidden_state_cls_token",
+          "frame_aggregation": "mean",
+          "frame_encoder_layout": "[B*T, C, H, W]",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "model_source": "transformers.Dinov2Model",
+        "model_type": "dinov2",
+        "num_hidden_layers": 12,
+        "patch_size": 14,
+        "preprocess": {
+          "image_size": 224,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415"
+      },
+      "path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/perturbations/spatial-blur-mid.pt",
+      "sha256": "a4fb95586f201c1a2b98ff459416ea16d4a7dcb590d2a4eb4eaf20760338bcda",
+      "size_bytes": 5970994,
+      "summary": {
+        "average_batch_seconds": 0.42253236621815354,
+        "batch_count": 1524,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/perturbations/spatial-blur-mid.pt",
+        "successful_samples": 1524,
+        "total_seconds": 644.157924521016
+      }
+    },
+    "temporal-shuffle-mid": {
+      "model_metadata": {
+        "checkpoint": "facebook/dinov2-base",
+        "device": "cuda",
+        "encoder_name": "dinov2",
+        "feature_source": "last_hidden_state_cls_token",
+        "frame_aggregation": "mean",
+        "hidden_size": 768,
+        "image_size": 518,
+        "input_spec": {
+          "feature_source": "last_hidden_state_cls_token",
+          "frame_aggregation": "mean",
+          "frame_encoder_layout": "[B*T, C, H, W]",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "model_source": "transformers.Dinov2Model",
+        "model_type": "dinov2",
+        "num_hidden_layers": 12,
+        "patch_size": 14,
+        "preprocess": {
+          "image_size": 224,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415"
+      },
+      "path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/perturbations/temporal-shuffle-mid.pt",
+      "sha256": "975177b033a568153aa44746b505b64c5acff4046c32e2b0847f8b5b10633983",
+      "size_bytes": 6004502,
+      "summary": {
+        "average_batch_seconds": 0.38048552751934994,
+        "batch_count": 1524,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/heldout/perturbations/temporal-shuffle-mid.pt",
+        "successful_samples": 1524,
+        "total_seconds": 580.1714227009797
+      }
+    },
+    "train_original": {
+      "model_metadata": {
+        "checkpoint": "facebook/dinov2-base",
+        "device": "cuda",
+        "encoder_name": "dinov2",
+        "feature_source": "last_hidden_state_cls_token",
+        "frame_aggregation": "mean",
+        "hidden_size": 768,
+        "image_size": 518,
+        "input_spec": {
+          "feature_source": "last_hidden_state_cls_token",
+          "frame_aggregation": "mean",
+          "frame_encoder_layout": "[B*T, C, H, W]",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "model_source": "transformers.Dinov2Model",
+        "model_type": "dinov2",
+        "num_hidden_layers": 12,
+        "patch_size": 14,
+        "preprocess": {
+          "image_size": 224,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "num_frames": 16,
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415"
+      },
+      "path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/train/original.pt",
+      "sha256": "66996c76ab8151b9bc062d256ebb5ec2f915503e879a141d36ffa3d7e4c43ff1",
+      "size_bytes": 13286570,
+      "summary": {
+        "average_batch_seconds": 0.4780334462818549,
+        "batch_count": 3551,
+        "dataset_size": 3551,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          3551,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          3551
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/embeddings/train/original.pt",
+        "successful_samples": 3551,
+        "total_seconds": 1698.0767685889732
+      }
+    }
+  },
+  "code_commit": null,
+  "created_at_utc": "2026-07-18T21:10:36.704772+00:00",
+  "evaluation_commands": [
+    [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.evaluate",
+      "--config",
+      "configs/runs/hmdb51_dinov2_linear_probe/hmdb51_dinov2_full_split1_linear_probe_evaluation.json"
+    ]
+  ],
+  "format_version": 1,
+  "hardware": {
+    "environment_recording_policy": "The artifact records the observed encoder device. Scheduler hostnames and GPU model names are intentionally excluded because allocations vary and are not experiment variables.",
+    "note": "The extraction artifact records device at runtime.",
+    "observed_encoder_devices": [
+      "cuda"
+    ]
+  },
+  "manifest_path": "outputs/runs/hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe/manifest.json",
+  "run_id": "hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe"
+}

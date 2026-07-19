@@ -1,0 +1,795 @@
+{
+  "artifact_commands": {
+    "embeddings/heldout/original.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_vjepa_linear_probe/diving48_vjepa_c32_heldout_original.json"
+    ],
+    "embeddings/heldout/perturbations/color-high.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_vjepa_linear_probe/diving48_vjepa_c32_heldout_color_high.json"
+    ],
+    "embeddings/heldout/perturbations/color-low.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_vjepa_linear_probe/diving48_vjepa_c32_heldout_color_low.json"
+    ],
+    "embeddings/heldout/perturbations/color-mid.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_vjepa_linear_probe/diving48_vjepa_c32_heldout_color_mid.json"
+    ],
+    "embeddings/heldout/perturbations/freeze-tail-high.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_vjepa_linear_probe/diving48_vjepa_c32_heldout_freeze_tail_high.json"
+    ],
+    "embeddings/heldout/perturbations/freeze-tail-low.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_vjepa_linear_probe/diving48_vjepa_c32_heldout_freeze_tail_low.json"
+    ],
+    "embeddings/heldout/perturbations/freeze-tail-mid.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_vjepa_linear_probe/diving48_vjepa_c32_heldout_freeze_tail_mid.json"
+    ],
+    "embeddings/heldout/perturbations/rgb-quantization-high.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_vjepa_linear_probe/diving48_vjepa_c32_heldout_rgb_quantization_high.json"
+    ],
+    "embeddings/heldout/perturbations/rgb-quantization-low.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_vjepa_linear_probe/diving48_vjepa_c32_heldout_rgb_quantization_low.json"
+    ],
+    "embeddings/heldout/perturbations/rgb-quantization-mid.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_vjepa_linear_probe/diving48_vjepa_c32_heldout_rgb_quantization_mid.json"
+    ],
+    "embeddings/heldout/perturbations/solarization-high.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_vjepa_linear_probe/diving48_vjepa_c32_heldout_solarization_high.json"
+    ],
+    "embeddings/heldout/perturbations/solarization-low.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_vjepa_linear_probe/diving48_vjepa_c32_heldout_solarization_low.json"
+    ],
+    "embeddings/heldout/perturbations/solarization-mid.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_vjepa_linear_probe/diving48_vjepa_c32_heldout_solarization_mid.json"
+    ],
+    "embeddings/heldout/perturbations/spatial-blur-mid.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_vjepa_linear_probe/diving48_vjepa_c32_heldout_blur_mid.json"
+    ],
+    "embeddings/heldout/perturbations/temporal-shuffle-mid.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_vjepa_linear_probe/diving48_vjepa_c32_heldout_temporal_shuffle_mid.json"
+    ],
+    "embeddings/train/original.pt": [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/diving48_vjepa_linear_probe/diving48_vjepa_c32_train_original.json"
+    ]
+  },
+  "artifacts": {
+    "color-high": {
+      "model_metadata": {
+        "checkpoint": "facebook/vjepa2-vitl-fpc64-256",
+        "crop_size": 256,
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "vjepa",
+        "frames_per_clip": 64,
+        "hidden_size": 1024,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 64
+        },
+        "model_type": "vjepa2",
+        "patch_size": 16,
+        "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+        "tubelet_size": 2
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/color-high.pt",
+      "sha256": "443a9d8ed953e251e88ffa20c3418f9f79369a34390ac6fb6a85fc069a0178f1",
+      "size_bytes": 2776873,
+      "summary": {
+        "average_batch_seconds": 11.08126175024857,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          1024
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/color-high.pt",
+        "successful_samples": 480,
+        "total_seconds": 665.7010894827545
+      }
+    },
+    "color-low": {
+      "model_metadata": {
+        "checkpoint": "facebook/vjepa2-vitl-fpc64-256",
+        "crop_size": 256,
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "vjepa",
+        "frames_per_clip": 64,
+        "hidden_size": 1024,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 64
+        },
+        "model_type": "vjepa2",
+        "patch_size": 16,
+        "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+        "tubelet_size": 2
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/color-low.pt",
+      "sha256": "923311a7161430067964778cf48bd300cbfe149d64b11123425b701774df94d9",
+      "size_bytes": 2776866,
+      "summary": {
+        "average_batch_seconds": 10.928718616192539,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          1024
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/color-low.pt",
+        "successful_samples": 480,
+        "total_seconds": 655.9839146137238
+      }
+    },
+    "color-mid": {
+      "model_metadata": {
+        "checkpoint": "facebook/vjepa2-vitl-fpc64-256",
+        "crop_size": 256,
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "vjepa",
+        "frames_per_clip": 64,
+        "hidden_size": 1024,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 64
+        },
+        "model_type": "vjepa2",
+        "patch_size": 16,
+        "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+        "tubelet_size": 2
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/color-mid.pt",
+      "sha256": "f123efada51c19bae7daeae950b7eec292b6b259304c2c7db5d002b70be352db",
+      "size_bytes": 2776866,
+      "summary": {
+        "average_batch_seconds": 10.837211531617989,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          1024
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/color-mid.pt",
+        "successful_samples": 480,
+        "total_seconds": 650.4583432711661
+      }
+    },
+    "freeze-tail-high": {
+      "model_metadata": {
+        "checkpoint": "facebook/vjepa2-vitl-fpc64-256",
+        "crop_size": 256,
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "vjepa",
+        "frames_per_clip": 64,
+        "hidden_size": 1024,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 64
+        },
+        "model_type": "vjepa2",
+        "patch_size": 16,
+        "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+        "tubelet_size": 2
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-high.pt",
+      "sha256": "a28e593a26a5683b226b7862fac986b688d2458df0ffca0b4f9f6d96d4871bab",
+      "size_bytes": 2741715,
+      "summary": {
+        "average_batch_seconds": 10.529194633383304,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          1024
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-high.pt",
+        "successful_samples": 480,
+        "total_seconds": 632.0114670731127
+      }
+    },
+    "freeze-tail-low": {
+      "model_metadata": {
+        "checkpoint": "facebook/vjepa2-vitl-fpc64-256",
+        "crop_size": 256,
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "vjepa",
+        "frames_per_clip": 64,
+        "hidden_size": 1024,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 64
+        },
+        "model_type": "vjepa2",
+        "patch_size": 16,
+        "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+        "tubelet_size": 2
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-low.pt",
+      "sha256": "95f01aa99f940b59717be95f65a80e830f7952b8f6de438140945de6c10057cb",
+      "size_bytes": 2741708,
+      "summary": {
+        "average_batch_seconds": 10.557959689417233,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          1024
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-low.pt",
+        "successful_samples": 480,
+        "total_seconds": 633.8494722284377
+      }
+    },
+    "freeze-tail-mid": {
+      "model_metadata": {
+        "checkpoint": "facebook/vjepa2-vitl-fpc64-256",
+        "crop_size": 256,
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "vjepa",
+        "frames_per_clip": 64,
+        "hidden_size": 1024,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 64
+        },
+        "model_type": "vjepa2",
+        "patch_size": 16,
+        "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+        "tubelet_size": 2
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-mid.pt",
+      "sha256": "9ae73e110ea379c5d9d365189d01619b078e70afdda78c37e8f5049d720df9bd",
+      "size_bytes": 2741708,
+      "summary": {
+        "average_batch_seconds": 10.560890537531426,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          1024
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-mid.pt",
+        "successful_samples": 480,
+        "total_seconds": 633.8937308583409
+      }
+    },
+    "heldout_original": {
+      "model_metadata": {
+        "checkpoint": "facebook/vjepa2-vitl-fpc64-256",
+        "crop_size": 256,
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "vjepa",
+        "frames_per_clip": 64,
+        "hidden_size": 1024,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 64
+        },
+        "model_type": "vjepa2",
+        "patch_size": 16,
+        "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+        "tubelet_size": 2
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/original.pt",
+      "sha256": "cc4d1edddf56845681376507767f23d8f067a82158dcc21414e4cc8c0b1e8085",
+      "size_bytes": 2672091,
+      "summary": {
+        "average_batch_seconds": 10.55689686263601,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          1024
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/original.pt",
+        "successful_samples": 480,
+        "total_seconds": 633.7681237254292
+      }
+    },
+    "rgb-quantization-high": {
+      "model_metadata": {
+        "checkpoint": "facebook/vjepa2-vitl-fpc64-256",
+        "crop_size": 256,
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "vjepa",
+        "frames_per_clip": 64,
+        "hidden_size": 1024,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 64
+        },
+        "model_type": "vjepa2",
+        "patch_size": 16,
+        "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+        "tubelet_size": 2
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-high.pt",
+      "sha256": "152573f1f0a35f5518a28df0573779e88385e5a3a352cef20c93dcad319e3e2e",
+      "size_bytes": 2753526,
+      "summary": {
+        "average_batch_seconds": 10.797297923732549,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          1024
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-high.pt",
+        "successful_samples": 480,
+        "total_seconds": 648.0799275785685
+      }
+    },
+    "rgb-quantization-low": {
+      "model_metadata": {
+        "checkpoint": "facebook/vjepa2-vitl-fpc64-256",
+        "crop_size": 256,
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "vjepa",
+        "frames_per_clip": 64,
+        "hidden_size": 1024,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 64
+        },
+        "model_type": "vjepa2",
+        "patch_size": 16,
+        "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+        "tubelet_size": 2
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-low.pt",
+      "sha256": "019b6b926755b1c6274014f0c61e719473def0f78f9800ea2700d95451c84479",
+      "size_bytes": 2753519,
+      "summary": {
+        "average_batch_seconds": 10.699841563527782,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          1024
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-low.pt",
+        "successful_samples": 480,
+        "total_seconds": 642.5747788343579
+      }
+    },
+    "rgb-quantization-mid": {
+      "model_metadata": {
+        "checkpoint": "facebook/vjepa2-vitl-fpc64-256",
+        "crop_size": 256,
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "vjepa",
+        "frames_per_clip": 64,
+        "hidden_size": 1024,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 64
+        },
+        "model_type": "vjepa2",
+        "patch_size": 16,
+        "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+        "tubelet_size": 2
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-mid.pt",
+      "sha256": "8c8fdad1d860805e6f7b709897d031272fc9eadf9fc8d9429f027aa9641c0dfb",
+      "size_bytes": 2753519,
+      "summary": {
+        "average_batch_seconds": 10.90317908624808,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          1024
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-mid.pt",
+        "successful_samples": 480,
+        "total_seconds": 654.5034834891558
+      }
+    },
+    "solarization-high": {
+      "model_metadata": {
+        "checkpoint": "facebook/vjepa2-vitl-fpc64-256",
+        "crop_size": 256,
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "vjepa",
+        "frames_per_clip": 64,
+        "hidden_size": 1024,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 64
+        },
+        "model_type": "vjepa2",
+        "patch_size": 16,
+        "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+        "tubelet_size": 2
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/solarization-high.pt",
+      "sha256": "2dcb07213eaeafadff6a1c4a358842fba4deb8469b416e342f753851d6c81799",
+      "size_bytes": 2743578,
+      "summary": {
+        "average_batch_seconds": 10.776060074816147,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          1024
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/solarization-high.pt",
+        "successful_samples": 480,
+        "total_seconds": 647.052094001323
+      }
+    },
+    "solarization-low": {
+      "model_metadata": {
+        "checkpoint": "facebook/vjepa2-vitl-fpc64-256",
+        "crop_size": 256,
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "vjepa",
+        "frames_per_clip": 64,
+        "hidden_size": 1024,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 64
+        },
+        "model_type": "vjepa2",
+        "patch_size": 16,
+        "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+        "tubelet_size": 2
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/solarization-low.pt",
+      "sha256": "da2147ecd8d9e47d3f519e906ae253dcdd7c3df666a5a43f0f50c7177ca850f5",
+      "size_bytes": 2743507,
+      "summary": {
+        "average_batch_seconds": 10.702969378232956,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          1024
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/solarization-low.pt",
+        "successful_samples": 480,
+        "total_seconds": 642.5529966223985
+      }
+    },
+    "solarization-mid": {
+      "model_metadata": {
+        "checkpoint": "facebook/vjepa2-vitl-fpc64-256",
+        "crop_size": 256,
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "vjepa",
+        "frames_per_clip": 64,
+        "hidden_size": 1024,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 64
+        },
+        "model_type": "vjepa2",
+        "patch_size": 16,
+        "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+        "tubelet_size": 2
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/solarization-mid.pt",
+      "sha256": "ee8ca1c92d0241ddfaab299927e5dadfc89970756c01063182808b761c13bed6",
+      "size_bytes": 2743507,
+      "summary": {
+        "average_batch_seconds": 10.790121796882401,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          1024
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/solarization-mid.pt",
+        "successful_samples": 480,
+        "total_seconds": 647.9525091014802
+      }
+    },
+    "spatial-blur-mid": {
+      "model_metadata": {
+        "checkpoint": "facebook/vjepa2-vitl-fpc64-256",
+        "crop_size": 256,
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "vjepa",
+        "frames_per_clip": 64,
+        "hidden_size": 1024,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 64
+        },
+        "model_type": "vjepa2",
+        "patch_size": 16,
+        "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+        "tubelet_size": 2
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/spatial-blur-mid.pt",
+      "sha256": "9008f1a7e252352f43bf47a6dd0a636ca09b581762e6fdb0e47c05cab99b9284",
+      "size_bytes": 2751699,
+      "summary": {
+        "average_batch_seconds": 10.93009072576339,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          1024
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/spatial-blur-mid.pt",
+        "successful_samples": 480,
+        "total_seconds": 656.7621055636555
+      }
+    },
+    "temporal-shuffle-mid": {
+      "model_metadata": {
+        "checkpoint": "facebook/vjepa2-vitl-fpc64-256",
+        "crop_size": 256,
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "vjepa",
+        "frames_per_clip": 64,
+        "hidden_size": 1024,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 64
+        },
+        "model_type": "vjepa2",
+        "patch_size": 16,
+        "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+        "tubelet_size": 2
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/temporal-shuffle-mid.pt",
+      "sha256": "8c4c3177977be75c865d05336c33c4074dcdd7c90101bfd370b11a5f1a24ed7d",
+      "size_bytes": 2806255,
+      "summary": {
+        "average_batch_seconds": 10.612646527712544,
+        "batch_count": 60,
+        "dataset_size": 480,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          480,
+          1024
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          480
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/heldout/perturbations/temporal-shuffle-mid.pt",
+        "successful_samples": 480,
+        "total_seconds": 637.3108103685081
+      }
+    },
+    "train_original": {
+      "model_metadata": {
+        "checkpoint": "facebook/vjepa2-vitl-fpc64-256",
+        "crop_size": 256,
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "vjepa",
+        "frames_per_clip": 64,
+        "hidden_size": 1024,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 256,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 64
+        },
+        "model_type": "vjepa2",
+        "patch_size": 16,
+        "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+        "tubelet_size": 2
+      },
+      "path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/train/original.pt",
+      "sha256": "7a9283982789cf64f41ace022e8ac7800a4ca72bfe5fa6db4b4101aa5da262cf",
+      "size_bytes": 8901275,
+      "summary": {
+        "average_batch_seconds": 10.43332774952054,
+        "batch_count": 200,
+        "dataset_size": 1600,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1600,
+          1024
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1600
+        ],
+        "output_path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/embeddings/train/original.pt",
+        "successful_samples": 1600,
+        "total_seconds": 2087.705208266154
+      }
+    }
+  },
+  "code_commit": null,
+  "created_at_utc": "2026-07-19T08:12:51.030405+00:00",
+  "evaluation_commands": [
+    [
+      "/workspace/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.evaluate",
+      "--config",
+      "configs/runs/diving48_vjepa_linear_probe/diving48_vjepa_c32_linear_probe_evaluation.json"
+    ]
+  ],
+  "format_version": 1,
+  "hardware": {
+    "environment_recording_policy": "The artifact records the observed encoder device. Scheduler hostnames and GPU model names are intentionally excluded because allocations vary and are not experiment variables.",
+    "note": "The extraction artifact records device at runtime.",
+    "observed_encoder_devices": [
+      "cuda"
+    ]
+  },
+  "manifest_path": "outputs/runs/diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe/manifest.json",
+  "run_id": "diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe"
+}

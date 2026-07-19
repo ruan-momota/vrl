@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520">
+<rect width="100%" height="100%" fill="white"/>
+<text x="480.00" y="28.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700">HMDB51 dinov2 frozen-linear-probe perturbation mean cosine distance</text>
+<line x1="190" y1="488" x2="920" y2="488" stroke="#444" stroke-width="1"/>
+<text x="180.00" y="70.67" text-anchor="end" font-family="Arial, sans-serif" font-size="13" font-weight="400">temporal-shuffle-mid</text>
+<rect x="190" y="56.00" width="0.00" height="21.57" fill="#4c78a8"/>
+<text x="196.00" y="70.67" text-anchor="start" font-family="Arial, sans-serif" font-size="12" font-weight="400">0.0000</text>
+<text x="180.00" y="102.24" text-anchor="end" font-family="Arial, sans-serif" font-size="13" font-weight="400">freeze-tail-low</text>
+<rect x="190" y="87.57" width="4.12" height="21.57" fill="#4c78a8"/>
+<text x="200.12" y="102.24" text-anchor="start" font-family="Arial, sans-serif" font-size="12" font-weight="400">0.0017</text>
+<text x="180.00" y="133.81" text-anchor="end" font-family="Arial, sans-serif" font-size="13" font-weight="400">freeze-tail-mid</text>
+<rect x="190" y="119.14" width="27.30" height="21.57" fill="#4c78a8"/>
+<text x="223.30" y="133.81" text-anchor="start" font-family="Arial, sans-serif" font-size="12" font-weight="400">0.0111</text>
+<text x="180.00" y="165.38" text-anchor="end" font-family="Arial, sans-serif" font-size="13" font-weight="400">freeze-tail-high</text>
+<rect x="190" y="150.71" width="78.97" height="21.57" fill="#4c78a8"/>
+<text x="274.97" y="165.38" text-anchor="start" font-family="Arial, sans-serif" font-size="12" font-weight="400">0.0321</text>
+<text x="180.00" y="196.95" text-anchor="end" font-family="Arial, sans-serif" font-size="13" font-weight="400">color-low</text>
+<rect x="190" y="182.29" width="0.12" height="21.57" fill="#4c78a8"/>
+<text x="196.12" y="196.95" text-anchor="start" font-family="Arial, sans-serif" font-size="12" font-weight="400">0.0000</text>
+<text x="180.00" y="228.53" text-anchor="end" font-family="Arial, sans-serif" font-size="13" font-weight="400">color-mid</text>
+<rect x="190" y="213.86" width="1.86" height="21.57" fill="#4c78a8"/>
+<text x="197.86" y="228.53" text-anchor="start" font-family="Arial, sans-serif" font-size="12" font-weight="400">0.0008</text>
+<text x="180.00" y="260.10" text-anchor="end" font-family="Arial, sans-serif" font-size="13" font-weight="400">color-high</text>
+<rect x="190" y="245.43" width="17.98" height="21.57" fill="#4c78a8"/>
+<text x="213.98" y="260.10" text-anchor="start" font-family="Arial, sans-serif" font-size="12" font-weight="400">0.0073</text>
+<text x="180.00" y="291.67" text-anchor="end" font-family="Arial, sans-serif" font-size="13" font-weight="400">spatial-blur-mid</text>
+<rect x="190" y="277.00" width="93.22" height="21.57" fill="#4c78a8"/>
+<text x="289.22" y="291.67" text-anchor="start" font-family="Arial, sans-serif" font-size="12" font-weight="400">0.0379</text>
+<text x="180.00" y="323.24" text-anchor="end" font-family="Arial, sans-serif" font-size="13" font-weight="400">rgb-quantization-low</text>
+<rect x="190" y="308.57" width="65.45" height="21.57" fill="#4c78a8"/>
+<text x="261.45" y="323.24" text-anchor="start" font-family="Arial, sans-serif" font-size="12" font-weight="400">0.0266</text>
+<text x="180.00" y="354.81" text-anchor="end" font-family="Arial, sans-serif" font-size="13" font-weight="400">rgb-quantization-mid</text>
+<rect x="190" y="340.14" width="264.22" height="21.57" fill="#4c78a8"/>
+<text x="460.22" y="354.81" text-anchor="start" font-family="Arial, sans-serif" font-size="12" font-weight="400">0.1075</text>
+<text x="180.00" y="386.38" text-anchor="end" font-family="Arial, sans-serif" font-size="13" font-weight="400">rgb-quantization-high</text>
+<rect x="190" y="371.71" width="690.86" height="21.57" fill="#4c78a8"/>
+<text x="886.86" y="386.38" text-anchor="start" font-family="Arial, sans-serif" font-size="12" font-weight="400">0.2810</text>
+<text x="180.00" y="417.95" text-anchor="end" font-family="Arial, sans-serif" font-size="13" font-weight="400">solarization-low</text>
+<rect x="190" y="403.29" width="221.03" height="21.57" fill="#4c78a8"/>
+<text x="417.03" y="417.95" text-anchor="start" font-family="Arial, sans-serif" font-size="12" font-weight="400">0.0899</text>
+<text x="180.00" y="449.53" text-anchor="end" font-family="Arial, sans-serif" font-size="13" font-weight="400">solarization-mid</text>
+<rect x="190" y="434.86" width="255.19" height="21.57" fill="#4c78a8"/>
+<text x="451.19" y="449.53" text-anchor="start" font-family="Arial, sans-serif" font-size="12" font-weight="400">0.1038</text>
+<text x="180.00" y="481.10" text-anchor="end" font-family="Arial, sans-serif" font-size="13" font-weight="400">solarization-high</text>
+<rect x="190" y="466.43" width="730.00" height="21.57" fill="#4c78a8"/>
+<text x="926.00" y="481.10" text-anchor="start" font-family="Arial, sans-serif" font-size="12" font-weight="400">0.2969</text>
+</svg>
