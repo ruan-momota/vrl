@@ -1,0 +1,26 @@
+{
+  "dataset_name": "ssv2",
+  "subset_id": "c50_train100_heldout30",
+  "subset_summary_path": "data/ssv2/index/summary.json",
+  "split": "heldout",
+  "index_path": "data/ssv2/index/heldout.jsonl",
+  "model_name": "vjepa",
+  "model_checkpoint": "facebook/vjepa2-vitl-fpc64-256",
+  "model_revision": null,
+  "input_profile": "vjepa2_64f_256_deterministic_center_clip",
+  "num_frames": 64,
+  "sampling_strategy": "deterministic_center_clip",
+  "image_size": 256,
+  "batch_size": 8,
+  "num_workers": 8,
+  "device": "auto",
+  "seed": 42,
+  "deterministic": true,
+  "perturbation": {
+    "name": "color_transform",
+    "artifact_label": "color-low",
+    "color_strength": 0.15
+  },
+  "output_root": "outputs/runs",
+  "run_id": "ssv2-c50-train100-heldout30-vjepa2-vitl-fpc64-256-frozen-linear-probe"
+}

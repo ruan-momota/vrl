@@ -1,0 +1,26 @@
+{
+  "dataset_name": "kinetics",
+  "subset_id": "c50_train100_heldout30",
+  "subset_summary_path": "data/kinetics/subsets/c50_train100_heldout30/summary.json",
+  "split": "heldout",
+  "index_path": "data/kinetics/subsets/c50_train100_heldout30/heldout.jsonl",
+  "model_name": "slowfast",
+  "model_checkpoint": "facebookresearch/pytorchvideo:slowfast_r50",
+  "model_revision": null,
+  "input_profile": "slowfast_r50_8x8_32f_256_deterministic_center_clip_alpha4",
+  "num_frames": 32,
+  "sampling_strategy": "deterministic_center_clip",
+  "image_size": 256,
+  "batch_size": 8,
+  "num_workers": 8,
+  "device": "auto",
+  "seed": 42,
+  "deterministic": true,
+  "perturbation": {
+    "name": "solarization",
+    "artifact_label": "solarization-high",
+    "solarization_threshold": 64
+  },
+  "output_root": "outputs/runs",
+  "run_id": "kinetics-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe"
+}

@@ -1,0 +1,26 @@
+{
+  "dataset_name": "hmdb51",
+  "subset_id": "full_split1_smoke",
+  "subset_summary_path": "data/hmdb51/subsets/full_split1/summary.json",
+  "split": "heldout",
+  "index_path": "data/hmdb51/subsets/full_split1/heldout.jsonl",
+  "model_name": "dismo",
+  "model_checkpoint": "motion_extractor_large",
+  "model_revision": null,
+  "input_profile": "dismo_16f_256_deterministic_center_clip",
+  "num_frames": 16,
+  "sampling_strategy": "deterministic_center_clip",
+  "image_size": 256,
+  "batch_size": 1,
+  "num_workers": 0,
+  "device": "auto",
+  "seed": 42,
+  "deterministic": true,
+  "perturbation": {
+    "name": "color_transform",
+    "artifact_label": "color-mid",
+    "color_strength": 0.35
+  },
+  "output_root": "outputs/runs-smoke",
+  "run_id": "hmdb51-full-split1-dismo-motion-extractor-large-frozen-linear-probe-smoke"
+}

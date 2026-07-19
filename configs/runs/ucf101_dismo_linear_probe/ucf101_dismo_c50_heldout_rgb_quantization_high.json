@@ -1,0 +1,26 @@
+{
+  "dataset_name": "ucf101",
+  "subset_id": "c50_train100_heldout30",
+  "subset_summary_path": "data/ucf101/subsets/c50_train100_heldout30/summary.json",
+  "split": "heldout",
+  "index_path": "data/ucf101/subsets/c50_train100_heldout30/heldout.jsonl",
+  "model_name": "dismo",
+  "model_checkpoint": "motion_extractor_large",
+  "model_revision": null,
+  "input_profile": "dismo_16f_256_deterministic_center_clip",
+  "num_frames": 16,
+  "sampling_strategy": "deterministic_center_clip",
+  "image_size": 256,
+  "batch_size": 8,
+  "num_workers": 8,
+  "device": "auto",
+  "seed": 42,
+  "deterministic": true,
+  "perturbation": {
+    "name": "rgb_quantization",
+    "artifact_label": "rgb-quantization-high",
+    "rgb_levels": 4
+  },
+  "output_root": "outputs/runs",
+  "run_id": "ucf101-c50-train100-heldout30-dismo-motion-extractor-large-frozen-linear-probe"
+}
