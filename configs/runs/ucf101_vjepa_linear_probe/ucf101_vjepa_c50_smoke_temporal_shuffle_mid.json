@@ -22,5 +22,6 @@
     "seed": 42
   },
   "output_root": "outputs/runs-smoke",
-  "run_id": "ucf101-c50-train100-heldout30-vjepa2-vitl-fpc64-256-frozen-linear-probe-smoke"
+  "run_id": "ucf101-c50-train100-heldout30-vjepa2-vitl-fpc64-256-frozen-linear-probe-smoke",
+  "window_frames": 64
 }

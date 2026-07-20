@@ -20,5 +20,6 @@
     "name": "none"
   },
   "output_root": "outputs/runs",
-  "run_id": "ucf101-c50-train100-heldout30-vjepa2-vitl-fpc64-256-frozen-linear-probe"
+  "run_id": "ucf101-c50-train100-heldout30-vjepa2-vitl-fpc64-256-frozen-linear-probe",
+  "window_frames": 64
 }

@@ -22,5 +22,6 @@
     "rgb_levels": 8
   },
   "output_root": "outputs/runs",
-  "run_id": "ssv2-c50-train100-heldout30-vjepa2-vitl-fpc64-256-frozen-linear-probe"
+  "run_id": "ssv2-c50-train100-heldout30-vjepa2-vitl-fpc64-256-frozen-linear-probe",
+  "window_frames": 64
 }

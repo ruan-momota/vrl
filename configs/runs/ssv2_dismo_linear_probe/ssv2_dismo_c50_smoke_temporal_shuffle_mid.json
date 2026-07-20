@@ -22,5 +22,6 @@
     "seed": 42
   },
   "output_root": "outputs/runs-smoke",
-  "run_id": "ssv2-c50-train100-heldout30-dismo-motion-extractor-large-frozen-linear-probe-smoke"
+  "run_id": "ssv2-c50-train100-heldout30-dismo-motion-extractor-large-frozen-linear-probe-smoke",
+  "window_frames": 64
 }

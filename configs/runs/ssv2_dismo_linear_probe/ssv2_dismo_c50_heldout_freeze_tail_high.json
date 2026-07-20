@@ -22,5 +22,6 @@
     "freeze_start_fraction": 0.25
   },
   "output_root": "outputs/runs",
-  "run_id": "ssv2-c50-train100-heldout30-dismo-motion-extractor-large-frozen-linear-probe"
+  "run_id": "ssv2-c50-train100-heldout30-dismo-motion-extractor-large-frozen-linear-probe",
+  "window_frames": 64
 }
