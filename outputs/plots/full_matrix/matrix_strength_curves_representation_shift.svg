@@ -1,305 +1,534 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1360" height="900" viewBox="0 0 1360 900">
+<svg xmlns="http://www.w3.org/2000/svg" width="1360" height="1720" viewBox="0 0 1360 1720">
 <rect width="100%" height="100%" fill="#ffffff" />
 <style>text { font-family: Arial, Helvetica, sans-serif; fill: #111827; }</style>
 <text x="680.00" y="28.00" font-size="18" font-weight="700" text-anchor="middle">Strength curves: mean cosine distance</text>
-<text x="90.00" y="65.00" font-size="14" font-weight="700" text-anchor="start">Freeze-tail low -&gt; mid -&gt; high</text>
-<text x="18.00" y="227.50" font-size="11" font-weight="400" text-anchor="middle" transform="rotate(-90 18.00 227.50)">Mean cosine distance</text>
-<line x1="90" y1="365" x2="930" y2="365" stroke="#111827" stroke-width="1" />
-<line x1="90" y1="90" x2="90" y2="365" stroke="#111827" stroke-width="1" />
-<line x1="86" y1="365.00" x2="90" y2="365.00" stroke="#111827" />
-<text x="82.00" y="369.00" font-size="10" font-weight="400" text-anchor="end">-0.047</text>
-<line x1="86" y1="310.00" x2="90" y2="310.00" stroke="#111827" />
-<text x="82.00" y="314.00" font-size="10" font-weight="400" text-anchor="end">0.050</text>
-<line x1="90" y1="310.00" x2="930" y2="310.00" stroke="#e5e7eb" stroke-width="1" />
-<line x1="86" y1="255.00" x2="90" y2="255.00" stroke="#111827" />
-<text x="82.00" y="259.00" font-size="10" font-weight="400" text-anchor="end">0.146</text>
-<line x1="90" y1="255.00" x2="930" y2="255.00" stroke="#e5e7eb" stroke-width="1" />
-<line x1="86" y1="200.00" x2="90" y2="200.00" stroke="#111827" />
-<text x="82.00" y="204.00" font-size="10" font-weight="400" text-anchor="end">0.242</text>
-<line x1="90" y1="200.00" x2="930" y2="200.00" stroke="#e5e7eb" stroke-width="1" />
-<line x1="86" y1="145.00" x2="90" y2="145.00" stroke="#111827" />
-<text x="82.00" y="149.00" font-size="10" font-weight="400" text-anchor="end">0.338</text>
-<line x1="90" y1="145.00" x2="930" y2="145.00" stroke="#e5e7eb" stroke-width="1" />
-<line x1="86" y1="90.00" x2="90" y2="90.00" stroke="#111827" />
-<text x="82.00" y="94.00" font-size="10" font-weight="400" text-anchor="end">0.434</text>
-<line x1="90" y1="338.39" x2="930" y2="338.39" stroke="#6b7280" stroke-dasharray="4 4" />
-<polyline points="90.00,337.79 510.00,335.54 930.00,331.20" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linejoin="round" />
-<circle cx="90.00" cy="337.79" r="3.8" fill="#2563eb" />
-<circle cx="510.00" cy="335.54" r="3.8" fill="#2563eb" />
-<circle cx="930.00" cy="331.20" r="3.8" fill="#2563eb" />
-<polyline points="90.00,338.14 510.00,337.03 930.00,334.76" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="12 5" />
-<circle cx="90.00" cy="338.14" r="3.8" fill="#2563eb" />
-<circle cx="510.00" cy="337.03" r="3.8" fill="#2563eb" />
-<circle cx="930.00" cy="334.76" r="3.8" fill="#2563eb" />
-<polyline points="90.00,336.14 510.00,324.92 930.00,305.90" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
-<circle cx="90.00" cy="336.14" r="3.8" fill="#2563eb" />
-<circle cx="510.00" cy="324.92" r="3.8" fill="#2563eb" />
-<circle cx="930.00" cy="305.90" r="3.8" fill="#2563eb" />
-<polyline points="90.00,314.02 510.00,269.51 930.00,207.02" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" />
-<circle cx="90.00" cy="314.02" r="3.8" fill="#dc2626" />
-<circle cx="510.00" cy="269.51" r="3.8" fill="#dc2626" />
-<circle cx="930.00" cy="207.02" r="3.8" fill="#dc2626" />
-<polyline points="90.00,321.97 510.00,288.91 930.00,237.42" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="12 5" />
-<circle cx="90.00" cy="321.97" r="3.8" fill="#dc2626" />
-<circle cx="510.00" cy="288.91" r="3.8" fill="#dc2626" />
-<circle cx="930.00" cy="237.42" r="3.8" fill="#dc2626" />
-<polyline points="90.00,312.60 510.00,260.12 930.00,186.96" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
-<circle cx="90.00" cy="312.60" r="3.8" fill="#dc2626" />
-<circle cx="510.00" cy="260.12" r="3.8" fill="#dc2626" />
-<circle cx="930.00" cy="186.96" r="3.8" fill="#dc2626" />
-<polyline points="90.00,336.73 510.00,326.46 930.00,306.85" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" />
-<circle cx="90.00" cy="336.73" r="3.8" fill="#7c3aed" />
-<circle cx="510.00" cy="326.46" r="3.8" fill="#7c3aed" />
-<circle cx="930.00" cy="306.85" r="3.8" fill="#7c3aed" />
-<polyline points="90.00,337.69 510.00,333.72 930.00,326.15" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="12 5" />
-<circle cx="90.00" cy="337.69" r="3.8" fill="#7c3aed" />
-<circle cx="510.00" cy="333.72" r="3.8" fill="#7c3aed" />
-<circle cx="930.00" cy="326.15" r="3.8" fill="#7c3aed" />
-<polyline points="90.00,336.25 510.00,324.33 930.00,302.46" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
-<circle cx="90.00" cy="336.25" r="3.8" fill="#7c3aed" />
-<circle cx="510.00" cy="324.33" r="3.8" fill="#7c3aed" />
-<circle cx="930.00" cy="302.46" r="3.8" fill="#7c3aed" />
-<polyline points="90.00,328.62 510.00,315.62 930.00,287.62" fill="none" stroke="#334155" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
-<circle cx="90.00" cy="328.62" r="3.8" fill="#334155" />
-<circle cx="510.00" cy="315.62" r="3.8" fill="#334155" />
-<circle cx="930.00" cy="287.62" r="3.8" fill="#334155" />
-<polyline points="90.00,338.12 510.00,336.97 930.00,334.46" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
-<circle cx="90.00" cy="338.12" r="3.8" fill="#2563eb" />
-<circle cx="510.00" cy="336.97" r="3.8" fill="#2563eb" />
-<circle cx="930.00" cy="334.46" r="3.8" fill="#2563eb" />
-<polyline points="90.00,315.87 510.00,272.52 930.00,206.69" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
-<circle cx="90.00" cy="315.87" r="3.8" fill="#dc2626" />
-<circle cx="510.00" cy="272.52" r="3.8" fill="#dc2626" />
-<circle cx="930.00" cy="206.69" r="3.8" fill="#dc2626" />
-<polyline points="90.00,338.01 510.00,336.50 930.00,333.42" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="5 3" />
-<circle cx="90.00" cy="338.01" r="3.8" fill="#2563eb" />
-<circle cx="510.00" cy="336.50" r="3.8" fill="#2563eb" />
-<circle cx="930.00" cy="333.42" r="3.8" fill="#2563eb" />
-<polyline points="90.00,336.46 510.00,307.25 930.00,240.49" fill="none" stroke="#db2777" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="5 3" />
-<circle cx="90.00" cy="336.46" r="3.8" fill="#db2777" />
-<circle cx="510.00" cy="307.25" r="3.8" fill="#db2777" />
-<circle cx="930.00" cy="240.49" r="3.8" fill="#db2777" />
-<polyline points="90.00,327.40 510.00,312.77 930.00,283.92" fill="none" stroke="#334155" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="5 3" />
-<circle cx="90.00" cy="327.40" r="3.8" fill="#334155" />
-<circle cx="510.00" cy="312.77" r="3.8" fill="#334155" />
-<circle cx="930.00" cy="283.92" r="3.8" fill="#334155" />
-<polyline points="90.00,337.43 510.00,332.04 930.00,320.02" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
-<circle cx="90.00" cy="337.43" r="3.8" fill="#7c3aed" />
-<circle cx="510.00" cy="332.04" r="3.8" fill="#7c3aed" />
-<circle cx="930.00" cy="320.02" r="3.8" fill="#7c3aed" />
-<polyline points="90.00,337.52 510.00,332.72 930.00,322.15" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="5 3" />
-<circle cx="90.00" cy="337.52" r="3.8" fill="#7c3aed" />
-<circle cx="510.00" cy="332.72" r="3.8" fill="#7c3aed" />
-<circle cx="930.00" cy="322.15" r="3.8" fill="#7c3aed" />
-<polyline points="90.00,320.79 510.00,287.54 930.00,235.43" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="5 3" />
-<circle cx="90.00" cy="320.79" r="3.8" fill="#dc2626" />
-<circle cx="510.00" cy="287.54" r="3.8" fill="#dc2626" />
-<circle cx="930.00" cy="235.43" r="3.8" fill="#dc2626" />
-<polyline points="90.00,335.98 510.00,277.51 930.00,116.61" fill="none" stroke="#db2777" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
-<circle cx="90.00" cy="335.98" r="3.8" fill="#db2777" />
-<circle cx="510.00" cy="277.51" r="3.8" fill="#db2777" />
-<circle cx="930.00" cy="116.61" r="3.8" fill="#db2777" />
-<polyline points="90.00,314.09 510.00,279.47 930.00,230.76" fill="none" stroke="#334155" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
-<circle cx="90.00" cy="314.09" r="3.8" fill="#334155" />
-<circle cx="510.00" cy="279.47" r="3.8" fill="#334155" />
-<circle cx="930.00" cy="230.76" r="3.8" fill="#334155" />
-<polyline points="90.00,336.50 510.00,306.53 930.00,240.10" fill="none" stroke="#db2777" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
-<circle cx="90.00" cy="336.50" r="3.8" fill="#db2777" />
-<circle cx="510.00" cy="306.53" r="3.8" fill="#db2777" />
-<circle cx="930.00" cy="240.10" r="3.8" fill="#db2777" />
-<text x="90.00" y="387.00" font-size="12" font-weight="400" text-anchor="middle">low</text>
-<text x="510.00" y="387.00" font-size="12" font-weight="400" text-anchor="middle">mid</text>
-<text x="930.00" y="387.00" font-size="12" font-weight="400" text-anchor="middle">high</text>
-<line x1="955" y1="75" x2="973" y2="75" stroke="#2563eb" stroke-width="3" />
-<text x="979.00" y="79.00" font-size="10" font-weight="400" text-anchor="start">VideoMAE x SSV2</text>
-<line x1="955" y1="95" x2="973" y2="95" stroke="#2563eb" stroke-width="3" stroke-dasharray="12 5" />
-<text x="979.00" y="99.00" font-size="10" font-weight="400" text-anchor="start">VideoMAE x UCF101</text>
-<line x1="955" y1="115" x2="973" y2="115" stroke="#2563eb" stroke-width="3" stroke-dasharray="1 4" />
-<text x="979.00" y="119.00" font-size="10" font-weight="400" text-anchor="start">VideoMAE x Diving48</text>
-<line x1="955" y1="135" x2="973" y2="135" stroke="#dc2626" stroke-width="3" />
-<text x="979.00" y="139.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x SSV2</text>
-<line x1="955" y1="155" x2="973" y2="155" stroke="#dc2626" stroke-width="3" stroke-dasharray="12 5" />
-<text x="979.00" y="159.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x UCF101</text>
-<line x1="955" y1="175" x2="973" y2="175" stroke="#dc2626" stroke-width="3" stroke-dasharray="1 4" />
-<text x="979.00" y="179.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x Diving48</text>
-<line x1="955" y1="195" x2="973" y2="195" stroke="#7c3aed" stroke-width="3" />
-<text x="979.00" y="199.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x SSV2</text>
-<line x1="955" y1="215" x2="973" y2="215" stroke="#7c3aed" stroke-width="3" stroke-dasharray="12 5" />
-<text x="979.00" y="219.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x UCF101</text>
-<line x1="955" y1="235" x2="973" y2="235" stroke="#7c3aed" stroke-width="3" stroke-dasharray="1 4" />
-<text x="979.00" y="239.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x Diving48</text>
-<line x1="955" y1="255" x2="973" y2="255" stroke="#334155" stroke-width="3" stroke-dasharray="9 3 2 3" />
-<text x="979.00" y="259.00" font-size="10" font-weight="400" text-anchor="start">V-JEPA2 x HMDB51</text>
-<line x1="955" y1="275" x2="973" y2="275" stroke="#2563eb" stroke-width="3" stroke-dasharray="9 3 2 3" />
-<text x="979.00" y="279.00" font-size="10" font-weight="400" text-anchor="start">VideoMAE x HMDB51</text>
-<line x1="955" y1="295" x2="973" y2="295" stroke="#dc2626" stroke-width="3" stroke-dasharray="9 3 2 3" />
-<text x="979.00" y="299.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x HMDB51</text>
-<line x1="955" y1="315" x2="973" y2="315" stroke="#2563eb" stroke-width="3" stroke-dasharray="5 3" />
-<text x="979.00" y="319.00" font-size="10" font-weight="400" text-anchor="start">VideoMAE x Kinetics</text>
-<line x1="955" y1="335" x2="973" y2="335" stroke="#db2777" stroke-width="3" stroke-dasharray="5 3" />
-<text x="979.00" y="339.00" font-size="10" font-weight="400" text-anchor="start">DisMo x Kinetics</text>
-<line x1="955" y1="355" x2="973" y2="355" stroke="#334155" stroke-width="3" stroke-dasharray="5 3" />
-<text x="979.00" y="359.00" font-size="10" font-weight="400" text-anchor="start">V-JEPA2 x Kinetics</text>
-<line x1="955" y1="375" x2="973" y2="375" stroke="#7c3aed" stroke-width="3" stroke-dasharray="9 3 2 3" />
-<text x="979.00" y="379.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x HMDB51</text>
-<line x1="955" y1="395" x2="973" y2="395" stroke="#7c3aed" stroke-width="3" stroke-dasharray="5 3" />
-<text x="979.00" y="399.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x Kinetics</text>
-<line x1="955" y1="415" x2="973" y2="415" stroke="#dc2626" stroke-width="3" stroke-dasharray="5 3" />
-<text x="979.00" y="419.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x Kinetics</text>
-<line x1="955" y1="435" x2="973" y2="435" stroke="#db2777" stroke-width="3" stroke-dasharray="1 4" />
-<text x="979.00" y="439.00" font-size="10" font-weight="400" text-anchor="start">DisMo x Diving48</text>
-<line x1="955" y1="455" x2="973" y2="455" stroke="#334155" stroke-width="3" stroke-dasharray="1 4" />
-<text x="979.00" y="459.00" font-size="10" font-weight="400" text-anchor="start">V-JEPA2 x Diving48</text>
-<line x1="955" y1="475" x2="973" y2="475" stroke="#db2777" stroke-width="3" stroke-dasharray="9 3 2 3" />
-<text x="979.00" y="479.00" font-size="10" font-weight="400" text-anchor="start">DisMo x HMDB51</text>
-<text x="90.00" y="475.00" font-size="14" font-weight="700" text-anchor="start">Color transform low -&gt; mid -&gt; high</text>
-<text x="18.00" y="637.50" font-size="11" font-weight="400" text-anchor="middle" transform="rotate(-90 18.00 637.50)">Mean cosine distance</text>
-<line x1="90" y1="775" x2="930" y2="775" stroke="#111827" stroke-width="1" />
-<line x1="90" y1="500" x2="90" y2="775" stroke="#111827" stroke-width="1" />
-<line x1="86" y1="775.00" x2="90" y2="775.00" stroke="#111827" />
-<text x="82.00" y="779.00" font-size="10" font-weight="400" text-anchor="end">-0.002</text>
-<line x1="86" y1="720.00" x2="90" y2="720.00" stroke="#111827" />
-<text x="82.00" y="724.00" font-size="10" font-weight="400" text-anchor="end">0.002</text>
-<line x1="90" y1="720.00" x2="930" y2="720.00" stroke="#e5e7eb" stroke-width="1" />
-<line x1="86" y1="665.00" x2="90" y2="665.00" stroke="#111827" />
-<text x="82.00" y="669.00" font-size="10" font-weight="400" text-anchor="end">0.007</text>
-<line x1="90" y1="665.00" x2="930" y2="665.00" stroke="#e5e7eb" stroke-width="1" />
-<line x1="86" y1="610.00" x2="90" y2="610.00" stroke="#111827" />
-<text x="82.00" y="614.00" font-size="10" font-weight="400" text-anchor="end">0.012</text>
-<line x1="90" y1="610.00" x2="930" y2="610.00" stroke="#e5e7eb" stroke-width="1" />
-<line x1="86" y1="555.00" x2="90" y2="555.00" stroke="#111827" />
-<text x="82.00" y="559.00" font-size="10" font-weight="400" text-anchor="end">0.016</text>
-<line x1="90" y1="555.00" x2="930" y2="555.00" stroke="#e5e7eb" stroke-width="1" />
-<line x1="86" y1="500.00" x2="90" y2="500.00" stroke="#111827" />
-<text x="82.00" y="504.00" font-size="10" font-weight="400" text-anchor="end">0.021</text>
-<line x1="90" y1="748.39" x2="930" y2="748.39" stroke="#6b7280" stroke-dasharray="4 4" />
-<polyline points="90.00,748.37 510.00,748.02 930.00,744.94" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linejoin="round" />
-<circle cx="90.00" cy="748.37" r="3.8" fill="#2563eb" />
-<circle cx="510.00" cy="748.02" r="3.8" fill="#2563eb" />
-<circle cx="930.00" cy="744.94" r="3.8" fill="#2563eb" />
-<polyline points="90.00,748.36 510.00,747.81 930.00,742.67" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="12 5" />
-<circle cx="90.00" cy="748.36" r="3.8" fill="#2563eb" />
-<circle cx="510.00" cy="747.81" r="3.8" fill="#2563eb" />
-<circle cx="930.00" cy="742.67" r="3.8" fill="#2563eb" />
-<polyline points="90.00,748.38 510.00,748.10 930.00,745.71" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
-<circle cx="90.00" cy="748.38" r="3.8" fill="#2563eb" />
-<circle cx="510.00" cy="748.10" r="3.8" fill="#2563eb" />
-<circle cx="930.00" cy="745.71" r="3.8" fill="#2563eb" />
-<polyline points="90.00,747.25 510.00,724.29 930.00,526.61" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" />
-<circle cx="90.00" cy="747.25" r="3.8" fill="#dc2626" />
-<circle cx="510.00" cy="724.29" r="3.8" fill="#dc2626" />
-<circle cx="930.00" cy="526.61" r="3.8" fill="#dc2626" />
-<polyline points="90.00,747.67 510.00,734.26 930.00,617.36" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="12 5" />
-<circle cx="90.00" cy="747.67" r="3.8" fill="#dc2626" />
-<circle cx="510.00" cy="734.26" r="3.8" fill="#dc2626" />
-<circle cx="930.00" cy="617.36" r="3.8" fill="#dc2626" />
-<polyline points="90.00,747.99 510.00,737.60 930.00,637.67" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
-<circle cx="90.00" cy="747.99" r="3.8" fill="#dc2626" />
-<circle cx="510.00" cy="737.60" r="3.8" fill="#dc2626" />
-<circle cx="930.00" cy="637.67" r="3.8" fill="#dc2626" />
-<polyline points="90.00,747.65 510.00,738.38 930.00,656.13" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" />
-<circle cx="90.00" cy="747.65" r="3.8" fill="#7c3aed" />
-<circle cx="510.00" cy="738.38" r="3.8" fill="#7c3aed" />
-<circle cx="930.00" cy="656.13" r="3.8" fill="#7c3aed" />
-<polyline points="90.00,747.76 510.00,739.47 930.00,658.89" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="12 5" />
-<circle cx="90.00" cy="747.76" r="3.8" fill="#7c3aed" />
-<circle cx="510.00" cy="739.47" r="3.8" fill="#7c3aed" />
-<circle cx="930.00" cy="658.89" r="3.8" fill="#7c3aed" />
-<polyline points="90.00,747.90 510.00,740.64 930.00,669.61" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
-<circle cx="90.00" cy="747.90" r="3.8" fill="#7c3aed" />
-<circle cx="510.00" cy="740.64" r="3.8" fill="#7c3aed" />
-<circle cx="930.00" cy="669.61" r="3.8" fill="#7c3aed" />
-<polyline points="90.00,747.94 510.00,736.54 930.00,598.71" fill="none" stroke="#334155" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
-<circle cx="90.00" cy="747.94" r="3.8" fill="#334155" />
-<circle cx="510.00" cy="736.54" r="3.8" fill="#334155" />
-<circle cx="930.00" cy="598.71" r="3.8" fill="#334155" />
-<polyline points="90.00,748.37 510.00,747.78 930.00,742.56" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
-<circle cx="90.00" cy="748.37" r="3.8" fill="#2563eb" />
-<circle cx="510.00" cy="747.78" r="3.8" fill="#2563eb" />
-<circle cx="930.00" cy="742.56" r="3.8" fill="#2563eb" />
-<polyline points="90.00,747.53 510.00,729.04 930.00,578.56" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
-<circle cx="90.00" cy="747.53" r="3.8" fill="#dc2626" />
-<circle cx="510.00" cy="729.04" r="3.8" fill="#dc2626" />
-<circle cx="930.00" cy="578.56" r="3.8" fill="#dc2626" />
-<polyline points="90.00,748.37 510.00,747.91 930.00,744.12" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="5 3" />
-<circle cx="90.00" cy="748.37" r="3.8" fill="#2563eb" />
-<circle cx="510.00" cy="747.91" r="3.8" fill="#2563eb" />
-<circle cx="930.00" cy="744.12" r="3.8" fill="#2563eb" />
-<polyline points="90.00,748.03 510.00,741.54 930.00,682.85" fill="none" stroke="#db2777" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="5 3" />
-<circle cx="90.00" cy="748.03" r="3.8" fill="#db2777" />
-<circle cx="510.00" cy="741.54" r="3.8" fill="#db2777" />
-<circle cx="930.00" cy="682.85" r="3.8" fill="#db2777" />
-<polyline points="90.00,747.94 510.00,738.39 930.00,634.89" fill="none" stroke="#334155" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="5 3" />
-<circle cx="90.00" cy="747.94" r="3.8" fill="#334155" />
-<circle cx="510.00" cy="738.39" r="3.8" fill="#334155" />
-<circle cx="930.00" cy="634.89" r="3.8" fill="#334155" />
-<polyline points="90.00,747.79 510.00,739.31 930.00,660.87" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
-<circle cx="90.00" cy="747.79" r="3.8" fill="#7c3aed" />
-<circle cx="510.00" cy="739.31" r="3.8" fill="#7c3aed" />
-<circle cx="930.00" cy="660.87" r="3.8" fill="#7c3aed" />
-<polyline points="90.00,747.74 510.00,739.34 930.00,664.51" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="5 3" />
-<circle cx="90.00" cy="747.74" r="3.8" fill="#7c3aed" />
-<circle cx="510.00" cy="739.34" r="3.8" fill="#7c3aed" />
-<circle cx="930.00" cy="664.51" r="3.8" fill="#7c3aed" />
-<polyline points="90.00,747.66 510.00,732.15 930.00,588.82" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="5 3" />
-<circle cx="90.00" cy="747.66" r="3.8" fill="#dc2626" />
-<circle cx="510.00" cy="732.15" r="3.8" fill="#dc2626" />
-<circle cx="930.00" cy="588.82" r="3.8" fill="#dc2626" />
-<polyline points="90.00,748.25 510.00,743.62 930.00,697.53" fill="none" stroke="#db2777" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
-<circle cx="90.00" cy="748.25" r="3.8" fill="#db2777" />
-<circle cx="510.00" cy="743.62" r="3.8" fill="#db2777" />
-<circle cx="930.00" cy="697.53" r="3.8" fill="#db2777" />
-<polyline points="90.00,748.10 510.00,742.28 930.00,687.04" fill="none" stroke="#334155" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
-<circle cx="90.00" cy="748.10" r="3.8" fill="#334155" />
-<circle cx="510.00" cy="742.28" r="3.8" fill="#334155" />
-<circle cx="930.00" cy="687.04" r="3.8" fill="#334155" />
-<polyline points="90.00,748.07 510.00,742.29 930.00,681.27" fill="none" stroke="#db2777" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
-<circle cx="90.00" cy="748.07" r="3.8" fill="#db2777" />
-<circle cx="510.00" cy="742.29" r="3.8" fill="#db2777" />
-<circle cx="930.00" cy="681.27" r="3.8" fill="#db2777" />
-<text x="90.00" y="797.00" font-size="12" font-weight="400" text-anchor="middle">low</text>
-<text x="510.00" y="797.00" font-size="12" font-weight="400" text-anchor="middle">mid</text>
-<text x="930.00" y="797.00" font-size="12" font-weight="400" text-anchor="middle">high</text>
-<line x1="955" y1="485" x2="973" y2="485" stroke="#2563eb" stroke-width="3" />
-<text x="979.00" y="489.00" font-size="10" font-weight="400" text-anchor="start">VideoMAE x SSV2</text>
-<line x1="955" y1="505" x2="973" y2="505" stroke="#2563eb" stroke-width="3" stroke-dasharray="12 5" />
-<text x="979.00" y="509.00" font-size="10" font-weight="400" text-anchor="start">VideoMAE x UCF101</text>
-<line x1="955" y1="525" x2="973" y2="525" stroke="#2563eb" stroke-width="3" stroke-dasharray="1 4" />
-<text x="979.00" y="529.00" font-size="10" font-weight="400" text-anchor="start">VideoMAE x Diving48</text>
-<line x1="955" y1="545" x2="973" y2="545" stroke="#dc2626" stroke-width="3" />
-<text x="979.00" y="549.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x SSV2</text>
-<line x1="955" y1="565" x2="973" y2="565" stroke="#dc2626" stroke-width="3" stroke-dasharray="12 5" />
-<text x="979.00" y="569.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x UCF101</text>
-<line x1="955" y1="585" x2="973" y2="585" stroke="#dc2626" stroke-width="3" stroke-dasharray="1 4" />
-<text x="979.00" y="589.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x Diving48</text>
-<line x1="955" y1="605" x2="973" y2="605" stroke="#7c3aed" stroke-width="3" />
-<text x="979.00" y="609.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x SSV2</text>
-<line x1="955" y1="625" x2="973" y2="625" stroke="#7c3aed" stroke-width="3" stroke-dasharray="12 5" />
-<text x="979.00" y="629.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x UCF101</text>
-<line x1="955" y1="645" x2="973" y2="645" stroke="#7c3aed" stroke-width="3" stroke-dasharray="1 4" />
-<text x="979.00" y="649.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x Diving48</text>
-<line x1="955" y1="665" x2="973" y2="665" stroke="#334155" stroke-width="3" stroke-dasharray="9 3 2 3" />
-<text x="979.00" y="669.00" font-size="10" font-weight="400" text-anchor="start">V-JEPA2 x HMDB51</text>
-<line x1="955" y1="685" x2="973" y2="685" stroke="#2563eb" stroke-width="3" stroke-dasharray="9 3 2 3" />
-<text x="979.00" y="689.00" font-size="10" font-weight="400" text-anchor="start">VideoMAE x HMDB51</text>
-<line x1="955" y1="705" x2="973" y2="705" stroke="#dc2626" stroke-width="3" stroke-dasharray="9 3 2 3" />
-<text x="979.00" y="709.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x HMDB51</text>
-<line x1="955" y1="725" x2="973" y2="725" stroke="#2563eb" stroke-width="3" stroke-dasharray="5 3" />
-<text x="979.00" y="729.00" font-size="10" font-weight="400" text-anchor="start">VideoMAE x Kinetics</text>
-<line x1="955" y1="745" x2="973" y2="745" stroke="#db2777" stroke-width="3" stroke-dasharray="5 3" />
-<text x="979.00" y="749.00" font-size="10" font-weight="400" text-anchor="start">DisMo x Kinetics</text>
-<line x1="955" y1="765" x2="973" y2="765" stroke="#334155" stroke-width="3" stroke-dasharray="5 3" />
-<text x="979.00" y="769.00" font-size="10" font-weight="400" text-anchor="start">V-JEPA2 x Kinetics</text>
-<line x1="955" y1="785" x2="973" y2="785" stroke="#7c3aed" stroke-width="3" stroke-dasharray="9 3 2 3" />
-<text x="979.00" y="789.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x HMDB51</text>
-<line x1="955" y1="805" x2="973" y2="805" stroke="#7c3aed" stroke-width="3" stroke-dasharray="5 3" />
-<text x="979.00" y="809.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x Kinetics</text>
-<line x1="955" y1="825" x2="973" y2="825" stroke="#dc2626" stroke-width="3" stroke-dasharray="5 3" />
-<text x="979.00" y="829.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x Kinetics</text>
-<line x1="955" y1="845" x2="973" y2="845" stroke="#db2777" stroke-width="3" stroke-dasharray="1 4" />
-<text x="979.00" y="849.00" font-size="10" font-weight="400" text-anchor="start">DisMo x Diving48</text>
-<line x1="955" y1="865" x2="973" y2="865" stroke="#334155" stroke-width="3" stroke-dasharray="1 4" />
-<text x="979.00" y="869.00" font-size="10" font-weight="400" text-anchor="start">V-JEPA2 x Diving48</text>
-<line x1="955" y1="885" x2="973" y2="885" stroke="#db2777" stroke-width="3" stroke-dasharray="9 3 2 3" />
-<text x="979.00" y="889.00" font-size="10" font-weight="400" text-anchor="start">DisMo x HMDB51</text>
+<text x="680.00" y="46.00" font-size="10" font-weight="400" text-anchor="middle">Cells built before the matrix expansion have no rgb-quantization/solarization data and are omitted from those two panels</text>
+<text x="90.00" y="75.00" font-size="14" font-weight="700" text-anchor="start">Freeze-tail low -&gt; mid -&gt; high</text>
+<text x="18.00" y="237.50" font-size="11" font-weight="400" text-anchor="middle" transform="rotate(-90 18.00 237.50)">Mean cosine distance</text>
+<line x1="90" y1="375" x2="930" y2="375" stroke="#111827" stroke-width="1" />
+<line x1="90" y1="100" x2="90" y2="375" stroke="#111827" stroke-width="1" />
+<line x1="86" y1="375.00" x2="90" y2="375.00" stroke="#111827" />
+<text x="82.00" y="379.00" font-size="10" font-weight="400" text-anchor="end">-0.047</text>
+<line x1="86" y1="320.00" x2="90" y2="320.00" stroke="#111827" />
+<text x="82.00" y="324.00" font-size="10" font-weight="400" text-anchor="end">0.050</text>
+<line x1="90" y1="320.00" x2="930" y2="320.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="86" y1="265.00" x2="90" y2="265.00" stroke="#111827" />
+<text x="82.00" y="269.00" font-size="10" font-weight="400" text-anchor="end">0.146</text>
+<line x1="90" y1="265.00" x2="930" y2="265.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="86" y1="210.00" x2="90" y2="210.00" stroke="#111827" />
+<text x="82.00" y="214.00" font-size="10" font-weight="400" text-anchor="end">0.242</text>
+<line x1="90" y1="210.00" x2="930" y2="210.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="86" y1="155.00" x2="90" y2="155.00" stroke="#111827" />
+<text x="82.00" y="159.00" font-size="10" font-weight="400" text-anchor="end">0.338</text>
+<line x1="90" y1="155.00" x2="930" y2="155.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="86" y1="100.00" x2="90" y2="100.00" stroke="#111827" />
+<text x="82.00" y="104.00" font-size="10" font-weight="400" text-anchor="end">0.434</text>
+<line x1="90" y1="348.39" x2="930" y2="348.39" stroke="#6b7280" stroke-dasharray="4 4" />
+<polyline points="90.00,347.79 510.00,345.54 930.00,341.20" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linejoin="round" />
+<circle cx="90.00" cy="347.79" r="3.8" fill="#2563eb" />
+<circle cx="510.00" cy="345.54" r="3.8" fill="#2563eb" />
+<circle cx="930.00" cy="341.20" r="3.8" fill="#2563eb" />
+<polyline points="90.00,348.14 510.00,347.03 930.00,344.76" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="12 5" />
+<circle cx="90.00" cy="348.14" r="3.8" fill="#2563eb" />
+<circle cx="510.00" cy="347.03" r="3.8" fill="#2563eb" />
+<circle cx="930.00" cy="344.76" r="3.8" fill="#2563eb" />
+<polyline points="90.00,346.14 510.00,334.92 930.00,315.90" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
+<circle cx="90.00" cy="346.14" r="3.8" fill="#2563eb" />
+<circle cx="510.00" cy="334.92" r="3.8" fill="#2563eb" />
+<circle cx="930.00" cy="315.90" r="3.8" fill="#2563eb" />
+<polyline points="90.00,324.02 510.00,279.51 930.00,217.02" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" />
+<circle cx="90.00" cy="324.02" r="3.8" fill="#dc2626" />
+<circle cx="510.00" cy="279.51" r="3.8" fill="#dc2626" />
+<circle cx="930.00" cy="217.02" r="3.8" fill="#dc2626" />
+<polyline points="90.00,331.97 510.00,298.91 930.00,247.42" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="12 5" />
+<circle cx="90.00" cy="331.97" r="3.8" fill="#dc2626" />
+<circle cx="510.00" cy="298.91" r="3.8" fill="#dc2626" />
+<circle cx="930.00" cy="247.42" r="3.8" fill="#dc2626" />
+<polyline points="90.00,322.60 510.00,270.12 930.00,196.96" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
+<circle cx="90.00" cy="322.60" r="3.8" fill="#dc2626" />
+<circle cx="510.00" cy="270.12" r="3.8" fill="#dc2626" />
+<circle cx="930.00" cy="196.96" r="3.8" fill="#dc2626" />
+<polyline points="90.00,346.73 510.00,336.46 930.00,316.85" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" />
+<circle cx="90.00" cy="346.73" r="3.8" fill="#7c3aed" />
+<circle cx="510.00" cy="336.46" r="3.8" fill="#7c3aed" />
+<circle cx="930.00" cy="316.85" r="3.8" fill="#7c3aed" />
+<polyline points="90.00,347.69 510.00,343.72 930.00,336.15" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="12 5" />
+<circle cx="90.00" cy="347.69" r="3.8" fill="#7c3aed" />
+<circle cx="510.00" cy="343.72" r="3.8" fill="#7c3aed" />
+<circle cx="930.00" cy="336.15" r="3.8" fill="#7c3aed" />
+<polyline points="90.00,346.25 510.00,334.33 930.00,312.46" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
+<circle cx="90.00" cy="346.25" r="3.8" fill="#7c3aed" />
+<circle cx="510.00" cy="334.33" r="3.8" fill="#7c3aed" />
+<circle cx="930.00" cy="312.46" r="3.8" fill="#7c3aed" />
+<polyline points="90.00,338.62 510.00,325.62 930.00,297.62" fill="none" stroke="#334155" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
+<circle cx="90.00" cy="338.62" r="3.8" fill="#334155" />
+<circle cx="510.00" cy="325.62" r="3.8" fill="#334155" />
+<circle cx="930.00" cy="297.62" r="3.8" fill="#334155" />
+<polyline points="90.00,348.12 510.00,346.97 930.00,344.46" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
+<circle cx="90.00" cy="348.12" r="3.8" fill="#2563eb" />
+<circle cx="510.00" cy="346.97" r="3.8" fill="#2563eb" />
+<circle cx="930.00" cy="344.46" r="3.8" fill="#2563eb" />
+<polyline points="90.00,325.87 510.00,282.52 930.00,216.69" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
+<circle cx="90.00" cy="325.87" r="3.8" fill="#dc2626" />
+<circle cx="510.00" cy="282.52" r="3.8" fill="#dc2626" />
+<circle cx="930.00" cy="216.69" r="3.8" fill="#dc2626" />
+<polyline points="90.00,348.01 510.00,346.50 930.00,343.42" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="5 3" />
+<circle cx="90.00" cy="348.01" r="3.8" fill="#2563eb" />
+<circle cx="510.00" cy="346.50" r="3.8" fill="#2563eb" />
+<circle cx="930.00" cy="343.42" r="3.8" fill="#2563eb" />
+<polyline points="90.00,346.46 510.00,317.25 930.00,250.49" fill="none" stroke="#db2777" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="5 3" />
+<circle cx="90.00" cy="346.46" r="3.8" fill="#db2777" />
+<circle cx="510.00" cy="317.25" r="3.8" fill="#db2777" />
+<circle cx="930.00" cy="250.49" r="3.8" fill="#db2777" />
+<polyline points="90.00,337.40 510.00,322.77 930.00,293.92" fill="none" stroke="#334155" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="5 3" />
+<circle cx="90.00" cy="337.40" r="3.8" fill="#334155" />
+<circle cx="510.00" cy="322.77" r="3.8" fill="#334155" />
+<circle cx="930.00" cy="293.92" r="3.8" fill="#334155" />
+<polyline points="90.00,347.43 510.00,342.04 930.00,330.02" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
+<circle cx="90.00" cy="347.43" r="3.8" fill="#7c3aed" />
+<circle cx="510.00" cy="342.04" r="3.8" fill="#7c3aed" />
+<circle cx="930.00" cy="330.02" r="3.8" fill="#7c3aed" />
+<polyline points="90.00,347.52 510.00,342.72 930.00,332.15" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="5 3" />
+<circle cx="90.00" cy="347.52" r="3.8" fill="#7c3aed" />
+<circle cx="510.00" cy="342.72" r="3.8" fill="#7c3aed" />
+<circle cx="930.00" cy="332.15" r="3.8" fill="#7c3aed" />
+<polyline points="90.00,330.79 510.00,297.54 930.00,245.43" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="5 3" />
+<circle cx="90.00" cy="330.79" r="3.8" fill="#dc2626" />
+<circle cx="510.00" cy="297.54" r="3.8" fill="#dc2626" />
+<circle cx="930.00" cy="245.43" r="3.8" fill="#dc2626" />
+<polyline points="90.00,345.98 510.00,287.51 930.00,126.61" fill="none" stroke="#db2777" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
+<circle cx="90.00" cy="345.98" r="3.8" fill="#db2777" />
+<circle cx="510.00" cy="287.51" r="3.8" fill="#db2777" />
+<circle cx="930.00" cy="126.61" r="3.8" fill="#db2777" />
+<polyline points="90.00,324.09 510.00,289.47 930.00,240.76" fill="none" stroke="#334155" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
+<circle cx="90.00" cy="324.09" r="3.8" fill="#334155" />
+<circle cx="510.00" cy="289.47" r="3.8" fill="#334155" />
+<circle cx="930.00" cy="240.76" r="3.8" fill="#334155" />
+<polyline points="90.00,346.50 510.00,316.53 930.00,250.10" fill="none" stroke="#db2777" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
+<circle cx="90.00" cy="346.50" r="3.8" fill="#db2777" />
+<circle cx="510.00" cy="316.53" r="3.8" fill="#db2777" />
+<circle cx="930.00" cy="250.10" r="3.8" fill="#db2777" />
+<text x="90.00" y="397.00" font-size="12" font-weight="400" text-anchor="middle">low</text>
+<text x="510.00" y="397.00" font-size="12" font-weight="400" text-anchor="middle">mid</text>
+<text x="930.00" y="397.00" font-size="12" font-weight="400" text-anchor="middle">high</text>
+<line x1="955" y1="85" x2="973" y2="85" stroke="#2563eb" stroke-width="3" />
+<text x="979.00" y="89.00" font-size="10" font-weight="400" text-anchor="start">VideoMAE x SSV2</text>
+<line x1="955" y1="105" x2="973" y2="105" stroke="#2563eb" stroke-width="3" stroke-dasharray="12 5" />
+<text x="979.00" y="109.00" font-size="10" font-weight="400" text-anchor="start">VideoMAE x UCF101</text>
+<line x1="955" y1="125" x2="973" y2="125" stroke="#2563eb" stroke-width="3" stroke-dasharray="1 4" />
+<text x="979.00" y="129.00" font-size="10" font-weight="400" text-anchor="start">VideoMAE x Diving48</text>
+<line x1="955" y1="145" x2="973" y2="145" stroke="#dc2626" stroke-width="3" />
+<text x="979.00" y="149.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x SSV2</text>
+<line x1="955" y1="165" x2="973" y2="165" stroke="#dc2626" stroke-width="3" stroke-dasharray="12 5" />
+<text x="979.00" y="169.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x UCF101</text>
+<line x1="955" y1="185" x2="973" y2="185" stroke="#dc2626" stroke-width="3" stroke-dasharray="1 4" />
+<text x="979.00" y="189.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x Diving48</text>
+<line x1="955" y1="205" x2="973" y2="205" stroke="#7c3aed" stroke-width="3" />
+<text x="979.00" y="209.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x SSV2</text>
+<line x1="955" y1="225" x2="973" y2="225" stroke="#7c3aed" stroke-width="3" stroke-dasharray="12 5" />
+<text x="979.00" y="229.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x UCF101</text>
+<line x1="955" y1="245" x2="973" y2="245" stroke="#7c3aed" stroke-width="3" stroke-dasharray="1 4" />
+<text x="979.00" y="249.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x Diving48</text>
+<line x1="955" y1="265" x2="973" y2="265" stroke="#334155" stroke-width="3" stroke-dasharray="9 3 2 3" />
+<text x="979.00" y="269.00" font-size="10" font-weight="400" text-anchor="start">V-JEPA2 x HMDB51</text>
+<line x1="955" y1="285" x2="973" y2="285" stroke="#2563eb" stroke-width="3" stroke-dasharray="9 3 2 3" />
+<text x="979.00" y="289.00" font-size="10" font-weight="400" text-anchor="start">VideoMAE x HMDB51</text>
+<line x1="955" y1="305" x2="973" y2="305" stroke="#dc2626" stroke-width="3" stroke-dasharray="9 3 2 3" />
+<text x="979.00" y="309.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x HMDB51</text>
+<line x1="955" y1="325" x2="973" y2="325" stroke="#2563eb" stroke-width="3" stroke-dasharray="5 3" />
+<text x="979.00" y="329.00" font-size="10" font-weight="400" text-anchor="start">VideoMAE x Kinetics</text>
+<line x1="955" y1="345" x2="973" y2="345" stroke="#db2777" stroke-width="3" stroke-dasharray="5 3" />
+<text x="979.00" y="349.00" font-size="10" font-weight="400" text-anchor="start">DisMo x Kinetics</text>
+<line x1="955" y1="365" x2="973" y2="365" stroke="#334155" stroke-width="3" stroke-dasharray="5 3" />
+<text x="979.00" y="369.00" font-size="10" font-weight="400" text-anchor="start">V-JEPA2 x Kinetics</text>
+<line x1="955" y1="385" x2="973" y2="385" stroke="#7c3aed" stroke-width="3" stroke-dasharray="9 3 2 3" />
+<text x="979.00" y="389.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x HMDB51</text>
+<line x1="955" y1="405" x2="973" y2="405" stroke="#7c3aed" stroke-width="3" stroke-dasharray="5 3" />
+<text x="979.00" y="409.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x Kinetics</text>
+<line x1="955" y1="425" x2="973" y2="425" stroke="#dc2626" stroke-width="3" stroke-dasharray="5 3" />
+<text x="979.00" y="429.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x Kinetics</text>
+<line x1="955" y1="445" x2="973" y2="445" stroke="#db2777" stroke-width="3" stroke-dasharray="1 4" />
+<text x="979.00" y="449.00" font-size="10" font-weight="400" text-anchor="start">DisMo x Diving48</text>
+<line x1="955" y1="465" x2="973" y2="465" stroke="#334155" stroke-width="3" stroke-dasharray="1 4" />
+<text x="979.00" y="469.00" font-size="10" font-weight="400" text-anchor="start">V-JEPA2 x Diving48</text>
+<line x1="955" y1="485" x2="973" y2="485" stroke="#db2777" stroke-width="3" stroke-dasharray="9 3 2 3" />
+<text x="979.00" y="489.00" font-size="10" font-weight="400" text-anchor="start">DisMo x HMDB51</text>
+<text x="90.00" y="485.00" font-size="14" font-weight="700" text-anchor="start">Color transform low -&gt; mid -&gt; high</text>
+<text x="18.00" y="647.50" font-size="11" font-weight="400" text-anchor="middle" transform="rotate(-90 18.00 647.50)">Mean cosine distance</text>
+<line x1="90" y1="785" x2="930" y2="785" stroke="#111827" stroke-width="1" />
+<line x1="90" y1="510" x2="90" y2="785" stroke="#111827" stroke-width="1" />
+<line x1="86" y1="785.00" x2="90" y2="785.00" stroke="#111827" />
+<text x="82.00" y="789.00" font-size="10" font-weight="400" text-anchor="end">-0.002</text>
+<line x1="86" y1="730.00" x2="90" y2="730.00" stroke="#111827" />
+<text x="82.00" y="734.00" font-size="10" font-weight="400" text-anchor="end">0.002</text>
+<line x1="90" y1="730.00" x2="930" y2="730.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="86" y1="675.00" x2="90" y2="675.00" stroke="#111827" />
+<text x="82.00" y="679.00" font-size="10" font-weight="400" text-anchor="end">0.007</text>
+<line x1="90" y1="675.00" x2="930" y2="675.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="86" y1="620.00" x2="90" y2="620.00" stroke="#111827" />
+<text x="82.00" y="624.00" font-size="10" font-weight="400" text-anchor="end">0.012</text>
+<line x1="90" y1="620.00" x2="930" y2="620.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="86" y1="565.00" x2="90" y2="565.00" stroke="#111827" />
+<text x="82.00" y="569.00" font-size="10" font-weight="400" text-anchor="end">0.016</text>
+<line x1="90" y1="565.00" x2="930" y2="565.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="86" y1="510.00" x2="90" y2="510.00" stroke="#111827" />
+<text x="82.00" y="514.00" font-size="10" font-weight="400" text-anchor="end">0.021</text>
+<line x1="90" y1="758.39" x2="930" y2="758.39" stroke="#6b7280" stroke-dasharray="4 4" />
+<polyline points="90.00,758.37 510.00,758.02 930.00,754.94" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linejoin="round" />
+<circle cx="90.00" cy="758.37" r="3.8" fill="#2563eb" />
+<circle cx="510.00" cy="758.02" r="3.8" fill="#2563eb" />
+<circle cx="930.00" cy="754.94" r="3.8" fill="#2563eb" />
+<polyline points="90.00,758.36 510.00,757.81 930.00,752.67" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="12 5" />
+<circle cx="90.00" cy="758.36" r="3.8" fill="#2563eb" />
+<circle cx="510.00" cy="757.81" r="3.8" fill="#2563eb" />
+<circle cx="930.00" cy="752.67" r="3.8" fill="#2563eb" />
+<polyline points="90.00,758.38 510.00,758.10 930.00,755.71" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
+<circle cx="90.00" cy="758.38" r="3.8" fill="#2563eb" />
+<circle cx="510.00" cy="758.10" r="3.8" fill="#2563eb" />
+<circle cx="930.00" cy="755.71" r="3.8" fill="#2563eb" />
+<polyline points="90.00,757.25 510.00,734.29 930.00,536.61" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" />
+<circle cx="90.00" cy="757.25" r="3.8" fill="#dc2626" />
+<circle cx="510.00" cy="734.29" r="3.8" fill="#dc2626" />
+<circle cx="930.00" cy="536.61" r="3.8" fill="#dc2626" />
+<polyline points="90.00,757.67 510.00,744.26 930.00,627.36" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="12 5" />
+<circle cx="90.00" cy="757.67" r="3.8" fill="#dc2626" />
+<circle cx="510.00" cy="744.26" r="3.8" fill="#dc2626" />
+<circle cx="930.00" cy="627.36" r="3.8" fill="#dc2626" />
+<polyline points="90.00,757.99 510.00,747.60 930.00,647.67" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
+<circle cx="90.00" cy="757.99" r="3.8" fill="#dc2626" />
+<circle cx="510.00" cy="747.60" r="3.8" fill="#dc2626" />
+<circle cx="930.00" cy="647.67" r="3.8" fill="#dc2626" />
+<polyline points="90.00,757.65 510.00,748.38 930.00,666.13" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" />
+<circle cx="90.00" cy="757.65" r="3.8" fill="#7c3aed" />
+<circle cx="510.00" cy="748.38" r="3.8" fill="#7c3aed" />
+<circle cx="930.00" cy="666.13" r="3.8" fill="#7c3aed" />
+<polyline points="90.00,757.76 510.00,749.47 930.00,668.89" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="12 5" />
+<circle cx="90.00" cy="757.76" r="3.8" fill="#7c3aed" />
+<circle cx="510.00" cy="749.47" r="3.8" fill="#7c3aed" />
+<circle cx="930.00" cy="668.89" r="3.8" fill="#7c3aed" />
+<polyline points="90.00,757.90 510.00,750.64 930.00,679.61" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
+<circle cx="90.00" cy="757.90" r="3.8" fill="#7c3aed" />
+<circle cx="510.00" cy="750.64" r="3.8" fill="#7c3aed" />
+<circle cx="930.00" cy="679.61" r="3.8" fill="#7c3aed" />
+<polyline points="90.00,757.94 510.00,746.54 930.00,608.71" fill="none" stroke="#334155" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
+<circle cx="90.00" cy="757.94" r="3.8" fill="#334155" />
+<circle cx="510.00" cy="746.54" r="3.8" fill="#334155" />
+<circle cx="930.00" cy="608.71" r="3.8" fill="#334155" />
+<polyline points="90.00,758.37 510.00,757.78 930.00,752.56" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
+<circle cx="90.00" cy="758.37" r="3.8" fill="#2563eb" />
+<circle cx="510.00" cy="757.78" r="3.8" fill="#2563eb" />
+<circle cx="930.00" cy="752.56" r="3.8" fill="#2563eb" />
+<polyline points="90.00,757.53 510.00,739.04 930.00,588.56" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
+<circle cx="90.00" cy="757.53" r="3.8" fill="#dc2626" />
+<circle cx="510.00" cy="739.04" r="3.8" fill="#dc2626" />
+<circle cx="930.00" cy="588.56" r="3.8" fill="#dc2626" />
+<polyline points="90.00,758.37 510.00,757.91 930.00,754.12" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="5 3" />
+<circle cx="90.00" cy="758.37" r="3.8" fill="#2563eb" />
+<circle cx="510.00" cy="757.91" r="3.8" fill="#2563eb" />
+<circle cx="930.00" cy="754.12" r="3.8" fill="#2563eb" />
+<polyline points="90.00,758.03 510.00,751.54 930.00,692.85" fill="none" stroke="#db2777" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="5 3" />
+<circle cx="90.00" cy="758.03" r="3.8" fill="#db2777" />
+<circle cx="510.00" cy="751.54" r="3.8" fill="#db2777" />
+<circle cx="930.00" cy="692.85" r="3.8" fill="#db2777" />
+<polyline points="90.00,757.94 510.00,748.39 930.00,644.89" fill="none" stroke="#334155" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="5 3" />
+<circle cx="90.00" cy="757.94" r="3.8" fill="#334155" />
+<circle cx="510.00" cy="748.39" r="3.8" fill="#334155" />
+<circle cx="930.00" cy="644.89" r="3.8" fill="#334155" />
+<polyline points="90.00,757.79 510.00,749.31 930.00,670.87" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
+<circle cx="90.00" cy="757.79" r="3.8" fill="#7c3aed" />
+<circle cx="510.00" cy="749.31" r="3.8" fill="#7c3aed" />
+<circle cx="930.00" cy="670.87" r="3.8" fill="#7c3aed" />
+<polyline points="90.00,757.74 510.00,749.34 930.00,674.51" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="5 3" />
+<circle cx="90.00" cy="757.74" r="3.8" fill="#7c3aed" />
+<circle cx="510.00" cy="749.34" r="3.8" fill="#7c3aed" />
+<circle cx="930.00" cy="674.51" r="3.8" fill="#7c3aed" />
+<polyline points="90.00,757.66 510.00,742.15 930.00,598.82" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="5 3" />
+<circle cx="90.00" cy="757.66" r="3.8" fill="#dc2626" />
+<circle cx="510.00" cy="742.15" r="3.8" fill="#dc2626" />
+<circle cx="930.00" cy="598.82" r="3.8" fill="#dc2626" />
+<polyline points="90.00,758.25 510.00,753.62 930.00,707.53" fill="none" stroke="#db2777" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
+<circle cx="90.00" cy="758.25" r="3.8" fill="#db2777" />
+<circle cx="510.00" cy="753.62" r="3.8" fill="#db2777" />
+<circle cx="930.00" cy="707.53" r="3.8" fill="#db2777" />
+<polyline points="90.00,758.10 510.00,752.28 930.00,697.04" fill="none" stroke="#334155" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
+<circle cx="90.00" cy="758.10" r="3.8" fill="#334155" />
+<circle cx="510.00" cy="752.28" r="3.8" fill="#334155" />
+<circle cx="930.00" cy="697.04" r="3.8" fill="#334155" />
+<polyline points="90.00,758.07 510.00,752.29 930.00,691.27" fill="none" stroke="#db2777" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
+<circle cx="90.00" cy="758.07" r="3.8" fill="#db2777" />
+<circle cx="510.00" cy="752.29" r="3.8" fill="#db2777" />
+<circle cx="930.00" cy="691.27" r="3.8" fill="#db2777" />
+<text x="90.00" y="807.00" font-size="12" font-weight="400" text-anchor="middle">low</text>
+<text x="510.00" y="807.00" font-size="12" font-weight="400" text-anchor="middle">mid</text>
+<text x="930.00" y="807.00" font-size="12" font-weight="400" text-anchor="middle">high</text>
+<line x1="955" y1="495" x2="973" y2="495" stroke="#2563eb" stroke-width="3" />
+<text x="979.00" y="499.00" font-size="10" font-weight="400" text-anchor="start">VideoMAE x SSV2</text>
+<line x1="955" y1="515" x2="973" y2="515" stroke="#2563eb" stroke-width="3" stroke-dasharray="12 5" />
+<text x="979.00" y="519.00" font-size="10" font-weight="400" text-anchor="start">VideoMAE x UCF101</text>
+<line x1="955" y1="535" x2="973" y2="535" stroke="#2563eb" stroke-width="3" stroke-dasharray="1 4" />
+<text x="979.00" y="539.00" font-size="10" font-weight="400" text-anchor="start">VideoMAE x Diving48</text>
+<line x1="955" y1="555" x2="973" y2="555" stroke="#dc2626" stroke-width="3" />
+<text x="979.00" y="559.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x SSV2</text>
+<line x1="955" y1="575" x2="973" y2="575" stroke="#dc2626" stroke-width="3" stroke-dasharray="12 5" />
+<text x="979.00" y="579.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x UCF101</text>
+<line x1="955" y1="595" x2="973" y2="595" stroke="#dc2626" stroke-width="3" stroke-dasharray="1 4" />
+<text x="979.00" y="599.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x Diving48</text>
+<line x1="955" y1="615" x2="973" y2="615" stroke="#7c3aed" stroke-width="3" />
+<text x="979.00" y="619.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x SSV2</text>
+<line x1="955" y1="635" x2="973" y2="635" stroke="#7c3aed" stroke-width="3" stroke-dasharray="12 5" />
+<text x="979.00" y="639.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x UCF101</text>
+<line x1="955" y1="655" x2="973" y2="655" stroke="#7c3aed" stroke-width="3" stroke-dasharray="1 4" />
+<text x="979.00" y="659.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x Diving48</text>
+<line x1="955" y1="675" x2="973" y2="675" stroke="#334155" stroke-width="3" stroke-dasharray="9 3 2 3" />
+<text x="979.00" y="679.00" font-size="10" font-weight="400" text-anchor="start">V-JEPA2 x HMDB51</text>
+<line x1="955" y1="695" x2="973" y2="695" stroke="#2563eb" stroke-width="3" stroke-dasharray="9 3 2 3" />
+<text x="979.00" y="699.00" font-size="10" font-weight="400" text-anchor="start">VideoMAE x HMDB51</text>
+<line x1="955" y1="715" x2="973" y2="715" stroke="#dc2626" stroke-width="3" stroke-dasharray="9 3 2 3" />
+<text x="979.00" y="719.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x HMDB51</text>
+<line x1="955" y1="735" x2="973" y2="735" stroke="#2563eb" stroke-width="3" stroke-dasharray="5 3" />
+<text x="979.00" y="739.00" font-size="10" font-weight="400" text-anchor="start">VideoMAE x Kinetics</text>
+<line x1="955" y1="755" x2="973" y2="755" stroke="#db2777" stroke-width="3" stroke-dasharray="5 3" />
+<text x="979.00" y="759.00" font-size="10" font-weight="400" text-anchor="start">DisMo x Kinetics</text>
+<line x1="955" y1="775" x2="973" y2="775" stroke="#334155" stroke-width="3" stroke-dasharray="5 3" />
+<text x="979.00" y="779.00" font-size="10" font-weight="400" text-anchor="start">V-JEPA2 x Kinetics</text>
+<line x1="955" y1="795" x2="973" y2="795" stroke="#7c3aed" stroke-width="3" stroke-dasharray="9 3 2 3" />
+<text x="979.00" y="799.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x HMDB51</text>
+<line x1="955" y1="815" x2="973" y2="815" stroke="#7c3aed" stroke-width="3" stroke-dasharray="5 3" />
+<text x="979.00" y="819.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x Kinetics</text>
+<line x1="955" y1="835" x2="973" y2="835" stroke="#dc2626" stroke-width="3" stroke-dasharray="5 3" />
+<text x="979.00" y="839.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x Kinetics</text>
+<line x1="955" y1="855" x2="973" y2="855" stroke="#db2777" stroke-width="3" stroke-dasharray="1 4" />
+<text x="979.00" y="859.00" font-size="10" font-weight="400" text-anchor="start">DisMo x Diving48</text>
+<line x1="955" y1="875" x2="973" y2="875" stroke="#334155" stroke-width="3" stroke-dasharray="1 4" />
+<text x="979.00" y="879.00" font-size="10" font-weight="400" text-anchor="start">V-JEPA2 x Diving48</text>
+<line x1="955" y1="895" x2="973" y2="895" stroke="#db2777" stroke-width="3" stroke-dasharray="9 3 2 3" />
+<text x="979.00" y="899.00" font-size="10" font-weight="400" text-anchor="start">DisMo x HMDB51</text>
+<text x="90.00" y="895.00" font-size="14" font-weight="700" text-anchor="start">RGB quantization low -&gt; mid -&gt; high</text>
+<text x="18.00" y="1057.50" font-size="11" font-weight="400" text-anchor="middle" transform="rotate(-90 18.00 1057.50)">Mean cosine distance</text>
+<line x1="90" y1="1195" x2="930" y2="1195" stroke="#111827" stroke-width="1" />
+<line x1="90" y1="920" x2="90" y2="1195" stroke="#111827" stroke-width="1" />
+<line x1="86" y1="1195.00" x2="90" y2="1195.00" stroke="#111827" />
+<text x="82.00" y="1199.00" font-size="10" font-weight="400" text-anchor="end">-0.049</text>
+<line x1="86" y1="1140.00" x2="90" y2="1140.00" stroke="#111827" />
+<text x="82.00" y="1144.00" font-size="10" font-weight="400" text-anchor="end">0.052</text>
+<line x1="90" y1="1140.00" x2="930" y2="1140.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="86" y1="1085.00" x2="90" y2="1085.00" stroke="#111827" />
+<text x="82.00" y="1089.00" font-size="10" font-weight="400" text-anchor="end">0.154</text>
+<line x1="90" y1="1085.00" x2="930" y2="1085.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="86" y1="1030.00" x2="90" y2="1030.00" stroke="#111827" />
+<text x="82.00" y="1034.00" font-size="10" font-weight="400" text-anchor="end">0.255</text>
+<line x1="90" y1="1030.00" x2="930" y2="1030.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="86" y1="975.00" x2="90" y2="975.00" stroke="#111827" />
+<text x="82.00" y="979.00" font-size="10" font-weight="400" text-anchor="end">0.356</text>
+<line x1="90" y1="975.00" x2="930" y2="975.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="86" y1="920.00" x2="90" y2="920.00" stroke="#111827" />
+<text x="82.00" y="924.00" font-size="10" font-weight="400" text-anchor="end">0.458</text>
+<line x1="90" y1="1168.39" x2="930" y2="1168.39" stroke="#6b7280" stroke-dasharray="4 4" />
+<polyline points="90.00,1164.79 510.00,1159.65 930.00,1152.20" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linejoin="round" />
+<circle cx="90.00" cy="1164.79" r="3.8" fill="#2563eb" />
+<circle cx="510.00" cy="1159.65" r="3.8" fill="#2563eb" />
+<circle cx="930.00" cy="1152.20" r="3.8" fill="#2563eb" />
+<polyline points="90.00,1166.71 510.00,1163.84 930.00,1159.00" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="12 5" />
+<circle cx="90.00" cy="1166.71" r="3.8" fill="#2563eb" />
+<circle cx="510.00" cy="1163.84" r="3.8" fill="#2563eb" />
+<circle cx="930.00" cy="1159.00" r="3.8" fill="#2563eb" />
+<polyline points="90.00,1167.14 510.00,1164.47 930.00,1160.22" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
+<circle cx="90.00" cy="1167.14" r="3.8" fill="#2563eb" />
+<circle cx="510.00" cy="1164.47" r="3.8" fill="#2563eb" />
+<circle cx="930.00" cy="1160.22" r="3.8" fill="#2563eb" />
+<polyline points="90.00,1122.45 510.00,1046.69 930.00,946.61" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" />
+<circle cx="90.00" cy="1122.45" r="3.8" fill="#dc2626" />
+<circle cx="510.00" cy="1046.69" r="3.8" fill="#dc2626" />
+<circle cx="930.00" cy="946.61" r="3.8" fill="#dc2626" />
+<polyline points="90.00,1154.81 510.00,1116.54 930.00,1029.51" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="12 5" />
+<circle cx="90.00" cy="1154.81" r="3.8" fill="#dc2626" />
+<circle cx="510.00" cy="1116.54" r="3.8" fill="#dc2626" />
+<circle cx="930.00" cy="1029.51" r="3.8" fill="#dc2626" />
+<polyline points="90.00,1159.57 510.00,1130.30 930.00,1038.63" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
+<circle cx="90.00" cy="1159.57" r="3.8" fill="#dc2626" />
+<circle cx="510.00" cy="1130.30" r="3.8" fill="#dc2626" />
+<circle cx="930.00" cy="1038.63" r="3.8" fill="#dc2626" />
+<polyline points="90.00,1136.88 510.00,1076.03 930.00,952.78" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" />
+<circle cx="90.00" cy="1136.88" r="3.8" fill="#7c3aed" />
+<circle cx="510.00" cy="1076.03" r="3.8" fill="#7c3aed" />
+<circle cx="930.00" cy="952.78" r="3.8" fill="#7c3aed" />
+<polyline points="90.00,1156.89 510.00,1124.29 930.00,1036.53" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="12 5" />
+<circle cx="90.00" cy="1156.89" r="3.8" fill="#7c3aed" />
+<circle cx="510.00" cy="1124.29" r="3.8" fill="#7c3aed" />
+<circle cx="930.00" cy="1036.53" r="3.8" fill="#7c3aed" />
+<polyline points="90.00,1148.59 510.00,1081.95 930.00,959.56" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
+<circle cx="90.00" cy="1148.59" r="3.8" fill="#7c3aed" />
+<circle cx="510.00" cy="1081.95" r="3.8" fill="#7c3aed" />
+<circle cx="930.00" cy="959.56" r="3.8" fill="#7c3aed" />
+<polyline points="90.00,1153.95 510.00,1110.09 930.00,1015.95" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
+<circle cx="90.00" cy="1153.95" r="3.8" fill="#7c3aed" />
+<circle cx="510.00" cy="1110.09" r="3.8" fill="#7c3aed" />
+<circle cx="930.00" cy="1015.95" r="3.8" fill="#7c3aed" />
+<polyline points="90.00,1149.72 510.00,1102.38 930.00,1004.75" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="5 3" />
+<circle cx="90.00" cy="1149.72" r="3.8" fill="#7c3aed" />
+<circle cx="510.00" cy="1102.38" r="3.8" fill="#7c3aed" />
+<circle cx="930.00" cy="1004.75" r="3.8" fill="#7c3aed" />
+<polyline points="90.00,1148.32 510.00,1099.46 930.00,1001.24" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="5 3" />
+<circle cx="90.00" cy="1148.32" r="3.8" fill="#dc2626" />
+<circle cx="510.00" cy="1099.46" r="3.8" fill="#dc2626" />
+<circle cx="930.00" cy="1001.24" r="3.8" fill="#dc2626" />
+<polyline points="90.00,1165.41 510.00,1161.16 930.00,1146.59" fill="none" stroke="#db2777" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
+<circle cx="90.00" cy="1165.41" r="3.8" fill="#db2777" />
+<circle cx="510.00" cy="1161.16" r="3.8" fill="#db2777" />
+<circle cx="930.00" cy="1146.59" r="3.8" fill="#db2777" />
+<polyline points="90.00,1162.80 510.00,1154.33 930.00,1133.71" fill="none" stroke="#334155" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
+<circle cx="90.00" cy="1162.80" r="3.8" fill="#334155" />
+<circle cx="510.00" cy="1154.33" r="3.8" fill="#334155" />
+<circle cx="930.00" cy="1133.71" r="3.8" fill="#334155" />
+<polyline points="90.00,1163.75 510.00,1157.74 930.00,1140.39" fill="none" stroke="#db2777" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
+<circle cx="90.00" cy="1163.75" r="3.8" fill="#db2777" />
+<circle cx="510.00" cy="1157.74" r="3.8" fill="#db2777" />
+<circle cx="930.00" cy="1140.39" r="3.8" fill="#db2777" />
+<text x="90.00" y="1217.00" font-size="12" font-weight="400" text-anchor="middle">low</text>
+<text x="510.00" y="1217.00" font-size="12" font-weight="400" text-anchor="middle">mid</text>
+<text x="930.00" y="1217.00" font-size="12" font-weight="400" text-anchor="middle">high</text>
+<line x1="955" y1="905" x2="973" y2="905" stroke="#2563eb" stroke-width="3" />
+<text x="979.00" y="909.00" font-size="10" font-weight="400" text-anchor="start">VideoMAE x SSV2</text>
+<line x1="955" y1="925" x2="973" y2="925" stroke="#2563eb" stroke-width="3" stroke-dasharray="12 5" />
+<text x="979.00" y="929.00" font-size="10" font-weight="400" text-anchor="start">VideoMAE x UCF101</text>
+<line x1="955" y1="945" x2="973" y2="945" stroke="#2563eb" stroke-width="3" stroke-dasharray="1 4" />
+<text x="979.00" y="949.00" font-size="10" font-weight="400" text-anchor="start">VideoMAE x Diving48</text>
+<line x1="955" y1="965" x2="973" y2="965" stroke="#dc2626" stroke-width="3" />
+<text x="979.00" y="969.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x SSV2</text>
+<line x1="955" y1="985" x2="973" y2="985" stroke="#dc2626" stroke-width="3" stroke-dasharray="12 5" />
+<text x="979.00" y="989.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x UCF101</text>
+<line x1="955" y1="1005" x2="973" y2="1005" stroke="#dc2626" stroke-width="3" stroke-dasharray="1 4" />
+<text x="979.00" y="1009.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x Diving48</text>
+<line x1="955" y1="1025" x2="973" y2="1025" stroke="#7c3aed" stroke-width="3" />
+<text x="979.00" y="1029.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x SSV2</text>
+<line x1="955" y1="1045" x2="973" y2="1045" stroke="#7c3aed" stroke-width="3" stroke-dasharray="12 5" />
+<text x="979.00" y="1049.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x UCF101</text>
+<line x1="955" y1="1065" x2="973" y2="1065" stroke="#7c3aed" stroke-width="3" stroke-dasharray="1 4" />
+<text x="979.00" y="1069.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x Diving48</text>
+<line x1="955" y1="1205" x2="973" y2="1205" stroke="#7c3aed" stroke-width="3" stroke-dasharray="9 3 2 3" />
+<text x="979.00" y="1209.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x HMDB51</text>
+<line x1="955" y1="1225" x2="973" y2="1225" stroke="#7c3aed" stroke-width="3" stroke-dasharray="5 3" />
+<text x="979.00" y="1229.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x Kinetics</text>
+<line x1="955" y1="1245" x2="973" y2="1245" stroke="#dc2626" stroke-width="3" stroke-dasharray="5 3" />
+<text x="979.00" y="1249.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x Kinetics</text>
+<line x1="955" y1="1265" x2="973" y2="1265" stroke="#db2777" stroke-width="3" stroke-dasharray="1 4" />
+<text x="979.00" y="1269.00" font-size="10" font-weight="400" text-anchor="start">DisMo x Diving48</text>
+<line x1="955" y1="1285" x2="973" y2="1285" stroke="#334155" stroke-width="3" stroke-dasharray="1 4" />
+<text x="979.00" y="1289.00" font-size="10" font-weight="400" text-anchor="start">V-JEPA2 x Diving48</text>
+<line x1="955" y1="1305" x2="973" y2="1305" stroke="#db2777" stroke-width="3" stroke-dasharray="9 3 2 3" />
+<text x="979.00" y="1309.00" font-size="10" font-weight="400" text-anchor="start">DisMo x HMDB51</text>
+<text x="90.00" y="1305.00" font-size="14" font-weight="700" text-anchor="start">Solarization low -&gt; mid -&gt; high</text>
+<text x="18.00" y="1467.50" font-size="11" font-weight="400" text-anchor="middle" transform="rotate(-90 18.00 1467.50)">Mean cosine distance</text>
+<line x1="90" y1="1605" x2="930" y2="1605" stroke="#111827" stroke-width="1" />
+<line x1="90" y1="1330" x2="90" y2="1605" stroke="#111827" stroke-width="1" />
+<line x1="86" y1="1605.00" x2="90" y2="1605.00" stroke="#111827" />
+<text x="82.00" y="1609.00" font-size="10" font-weight="400" text-anchor="end">-0.044</text>
+<line x1="86" y1="1550.00" x2="90" y2="1550.00" stroke="#111827" />
+<text x="82.00" y="1554.00" font-size="10" font-weight="400" text-anchor="end">0.046</text>
+<line x1="90" y1="1550.00" x2="930" y2="1550.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="86" y1="1495.00" x2="90" y2="1495.00" stroke="#111827" />
+<text x="82.00" y="1499.00" font-size="10" font-weight="400" text-anchor="end">0.136</text>
+<line x1="90" y1="1495.00" x2="930" y2="1495.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="86" y1="1440.00" x2="90" y2="1440.00" stroke="#111827" />
+<text x="82.00" y="1444.00" font-size="10" font-weight="400" text-anchor="end">0.226</text>
+<line x1="90" y1="1440.00" x2="930" y2="1440.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="86" y1="1385.00" x2="90" y2="1385.00" stroke="#111827" />
+<text x="82.00" y="1389.00" font-size="10" font-weight="400" text-anchor="end">0.317</text>
+<line x1="90" y1="1385.00" x2="930" y2="1385.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="86" y1="1330.00" x2="90" y2="1330.00" stroke="#111827" />
+<text x="82.00" y="1334.00" font-size="10" font-weight="400" text-anchor="end">0.407</text>
+<line x1="90" y1="1578.39" x2="930" y2="1578.39" stroke="#6b7280" stroke-dasharray="4 4" />
+<polyline points="90.00,1574.01 510.00,1572.57 930.00,1566.91" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linejoin="round" />
+<circle cx="90.00" cy="1574.01" r="3.8" fill="#2563eb" />
+<circle cx="510.00" cy="1572.57" r="3.8" fill="#2563eb" />
+<circle cx="930.00" cy="1566.91" r="3.8" fill="#2563eb" />
+<polyline points="90.00,1574.90 510.00,1574.27 930.00,1570.19" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="12 5" />
+<circle cx="90.00" cy="1574.90" r="3.8" fill="#2563eb" />
+<circle cx="510.00" cy="1574.27" r="3.8" fill="#2563eb" />
+<circle cx="930.00" cy="1570.19" r="3.8" fill="#2563eb" />
+<polyline points="90.00,1577.16 510.00,1576.69 930.00,1572.63" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
+<circle cx="90.00" cy="1577.16" r="3.8" fill="#2563eb" />
+<circle cx="510.00" cy="1576.69" r="3.8" fill="#2563eb" />
+<circle cx="930.00" cy="1572.63" r="3.8" fill="#2563eb" />
+<polyline points="90.00,1457.65 510.00,1465.69 930.00,1366.94" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" />
+<circle cx="90.00" cy="1457.65" r="3.8" fill="#dc2626" />
+<circle cx="510.00" cy="1465.69" r="3.8" fill="#dc2626" />
+<circle cx="930.00" cy="1366.94" r="3.8" fill="#dc2626" />
+<polyline points="90.00,1491.62 510.00,1483.30 930.00,1384.80" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="12 5" />
+<circle cx="90.00" cy="1491.62" r="3.8" fill="#dc2626" />
+<circle cx="510.00" cy="1483.30" r="3.8" fill="#dc2626" />
+<circle cx="930.00" cy="1384.80" r="3.8" fill="#dc2626" />
+<polyline points="90.00,1535.66 510.00,1515.76 930.00,1397.10" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
+<circle cx="90.00" cy="1535.66" r="3.8" fill="#dc2626" />
+<circle cx="510.00" cy="1515.76" r="3.8" fill="#dc2626" />
+<circle cx="930.00" cy="1397.10" r="3.8" fill="#dc2626" />
+<polyline points="90.00,1488.66 510.00,1502.17 930.00,1362.00" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" />
+<circle cx="90.00" cy="1488.66" r="3.8" fill="#7c3aed" />
+<circle cx="510.00" cy="1502.17" r="3.8" fill="#7c3aed" />
+<circle cx="930.00" cy="1362.00" r="3.8" fill="#7c3aed" />
+<polyline points="90.00,1510.58 510.00,1502.96 930.00,1386.83" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="12 5" />
+<circle cx="90.00" cy="1510.58" r="3.8" fill="#7c3aed" />
+<circle cx="510.00" cy="1502.96" r="3.8" fill="#7c3aed" />
+<circle cx="930.00" cy="1386.83" r="3.8" fill="#7c3aed" />
+<polyline points="90.00,1530.35 510.00,1505.89 930.00,1356.61" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
+<circle cx="90.00" cy="1530.35" r="3.8" fill="#7c3aed" />
+<circle cx="510.00" cy="1505.89" r="3.8" fill="#7c3aed" />
+<circle cx="930.00" cy="1356.61" r="3.8" fill="#7c3aed" />
+<polyline points="90.00,1523.46 510.00,1514.97 930.00,1396.98" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
+<circle cx="90.00" cy="1523.46" r="3.8" fill="#7c3aed" />
+<circle cx="510.00" cy="1514.97" r="3.8" fill="#7c3aed" />
+<circle cx="930.00" cy="1396.98" r="3.8" fill="#7c3aed" />
+<polyline points="90.00,1493.92 510.00,1503.47 930.00,1369.78" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="5 3" />
+<circle cx="90.00" cy="1493.92" r="3.8" fill="#7c3aed" />
+<circle cx="510.00" cy="1503.47" r="3.8" fill="#7c3aed" />
+<circle cx="930.00" cy="1369.78" r="3.8" fill="#7c3aed" />
+<polyline points="90.00,1474.84 510.00,1463.36 930.00,1366.57" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="5 3" />
+<circle cx="90.00" cy="1474.84" r="3.8" fill="#dc2626" />
+<circle cx="510.00" cy="1463.36" r="3.8" fill="#dc2626" />
+<circle cx="930.00" cy="1366.57" r="3.8" fill="#dc2626" />
+<polyline points="90.00,1565.05 510.00,1563.76 930.00,1542.53" fill="none" stroke="#db2777" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
+<circle cx="90.00" cy="1565.05" r="3.8" fill="#db2777" />
+<circle cx="510.00" cy="1563.76" r="3.8" fill="#db2777" />
+<circle cx="930.00" cy="1542.53" r="3.8" fill="#db2777" />
+<polyline points="90.00,1563.99 510.00,1561.72 930.00,1537.79" fill="none" stroke="#334155" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="1 4" />
+<circle cx="90.00" cy="1563.99" r="3.8" fill="#334155" />
+<circle cx="510.00" cy="1561.72" r="3.8" fill="#334155" />
+<circle cx="930.00" cy="1537.79" r="3.8" fill="#334155" />
+<polyline points="90.00,1560.14 510.00,1566.26 930.00,1536.86" fill="none" stroke="#db2777" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
+<circle cx="90.00" cy="1560.14" r="3.8" fill="#db2777" />
+<circle cx="510.00" cy="1566.26" r="3.8" fill="#db2777" />
+<circle cx="930.00" cy="1536.86" r="3.8" fill="#db2777" />
+<text x="90.00" y="1627.00" font-size="12" font-weight="400" text-anchor="middle">low</text>
+<text x="510.00" y="1627.00" font-size="12" font-weight="400" text-anchor="middle">mid</text>
+<text x="930.00" y="1627.00" font-size="12" font-weight="400" text-anchor="middle">high</text>
+<line x1="955" y1="1315" x2="973" y2="1315" stroke="#2563eb" stroke-width="3" />
+<text x="979.00" y="1319.00" font-size="10" font-weight="400" text-anchor="start">VideoMAE x SSV2</text>
+<line x1="955" y1="1335" x2="973" y2="1335" stroke="#2563eb" stroke-width="3" stroke-dasharray="12 5" />
+<text x="979.00" y="1339.00" font-size="10" font-weight="400" text-anchor="start">VideoMAE x UCF101</text>
+<line x1="955" y1="1355" x2="973" y2="1355" stroke="#2563eb" stroke-width="3" stroke-dasharray="1 4" />
+<text x="979.00" y="1359.00" font-size="10" font-weight="400" text-anchor="start">VideoMAE x Diving48</text>
+<line x1="955" y1="1375" x2="973" y2="1375" stroke="#dc2626" stroke-width="3" />
+<text x="979.00" y="1379.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x SSV2</text>
+<line x1="955" y1="1395" x2="973" y2="1395" stroke="#dc2626" stroke-width="3" stroke-dasharray="12 5" />
+<text x="979.00" y="1399.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x UCF101</text>
+<line x1="955" y1="1415" x2="973" y2="1415" stroke="#dc2626" stroke-width="3" stroke-dasharray="1 4" />
+<text x="979.00" y="1419.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x Diving48</text>
+<line x1="955" y1="1435" x2="973" y2="1435" stroke="#7c3aed" stroke-width="3" />
+<text x="979.00" y="1439.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x SSV2</text>
+<line x1="955" y1="1455" x2="973" y2="1455" stroke="#7c3aed" stroke-width="3" stroke-dasharray="12 5" />
+<text x="979.00" y="1459.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x UCF101</text>
+<line x1="955" y1="1475" x2="973" y2="1475" stroke="#7c3aed" stroke-width="3" stroke-dasharray="1 4" />
+<text x="979.00" y="1479.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x Diving48</text>
+<line x1="955" y1="1615" x2="973" y2="1615" stroke="#7c3aed" stroke-width="3" stroke-dasharray="9 3 2 3" />
+<text x="979.00" y="1619.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x HMDB51</text>
+<line x1="955" y1="1635" x2="973" y2="1635" stroke="#7c3aed" stroke-width="3" stroke-dasharray="5 3" />
+<text x="979.00" y="1639.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x Kinetics</text>
+<line x1="955" y1="1655" x2="973" y2="1655" stroke="#dc2626" stroke-width="3" stroke-dasharray="5 3" />
+<text x="979.00" y="1659.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x Kinetics</text>
+<line x1="955" y1="1675" x2="973" y2="1675" stroke="#db2777" stroke-width="3" stroke-dasharray="1 4" />
+<text x="979.00" y="1679.00" font-size="10" font-weight="400" text-anchor="start">DisMo x Diving48</text>
+<line x1="955" y1="1695" x2="973" y2="1695" stroke="#334155" stroke-width="3" stroke-dasharray="1 4" />
+<text x="979.00" y="1699.00" font-size="10" font-weight="400" text-anchor="start">V-JEPA2 x Diving48</text>
+<line x1="955" y1="1715" x2="973" y2="1715" stroke="#db2777" stroke-width="3" stroke-dasharray="9 3 2 3" />
+<text x="979.00" y="1719.00" font-size="10" font-weight="400" text-anchor="start">DisMo x HMDB51</text>
 </svg>

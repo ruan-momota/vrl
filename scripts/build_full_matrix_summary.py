@@ -119,6 +119,8 @@ ARTIFACT_ORDER = (
     "freeze-tail-low", "freeze-tail-mid", "freeze-tail-high",
     "color-low", "color-mid", "color-high",
     "spatial-blur-mid",
+    "rgb-quantization-low", "rgb-quantization-mid", "rgb-quantization-high",
+    "solarization-low", "solarization-mid", "solarization-high",
 )
 GROUP_COLORS = {"motion": "#2563eb", "appearance": "#ea580c"}
 
@@ -453,12 +455,22 @@ def write_strength_curve_chart(
     title: str,
     y_label: str,
 ) -> None:
-    width, height = 1360, 900
+    width, height = 1360, 1720
     parts = svg_header(width, height)
     parts.append(text(width / 2, 28, title, size=18, weight="700", anchor="middle"))
+    parts.append(
+        text(
+            width / 2, 46,
+            "Cells built before the matrix expansion have no rgb-quantization/solarization data "
+            "and are omitted from those two panels",
+            size=10, anchor="middle",
+        )
+    )
     panel_specs = (
-        ("freeze_tail", "Freeze-tail low -> mid -> high", 55),
-        ("color_transform", "Color transform low -> mid -> high", 465),
+        ("freeze_tail", "Freeze-tail low -> mid -> high", 65),
+        ("color_transform", "Color transform low -> mid -> high", 475),
+        ("rgb_quantization", "RGB quantization low -> mid -> high", 885),
+        ("solarization", "Solarization low -> mid -> high", 1295),
     )
     for perturbation, subtitle, top in panel_specs:
         curve_rows = [
@@ -704,8 +716,9 @@ def write_matrix_grid_chart(
     parts.append(
         text(
             width / 2, 26,
-            "Per-cell perturbation profile (correct-to-incorrect rate, all 8 artifacts)",
-            size=16, weight="700", anchor="middle",
+            "Per-cell perturbation profile (correct-to-incorrect rate, up to 14 artifacts "
+            "-- cells built before the matrix expansion show only the original 8)",
+            size=15, weight="700", anchor="middle",
         )
     )
 
@@ -753,8 +766,9 @@ def write_matrix_grid_chart(
     parts.append(
         text(
             label_col_w + 400, legend_y,
-            "bar order (left to right): shuffle, freeze-low/mid/high, color-low/mid/high, blur",
-            size=10,
+            "bar order (left to right): shuffle, freeze-low/mid/high, color-low/mid/high, blur, "
+            "rgb-quant-low/mid/high, solarization-low/mid/high",
+            size=9,
         )
     )
 
