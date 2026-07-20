@@ -1,67 +1,69 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="620" viewBox="0 0 1400 620">
+<svg xmlns="http://www.w3.org/2000/svg" width="1470" height="620" viewBox="0 0 1470 620">
 <rect width="100%" height="100%" fill="#ffffff" />
 <style>text { font-family: Arial, Helvetica, sans-serif; fill: #111827; }</style>
-<text x="700.00" y="26.00" font-size="15" font-weight="700" text-anchor="middle">Representation-shift bias: log2(motion cos. dist. / appearance cos. dist.), mid strength</text>
+<text x="735.00" y="26.00" font-size="15" font-weight="700" text-anchor="middle">Representation-shift bias: log2(motion cos. dist. / appearance cos. dist.), mid strength</text>
 <text x="16.00" y="250.00" font-size="11" font-weight="400" text-anchor="middle" transform="rotate(-90 16.00 250.00)">log2 ratio (motion / appearance)</text>
-<line x1="60" y1="430" x2="1370" y2="430" stroke="#111827" stroke-width="1" />
+<line x1="60" y1="430" x2="1440" y2="430" stroke="#111827" stroke-width="1" />
 <line x1="60" y1="70" x2="60" y2="430" stroke="#111827" stroke-width="1" />
 <line x1="56" y1="430.00" x2="60" y2="430.00" stroke="#111827" />
 <text x="52.00" y="434.00" font-size="10" font-weight="400" text-anchor="end">-10.500</text>
 <line x1="56" y1="358.00" x2="60" y2="358.00" stroke="#111827" />
 <text x="52.00" y="362.00" font-size="10" font-weight="400" text-anchor="end">-6.300</text>
-<line x1="60" y1="358.00" x2="1370" y2="358.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="60" y1="358.00" x2="1440" y2="358.00" stroke="#e5e7eb" stroke-width="1" />
 <line x1="56" y1="286.00" x2="60" y2="286.00" stroke="#111827" />
 <text x="52.00" y="290.00" font-size="10" font-weight="400" text-anchor="end">-2.100</text>
-<line x1="60" y1="286.00" x2="1370" y2="286.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="60" y1="286.00" x2="1440" y2="286.00" stroke="#e5e7eb" stroke-width="1" />
 <line x1="56" y1="214.00" x2="60" y2="214.00" stroke="#111827" />
 <text x="52.00" y="218.00" font-size="10" font-weight="400" text-anchor="end">2.100</text>
-<line x1="60" y1="214.00" x2="1370" y2="214.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="60" y1="214.00" x2="1440" y2="214.00" stroke="#e5e7eb" stroke-width="1" />
 <line x1="56" y1="142.00" x2="60" y2="142.00" stroke="#111827" />
 <text x="52.00" y="146.00" font-size="10" font-weight="400" text-anchor="end">6.300</text>
-<line x1="60" y1="142.00" x2="1370" y2="142.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="60" y1="142.00" x2="1440" y2="142.00" stroke="#e5e7eb" stroke-width="1" />
 <line x1="56" y1="70.00" x2="60" y2="70.00" stroke="#111827" />
 <text x="52.00" y="74.00" font-size="10" font-weight="400" text-anchor="end">10.500</text>
-<line x1="60" y1="250.00" x2="1370" y2="250.00" stroke="#6b7280" stroke-dasharray="4 4" />
-<text x="1365.00" y="84.00" font-size="10" font-weight="600" text-anchor="end">motion-dominant</text>
-<text x="1365.00" y="424.00" font-size="10" font-weight="600" text-anchor="end">appearance-dominant</text>
-<rect x="73.10" y="111.18" width="39.30" height="138.82" fill="#2563eb" />
-<text x="92.75" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 92.75 490.00)">DisMo x Diving48</text>
-<rect x="138.60" y="143.15" width="39.30" height="106.85" fill="#2563eb" />
-<text x="158.25" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 158.25 490.00)">VideoMAE x Diving48</text>
-<rect x="204.10" y="157.53" width="39.30" height="92.47" fill="#2563eb" />
-<text x="223.75" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 223.75 490.00)">DisMo x Kinetics</text>
-<rect x="269.60" y="159.75" width="39.30" height="90.25" fill="#2563eb" />
-<text x="289.25" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 289.25 490.00)">SlowFast R50 8x8 x Diving48</text>
-<rect x="335.10" y="200.31" width="39.30" height="49.69" fill="#2563eb" />
-<text x="354.75" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 354.75 490.00)">SlowFast R50 8x8 x Kinetics</text>
-<rect x="400.60" y="202.36" width="39.30" height="47.64" fill="#2563eb" />
-<text x="420.25" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 420.25 490.00)">VideoMAE x Kinetics</text>
-<rect x="466.10" y="218.23" width="39.30" height="31.77" fill="#2563eb" />
-<text x="485.75" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 485.75 490.00)">SlowFast R50 8x8 x HMDB51</text>
-<rect x="531.60" y="218.62" width="39.30" height="31.38" fill="#2563eb" />
-<text x="551.25" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 551.25 490.00)">VideoMAE x SSV2</text>
-<rect x="597.10" y="223.55" width="39.30" height="26.45" fill="#2563eb" />
-<text x="616.75" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 616.75 490.00)">SlowFast R50 8x8 x SSV2</text>
-<rect x="662.60" y="225.87" width="39.30" height="24.13" fill="#2563eb" />
-<text x="682.25" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 682.25 490.00)">SlowFast R50 8x8 x UCF101</text>
-<rect x="728.10" y="232.06" width="39.30" height="17.94" fill="#2563eb" />
-<text x="747.75" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 747.75 490.00)">V-JEPA2 x Diving48</text>
-<rect x="793.60" y="238.87" width="39.30" height="11.13" fill="#2563eb" />
-<text x="813.25" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 813.25 490.00)">VideoMAE x HMDB51</text>
-<rect x="859.10" y="243.63" width="39.30" height="6.37" fill="#2563eb" />
-<text x="878.75" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 878.75 490.00)">VideoMAE x UCF101</text>
-<rect x="924.60" y="250.00" width="39.30" height="3.61" fill="#ea580c" />
-<text x="944.25" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 944.25 490.00)">V-JEPA2 x Kinetics</text>
-<rect x="990.10" y="250.00" width="39.30" height="11.96" fill="#ea580c" />
-<text x="1009.75" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1009.75 490.00)">V-JEPA2 x HMDB51</text>
-<rect x="1055.60" y="250.00" width="39.30" height="171.43" fill="#ea580c" />
-<text x="1075.25" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1075.25 490.00)">DINOv2 frame-mean x SSV2</text>
-<rect x="1121.10" y="250.00" width="39.30" height="171.43" fill="#ea580c" />
-<text x="1140.75" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1140.75 490.00)">DINOv2 frame-mean x UCF101</text>
-<rect x="1186.60" y="250.00" width="39.30" height="171.43" fill="#ea580c" />
-<text x="1206.25" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1206.25 490.00)">DINOv2 frame-mean x Diving48</text>
-<rect x="1252.10" y="250.00" width="39.30" height="171.43" fill="#ea580c" />
-<text x="1271.75" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1271.75 490.00)">DINOv2 frame-mean x HMDB51</text>
-<rect x="1317.60" y="250.00" width="39.30" height="171.43" fill="#ea580c" />
-<text x="1337.25" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1337.25 490.00)">DINOv2 frame-mean x Kinetics</text>
+<line x1="60" y1="250.00" x2="1440" y2="250.00" stroke="#6b7280" stroke-dasharray="4 4" />
+<text x="1435.00" y="84.00" font-size="10" font-weight="600" text-anchor="end">motion-dominant</text>
+<text x="1435.00" y="424.00" font-size="10" font-weight="600" text-anchor="end">appearance-dominant</text>
+<rect x="73.14" y="111.18" width="39.43" height="138.82" fill="#2563eb" />
+<text x="92.86" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 92.86 490.00)">DisMo x Diving48</text>
+<rect x="138.86" y="143.15" width="39.43" height="106.85" fill="#2563eb" />
+<text x="158.57" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 158.57 490.00)">VideoMAE x Diving48</text>
+<rect x="204.57" y="157.53" width="39.43" height="92.47" fill="#2563eb" />
+<text x="224.29" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 224.29 490.00)">DisMo x Kinetics</text>
+<rect x="270.29" y="159.75" width="39.43" height="90.25" fill="#2563eb" />
+<text x="290.00" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 290.00 490.00)">SlowFast R50 8x8 x Diving48</text>
+<rect x="336.00" y="175.31" width="39.43" height="74.69" fill="#2563eb" />
+<text x="355.71" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 355.71 490.00)">DisMo x HMDB51</text>
+<rect x="401.71" y="200.31" width="39.43" height="49.69" fill="#2563eb" />
+<text x="421.43" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 421.43 490.00)">SlowFast R50 8x8 x Kinetics</text>
+<rect x="467.43" y="202.36" width="39.43" height="47.64" fill="#2563eb" />
+<text x="487.14" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 487.14 490.00)">VideoMAE x Kinetics</text>
+<rect x="533.14" y="218.23" width="39.43" height="31.77" fill="#2563eb" />
+<text x="552.86" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 552.86 490.00)">SlowFast R50 8x8 x HMDB51</text>
+<rect x="598.86" y="218.62" width="39.43" height="31.38" fill="#2563eb" />
+<text x="618.57" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 618.57 490.00)">VideoMAE x SSV2</text>
+<rect x="664.57" y="223.55" width="39.43" height="26.45" fill="#2563eb" />
+<text x="684.29" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 684.29 490.00)">SlowFast R50 8x8 x SSV2</text>
+<rect x="730.29" y="225.87" width="39.43" height="24.13" fill="#2563eb" />
+<text x="750.00" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 750.00 490.00)">SlowFast R50 8x8 x UCF101</text>
+<rect x="796.00" y="232.06" width="39.43" height="17.94" fill="#2563eb" />
+<text x="815.71" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 815.71 490.00)">V-JEPA2 x Diving48</text>
+<rect x="861.71" y="238.87" width="39.43" height="11.13" fill="#2563eb" />
+<text x="881.43" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 881.43 490.00)">VideoMAE x HMDB51</text>
+<rect x="927.43" y="243.63" width="39.43" height="6.37" fill="#2563eb" />
+<text x="947.14" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 947.14 490.00)">VideoMAE x UCF101</text>
+<rect x="993.14" y="250.00" width="39.43" height="3.61" fill="#ea580c" />
+<text x="1012.86" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1012.86 490.00)">V-JEPA2 x Kinetics</text>
+<rect x="1058.86" y="250.00" width="39.43" height="11.96" fill="#ea580c" />
+<text x="1078.57" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1078.57 490.00)">V-JEPA2 x HMDB51</text>
+<rect x="1124.57" y="250.00" width="39.43" height="171.43" fill="#ea580c" />
+<text x="1144.29" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1144.29 490.00)">DINOv2 frame-mean x SSV2</text>
+<rect x="1190.29" y="250.00" width="39.43" height="171.43" fill="#ea580c" />
+<text x="1210.00" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1210.00 490.00)">DINOv2 frame-mean x UCF101</text>
+<rect x="1256.00" y="250.00" width="39.43" height="171.43" fill="#ea580c" />
+<text x="1275.71" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1275.71 490.00)">DINOv2 frame-mean x Diving48</text>
+<rect x="1321.71" y="250.00" width="39.43" height="171.43" fill="#ea580c" />
+<text x="1341.43" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1341.43 490.00)">DINOv2 frame-mean x HMDB51</text>
+<rect x="1387.43" y="250.00" width="39.43" height="171.43" fill="#ea580c" />
+<text x="1407.14" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1407.14 490.00)">DINOv2 frame-mean x Kinetics</text>
 </svg>

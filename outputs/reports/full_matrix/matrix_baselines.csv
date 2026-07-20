@@ -19,3 +19,4 @@ Kinetics,large-scale web-video,DINOv2 frame-mean,facebook/dinov2-base,kinetics-c
 Kinetics,large-scale web-video,SlowFast R50 8x8,facebookresearch/pytorchvideo:slowfast_r50,kinetics-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,5000,1500,9216,0.9206666946411133,0.892,True,0
 Diving48,fine-grained motion / pose contrast,DisMo,motion_extractor_large,diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe,1600,480,128,0.09791667014360428,0.07291666666666667,True,0
 Diving48,fine-grained motion / pose contrast,V-JEPA2,facebook/vjepa2-vitl-fpc64-256,diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe,1600,480,1024,0.08541666716337204,0.08333333333333333,True,0
+HMDB51,action-recognition,DisMo,motion_extractor_large,hmdb51-full-split1-dismo-motion-extractor-large-frozen-linear-probe,3551,1524,128,0.4730971157550812,0.3720472440944882,True,0
