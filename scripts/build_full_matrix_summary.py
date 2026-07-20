@@ -159,6 +159,23 @@ MODEL_COLORS = {
     "V-JEPA2": "#334155",
     "DisMo": "#db2777",
 }
+
+# Comparability reminder: deterministic_center_clip samples num_frames
+# *consecutive* native frames, so a model's num_frames controls how much
+# real-world video duration it sees, not just temporal resolution -- e.g. at
+# 30fps, 16 frames = ~0.53s vs V-JEPA2's 64 frames = ~2.13s of the same
+# source clip. Motion perturbations (freeze_tail/temporal_shuffle) are
+# defined as a fraction of that sampled window, so this confounds any
+# cross-model claim about motion-perturbation magnitude unless window_frames
+# is set (not yet applied to any cell -- see project memory). Displayed on
+# the grid so it stays visible rather than a footnote nobody rereads.
+NUM_FRAMES_BY_MODEL = {
+    "VideoMAE": 16,
+    "SlowFast R50 8x8": 32,
+    "DINOv2 frame-mean": 16,
+    "V-JEPA2": 64,
+    "DisMo": 16,
+}
 DATASET_DASH = {
     "SSV2": None,
     "UCF101": "12 5",
@@ -707,7 +724,7 @@ def write_matrix_grid_chart(
     ]
     y_max = max(all_values) * 1.12
 
-    label_col_w, header_h = 130, 50
+    label_col_w, header_h = 130, 66
     tile_w, tile_h = 190, 150
     width = label_col_w + tile_w * len(MODEL_ORDER)
     height = header_h + tile_h * len(DATASET_ORDER) + 70
@@ -715,16 +732,32 @@ def write_matrix_grid_chart(
     parts = svg_header(width, height)
     parts.append(
         text(
-            width / 2, 26,
+            width / 2, 22,
             "Per-cell perturbation profile (correct-to-incorrect rate, up to 14 artifacts "
             "-- cells built before the matrix expansion show only the original 8)",
             size=15, weight="700", anchor="middle",
         )
     )
+    parts.append(
+        text(
+            width / 2, 40,
+            "Frame counts below each model differ (16-64) and are NOT yet normalized to a "
+            "shared window -- motion-perturbation magnitude is not directly comparable across models",
+            size=10, weight="400", anchor="middle",
+        )
+    )
 
     for col, model in enumerate(MODEL_ORDER):
         cx = label_col_w + (col + 0.5) * tile_w
-        parts.append(text(cx, header_h + 32, model, size=12, weight="700", anchor="middle"))
+        parts.append(text(cx, header_h + 20, model, size=12, weight="700", anchor="middle"))
+        frames = NUM_FRAMES_BY_MODEL.get(model)
+        if frames is not None:
+            parts.append(
+                text(
+                    cx, header_h + 36, f"{frames} frames sampled",
+                    size=10, weight="400", anchor="middle",
+                )
+            )
 
     for row_idx, dataset in enumerate(DATASET_ORDER):
         row_y = header_h + 40 + row_idx * tile_h
