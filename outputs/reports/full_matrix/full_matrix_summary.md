@@ -50,7 +50,7 @@ Quality audit overall status across all cells: `True`.
 | DINOv2 frame-mean | UCF101 | 5000 | 1500 | 768 | 99.0% | 97.7% | True |
 | DINOv2 frame-mean | Diving48 | 1600 | 480 | 768 | 9.6% | 9.0% | True |
 | V-JEPA2 | HMDB51 | 3551 | 1524 | 1024 | 62.8% | 46.9% | True |
-| VideoMAE | HMDB51 | 3551 | 1524 | 768 | 36.0% | 16.8% | True |
+| VideoMAE | HMDB51 | 3551 | 1524 | 768 | 36.4% | 16.8% | True |
 | SlowFast R50 8x8 | HMDB51 | 3551 | 1524 | 9216 | 71.8% | 61.3% | True |
 | VideoMAE | Kinetics | 5000 | 1500 | 768 | 45.7% | 19.5% | True |
 | DisMo | Kinetics | 5000 | 1500 | 128 | 34.6% | 20.3% | True |
@@ -78,7 +78,7 @@ Quality audit overall status across all cells: `True`.
 | DINOv2 frame-mean | UCF101 | 0.0000 | 0.0020 | 3.20e-08 | 0.0394 |
 | DINOv2 frame-mean | Diving48 | 0.0000 | 0.0042 | 3.71e-08 | 0.0033 |
 | V-JEPA2 | HMDB51 | 0.1844 | 0.1404 | 0.0907 | 0.1470 |
-| VideoMAE | HMDB51 | 0.1496 | 0.1437 | 0.0143 | 0.0091 |
+| VideoMAE | HMDB51 | 0.1470 | 0.1417 | 0.0143 | 0.0091 |
 | SlowFast R50 8x8 | HMDB51 | 0.1726 | 0.0407 | 0.2405 | 0.0667 |
 | VideoMAE | Kinetics | 0.1480 | 0.0253 | 0.0181 | 0.0026 |
 | DisMo | Kinetics | 0.1073 | 0.0167 | 0.3773 | 0.0090 |
@@ -137,7 +137,7 @@ spatial-blur-mid) within each cell:
 | VideoMAE | Diving48 | 0.0562 | 0.0229 | 0.0333 | 6.2328 |
 | SlowFast R50 8x8 | UCF101 | 0.0487 | 0.0160 | 0.0327 | 1.4077 |
 | V-JEPA2 | Diving48 | 0.0708 | 0.0458 | 0.0250 | 1.0465 |
-| VideoMAE | HMDB51 | 0.1916 | 0.1870 | 0.0046 | 0.6494 |
+| VideoMAE | HMDB51 | 0.1916 | 0.1844 | 0.0072 | 0.6501 |
 | DINOv2 frame-mean | UCF101 | 0.0000 | 0.0040 | -0.0040 | -10.0000 |
 | DINOv2 frame-mean | Diving48 | 0.0000 | 0.0104 | -0.0104 | -10.0000 |
 | DINOv2 frame-mean | Kinetics | 0.0000 | 0.0120 | -0.0120 | -10.0000 |
@@ -161,7 +161,7 @@ are not fully apples-to-apples across rows):
 | --- | --- | --- | --- |
 | DisMo | Diving48, HMDB51, Kinetics, SSV2 | 0.1583 | 5.5222 |
 | SlowFast R50 8x8 | Diving48, HMDB51, Kinetics, SSV2, UCF101 | 0.0914 | 2.5930 |
-| VideoMAE | Diving48, HMDB51, Kinetics, SSV2, UCF101 | 0.0515 | 2.3726 |
+| VideoMAE | Diving48, HMDB51, Kinetics, SSV2, UCF101 | 0.0520 | 2.3727 |
 | V-JEPA2 | Diving48, HMDB51, Kinetics, UCF101 | 0.0322 | -0.2286 |
 | DINOv2 frame-mean | Diving48, HMDB51, Kinetics, SSV2, UCF101 | -0.0219 | -10.0000 |
 

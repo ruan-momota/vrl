@@ -163,6 +163,12 @@ HMDB51,VideoMAE,hmdb51-full-split1-videomae-base-frozen-linear-probe,color-mid,1
 HMDB51,VideoMAE,hmdb51-full-split1-videomae-base-frozen-linear-probe,color-high,1524,1524,0,True
 HMDB51,VideoMAE,hmdb51-full-split1-videomae-base-frozen-linear-probe,spatial-blur-mid,1524,1524,0,True
 HMDB51,VideoMAE,hmdb51-full-split1-videomae-base-frozen-linear-probe,temporal-shuffle-mid,1524,1524,0,True
+HMDB51,VideoMAE,hmdb51-full-split1-videomae-base-frozen-linear-probe,rgb-quantization-low,1524,1524,0,True
+HMDB51,VideoMAE,hmdb51-full-split1-videomae-base-frozen-linear-probe,rgb-quantization-mid,1524,1524,0,True
+HMDB51,VideoMAE,hmdb51-full-split1-videomae-base-frozen-linear-probe,rgb-quantization-high,1524,1524,0,True
+HMDB51,VideoMAE,hmdb51-full-split1-videomae-base-frozen-linear-probe,solarization-low,1524,1524,0,True
+HMDB51,VideoMAE,hmdb51-full-split1-videomae-base-frozen-linear-probe,solarization-mid,1524,1524,0,True
+HMDB51,VideoMAE,hmdb51-full-split1-videomae-base-frozen-linear-probe,solarization-high,1524,1524,0,True
 HMDB51,SlowFast R50 8x8,hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe,train_original,3551,3551,0,True
 HMDB51,SlowFast R50 8x8,hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe,heldout_original,1524,1524,0,True
 HMDB51,SlowFast R50 8x8,hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe,freeze-tail-low,1524,1524,0,True

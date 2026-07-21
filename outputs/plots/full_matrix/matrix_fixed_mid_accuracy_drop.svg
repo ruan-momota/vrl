@@ -52,8 +52,8 @@
 <rect x="779.87" y="212.87" width="18.70" height="203.34" fill="#2563eb" />
 <rect x="802.30" y="261.36" width="18.70" height="154.86" fill="#ea580c" />
 <text x="800.43" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 800.43 520.00)">V-JEPA2 x HMDB51</text>
-<rect x="854.65" y="251.23" width="18.70" height="164.99" fill="#2563eb" />
-<rect x="877.09" y="257.74" width="18.70" height="158.47" fill="#ea580c" />
+<rect x="854.65" y="254.12" width="18.70" height="162.09" fill="#2563eb" />
+<rect x="877.09" y="259.91" width="18.70" height="156.30" fill="#ea580c" />
 <text x="875.22" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 875.22 520.00)">VideoMAE x HMDB51</text>
 <rect x="929.43" y="225.90" width="18.70" height="190.31" fill="#2563eb" />
 <rect x="951.87" y="371.35" width="18.70" height="44.86" fill="#ea580c" />
