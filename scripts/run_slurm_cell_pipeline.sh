@@ -58,12 +58,11 @@ run "${PY}" -m src.pipeline.extract \
 run "${PY}" -m src.pipeline.extract \
   --run-config "configs/runs/${CONFIG_DIR}/${PREFIX}_heldout_original.json" || exit 1
 
-for pert in temporal_shuffle_mid freeze_tail_low freeze_tail_mid freeze_tail_high \
-            color_low color_mid color_high blur_mid \
-            rgb_quantization_low rgb_quantization_mid rgb_quantization_high \
-            solarization_low solarization_mid solarization_high; do
-  run "${PY}" -m src.pipeline.extract \
-    --run-config "configs/runs/${CONFIG_DIR}/${PREFIX}_heldout_${pert}.json" || exit 1
+for cfg in "configs/runs/${CONFIG_DIR}/${PREFIX}_heldout_"*.json; do
+  case "$cfg" in
+    *_heldout_original.json) continue ;;
+  esac
+  run "${PY}" -m src.pipeline.extract --run-config "$cfg" || exit 1
 done
 echo "=== full extraction complete for ${PREFIX} ==="
 
