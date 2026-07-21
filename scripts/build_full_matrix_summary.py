@@ -111,6 +111,9 @@ CELLS = (
          "hmdb51-full-split1-dismo-motion-extractor-large-frozen-linear-probe"),
     Cell("SSV2", "motion-oriented", "DisMo", "motion_extractor_large",
          "ssv2-c50-train100-heldout30-dismo-motion-extractor-large-frozen-linear-probe"),
+    Cell("UCF101", "appearance-rich / context-correlated contrast", "V-JEPA2",
+         "facebook/vjepa2-vitl-fpc64-256",
+         "ucf101-c50-train100-heldout30-vjepa2-vitl-fpc64-256-frozen-linear-probe"),
 )
 
 
@@ -143,6 +146,7 @@ CELL_COLORS = {
     "V-JEPA2 x HMDB51": "#334155",
     "V-JEPA2 x Kinetics": "#b45309",
     "V-JEPA2 x Diving48": "#475569",
+    "V-JEPA2 x UCF101": "#64748b",
     "DisMo x Kinetics": "#db2777",
     "DisMo x Diving48": "#c026d3",
     "DisMo x HMDB51": "#9f1239",
