@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 import time
 from typing import Any
 
@@ -69,7 +70,8 @@ def extract_embeddings(
         with torch.autocast(
             device_type=resolved_device.type,
             dtype=torch.bfloat16,
-            enabled=resolved_device.type == "cuda",
+            enabled=resolved_device.type == "cuda"
+            and os.environ.get("VRL_FORCE_FP32") != "1",
         ):
             result_embeddings = encoder.encode(
                 batch["pixel_values"],

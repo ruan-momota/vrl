@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 from typing import Any
@@ -120,8 +121,9 @@ def main() -> int:
     # fp32 and leave a real (~2-3x on matmul-heavy ops), free throughput gain
     # unused. Set once at the CLI entrypoint so it applies to every future
     # extraction process without touching already-extracted embeddings.
-    torch.backends.cuda.matmul.allow_tf32 = True
-    torch.backends.cudnn.allow_tf32 = True
+    if os.environ.get("VRL_FORCE_FP32") != "1":
+        torch.backends.cuda.matmul.allow_tf32 = True
+        torch.backends.cudnn.allow_tf32 = True
 
     args = parse_args()
     command = [sys.executable, "-m", "src.pipeline.extract", "--run-config", str(args.run_config)]

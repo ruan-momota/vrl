@@ -35,13 +35,13 @@ def test_extraction_configs_share_one_run_identity(
         if "evaluation" not in path.name and "smoke" not in path.name
     ]
 
-    assert len(configs) == 10
+    assert len(configs) == 16
     assert {config.resolved_run_id for config in configs} == {run_id}
     assert {config.split for config in configs} == {"train", "heldout"}
     assert {config.model_name for config in configs} == {model_name}
     assert {config.dataset_name for config in configs} == {"kinetics"}
     assert sum(config.perturbation["name"] !=
-               "none" for config in configs) == 8
+               "none" for config in configs) == 14
     assert all(config.subset_summary_path ==
                SUBSET_SUMMARY for config in configs)
 
@@ -61,9 +61,10 @@ def test_evaluation_config_covers_motion_and_appearance_probes(
     config = RunEvaluationConfig.from_file(config_path)
 
     assert config.run_id == run_id
-    assert len(config.perturbations) == 8
+    assert len(config.perturbations) == 14
     assert config.knn == {"metric": "cosine", "k_values": [5]}
     assert {spec.group for spec in config.perturbations} == {
         "motion", "appearance"}
     assert {spec.name for spec in config.perturbations} == {
-        "temporal_shuffle", "freeze_tail", "color_transform", "spatial_blur"}
+        "temporal_shuffle", "freeze_tail", "color_transform", "spatial_blur",
+        "rgb_quantization", "solarization"}
