@@ -6,6 +6,8 @@ import sys
 from pathlib import Path
 from typing import Any
 
+import torch
+
 from src.artifacts import save_embedding_artifact
 from src.data.base import DatasetAdapter
 from src.data.registry import get_dataset_adapter
@@ -113,6 +115,14 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> int:
+    # A40/RTX Ampere+ tensor cores: matmul.allow_tf32 defaults to False in
+    # modern PyTorch, so frozen-encoder forward passes otherwise run in true
+    # fp32 and leave a real (~2-3x on matmul-heavy ops), free throughput gain
+    # unused. Set once at the CLI entrypoint so it applies to every future
+    # extraction process without touching already-extracted embeddings.
+    torch.backends.cuda.matmul.allow_tf32 = True
+    torch.backends.cudnn.allow_tf32 = True
+
     args = parse_args()
     command = [sys.executable, "-m", "src.pipeline.extract", "--run-config", str(args.run_config)]
     if args.limit is not None:
