@@ -66,10 +66,15 @@ def extract_embeddings(
     for _ in progress:
         batch_start = time.perf_counter()
         batch = next(loader_iter)
-        result_embeddings = encoder.encode(
-            batch["pixel_values"],
-            device=resolved_device,
-        )
+        with torch.autocast(
+            device_type=resolved_device.type,
+            dtype=torch.bfloat16,
+            enabled=resolved_device.type == "cuda",
+        ):
+            result_embeddings = encoder.encode(
+                batch["pixel_values"],
+                device=resolved_device,
+            )
         if result_embeddings.ndim != 2:
             raise ValueError(
                 "Video encoder must return embeddings with shape [B, D], "
