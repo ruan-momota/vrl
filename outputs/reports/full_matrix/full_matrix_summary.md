@@ -1,6 +1,6 @@
 # Full Model x Dataset Matrix Summary
 
-This summary reads the 21 completed run reports from both branches
+This summary reads the 22 completed run reports from both branches
 and does not re-extract embeddings or fabricate cross-cell interpretation --
 that is left for a follow-up write-up. Perturbation strengths and protocol
 match across all cells (frozen linear probe + KNN baseline, plus 2-8
@@ -31,6 +31,7 @@ perturbation set).
 - `diving48-c32-train50-heldout15-dismo-motion-extractor-large-frozen-linear-probe`
 - `diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe`
 - `hmdb51-full-split1-dismo-motion-extractor-large-frozen-linear-probe`
+- `ssv2-c50-train100-heldout30-dismo-motion-extractor-large-frozen-linear-probe`
 
 Quality audit overall status across all cells: `True`.
 
@@ -59,6 +60,7 @@ Quality audit overall status across all cells: `True`.
 | DisMo | Diving48 | 1600 | 480 | 128 | 9.8% | 7.3% | True |
 | V-JEPA2 | Diving48 | 1600 | 480 | 1024 | 8.5% | 8.3% | True |
 | DisMo | HMDB51 | 3551 | 1524 | 128 | 47.3% | 37.2% | True |
+| DisMo | SSV2 | 5000 | 1500 | 128 | 39.3% | 30.9% | True |
 
 ## Fixed-mid Interventions
 
@@ -85,6 +87,7 @@ Quality audit overall status across all cells: `True`.
 | DisMo | Diving48 | 0.0458 | 0.0083 | 0.7094 | 0.0026 |
 | V-JEPA2 | Diving48 | 0.0229 | 0.0104 | 0.1209 | 0.0585 |
 | DisMo | HMDB51 | 0.1883 | 0.0295 | 0.3622 | 0.0177 |
+| DisMo | SSV2 | 0.2493 | 0.0113 | 0.4098 | 0.0217 |
 
 (Not every cell has both fixed-mid perturbations -- HMDB51/Kinetics cells
 have the full 8-perturbation matrix, matching this table; entries show
@@ -116,6 +119,7 @@ spatial-blur-mid) within each cell:
 
 | Model | Dataset | Motion flip rate (shuffle) | Appearance flip rate (blur) | Behavioral bias (motion - appearance) | Repr. log2(motion/appearance), mid |
 | --- | --- | --- | --- | --- | --- |
+| DisMo | SSV2 | 0.2847 | 0.0440 | 0.2407 | 4.2399 |
 | DisMo | HMDB51 | 0.2618 | 0.0689 | 0.1929 | 4.3570 |
 | SlowFast R50 8x8 | SSV2 | 0.2333 | 0.0647 | 0.1687 | 1.5428 |
 | V-JEPA2 | Kinetics | 0.2333 | 0.0860 | 0.1473 | -0.2105 |
@@ -151,7 +155,7 @@ are not fully apples-to-apples across rows):
 
 | Model | Datasets averaged | Mean behavioral bias | Mean repr. log2 ratio, mid |
 | --- | --- | --- | --- |
-| DisMo | Diving48, HMDB51, Kinetics | 0.1308 | 5.9496 |
+| DisMo | Diving48, HMDB51, Kinetics, SSV2 | 0.1583 | 5.5222 |
 | SlowFast R50 8x8 | Diving48, HMDB51, Kinetics, SSV2, UCF101 | 0.0910 | 2.5934 |
 | V-JEPA2 | Diving48, HMDB51, Kinetics | 0.0723 | 0.0461 |
 | VideoMAE | Diving48, HMDB51, Kinetics, SSV2, UCF101 | 0.0515 | 2.3726 |

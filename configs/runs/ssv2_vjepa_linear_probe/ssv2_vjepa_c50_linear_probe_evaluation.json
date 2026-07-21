@@ -2,100 +2,100 @@
   "run_id": "ssv2-c50-train100-heldout30-vjepa2-vitl-fpc64-256-frozen-linear-probe",
   "output_root": "outputs/runs",
   "train_original": "embeddings/train/original.pt",
-  "heldout_original": "embeddings/heldout/original.pt",
+  "heldout_original": "embeddings/validation/original.pt",
   "perturbations": [
     {
       "name": "temporal_shuffle",
-      "artifact": "embeddings/heldout/perturbations/temporal-shuffle-mid.pt",
+      "artifact": "embeddings/validation/perturbations/temporal-shuffle-mid.pt",
       "group": "motion",
       "role": "fixed_mid"
     },
     {
       "name": "freeze_tail",
-      "artifact": "embeddings/heldout/perturbations/freeze-tail-low.pt",
+      "artifact": "embeddings/validation/perturbations/freeze-tail-low.pt",
       "group": "motion",
       "role": "curve",
       "strength": "low"
     },
     {
       "name": "freeze_tail",
-      "artifact": "embeddings/heldout/perturbations/freeze-tail-mid.pt",
+      "artifact": "embeddings/validation/perturbations/freeze-tail-mid.pt",
       "group": "motion",
       "role": "curve",
       "strength": "mid"
     },
     {
       "name": "freeze_tail",
-      "artifact": "embeddings/heldout/perturbations/freeze-tail-high.pt",
+      "artifact": "embeddings/validation/perturbations/freeze-tail-high.pt",
       "group": "motion",
       "role": "curve",
       "strength": "high"
     },
     {
       "name": "color_transform",
-      "artifact": "embeddings/heldout/perturbations/color-low.pt",
+      "artifact": "embeddings/validation/perturbations/color-low.pt",
       "group": "appearance",
       "role": "curve",
       "strength": "low"
     },
     {
       "name": "color_transform",
-      "artifact": "embeddings/heldout/perturbations/color-mid.pt",
+      "artifact": "embeddings/validation/perturbations/color-mid.pt",
       "group": "appearance",
       "role": "curve",
       "strength": "mid"
     },
     {
       "name": "color_transform",
-      "artifact": "embeddings/heldout/perturbations/color-high.pt",
+      "artifact": "embeddings/validation/perturbations/color-high.pt",
       "group": "appearance",
       "role": "curve",
       "strength": "high"
     },
     {
       "name": "spatial_blur",
-      "artifact": "embeddings/heldout/perturbations/spatial-blur-mid.pt",
+      "artifact": "embeddings/validation/perturbations/spatial-blur-mid.pt",
       "group": "appearance",
       "role": "fixed_mid"
     },
     {
       "name": "rgb_quantization",
-      "artifact": "embeddings/heldout/perturbations/rgb-quantization-low.pt",
+      "artifact": "embeddings/validation/perturbations/rgb-quantization-low.pt",
       "group": "appearance",
       "role": "curve",
       "strength": "low"
     },
     {
       "name": "rgb_quantization",
-      "artifact": "embeddings/heldout/perturbations/rgb-quantization-mid.pt",
+      "artifact": "embeddings/validation/perturbations/rgb-quantization-mid.pt",
       "group": "appearance",
       "role": "curve",
       "strength": "mid"
     },
     {
       "name": "rgb_quantization",
-      "artifact": "embeddings/heldout/perturbations/rgb-quantization-high.pt",
+      "artifact": "embeddings/validation/perturbations/rgb-quantization-high.pt",
       "group": "appearance",
       "role": "curve",
       "strength": "high"
     },
     {
       "name": "solarization",
-      "artifact": "embeddings/heldout/perturbations/solarization-low.pt",
+      "artifact": "embeddings/validation/perturbations/solarization-low.pt",
       "group": "appearance",
       "role": "curve",
       "strength": "low"
     },
     {
       "name": "solarization",
-      "artifact": "embeddings/heldout/perturbations/solarization-mid.pt",
+      "artifact": "embeddings/validation/perturbations/solarization-mid.pt",
       "group": "appearance",
       "role": "curve",
       "strength": "mid"
     },
     {
       "name": "solarization",
-      "artifact": "embeddings/heldout/perturbations/solarization-high.pt",
+      "artifact": "embeddings/validation/perturbations/solarization-high.pt",
       "group": "appearance",
       "role": "curve",
       "strength": "high"

@@ -109,6 +109,8 @@ CELLS = (
          "diving48-c32-train50-heldout15-vjepa2-vitl-fpc64-256-frozen-linear-probe"),
     Cell("HMDB51", "action-recognition", "DisMo", "motion_extractor_large",
          "hmdb51-full-split1-dismo-motion-extractor-large-frozen-linear-probe"),
+    Cell("SSV2", "motion-oriented", "DisMo", "motion_extractor_large",
+         "ssv2-c50-train100-heldout30-dismo-motion-extractor-large-frozen-linear-probe"),
 )
 
 
@@ -144,6 +146,7 @@ CELL_COLORS = {
     "DisMo x Kinetics": "#db2777",
     "DisMo x Diving48": "#c026d3",
     "DisMo x HMDB51": "#9f1239",
+    "DisMo x SSV2": "#f472b6",
     "DINOv2 frame-mean x HMDB51": "#a855f7",
     "DINOv2 frame-mean x Kinetics": "#059669",
     "SlowFast R50 8x8 x Kinetics": "#ea580c",
