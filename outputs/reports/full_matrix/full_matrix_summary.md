@@ -51,7 +51,7 @@ Quality audit overall status across all cells: `True`.
 | DINOv2 frame-mean | Diving48 | 1600 | 480 | 768 | 9.6% | 9.0% | True |
 | V-JEPA2 | HMDB51 | 3551 | 1524 | 1024 | 62.8% | 46.9% | True |
 | VideoMAE | HMDB51 | 3551 | 1524 | 768 | 36.0% | 16.8% | True |
-| SlowFast R50 8x8 | HMDB51 | 3551 | 1524 | 9216 | 71.9% | 61.4% | True |
+| SlowFast R50 8x8 | HMDB51 | 3551 | 1524 | 9216 | 71.8% | 61.3% | True |
 | VideoMAE | Kinetics | 5000 | 1500 | 768 | 45.7% | 19.5% | True |
 | DisMo | Kinetics | 5000 | 1500 | 128 | 34.6% | 20.3% | True |
 | V-JEPA2 | Kinetics | 5000 | 1500 | 1024 | 71.8% | 52.1% | True |
@@ -79,7 +79,7 @@ Quality audit overall status across all cells: `True`.
 | DINOv2 frame-mean | Diving48 | 0.0000 | 0.0042 | 3.71e-08 | 0.0033 |
 | V-JEPA2 | HMDB51 | 0.1844 | 0.1404 | 0.0907 | 0.1470 |
 | VideoMAE | HMDB51 | 0.1496 | 0.1437 | 0.0143 | 0.0091 |
-| SlowFast R50 8x8 | HMDB51 | 0.1732 | 0.0433 | 0.2407 | 0.0666 |
+| SlowFast R50 8x8 | HMDB51 | 0.1726 | 0.0407 | 0.2405 | 0.0667 |
 | VideoMAE | Kinetics | 0.1480 | 0.0253 | 0.0181 | 0.0026 |
 | DisMo | Kinetics | 0.1073 | 0.0167 | 0.3773 | 0.0090 |
 | V-JEPA2 | Kinetics | 0.2020 | 0.0473 | 0.0854 | 0.0989 |
@@ -127,8 +127,8 @@ spatial-blur-mid) within each cell:
 | SlowFast R50 8x8 | SSV2 | 0.2333 | 0.0647 | 0.1687 | 1.5428 |
 | V-JEPA2 | Kinetics | 0.2333 | 0.0860 | 0.1473 | -0.2105 |
 | VideoMAE | Kinetics | 0.1913 | 0.0573 | 0.1340 | 2.7789 |
+| SlowFast R50 8x8 | HMDB51 | 0.2113 | 0.0814 | 0.1299 | 1.8508 |
 | DisMo | Kinetics | 0.1680 | 0.0393 | 0.1287 | 5.3939 |
-| SlowFast R50 8x8 | HMDB51 | 0.2113 | 0.0833 | 0.1280 | 1.8530 |
 | VideoMAE | SSV2 | 0.2027 | 0.0840 | 0.1187 | 1.8304 |
 | DisMo | Diving48 | 0.0833 | 0.0125 | 0.0708 | 8.0978 |
 | SlowFast R50 8x8 | Kinetics | 0.0893 | 0.0240 | 0.0653 | 2.8988 |
@@ -160,7 +160,7 @@ are not fully apples-to-apples across rows):
 | Model | Datasets averaged | Mean behavioral bias | Mean repr. log2 ratio, mid |
 | --- | --- | --- | --- |
 | DisMo | Diving48, HMDB51, Kinetics, SSV2 | 0.1583 | 5.5222 |
-| SlowFast R50 8x8 | Diving48, HMDB51, Kinetics, SSV2, UCF101 | 0.0910 | 2.5934 |
+| SlowFast R50 8x8 | Diving48, HMDB51, Kinetics, SSV2, UCF101 | 0.0914 | 2.5930 |
 | VideoMAE | Diving48, HMDB51, Kinetics, SSV2, UCF101 | 0.0515 | 2.3726 |
 | V-JEPA2 | Diving48, HMDB51, Kinetics, UCF101 | 0.0322 | -0.2286 |
 | DINOv2 frame-mean | Diving48, HMDB51, Kinetics, SSV2, UCF101 | -0.0219 | -10.0000 |

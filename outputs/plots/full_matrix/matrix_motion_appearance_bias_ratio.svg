@@ -40,7 +40,7 @@
 <text x="489.57" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 489.57 490.00)">SlowFast R50 8x8 x Kinetics</text>
 <rect x="535.83" y="202.36" width="39.65" height="47.64" fill="#2563eb" />
 <text x="555.65" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 555.65 490.00)">VideoMAE x Kinetics</text>
-<rect x="601.91" y="218.23" width="39.65" height="31.77" fill="#2563eb" />
+<rect x="601.91" y="218.27" width="39.65" height="31.73" fill="#2563eb" />
 <text x="621.74" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 621.74 490.00)">SlowFast R50 8x8 x HMDB51</text>
 <rect x="668.00" y="218.62" width="39.65" height="31.38" fill="#2563eb" />
 <text x="687.83" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 687.83 490.00)">VideoMAE x SSV2</text>

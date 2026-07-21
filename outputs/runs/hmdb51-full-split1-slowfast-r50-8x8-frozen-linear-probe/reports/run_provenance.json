@@ -1,70 +1,112 @@
 {
   "artifact_commands": {
     "embeddings/heldout/original.pt": [
-      "/workspace/vrl/.venv/bin/python",
+      "/home/s/selberg/vrl/.venv/bin/python",
       "-m",
       "src.pipeline.extract",
       "--run-config",
       "configs/runs/hmdb51_slowfast_linear_probe/hmdb51_slowfast_full_split1_heldout_original.json"
     ],
     "embeddings/heldout/perturbations/color-high.pt": [
-      "/workspace/vrl/.venv/bin/python",
+      "/home/s/selberg/vrl/.venv/bin/python",
       "-m",
       "src.pipeline.extract",
       "--run-config",
       "configs/runs/hmdb51_slowfast_linear_probe/hmdb51_slowfast_full_split1_heldout_color_high.json"
     ],
     "embeddings/heldout/perturbations/color-low.pt": [
-      "/workspace/vrl/.venv/bin/python",
+      "/home/s/selberg/vrl/.venv/bin/python",
       "-m",
       "src.pipeline.extract",
       "--run-config",
       "configs/runs/hmdb51_slowfast_linear_probe/hmdb51_slowfast_full_split1_heldout_color_low.json"
     ],
     "embeddings/heldout/perturbations/color-mid.pt": [
-      "/workspace/vrl/.venv/bin/python",
+      "/home/s/selberg/vrl/.venv/bin/python",
       "-m",
       "src.pipeline.extract",
       "--run-config",
       "configs/runs/hmdb51_slowfast_linear_probe/hmdb51_slowfast_full_split1_heldout_color_mid.json"
     ],
     "embeddings/heldout/perturbations/freeze-tail-high.pt": [
-      "/workspace/vrl/.venv/bin/python",
+      "/home/s/selberg/vrl/.venv/bin/python",
       "-m",
       "src.pipeline.extract",
       "--run-config",
       "configs/runs/hmdb51_slowfast_linear_probe/hmdb51_slowfast_full_split1_heldout_freeze_tail_high.json"
     ],
     "embeddings/heldout/perturbations/freeze-tail-low.pt": [
-      "/workspace/vrl/.venv/bin/python",
+      "/home/s/selberg/vrl/.venv/bin/python",
       "-m",
       "src.pipeline.extract",
       "--run-config",
       "configs/runs/hmdb51_slowfast_linear_probe/hmdb51_slowfast_full_split1_heldout_freeze_tail_low.json"
     ],
     "embeddings/heldout/perturbations/freeze-tail-mid.pt": [
-      "/workspace/vrl/.venv/bin/python",
+      "/home/s/selberg/vrl/.venv/bin/python",
       "-m",
       "src.pipeline.extract",
       "--run-config",
       "configs/runs/hmdb51_slowfast_linear_probe/hmdb51_slowfast_full_split1_heldout_freeze_tail_mid.json"
     ],
+    "embeddings/heldout/perturbations/rgb-quantization-high.pt": [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_slowfast_linear_probe/hmdb51_slowfast_full_split1_heldout_rgb_quantization_high.json"
+    ],
+    "embeddings/heldout/perturbations/rgb-quantization-low.pt": [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_slowfast_linear_probe/hmdb51_slowfast_full_split1_heldout_rgb_quantization_low.json"
+    ],
+    "embeddings/heldout/perturbations/rgb-quantization-mid.pt": [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_slowfast_linear_probe/hmdb51_slowfast_full_split1_heldout_rgb_quantization_mid.json"
+    ],
+    "embeddings/heldout/perturbations/solarization-high.pt": [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_slowfast_linear_probe/hmdb51_slowfast_full_split1_heldout_solarization_high.json"
+    ],
+    "embeddings/heldout/perturbations/solarization-low.pt": [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_slowfast_linear_probe/hmdb51_slowfast_full_split1_heldout_solarization_low.json"
+    ],
+    "embeddings/heldout/perturbations/solarization-mid.pt": [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/hmdb51_slowfast_linear_probe/hmdb51_slowfast_full_split1_heldout_solarization_mid.json"
+    ],
     "embeddings/heldout/perturbations/spatial-blur-mid.pt": [
-      "/workspace/vrl/.venv/bin/python",
+      "/home/s/selberg/vrl/.venv/bin/python",
       "-m",
       "src.pipeline.extract",
       "--run-config",
       "configs/runs/hmdb51_slowfast_linear_probe/hmdb51_slowfast_full_split1_heldout_spatial_blur_mid.json"
     ],
     "embeddings/heldout/perturbations/temporal-shuffle-mid.pt": [
-      "/workspace/vrl/.venv/bin/python",
+      "/home/s/selberg/vrl/.venv/bin/python",
       "-m",
       "src.pipeline.extract",
       "--run-config",
       "configs/runs/hmdb51_slowfast_linear_probe/hmdb51_slowfast_full_split1_heldout_temporal_shuffle_mid.json"
     ],
     "embeddings/train/original.pt": [
-      "/workspace/vrl/.venv/bin/python",
+      "/home/s/selberg/vrl/.venv/bin/python",
       "-m",
       "src.pipeline.extract",
       "--run-config",
@@ -102,10 +144,10 @@
         "model_type": "slowfast"
       },
       "path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/color-high.pt",
-      "sha256": "a960ae42f122936454b1271d0ef25d62b38d3712678cd0ccf196e52ab6349c72",
-      "size_bytes": 57878185,
+      "sha256": "66a33e4e6df6e8d069746d1c0b9860b068bf1cb3362fef0aa30e9eea3a32d655",
+      "size_bytes": 57912508,
       "summary": {
-        "average_batch_seconds": 0.4293069193890582,
+        "average_batch_seconds": 0.7362769415330249,
         "batch_count": 191,
         "dataset_size": 1524,
         "embeddings_dtype": "torch.float32",
@@ -119,7 +161,7 @@
         ],
         "output_path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/color-high.pt",
         "successful_samples": 1524,
-        "total_seconds": 82.23719488456845
+        "total_seconds": 140.8809441550111
       }
     },
     "color-low": {
@@ -152,10 +194,10 @@
         "model_type": "slowfast"
       },
       "path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/color-low.pt",
-      "sha256": "c219e1e065301d2436f38f465093b88732c25f8da022f6d68fac53bb49b7ae90",
-      "size_bytes": 57878178,
+      "sha256": "ec9b9d2bbf0261d4c7553be4c0f0e978ef70435c79f9afc4ebcfa8cdfa3c9481",
+      "size_bytes": 57912499,
       "summary": {
-        "average_batch_seconds": 0.43240098070099714,
+        "average_batch_seconds": 0.7357441486331515,
         "batch_count": 191,
         "dataset_size": 1524,
         "embeddings_dtype": "torch.float32",
@@ -169,7 +211,7 @@
         ],
         "output_path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/color-low.pt",
         "successful_samples": 1524,
-        "total_seconds": 82.87495676800609
+        "total_seconds": 140.77333226401242
       }
     },
     "color-mid": {
@@ -202,10 +244,10 @@
         "model_type": "slowfast"
       },
       "path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/color-mid.pt",
-      "sha256": "8348dd94ea00f663a9a680dd89d440821b3717547c0f7c3a4456ae417a60b9a8",
-      "size_bytes": 57878178,
+      "sha256": "aee3300b0cf9c270050aa57c76f46808e10428d511a0361753eec904732e123d",
+      "size_bytes": 57912499,
       "summary": {
-        "average_batch_seconds": 0.4307470340574287,
+        "average_batch_seconds": 0.7349721246058577,
         "batch_count": 191,
         "dataset_size": 1524,
         "embeddings_dtype": "torch.float32",
@@ -219,7 +261,7 @@
         ],
         "output_path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/color-mid.pt",
         "successful_samples": 1524,
-        "total_seconds": 82.47141392156482
+        "total_seconds": 140.6941159699927
       }
     },
     "freeze-tail-high": {
@@ -252,10 +294,10 @@
         "model_type": "slowfast"
       },
       "path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-high.pt",
-      "sha256": "3f50478a50483c36391a7e5b805bd25e2bbb5dc484a443ee21628dcb6f366c6d",
-      "size_bytes": 57766355,
+      "sha256": "f582348f2997c3326f98347641295bb6d51409f979926fc4ea8756322fe45258",
+      "size_bytes": 57800754,
       "summary": {
-        "average_batch_seconds": 0.3692275376610107,
+        "average_batch_seconds": 0.6919503503251109,
         "batch_count": 191,
         "dataset_size": 1524,
         "embeddings_dtype": "torch.float32",
@@ -269,7 +311,7 @@
         ],
         "output_path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-high.pt",
         "successful_samples": 1524,
-        "total_seconds": 70.75399027392268
+        "total_seconds": 132.2485798339767
       }
     },
     "freeze-tail-low": {
@@ -302,10 +344,10 @@
         "model_type": "slowfast"
       },
       "path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-low.pt",
-      "sha256": "3a341ed9bdf20761e6062b23652f4dddb6acd5b2ed1667e44832a82f47f58c71",
-      "size_bytes": 57766348,
+      "sha256": "3808217c082f554ac227ca3f26e3110499d63bc515d5c03078de643c9d41b5ee",
+      "size_bytes": 57800681,
       "summary": {
-        "average_batch_seconds": 0.36555365077098,
+        "average_batch_seconds": 0.6925199535495238,
         "batch_count": 191,
         "dataset_size": 1524,
         "embeddings_dtype": "torch.float32",
@@ -319,7 +361,7 @@
         ],
         "output_path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-low.pt",
         "successful_samples": 1524,
-        "total_seconds": 70.03160626068711
+        "total_seconds": 132.38245449299575
       }
     },
     "freeze-tail-mid": {
@@ -352,10 +394,10 @@
         "model_type": "slowfast"
       },
       "path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-mid.pt",
-      "sha256": "201536a8072890176400fe7b6abf8622a16ccc7ae65a4be11bcc3c4a4f85dfd3",
-      "size_bytes": 57766348,
+      "sha256": "c3e2594718b298f71e94ad4a73861557c16377edd7c1e13aa3a0926761dcb781",
+      "size_bytes": 57800681,
       "summary": {
-        "average_batch_seconds": 0.3704461819292363,
+        "average_batch_seconds": 0.6925203353623709,
         "batch_count": 191,
         "dataset_size": 1524,
         "embeddings_dtype": "torch.float32",
@@ -369,7 +411,7 @@
         ],
         "output_path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-mid.pt",
         "successful_samples": 1524,
-        "total_seconds": 70.95314004644752
+        "total_seconds": 132.43038549998892
       }
     },
     "heldout_original": {
@@ -402,10 +444,10 @@
         "model_type": "slowfast"
       },
       "path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/original.pt",
-      "sha256": "3c03e02088dd921cc20e325926b9dac5956217c846a100e7841ea70fb3286227",
-      "size_bytes": 57579419,
+      "sha256": "73868201ef24bad0ee52c2945c1f9436d5272a5cf96c6abe18f143ddc454a507",
+      "size_bytes": 57579818,
       "summary": {
-        "average_batch_seconds": 0.3676427320738113,
+        "average_batch_seconds": 0.691117379790311,
         "batch_count": 191,
         "dataset_size": 1524,
         "embeddings_dtype": "torch.float32",
@@ -419,7 +461,307 @@
         ],
         "output_path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/original.pt",
         "successful_samples": 1524,
-        "total_seconds": 70.47929905727506
+        "total_seconds": 132.12412559299264
+      }
+    },
+    "rgb-quantization-high": {
+      "model_metadata": {
+        "checkpoint": "facebookresearch/pytorchvideo:slowfast_r50",
+        "device": "cuda",
+        "encoder_name": "slowfast",
+        "input_spec": {
+          "embedding_source": "last_linear_input",
+          "image_size": 256,
+          "input_layout": "[B, C, T, H, W]",
+          "mean": [
+            0.45,
+            0.45,
+            0.45
+          ],
+          "num_frames": 32,
+          "pathways": {
+            "alpha": 4,
+            "fast": "[B, C, T, H, W]",
+            "slow": "[B, C, T/alpha, H, W]"
+          },
+          "std": [
+            0.225,
+            0.225,
+            0.225
+          ]
+        },
+        "model_source": "pytorchvideo.models.hub:slowfast_r50",
+        "model_type": "slowfast"
+      },
+      "path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-high.pt",
+      "sha256": "1d04eeab5c4176d05ee43f571bbae9a9a5983051c8f7cb673eb5462b03c92cbb",
+      "size_bytes": 57838111,
+      "summary": {
+        "average_batch_seconds": 0.7072839432465173,
+        "batch_count": 191,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          9216
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-high.pt",
+        "successful_samples": 1524,
+        "total_seconds": 135.21415014800732
+      }
+    },
+    "rgb-quantization-low": {
+      "model_metadata": {
+        "checkpoint": "facebookresearch/pytorchvideo:slowfast_r50",
+        "device": "cuda",
+        "encoder_name": "slowfast",
+        "input_spec": {
+          "embedding_source": "last_linear_input",
+          "image_size": 256,
+          "input_layout": "[B, C, T, H, W]",
+          "mean": [
+            0.45,
+            0.45,
+            0.45
+          ],
+          "num_frames": 32,
+          "pathways": {
+            "alpha": 4,
+            "fast": "[B, C, T, H, W]",
+            "slow": "[B, C, T/alpha, H, W]"
+          },
+          "std": [
+            0.225,
+            0.225,
+            0.225
+          ]
+        },
+        "model_source": "pytorchvideo.models.hub:slowfast_r50",
+        "model_type": "slowfast"
+      },
+      "path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-low.pt",
+      "sha256": "27f9bb782700f2283a02ab340694b09685e688d874d9a9186148431491681692",
+      "size_bytes": 57838102,
+      "summary": {
+        "average_batch_seconds": 0.7081251315163334,
+        "batch_count": 191,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          9216
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-low.pt",
+        "successful_samples": 1524,
+        "total_seconds": 135.38514601398492
+      }
+    },
+    "rgb-quantization-mid": {
+      "model_metadata": {
+        "checkpoint": "facebookresearch/pytorchvideo:slowfast_r50",
+        "device": "cuda",
+        "encoder_name": "slowfast",
+        "input_spec": {
+          "embedding_source": "last_linear_input",
+          "image_size": 256,
+          "input_layout": "[B, C, T, H, W]",
+          "mean": [
+            0.45,
+            0.45,
+            0.45
+          ],
+          "num_frames": 32,
+          "pathways": {
+            "alpha": 4,
+            "fast": "[B, C, T, H, W]",
+            "slow": "[B, C, T/alpha, H, W]"
+          },
+          "std": [
+            0.225,
+            0.225,
+            0.225
+          ]
+        },
+        "model_source": "pytorchvideo.models.hub:slowfast_r50",
+        "model_type": "slowfast"
+      },
+      "path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-mid.pt",
+      "sha256": "0bc01f983973a83ccf5727b7bb984380ff140c83beb949c3e684e8e4e3740301",
+      "size_bytes": 57838102,
+      "summary": {
+        "average_batch_seconds": 0.7073205009690079,
+        "batch_count": 191,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          9216
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-mid.pt",
+        "successful_samples": 1524,
+        "total_seconds": 135.274030955974
+      }
+    },
+    "solarization-high": {
+      "model_metadata": {
+        "checkpoint": "facebookresearch/pytorchvideo:slowfast_r50",
+        "device": "cuda",
+        "encoder_name": "slowfast",
+        "input_spec": {
+          "embedding_source": "last_linear_input",
+          "image_size": 256,
+          "input_layout": "[B, C, T, H, W]",
+          "mean": [
+            0.45,
+            0.45,
+            0.45
+          ],
+          "num_frames": 32,
+          "pathways": {
+            "alpha": 4,
+            "fast": "[B, C, T, H, W]",
+            "slow": "[B, C, T/alpha, H, W]"
+          },
+          "std": [
+            0.225,
+            0.225,
+            0.225
+          ]
+        },
+        "model_source": "pytorchvideo.models.hub:slowfast_r50",
+        "model_type": "slowfast"
+      },
+      "path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/solarization-high.pt",
+      "sha256": "5c7d60a1e3ca14b828da3f406bd7f15787400669c362fa41d47d2169702390a0",
+      "size_bytes": 57806459,
+      "summary": {
+        "average_batch_seconds": 0.7062506987173865,
+        "batch_count": 191,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          9216
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/solarization-high.pt",
+        "successful_samples": 1524,
+        "total_seconds": 135.05720138998004
+      }
+    },
+    "solarization-low": {
+      "model_metadata": {
+        "checkpoint": "facebookresearch/pytorchvideo:slowfast_r50",
+        "device": "cuda",
+        "encoder_name": "slowfast",
+        "input_spec": {
+          "embedding_source": "last_linear_input",
+          "image_size": 256,
+          "input_layout": "[B, C, T, H, W]",
+          "mean": [
+            0.45,
+            0.45,
+            0.45
+          ],
+          "num_frames": 32,
+          "pathways": {
+            "alpha": 4,
+            "fast": "[B, C, T, H, W]",
+            "slow": "[B, C, T/alpha, H, W]"
+          },
+          "std": [
+            0.225,
+            0.225,
+            0.225
+          ]
+        },
+        "model_source": "pytorchvideo.models.hub:slowfast_r50",
+        "model_type": "slowfast"
+      },
+      "path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/solarization-low.pt",
+      "sha256": "f562cab12debc42cce0034944ac975cba65f53e5bf740c46e9603ca3ca9e2bc9",
+      "size_bytes": 57806450,
+      "summary": {
+        "average_batch_seconds": 0.7070418620888627,
+        "batch_count": 191,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          9216
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/solarization-low.pt",
+        "successful_samples": 1524,
+        "total_seconds": 135.22862847099896
+      }
+    },
+    "solarization-mid": {
+      "model_metadata": {
+        "checkpoint": "facebookresearch/pytorchvideo:slowfast_r50",
+        "device": "cuda",
+        "encoder_name": "slowfast",
+        "input_spec": {
+          "embedding_source": "last_linear_input",
+          "image_size": 256,
+          "input_layout": "[B, C, T, H, W]",
+          "mean": [
+            0.45,
+            0.45,
+            0.45
+          ],
+          "num_frames": 32,
+          "pathways": {
+            "alpha": 4,
+            "fast": "[B, C, T, H, W]",
+            "slow": "[B, C, T/alpha, H, W]"
+          },
+          "std": [
+            0.225,
+            0.225,
+            0.225
+          ]
+        },
+        "model_source": "pytorchvideo.models.hub:slowfast_r50",
+        "model_type": "slowfast"
+      },
+      "path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/solarization-mid.pt",
+      "sha256": "80ccf356ed695365957ec6ea0ee7991a5a5ef8277308cbfecee0613fdf65ddc9",
+      "size_bytes": 57806450,
+      "summary": {
+        "average_batch_seconds": 0.7058967497533173,
+        "batch_count": 191,
+        "dataset_size": 1524,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1524,
+          9216
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1524
+        ],
+        "output_path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/solarization-mid.pt",
+        "successful_samples": 1524,
+        "total_seconds": 134.94089175501722
       }
     },
     "spatial-blur-mid": {
@@ -452,10 +794,10 @@
         "model_type": "slowfast"
       },
       "path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/spatial-blur-mid.pt",
-      "sha256": "a5fb1da08038c8e7d9b63ba94f4d632a43e2c3e1fc6d39dcd6a87ddfbaf323ac",
-      "size_bytes": 57798035,
+      "sha256": "f4b9ade61eeeb38217517d0170e463d936153424c2c04fec5045f9d97b96a5a7",
+      "size_bytes": 57832370,
       "summary": {
-        "average_batch_seconds": 0.47483288083244996,
+        "average_batch_seconds": 0.7533475094621438,
         "batch_count": 191,
         "dataset_size": 1524,
         "embeddings_dtype": "torch.float32",
@@ -469,7 +811,7 @@
         ],
         "output_path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/spatial-blur-mid.pt",
         "successful_samples": 1524,
-        "total_seconds": 90.99568296596408
+        "total_seconds": 144.33474346998264
       }
     },
     "temporal-shuffle-mid": {
@@ -502,10 +844,10 @@
         "model_type": "slowfast"
       },
       "path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/temporal-shuffle-mid.pt",
-      "sha256": "6bb0c4cf603ab070802f6a2e289af7d7197263ee2e3a9d112cfba16719335593",
-      "size_bytes": 57873647,
+      "sha256": "b56d802f147a39beee44cf5a91ea0db0087020d03aea6aff29c439b233c15409",
+      "size_bytes": 57907990,
       "summary": {
-        "average_batch_seconds": 0.36938414950879456,
+        "average_batch_seconds": 0.6926119565722686,
         "batch_count": 191,
         "dataset_size": 1524,
         "embeddings_dtype": "torch.float32",
@@ -519,7 +861,7 @@
         ],
         "output_path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/heldout/perturbations/temporal-shuffle-mid.pt",
         "successful_samples": 1524,
-        "total_seconds": 70.82299388572574
+        "total_seconds": 132.41559834798682
       }
     },
     "train_original": {
@@ -552,10 +894,10 @@
         "model_type": "slowfast"
       },
       "path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/train/original.pt",
-      "sha256": "18addeb8867c8a84a93b7ee0230cf0f3e0ce68bbc93882c03e94721bf43cdd70",
-      "size_bytes": 134007451,
+      "sha256": "261b3d6bcdd3035b3507e03975631dbdf05560af01542ccfe31a11458cc5212b",
+      "size_bytes": 134007850,
       "summary": {
-        "average_batch_seconds": 0.3579160800908466,
+        "average_batch_seconds": 0.6732319009328798,
         "batch_count": 444,
         "dataset_size": 3551,
         "embeddings_dtype": "torch.float32",
@@ -569,15 +911,15 @@
         ],
         "output_path": "outputs/runs/hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe/embeddings/train/original.pt",
         "successful_samples": 3551,
-        "total_seconds": 159.55495774000883
+        "total_seconds": 299.34420688499813
       }
     }
   },
   "code_commit": null,
-  "created_at_utc": "2026-07-14T18:47:10.801455+00:00",
+  "created_at_utc": "2026-07-21T12:38:27.766286+00:00",
   "evaluation_commands": [
     [
-      "/workspace/vrl/.venv/bin/python",
+      "/home/s/selberg/vrl/.venv/bin/python",
       "-m",
       "src.pipeline.evaluate",
       "--config",

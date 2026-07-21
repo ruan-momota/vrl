@@ -68,10 +68,10 @@
 <circle cx="90.00" cy="328.05" r="3.8" fill="#2563eb" />
 <circle cx="510.00" cy="308.86" r="3.8" fill="#2563eb" />
 <circle cx="930.00" cy="263.34" r="3.8" fill="#2563eb" />
-<polyline points="90.00,317.34 510.00,272.26 930.00,185.69" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
-<circle cx="90.00" cy="317.34" r="3.8" fill="#dc2626" />
-<circle cx="510.00" cy="272.26" r="3.8" fill="#dc2626" />
-<circle cx="930.00" cy="185.69" r="3.8" fill="#dc2626" />
+<polyline points="90.00,316.00 510.00,271.82 930.00,184.35" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
+<circle cx="90.00" cy="316.00" r="3.8" fill="#dc2626" />
+<circle cx="510.00" cy="271.82" r="3.8" fill="#dc2626" />
+<circle cx="930.00" cy="184.35" r="3.8" fill="#dc2626" />
 <polyline points="90.00,342.44 510.00,335.18 930.00,316.59" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="5 3" />
 <circle cx="90.00" cy="342.44" r="3.8" fill="#2563eb" />
 <circle cx="510.00" cy="335.18" r="3.8" fill="#2563eb" />
@@ -230,10 +230,10 @@
 <circle cx="90.00" cy="731.73" r="3.8" fill="#2563eb" />
 <circle cx="510.00" cy="708.60" r="3.8" fill="#2563eb" />
 <circle cx="930.00" cy="609.15" r="3.8" fill="#2563eb" />
-<polyline points="90.00,731.73 510.00,724.79 930.00,724.79" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
-<circle cx="90.00" cy="731.73" r="3.8" fill="#dc2626" />
-<circle cx="510.00" cy="724.79" r="3.8" fill="#dc2626" />
-<circle cx="930.00" cy="724.79" r="3.8" fill="#dc2626" />
+<polyline points="90.00,736.36 510.00,736.36 930.00,729.42" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
+<circle cx="90.00" cy="736.36" r="3.8" fill="#dc2626" />
+<circle cx="510.00" cy="736.36" r="3.8" fill="#dc2626" />
+<circle cx="930.00" cy="729.42" r="3.8" fill="#dc2626" />
 <polyline points="90.00,738.71 510.00,731.66 930.00,698.76" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="5 3" />
 <circle cx="90.00" cy="738.71" r="3.8" fill="#2563eb" />
 <circle cx="510.00" cy="731.66" r="3.8" fill="#2563eb" />
@@ -384,6 +384,10 @@
 <circle cx="90.00" cy="1162.81" r="3.8" fill="#7c3aed" />
 <circle cx="510.00" cy="1155.64" r="3.8" fill="#7c3aed" />
 <circle cx="930.00" cy="1145.28" r="3.8" fill="#7c3aed" />
+<polyline points="90.00,1150.77 510.00,1128.18 930.00,1058.17" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
+<circle cx="90.00" cy="1150.77" r="3.8" fill="#dc2626" />
+<circle cx="510.00" cy="1128.18" r="3.8" fill="#dc2626" />
+<circle cx="930.00" cy="1058.17" r="3.8" fill="#dc2626" />
 <polyline points="90.00,1157.79 510.00,1141.23 930.00,1104.34" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
 <circle cx="90.00" cy="1157.79" r="3.8" fill="#7c3aed" />
 <circle cx="510.00" cy="1141.23" r="3.8" fill="#7c3aed" />
@@ -437,6 +441,8 @@
 <text x="979.00" y="1049.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x UCF101</text>
 <line x1="955" y1="1065" x2="973" y2="1065" stroke="#7c3aed" stroke-width="3" stroke-dasharray="1 4" />
 <text x="979.00" y="1069.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x Diving48</text>
+<line x1="955" y1="1125" x2="973" y2="1125" stroke="#dc2626" stroke-width="3" stroke-dasharray="9 3 2 3" />
+<text x="979.00" y="1129.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x HMDB51</text>
 <line x1="955" y1="1205" x2="973" y2="1205" stroke="#7c3aed" stroke-width="3" stroke-dasharray="9 3 2 3" />
 <text x="979.00" y="1209.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x HMDB51</text>
 <line x1="955" y1="1225" x2="973" y2="1225" stroke="#7c3aed" stroke-width="3" stroke-dasharray="5 3" />
@@ -510,6 +516,10 @@
 <circle cx="90.00" cy="1570.59" r="3.8" fill="#7c3aed" />
 <circle cx="510.00" cy="1570.59" r="3.8" fill="#7c3aed" />
 <circle cx="930.00" cy="1550.14" r="3.8" fill="#7c3aed" />
+<polyline points="90.00,1522.95 510.00,1514.67 930.00,1423.86" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
+<circle cx="90.00" cy="1522.95" r="3.8" fill="#dc2626" />
+<circle cx="510.00" cy="1514.67" r="3.8" fill="#dc2626" />
+<circle cx="930.00" cy="1423.86" r="3.8" fill="#dc2626" />
 <polyline points="90.00,1556.70 510.00,1553.63 930.00,1497.18" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linejoin="round" stroke-dasharray="9 3 2 3" />
 <circle cx="90.00" cy="1556.70" r="3.8" fill="#7c3aed" />
 <circle cx="510.00" cy="1553.63" r="3.8" fill="#7c3aed" />
@@ -563,6 +573,8 @@
 <text x="979.00" y="1459.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x UCF101</text>
 <line x1="955" y1="1475" x2="973" y2="1475" stroke="#7c3aed" stroke-width="3" stroke-dasharray="1 4" />
 <text x="979.00" y="1479.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x Diving48</text>
+<line x1="955" y1="1535" x2="973" y2="1535" stroke="#dc2626" stroke-width="3" stroke-dasharray="9 3 2 3" />
+<text x="979.00" y="1539.00" font-size="10" font-weight="400" text-anchor="start">SlowFast R50 8x8 x HMDB51</text>
 <line x1="955" y1="1615" x2="973" y2="1615" stroke="#7c3aed" stroke-width="3" stroke-dasharray="9 3 2 3" />
 <text x="979.00" y="1619.00" font-size="10" font-weight="400" text-anchor="start">DINOv2 frame-mean x HMDB51</text>
 <line x1="955" y1="1635" x2="973" y2="1635" stroke="#7c3aed" stroke-width="3" stroke-dasharray="5 3" />
