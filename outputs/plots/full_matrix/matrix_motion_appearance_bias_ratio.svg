@@ -38,7 +38,7 @@
 <text x="423.48" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 423.48 490.00)">DisMo x SSV2</text>
 <rect x="469.74" y="200.31" width="39.65" height="49.69" fill="#2563eb" />
 <text x="489.57" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 489.57 490.00)">SlowFast R50 8x8 x Kinetics</text>
-<rect x="535.83" y="202.36" width="39.65" height="47.64" fill="#2563eb" />
+<rect x="535.83" y="202.24" width="39.65" height="47.76" fill="#2563eb" />
 <text x="555.65" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 555.65 490.00)">VideoMAE x Kinetics</text>
 <rect x="601.91" y="218.27" width="39.65" height="31.73" fill="#2563eb" />
 <text x="621.74" y="490.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 621.74 490.00)">SlowFast R50 8x8 x HMDB51</text>

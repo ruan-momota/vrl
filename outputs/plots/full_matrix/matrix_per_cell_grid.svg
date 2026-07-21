@@ -324,14 +324,20 @@
 <text x="120.00" y="781.00" font-size="12" font-weight="700" text-anchor="end">Kinetics</text>
 <rect x="134" y="710" width="182" height="142" fill="none" stroke="#e5e7eb" stroke-width="1" />
 <text x="225.00" y="722.00" font-size="9" font-weight="400" text-anchor="middle">LP orig. 46%</text>
-<rect x="134.00" y="812.33" width="11.14" height="35.67" fill="#2563eb" />
-<rect x="147.14" y="845.76" width="11.14" height="2.24" fill="#2563eb" />
-<rect x="160.29" y="839.42" width="11.14" height="8.58" fill="#2563eb" />
-<rect x="173.43" y="832.46" width="11.14" height="15.54" fill="#2563eb" />
-<rect x="186.57" y="847.63" width="11.14" height="0.60" fill="#ea580c" />
-<rect x="199.71" y="845.76" width="11.14" height="2.24" fill="#ea580c" />
-<rect x="212.86" y="839.80" width="11.14" height="8.20" fill="#ea580c" />
-<rect x="226.00" y="837.31" width="11.14" height="10.69" fill="#ea580c" />
+<rect x="134.00" y="811.33" width="11.14" height="36.67" fill="#2563eb" />
+<rect x="147.14" y="845.51" width="11.14" height="2.49" fill="#2563eb" />
+<rect x="160.29" y="838.55" width="11.14" height="9.45" fill="#2563eb" />
+<rect x="173.43" y="830.35" width="11.14" height="17.65" fill="#2563eb" />
+<rect x="186.57" y="847.75" width="11.14" height="0.60" fill="#ea580c" />
+<rect x="199.71" y="845.27" width="11.14" height="2.73" fill="#ea580c" />
+<rect x="212.86" y="839.30" width="11.14" height="8.70" fill="#ea580c" />
+<rect x="226.00" y="835.69" width="11.14" height="12.31" fill="#ea580c" />
+<rect x="239.14" y="823.76" width="11.14" height="24.24" fill="#ea580c" />
+<rect x="252.29" y="804.62" width="11.14" height="43.38" fill="#ea580c" />
+<rect x="265.43" y="790.82" width="11.14" height="57.18" fill="#ea580c" />
+<rect x="278.57" y="818.29" width="11.14" height="29.71" fill="#ea580c" />
+<rect x="291.71" y="812.33" width="11.14" height="35.67" fill="#ea580c" />
+<rect x="304.86" y="794.68" width="11.14" height="53.32" fill="#ea580c" />
 <line x1="134" y1="848.00" x2="316" y2="848.00" stroke="#9ca3af" stroke-width="1" />
 <rect x="324" y="710" width="182" height="142" fill="none" stroke="#e5e7eb" stroke-width="1" />
 <text x="415.00" y="722.00" font-size="9" font-weight="400" text-anchor="middle">LP orig. 92%</text>

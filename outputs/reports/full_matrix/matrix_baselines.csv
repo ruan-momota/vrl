@@ -11,7 +11,7 @@ Diving48,fine-grained motion / pose contrast,DINOv2 frame-mean,facebook/dinov2-b
 HMDB51,action-recognition,V-JEPA2,facebook/vjepa2-vitl-fpc64-256,hmdb51-full-split1-vjepa2-vitl-fpc64-256-frozen-linear-probe,3551,1524,1024,0.6279527544975281,0.468503937007874,True,0
 HMDB51,action-recognition,VideoMAE,MCG-NJU/videomae-base,hmdb51-full-split1-videomae-base-frozen-linear-probe,3551,1524,768,0.36351704597473145,0.1679790026246719,True,0
 HMDB51,action-recognition,SlowFast R50 8x8,facebookresearch/pytorchvideo:slowfast_r50,hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe,3551,1524,9216,0.7178477644920349,0.6128608923884514,True,0
-Kinetics,large-scale web-video,VideoMAE,MCG-NJU/videomae-base,kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe,5000,1500,768,0.4573333263397217,0.19466666666666665,True,0
+Kinetics,large-scale web-video,VideoMAE,MCG-NJU/videomae-base,kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe,5000,1500,768,0.4633333384990692,0.19466666666666665,True,0
 Kinetics,large-scale web-video,DisMo,motion_extractor_large,kinetics-c50-train100-heldout30-dismo-motion-extractor-large-frozen-linear-probe,5000,1500,128,0.34599998593330383,0.20266666666666666,True,0
 Kinetics,large-scale web-video,V-JEPA2,facebook/vjepa2-vitl-fpc64-256,kinetics-c50-train100-heldout30-vjepa2-vitl-fpc64-256-frozen-linear-probe,5000,1500,1024,0.7179999947547913,0.5213333333333333,True,0
 HMDB51,action-recognition,DINOv2 frame-mean,facebook/dinov2-base,hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe,3551,1524,768,0.6325459480285645,0.5295275590551181,True,0

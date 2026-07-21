@@ -195,6 +195,12 @@ Kinetics,VideoMAE,kinetics-c50-train100-heldout30-videomae-base-frozen-linear-pr
 Kinetics,VideoMAE,kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe,color-high,1500,1500,0,True
 Kinetics,VideoMAE,kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe,spatial-blur-mid,1500,1500,0,True
 Kinetics,VideoMAE,kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe,temporal-shuffle-mid,1500,1500,0,True
+Kinetics,VideoMAE,kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe,rgb-quantization-low,1500,1500,0,True
+Kinetics,VideoMAE,kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe,rgb-quantization-mid,1500,1500,0,True
+Kinetics,VideoMAE,kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe,rgb-quantization-high,1500,1500,0,True
+Kinetics,VideoMAE,kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe,solarization-low,1500,1500,0,True
+Kinetics,VideoMAE,kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe,solarization-mid,1500,1500,0,True
+Kinetics,VideoMAE,kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe,solarization-high,1500,1500,0,True
 Kinetics,DisMo,kinetics-c50-train100-heldout30-dismo-motion-extractor-large-frozen-linear-probe,train_original,5000,5000,0,True
 Kinetics,DisMo,kinetics-c50-train100-heldout30-dismo-motion-extractor-large-frozen-linear-probe,heldout_original,1500,1500,0,True
 Kinetics,DisMo,kinetics-c50-train100-heldout30-dismo-motion-extractor-large-frozen-linear-probe,freeze-tail-low,1500,1500,0,True

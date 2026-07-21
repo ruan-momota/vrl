@@ -1,70 +1,112 @@
 {
   "artifact_commands": {
     "embeddings/heldout/original.pt": [
-      "/workspace/vrl/.venv/bin/python",
+      "/home/s/selberg/vrl/.venv/bin/python",
       "-m",
       "src.pipeline.extract",
       "--run-config",
       "configs/runs/kinetics_videomae_linear_probe/kinetics_videomae_c50_heldout_original.json"
     ],
     "embeddings/heldout/perturbations/color-high.pt": [
-      "/workspace/vrl/.venv/bin/python",
+      "/home/s/selberg/vrl/.venv/bin/python",
       "-m",
       "src.pipeline.extract",
       "--run-config",
       "configs/runs/kinetics_videomae_linear_probe/kinetics_videomae_c50_heldout_color_high.json"
     ],
     "embeddings/heldout/perturbations/color-low.pt": [
-      "/workspace/vrl/.venv/bin/python",
+      "/home/s/selberg/vrl/.venv/bin/python",
       "-m",
       "src.pipeline.extract",
       "--run-config",
       "configs/runs/kinetics_videomae_linear_probe/kinetics_videomae_c50_heldout_color_low.json"
     ],
     "embeddings/heldout/perturbations/color-mid.pt": [
-      "/workspace/vrl/.venv/bin/python",
+      "/home/s/selberg/vrl/.venv/bin/python",
       "-m",
       "src.pipeline.extract",
       "--run-config",
       "configs/runs/kinetics_videomae_linear_probe/kinetics_videomae_c50_heldout_color_mid.json"
     ],
     "embeddings/heldout/perturbations/freeze-tail-high.pt": [
-      "/workspace/vrl/.venv/bin/python",
+      "/home/s/selberg/vrl/.venv/bin/python",
       "-m",
       "src.pipeline.extract",
       "--run-config",
       "configs/runs/kinetics_videomae_linear_probe/kinetics_videomae_c50_heldout_freeze_tail_high.json"
     ],
     "embeddings/heldout/perturbations/freeze-tail-low.pt": [
-      "/workspace/vrl/.venv/bin/python",
+      "/home/s/selberg/vrl/.venv/bin/python",
       "-m",
       "src.pipeline.extract",
       "--run-config",
       "configs/runs/kinetics_videomae_linear_probe/kinetics_videomae_c50_heldout_freeze_tail_low.json"
     ],
     "embeddings/heldout/perturbations/freeze-tail-mid.pt": [
-      "/workspace/vrl/.venv/bin/python",
+      "/home/s/selberg/vrl/.venv/bin/python",
       "-m",
       "src.pipeline.extract",
       "--run-config",
       "configs/runs/kinetics_videomae_linear_probe/kinetics_videomae_c50_heldout_freeze_tail_mid.json"
     ],
+    "embeddings/heldout/perturbations/rgb-quantization-high.pt": [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/kinetics_videomae_linear_probe/kinetics_videomae_c50_heldout_rgb_quantization_high.json"
+    ],
+    "embeddings/heldout/perturbations/rgb-quantization-low.pt": [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/kinetics_videomae_linear_probe/kinetics_videomae_c50_heldout_rgb_quantization_low.json"
+    ],
+    "embeddings/heldout/perturbations/rgb-quantization-mid.pt": [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/kinetics_videomae_linear_probe/kinetics_videomae_c50_heldout_rgb_quantization_mid.json"
+    ],
+    "embeddings/heldout/perturbations/solarization-high.pt": [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/kinetics_videomae_linear_probe/kinetics_videomae_c50_heldout_solarization_high.json"
+    ],
+    "embeddings/heldout/perturbations/solarization-low.pt": [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/kinetics_videomae_linear_probe/kinetics_videomae_c50_heldout_solarization_low.json"
+    ],
+    "embeddings/heldout/perturbations/solarization-mid.pt": [
+      "/home/s/selberg/vrl/.venv/bin/python",
+      "-m",
+      "src.pipeline.extract",
+      "--run-config",
+      "configs/runs/kinetics_videomae_linear_probe/kinetics_videomae_c50_heldout_solarization_mid.json"
+    ],
     "embeddings/heldout/perturbations/spatial-blur-mid.pt": [
-      "/workspace/vrl/.venv/bin/python",
+      "/home/s/selberg/vrl/.venv/bin/python",
       "-m",
       "src.pipeline.extract",
       "--run-config",
       "configs/runs/kinetics_videomae_linear_probe/kinetics_videomae_c50_heldout_spatial_blur_mid.json"
     ],
     "embeddings/heldout/perturbations/temporal-shuffle-mid.pt": [
-      "/workspace/vrl/.venv/bin/python",
+      "/home/s/selberg/vrl/.venv/bin/python",
       "-m",
       "src.pipeline.extract",
       "--run-config",
       "configs/runs/kinetics_videomae_linear_probe/kinetics_videomae_c50_heldout_temporal_shuffle_mid.json"
     ],
     "embeddings/train/original.pt": [
-      "/workspace/vrl/.venv/bin/python",
+      "/home/s/selberg/vrl/.venv/bin/python",
       "-m",
       "src.pipeline.extract",
       "--run-config",
@@ -94,10 +136,10 @@
         "use_mean_pooling": false
       },
       "path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/perturbations/color-high.pt",
-      "sha256": "82fcaea48bb44fe0c2f6feef05a9b70874f80717743a30ab440392b52d273f33",
-      "size_bytes": 5871721,
+      "sha256": "68d758de3ba0ccaec1fe2f462fbd6f9eda00d6b8917c20ea512617a63de0b9cf",
+      "size_bytes": 5905532,
       "summary": {
-        "average_batch_seconds": 1.5274525174742286,
+        "average_batch_seconds": 2.0536143154513025,
         "batch_count": 188,
         "dataset_size": 1500,
         "embeddings_dtype": "torch.float32",
@@ -111,7 +153,7 @@
         ],
         "output_path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/perturbations/color-high.pt",
         "successful_samples": 1500,
-        "total_seconds": 287.30957149527967
+        "total_seconds": 386.16279071298777
       }
     },
     "color-low": {
@@ -136,10 +178,10 @@
         "use_mean_pooling": false
       },
       "path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/perturbations/color-low.pt",
-      "sha256": "2d32d25360e4302efca7b43f7658056320ab0cba97462b48961b1adeb9d45134",
-      "size_bytes": 5871714,
+      "sha256": "eb8d6e63e9cc102b1f8fd2de5cc5ba52a78c0d3c22481251285498bff438d2fd",
+      "size_bytes": 5905523,
       "summary": {
-        "average_batch_seconds": 1.5204663563648517,
+        "average_batch_seconds": 2.058802882940267,
         "batch_count": 188,
         "dataset_size": 1500,
         "embeddings_dtype": "torch.float32",
@@ -153,7 +195,7 @@
         ],
         "output_path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/perturbations/color-low.pt",
         "successful_samples": 1500,
-        "total_seconds": 286.09277320373803
+        "total_seconds": 387.1341899239924
       }
     },
     "color-mid": {
@@ -178,10 +220,10 @@
         "use_mean_pooling": false
       },
       "path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/perturbations/color-mid.pt",
-      "sha256": "8a22ab6b7673f577d3f33940527002f1dffca8b0ee8f6247e0699ca0a80659ca",
-      "size_bytes": 5871714,
+      "sha256": "b4ccb54601edf14dcdb454f4e5d3ec0f4901b48640420e30316edf1513cf2f1d",
+      "size_bytes": 5905523,
       "summary": {
-        "average_batch_seconds": 1.5000583573710173,
+        "average_batch_seconds": 2.058419294368774,
         "batch_count": 188,
         "dataset_size": 1500,
         "embeddings_dtype": "torch.float32",
@@ -195,7 +237,7 @@
         ],
         "output_path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/perturbations/color-mid.pt",
         "successful_samples": 1500,
-        "total_seconds": 282.1672631679103
+        "total_seconds": 387.06450225098524
       }
     },
     "freeze-tail-high": {
@@ -220,10 +262,10 @@
         "use_mean_pooling": false
       },
       "path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-high.pt",
-      "sha256": "2db22c1b1d2bd2823d010fc60c59da6cf59f2a345bd42b6ed84fe91e25f981b3",
-      "size_bytes": 5761683,
+      "sha256": "79a188df4316fb9051a5d3955ecb9699ebc288ddb4e2be2b48c0b3f1c9559f52",
+      "size_bytes": 5795506,
       "summary": {
-        "average_batch_seconds": 2.2579215311871326,
+        "average_batch_seconds": 1.3571255513874967,
         "batch_count": 188,
         "dataset_size": 1500,
         "embeddings_dtype": "torch.float32",
@@ -237,7 +279,7 @@
         ],
         "output_path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-high.pt",
         "successful_samples": 1500,
-        "total_seconds": 424.64292246010154
+        "total_seconds": 255.20994848400005
       }
     },
     "freeze-tail-low": {
@@ -262,10 +304,10 @@
         "use_mean_pooling": false
       },
       "path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-low.pt",
-      "sha256": "106711d537622b79fc9d2baa27af7335fa9163eaa861d5ab9d81d48eee82fb88",
-      "size_bytes": 5761676,
+      "sha256": "00f55f1d57baf00396a3643e5133444381d3569670758a052131d37192a9569f",
+      "size_bytes": 5795497,
       "summary": {
-        "average_batch_seconds": 1.1964382798797353,
+        "average_batch_seconds": 1.3559840614568415,
         "batch_count": 188,
         "dataset_size": 1500,
         "embeddings_dtype": "torch.float32",
@@ -279,7 +321,7 @@
         ],
         "output_path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-low.pt",
         "successful_samples": 1500,
-        "total_seconds": 225.08620222099125
+        "total_seconds": 254.99724052101374
       }
     },
     "freeze-tail-mid": {
@@ -304,10 +346,10 @@
         "use_mean_pooling": false
       },
       "path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-mid.pt",
-      "sha256": "f16eba4661debcd0499a131ccb81b55c76f6c70a1b4181a372af88ec6cd5f3bc",
-      "size_bytes": 5761676,
+      "sha256": "0d3584c475484032cc68c081bc631f8feb18f937839e03c4ce0d899f3f7f9456",
+      "size_bytes": 5795497,
       "summary": {
-        "average_batch_seconds": 1.9084561868233885,
+        "average_batch_seconds": 1.3544073243886467,
         "batch_count": 188,
         "dataset_size": 1500,
         "embeddings_dtype": "torch.float32",
@@ -321,7 +363,7 @@
         ],
         "output_path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/perturbations/freeze-tail-mid.pt",
         "successful_samples": 1500,
-        "total_seconds": 358.95781222730875
+        "total_seconds": 254.69871203097864
       }
     },
     "heldout_original": {
@@ -346,10 +388,10 @@
         "use_mean_pooling": false
       },
       "path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/original.pt",
-      "sha256": "997d2e927ce4652061b83a5edacf54cd60921daefe1f5c6c1d3e0e3741dabfab",
-      "size_bytes": 5577627,
+      "sha256": "35f569c55fbda1ccb547dc551a6665d4df3ba6731032c6b7fb31036084d75e8f",
+      "size_bytes": 5578090,
       "summary": {
-        "average_batch_seconds": 1.2136086499803957,
+        "average_batch_seconds": 1.355561245283133,
         "batch_count": 188,
         "dataset_size": 1500,
         "embeddings_dtype": "torch.float32",
@@ -363,7 +405,259 @@
         ],
         "output_path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/original.pt",
         "successful_samples": 1500,
-        "total_seconds": 228.32064226455986
+        "total_seconds": 254.91292916299426
+      }
+    },
+    "rgb-quantization-high": {
+      "model_metadata": {
+        "checkpoint": "MCG-NJU/videomae-base",
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "videomae",
+        "hidden_size": 768,
+        "image_size": 224,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 16
+        },
+        "model_type": "videomae",
+        "num_frames": 16,
+        "patch_size": 16,
+        "revision": "dc740ceda42fce44faed2ea03c6d447db72f6af9",
+        "tubelet_size": 2,
+        "use_mean_pooling": false
+      },
+      "path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-high.pt",
+      "sha256": "25821fb6fd628546eb2e5c7e67915d03c24f94ef05159cb2509523c1977b98b5",
+      "size_bytes": 5832351,
+      "summary": {
+        "average_batch_seconds": 1.6477995339144478,
+        "batch_count": 188,
+        "dataset_size": 1500,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1500,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1500
+        ],
+        "output_path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-high.pt",
+        "successful_samples": 1500,
+        "total_seconds": 309.8646525500226
+      }
+    },
+    "rgb-quantization-low": {
+      "model_metadata": {
+        "checkpoint": "MCG-NJU/videomae-base",
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "videomae",
+        "hidden_size": 768,
+        "image_size": 224,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 16
+        },
+        "model_type": "videomae",
+        "num_frames": 16,
+        "patch_size": 16,
+        "revision": "dc740ceda42fce44faed2ea03c6d447db72f6af9",
+        "tubelet_size": 2,
+        "use_mean_pooling": false
+      },
+      "path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-low.pt",
+      "sha256": "d1d4102e423978f18c1434bbcacc5bf9c537a0e4cdef5125175d3553d88d8856",
+      "size_bytes": 5832342,
+      "summary": {
+        "average_batch_seconds": 1.6498425995692316,
+        "batch_count": 188,
+        "dataset_size": 1500,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1500,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1500
+        ],
+        "output_path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-low.pt",
+        "successful_samples": 1500,
+        "total_seconds": 310.25107842098805
+      }
+    },
+    "rgb-quantization-mid": {
+      "model_metadata": {
+        "checkpoint": "MCG-NJU/videomae-base",
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "videomae",
+        "hidden_size": 768,
+        "image_size": 224,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 16
+        },
+        "model_type": "videomae",
+        "num_frames": 16,
+        "patch_size": 16,
+        "revision": "dc740ceda42fce44faed2ea03c6d447db72f6af9",
+        "tubelet_size": 2,
+        "use_mean_pooling": false
+      },
+      "path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-mid.pt",
+      "sha256": "cc7d28e3af2a3ecbb12643f6ba55b06fbec315e26af2e51f8d2c931827b25744",
+      "size_bytes": 5832342,
+      "summary": {
+        "average_batch_seconds": 1.6488848727113168,
+        "batch_count": 188,
+        "dataset_size": 1500,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1500,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1500
+        ],
+        "output_path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/perturbations/rgb-quantization-mid.pt",
+        "successful_samples": 1500,
+        "total_seconds": 310.070158002025
+      }
+    },
+    "solarization-high": {
+      "model_metadata": {
+        "checkpoint": "MCG-NJU/videomae-base",
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "videomae",
+        "hidden_size": 768,
+        "image_size": 224,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 16
+        },
+        "model_type": "videomae",
+        "num_frames": 16,
+        "patch_size": 16,
+        "revision": "dc740ceda42fce44faed2ea03c6d447db72f6af9",
+        "tubelet_size": 2,
+        "use_mean_pooling": false
+      },
+      "path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/perturbations/solarization-high.pt",
+      "sha256": "7d91a13cc87f4d364fa5cb51441e702f1fa2fd95271e99e6106c62451443e26c",
+      "size_bytes": 5801147,
+      "summary": {
+        "average_batch_seconds": 1.645695592123028,
+        "batch_count": 188,
+        "dataset_size": 1500,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1500,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1500
+        ],
+        "output_path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/perturbations/solarization-high.pt",
+        "successful_samples": 1500,
+        "total_seconds": 309.4658796650183
+      }
+    },
+    "solarization-low": {
+      "model_metadata": {
+        "checkpoint": "MCG-NJU/videomae-base",
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "videomae",
+        "hidden_size": 768,
+        "image_size": 224,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 16
+        },
+        "model_type": "videomae",
+        "num_frames": 16,
+        "patch_size": 16,
+        "revision": "dc740ceda42fce44faed2ea03c6d447db72f6af9",
+        "tubelet_size": 2,
+        "use_mean_pooling": false
+      },
+      "path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/perturbations/solarization-low.pt",
+      "sha256": "a4a17be79a1fb0170964c79aabca00188e85751163f30cfb3b6f257e89a1a5c2",
+      "size_bytes": 5801138,
+      "summary": {
+        "average_batch_seconds": 1.641687889716853,
+        "batch_count": 188,
+        "dataset_size": 1500,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1500,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1500
+        ],
+        "output_path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/perturbations/solarization-low.pt",
+        "successful_samples": 1500,
+        "total_seconds": 308.7156379609951
+      }
+    },
+    "solarization-mid": {
+      "model_metadata": {
+        "checkpoint": "MCG-NJU/videomae-base",
+        "device": "cuda",
+        "embedding_type": "last_hidden_state_mean_pool",
+        "encoder_name": "videomae",
+        "hidden_size": 768,
+        "image_size": 224,
+        "input_spec": {
+          "embedding_type": "last_hidden_state_mean_pool",
+          "image_size": 224,
+          "input_layout": "[B, T, C, H, W]",
+          "num_frames": 16
+        },
+        "model_type": "videomae",
+        "num_frames": 16,
+        "patch_size": 16,
+        "revision": "dc740ceda42fce44faed2ea03c6d447db72f6af9",
+        "tubelet_size": 2,
+        "use_mean_pooling": false
+      },
+      "path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/perturbations/solarization-mid.pt",
+      "sha256": "24c395a361497872d3bcf9ebaa1948b8889d0441bd8984102354878a38d9fd11",
+      "size_bytes": 5801138,
+      "summary": {
+        "average_batch_seconds": 1.642167892469591,
+        "batch_count": 188,
+        "dataset_size": 1500,
+        "embeddings_dtype": "torch.float32",
+        "embeddings_shape": [
+          1500,
+          768
+        ],
+        "failed_samples": 0,
+        "labels_shape": [
+          1500
+        ],
+        "output_path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/perturbations/solarization-mid.pt",
+        "successful_samples": 1500,
+        "total_seconds": 308.8034355319978
       }
     },
     "spatial-blur-mid": {
@@ -388,10 +682,10 @@
         "use_mean_pooling": false
       },
       "path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/perturbations/spatial-blur-mid.pt",
-      "sha256": "66a3bc0cc0d093f5c2c1c7b89931f16538aaa35a2ed37bb065f7a29c5ca7878c",
-      "size_bytes": 5792787,
+      "sha256": "9ed1a468d45ea223e042972cfcd13e910e2494b80a675298b19cf40543e0040c",
+      "size_bytes": 5826674,
       "summary": {
-        "average_batch_seconds": 1.7397225859148944,
+        "average_batch_seconds": 2.13402855121286,
         "batch_count": 188,
         "dataset_size": 1500,
         "embeddings_dtype": "torch.float32",
@@ -405,7 +699,7 @@
         ],
         "output_path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/perturbations/spatial-blur-mid.pt",
         "successful_samples": 1500,
-        "total_seconds": 327.2039610883221
+        "total_seconds": 401.2766073390085
       }
     },
     "temporal-shuffle-mid": {
@@ -430,10 +724,10 @@
         "use_mean_pooling": false
       },
       "path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/perturbations/temporal-shuffle-mid.pt",
-      "sha256": "b159b3e9b23c5640972eb9e89dcb024259955c95c40c22bf1951bde0f7302a0b",
-      "size_bytes": 5819247,
+      "sha256": "c3ce681cdcc26412b0eaf844378b54b477d3512d1dcf7986defb3dee5884b465",
+      "size_bytes": 5853078,
       "summary": {
-        "average_batch_seconds": 1.1986282377880304,
+        "average_batch_seconds": 1.3502511488181783,
         "batch_count": 188,
         "dataset_size": 1500,
         "embeddings_dtype": "torch.float32",
@@ -447,7 +741,7 @@
         ],
         "output_path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/heldout/perturbations/temporal-shuffle-mid.pt",
         "successful_samples": 1500,
-        "total_seconds": 225.4986519869417
+        "total_seconds": 253.9160057079862
       }
     },
     "train_original": {
@@ -472,10 +766,10 @@
         "use_mean_pooling": false
       },
       "path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/train/original.pt",
-      "sha256": "e30bfa33270b41903fde4043f555ec87e37e141cfeb510c813a06527e7b5b35d",
-      "size_bytes": 18576731,
+      "sha256": "36ae4c6a874e697da2507651cef9a4714b751af100a796b4fbc4d8a39b938519",
+      "size_bytes": 18577130,
       "summary": {
-        "average_batch_seconds": 1.1520492114782332,
+        "average_batch_seconds": 1.3267995009758975,
         "batch_count": 625,
         "dataset_size": 5000,
         "embeddings_dtype": "torch.float32",
@@ -489,15 +783,15 @@
         ],
         "output_path": "outputs/runs/kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe/embeddings/train/original.pt",
         "successful_samples": 5000,
-        "total_seconds": 720.5295194229111
+        "total_seconds": 829.4925577669928
       }
     }
   },
   "code_commit": null,
-  "created_at_utc": "2026-07-13T14:14:00.954200+00:00",
+  "created_at_utc": "2026-07-21T12:38:51.305372+00:00",
   "evaluation_commands": [
     [
-      "/workspace/vrl/.venv/bin/python",
+      "/home/s/selberg/vrl/.venv/bin/python",
       "-m",
       "src.pipeline.evaluate",
       "--config",

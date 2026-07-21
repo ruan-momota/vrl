@@ -64,10 +64,46 @@
         "dataset_size": 1500,
         "failed_samples": 0,
         "successful_samples": 1500
+      },
+      {
+        "artifact_label": "rgb-quantization-low",
+        "dataset_size": 1500,
+        "failed_samples": 0,
+        "successful_samples": 1500
+      },
+      {
+        "artifact_label": "rgb-quantization-mid",
+        "dataset_size": 1500,
+        "failed_samples": 0,
+        "successful_samples": 1500
+      },
+      {
+        "artifact_label": "rgb-quantization-high",
+        "dataset_size": 1500,
+        "failed_samples": 0,
+        "successful_samples": 1500
+      },
+      {
+        "artifact_label": "solarization-low",
+        "dataset_size": 1500,
+        "failed_samples": 0,
+        "successful_samples": 1500
+      },
+      {
+        "artifact_label": "solarization-mid",
+        "dataset_size": 1500,
+        "failed_samples": 0,
+        "successful_samples": 1500
+      },
+      {
+        "artifact_label": "solarization-high",
+        "dataset_size": 1500,
+        "failed_samples": 0,
+        "successful_samples": 1500
       }
     ],
     "quality_mismatches": [],
-    "quality_sample_count": 40
+    "quality_sample_count": 70
   },
   "fixed_seed": 42,
   "format_version": 1,
@@ -103,7 +139,9 @@
           "name": "freeze_tail",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "freeze_start_index": 12,
         "name": "freeze_tail",
@@ -145,7 +183,9 @@
           "name": "freeze_tail",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "freeze_start_index": 12,
         "name": "freeze_tail",
@@ -187,7 +227,9 @@
           "name": "freeze_tail",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "freeze_start_index": 12,
         "name": "freeze_tail",
@@ -229,7 +271,9 @@
           "name": "freeze_tail",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "freeze_start_index": 12,
         "name": "freeze_tail",
@@ -271,7 +315,9 @@
           "name": "freeze_tail",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "freeze_start_index": 12,
         "name": "freeze_tail",
@@ -313,7 +359,9 @@
           "name": "freeze_tail",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "freeze_start_index": 8,
         "name": "freeze_tail",
@@ -355,7 +403,9 @@
           "name": "freeze_tail",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "freeze_start_index": 8,
         "name": "freeze_tail",
@@ -397,7 +447,9 @@
           "name": "freeze_tail",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "freeze_start_index": 8,
         "name": "freeze_tail",
@@ -439,7 +491,9 @@
           "name": "freeze_tail",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "freeze_start_index": 8,
         "name": "freeze_tail",
@@ -481,7 +535,9 @@
           "name": "freeze_tail",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "freeze_start_index": 8,
         "name": "freeze_tail",
@@ -523,7 +579,9 @@
           "name": "freeze_tail",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "freeze_start_index": 4,
         "name": "freeze_tail",
@@ -565,7 +623,9 @@
           "name": "freeze_tail",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "freeze_start_index": 4,
         "name": "freeze_tail",
@@ -607,7 +667,9 @@
           "name": "freeze_tail",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "freeze_start_index": 4,
         "name": "freeze_tail",
@@ -649,7 +711,9 @@
           "name": "freeze_tail",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "freeze_start_index": 4,
         "name": "freeze_tail",
@@ -691,7 +755,9 @@
           "name": "freeze_tail",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "freeze_start_index": 4,
         "name": "freeze_tail",
@@ -739,7 +805,9 @@
           "name": "color_transform",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "constant_across_frames": true,
         "name": "color_transform",
@@ -788,7 +856,9 @@
           "name": "color_transform",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "constant_across_frames": true,
         "name": "color_transform",
@@ -837,7 +907,9 @@
           "name": "color_transform",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "constant_across_frames": true,
         "name": "color_transform",
@@ -886,7 +958,9 @@
           "name": "color_transform",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "constant_across_frames": true,
         "name": "color_transform",
@@ -935,7 +1009,9 @@
           "name": "color_transform",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "constant_across_frames": true,
         "name": "color_transform",
@@ -984,7 +1060,9 @@
           "name": "color_transform",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "constant_across_frames": true,
         "name": "color_transform",
@@ -1033,7 +1111,9 @@
           "name": "color_transform",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "constant_across_frames": true,
         "name": "color_transform",
@@ -1082,7 +1162,9 @@
           "name": "color_transform",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "constant_across_frames": true,
         "name": "color_transform",
@@ -1131,7 +1213,9 @@
           "name": "color_transform",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "constant_across_frames": true,
         "name": "color_transform",
@@ -1180,7 +1264,9 @@
           "name": "color_transform",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "constant_across_frames": true,
         "name": "color_transform",
@@ -1229,7 +1315,9 @@
           "name": "color_transform",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "constant_across_frames": true,
         "name": "color_transform",
@@ -1278,7 +1366,9 @@
           "name": "color_transform",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "constant_across_frames": true,
         "name": "color_transform",
@@ -1327,7 +1417,9 @@
           "name": "color_transform",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "constant_across_frames": true,
         "name": "color_transform",
@@ -1376,7 +1468,9 @@
           "name": "color_transform",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "constant_across_frames": true,
         "name": "color_transform",
@@ -1425,7 +1519,9 @@
           "name": "color_transform",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "constant_across_frames": true,
         "name": "color_transform",
@@ -1470,7 +1566,9 @@
           "name": "spatial_blur",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "constant_across_frames": true,
         "name": "spatial_blur",
@@ -1514,7 +1612,9 @@
           "name": "spatial_blur",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "constant_across_frames": true,
         "name": "spatial_blur",
@@ -1558,7 +1658,9 @@
           "name": "spatial_blur",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "constant_across_frames": true,
         "name": "spatial_blur",
@@ -1602,7 +1704,9 @@
           "name": "spatial_blur",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "constant_across_frames": true,
         "name": "spatial_blur",
@@ -1646,7 +1750,9 @@
           "name": "spatial_blur",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 0
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": -1
         },
         "constant_across_frames": true,
         "name": "spatial_blur",
@@ -1688,7 +1794,9 @@
           "name": "temporal_shuffle",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 42
+          "rgb_levels": 0,
+          "seed": 42,
+          "solarization_threshold": -1
         },
         "frame_order": [
           12,
@@ -1747,7 +1855,9 @@
           "name": "temporal_shuffle",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 42
+          "rgb_levels": 0,
+          "seed": 42,
+          "solarization_threshold": -1
         },
         "frame_order": [
           9,
@@ -1806,7 +1916,9 @@
           "name": "temporal_shuffle",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 42
+          "rgb_levels": 0,
+          "seed": 42,
+          "solarization_threshold": -1
         },
         "frame_order": [
           7,
@@ -1865,7 +1977,9 @@
           "name": "temporal_shuffle",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 42
+          "rgb_levels": 0,
+          "seed": 42,
+          "solarization_threshold": -1
         },
         "frame_order": [
           6,
@@ -1924,7 +2038,9 @@
           "name": "temporal_shuffle",
           "occlusion_fill_value": 0,
           "occlusion_size_fraction": 0.25,
-          "seed": 42
+          "rgb_levels": 0,
+          "seed": 42,
+          "solarization_threshold": -1
         },
         "frame_order": [
           6,
@@ -1951,6 +2067,1371 @@
       "sampling_strategy_match": true,
       "video_id": "-lTupVOk3AY_000026_000036",
       "video_path": "data/kinetics/raw/c50/canoeing or kayaking/-lTupVOk3AY_000026_000036.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "rgb-quantization-low",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "rgb_quantization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 16,
+          "seed": 0,
+          "solarization_threshold": -1
+        },
+        "constant_across_frames": true,
+        "name": "rgb_quantization",
+        "operation": "rgb_quantization",
+        "quantization_step": 17.0,
+        "rgb_levels": 16
+      },
+      "sample_index": 327,
+      "sampling_strategy_match": true,
+      "video_id": "HLtmLqnP7cQ_000080_000090",
+      "video_path": "data/kinetics/raw/c50/baby waking up/HLtmLqnP7cQ_000080_000090.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "rgb-quantization-low",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "rgb_quantization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 16,
+          "seed": 0,
+          "solarization_threshold": -1
+        },
+        "constant_across_frames": true,
+        "name": "rgb_quantization",
+        "operation": "rgb_quantization",
+        "quantization_step": 17.0,
+        "rgb_levels": 16
+      },
+      "sample_index": 546,
+      "sampling_strategy_match": true,
+      "video_id": "1envheMuhqk_000207_000217",
+      "video_path": "data/kinetics/raw/c50/belly dancing/1envheMuhqk_000207_000217.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "rgb-quantization-low",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "rgb_quantization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 16,
+          "seed": 0,
+          "solarization_threshold": -1
+        },
+        "constant_across_frames": true,
+        "name": "rgb_quantization",
+        "operation": "rgb_quantization",
+        "quantization_step": 17.0,
+        "rgb_levels": 16
+      },
+      "sample_index": 849,
+      "sampling_strategy_match": true,
+      "video_id": "5idJV6wRHhw_000085_000095",
+      "video_path": "data/kinetics/raw/c50/bobsledding/5idJV6wRHhw_000085_000095.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "rgb-quantization-low",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "rgb_quantization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 16,
+          "seed": 0,
+          "solarization_threshold": -1
+        },
+        "constant_across_frames": true,
+        "name": "rgb_quantization",
+        "operation": "rgb_quantization",
+        "quantization_step": 17.0,
+        "rgb_levels": 16
+      },
+      "sample_index": 971,
+      "sampling_strategy_match": true,
+      "video_id": "5R9WPnRn_M4_000210_000220",
+      "video_path": "data/kinetics/raw/c50/braiding hair/5R9WPnRn_M4_000210_000220.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "rgb-quantization-low",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "rgb_quantization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 16,
+          "seed": 0,
+          "solarization_threshold": -1
+        },
+        "constant_across_frames": true,
+        "name": "rgb_quantization",
+        "operation": "rgb_quantization",
+        "quantization_step": 17.0,
+        "rgb_levels": 16
+      },
+      "sample_index": 1100,
+      "sampling_strategy_match": true,
+      "video_id": "5nTEI4wKYDg_000021_000031",
+      "video_path": "data/kinetics/raw/c50/brushing hair/5nTEI4wKYDg_000021_000031.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "rgb-quantization-mid",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "rgb_quantization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 8,
+          "seed": 0,
+          "solarization_threshold": -1
+        },
+        "constant_across_frames": true,
+        "name": "rgb_quantization",
+        "operation": "rgb_quantization",
+        "quantization_step": 36.42857142857143,
+        "rgb_levels": 8
+      },
+      "sample_index": 145,
+      "sampling_strategy_match": true,
+      "video_id": "JjpfUbDYx0E_000028_000038",
+      "video_path": "data/kinetics/raw/c50/applying cream/JjpfUbDYx0E_000028_000038.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "rgb-quantization-mid",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "rgb_quantization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 8,
+          "seed": 0,
+          "solarization_threshold": -1
+        },
+        "constant_across_frames": true,
+        "name": "rgb_quantization",
+        "operation": "rgb_quantization",
+        "quantization_step": 36.42857142857143,
+        "rgb_levels": 8
+      },
+      "sample_index": 621,
+      "sampling_strategy_match": true,
+      "video_id": "BxbrvLPYqBQ_000245_000255",
+      "video_path": "data/kinetics/raw/c50/bending back/BxbrvLPYqBQ_000245_000255.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "rgb-quantization-mid",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "rgb_quantization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 8,
+          "seed": 0,
+          "solarization_threshold": -1
+        },
+        "constant_across_frames": true,
+        "name": "rgb_quantization",
+        "operation": "rgb_quantization",
+        "quantization_step": 36.42857142857143,
+        "rgb_levels": 8
+      },
+      "sample_index": 629,
+      "sampling_strategy_match": true,
+      "video_id": "FL6DT8eEDkw_000073_000083",
+      "video_path": "data/kinetics/raw/c50/bending back/FL6DT8eEDkw_000073_000083.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "rgb-quantization-mid",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "rgb_quantization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 8,
+          "seed": 0,
+          "solarization_threshold": -1
+        },
+        "constant_across_frames": true,
+        "name": "rgb_quantization",
+        "operation": "rgb_quantization",
+        "quantization_step": 36.42857142857143,
+        "rgb_levels": 8
+      },
+      "sample_index": 1231,
+      "sampling_strategy_match": true,
+      "video_id": "-bfFYc-aQro_000047_000057",
+      "video_path": "data/kinetics/raw/c50/busking/-bfFYc-aQro_000047_000057.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "rgb-quantization-mid",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "rgb_quantization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 8,
+          "seed": 0,
+          "solarization_threshold": -1
+        },
+        "constant_across_frames": true,
+        "name": "rgb_quantization",
+        "operation": "rgb_quantization",
+        "quantization_step": 36.42857142857143,
+        "rgb_levels": 8
+      },
+      "sample_index": 1293,
+      "sampling_strategy_match": true,
+      "video_id": "0LAj9SQt8Rk_000084_000094",
+      "video_path": "data/kinetics/raw/c50/capoeira/0LAj9SQt8Rk_000084_000094.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "rgb-quantization-high",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "rgb_quantization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 4,
+          "seed": 0,
+          "solarization_threshold": -1
+        },
+        "constant_across_frames": true,
+        "name": "rgb_quantization",
+        "operation": "rgb_quantization",
+        "quantization_step": 85.0,
+        "rgb_levels": 4
+      },
+      "sample_index": 109,
+      "sampling_strategy_match": true,
+      "video_id": "GhbVLB3YNho_000016_000026",
+      "video_path": "data/kinetics/raw/c50/applauding/GhbVLB3YNho_000016_000026.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "rgb-quantization-high",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "rgb_quantization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 4,
+          "seed": 0,
+          "solarization_threshold": -1
+        },
+        "constant_across_frames": true,
+        "name": "rgb_quantization",
+        "operation": "rgb_quantization",
+        "quantization_step": 85.0,
+        "rgb_levels": 4
+      },
+      "sample_index": 208,
+      "sampling_strategy_match": true,
+      "video_id": "85Ez_BAuGjA_000017_000027",
+      "video_path": "data/kinetics/raw/c50/arm wrestling/85Ez_BAuGjA_000017_000027.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "rgb-quantization-high",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "rgb_quantization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 4,
+          "seed": 0,
+          "solarization_threshold": -1
+        },
+        "constant_across_frames": true,
+        "name": "rgb_quantization",
+        "operation": "rgb_quantization",
+        "quantization_step": 85.0,
+        "rgb_levels": 4
+      },
+      "sample_index": 776,
+      "sampling_strategy_match": true,
+      "video_id": "OlnLg3RCrQU_000063_000073",
+      "video_path": "data/kinetics/raw/c50/blowing leaves/OlnLg3RCrQU_000063_000073.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "rgb-quantization-high",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "rgb_quantization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 4,
+          "seed": 0,
+          "solarization_threshold": -1
+        },
+        "constant_across_frames": true,
+        "name": "rgb_quantization",
+        "operation": "rgb_quantization",
+        "quantization_step": 85.0,
+        "rgb_levels": 4
+      },
+      "sample_index": 893,
+      "sampling_strategy_match": true,
+      "video_id": "9O5XF91kDC8_000182_000192",
+      "video_path": "data/kinetics/raw/c50/bookbinding/9O5XF91kDC8_000182_000192.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "rgb-quantization-high",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "rgb_quantization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 4,
+          "seed": 0,
+          "solarization_threshold": -1
+        },
+        "constant_across_frames": true,
+        "name": "rgb_quantization",
+        "operation": "rgb_quantization",
+        "quantization_step": 85.0,
+        "rgb_levels": 4
+      },
+      "sample_index": 1031,
+      "sampling_strategy_match": true,
+      "video_id": "475ZMvOl4GQ_000000_000010",
+      "video_path": "data/kinetics/raw/c50/breakdancing/475ZMvOl4GQ_000000_000010.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "solarization-low",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "solarization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": 192
+        },
+        "constant_across_frames": true,
+        "name": "solarization",
+        "operation": "solarization",
+        "solarization_threshold": 192
+      },
+      "sample_index": 683,
+      "sampling_strategy_match": true,
+      "video_id": "5a1eTEBvnVM_000074_000084",
+      "video_path": "data/kinetics/raw/c50/biking through snow/5a1eTEBvnVM_000074_000084.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "solarization-low",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "solarization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": 192
+        },
+        "constant_across_frames": true,
+        "name": "solarization",
+        "operation": "solarization",
+        "solarization_threshold": 192
+      },
+      "sample_index": 735,
+      "sampling_strategy_match": true,
+      "video_id": "5MvvnXZ9fIw_000024_000034",
+      "video_path": "data/kinetics/raw/c50/blowing glass/5MvvnXZ9fIw_000024_000034.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "solarization-low",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "solarization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": 192
+        },
+        "constant_across_frames": true,
+        "name": "solarization",
+        "operation": "solarization",
+        "solarization_threshold": 192
+      },
+      "sample_index": 903,
+      "sampling_strategy_match": true,
+      "video_id": "17k57WB3LNA_000018_000028",
+      "video_path": "data/kinetics/raw/c50/bouncing on trampoline/17k57WB3LNA_000018_000028.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "solarization-low",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "solarization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": 192
+        },
+        "constant_across_frames": true,
+        "name": "solarization",
+        "operation": "solarization",
+        "solarization_threshold": 192
+      },
+      "sample_index": 1146,
+      "sampling_strategy_match": true,
+      "video_id": "9AVqograhTc_000074_000084",
+      "video_path": "data/kinetics/raw/c50/building cabinet/9AVqograhTc_000074_000084.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "solarization-low",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "solarization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": 192
+        },
+        "constant_across_frames": true,
+        "name": "solarization",
+        "operation": "solarization",
+        "solarization_threshold": 192
+      },
+      "sample_index": 1164,
+      "sampling_strategy_match": true,
+      "video_id": "N6l3vB7QCpo_000000_000010",
+      "video_path": "data/kinetics/raw/c50/building cabinet/N6l3vB7QCpo_000000_000010.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "solarization-mid",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "solarization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": 128
+        },
+        "constant_across_frames": true,
+        "name": "solarization",
+        "operation": "solarization",
+        "solarization_threshold": 128
+      },
+      "sample_index": 266,
+      "sampling_strategy_match": true,
+      "video_id": "KGBWH5HuJ_Y_000085_000095",
+      "video_path": "data/kinetics/raw/c50/assembling computer/KGBWH5HuJ_Y_000085_000095.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "solarization-mid",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "solarization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": 128
+        },
+        "constant_across_frames": true,
+        "name": "solarization",
+        "operation": "solarization",
+        "solarization_threshold": 128
+      },
+      "sample_index": 468,
+      "sampling_strategy_match": true,
+      "video_id": "DADZczC5RRg_000254_000264",
+      "video_path": "data/kinetics/raw/c50/bartending/DADZczC5RRg_000254_000264.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "solarization-mid",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "solarization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": 128
+        },
+        "constant_across_frames": true,
+        "name": "solarization",
+        "operation": "solarization",
+        "solarization_threshold": 128
+      },
+      "sample_index": 534,
+      "sampling_strategy_match": true,
+      "video_id": "PRWFAY4SFX0_000103_000113",
+      "video_path": "data/kinetics/raw/c50/bee keeping/PRWFAY4SFX0_000103_000113.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "solarization-mid",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "solarization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": 128
+        },
+        "constant_across_frames": true,
+        "name": "solarization",
+        "operation": "solarization",
+        "solarization_threshold": 128
+      },
+      "sample_index": 825,
+      "sampling_strategy_match": true,
+      "video_id": "2LNTF-6IXQI_000048_000058",
+      "video_path": "data/kinetics/raw/c50/blowing out candles/2LNTF-6IXQI_000048_000058.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "solarization-mid",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "solarization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": 128
+        },
+        "constant_across_frames": true,
+        "name": "solarization",
+        "operation": "solarization",
+        "solarization_threshold": 128
+      },
+      "sample_index": 1317,
+      "sampling_strategy_match": true,
+      "video_id": "77faOqwRha4_000140_000150",
+      "video_path": "data/kinetics/raw/c50/capoeira/77faOqwRha4_000140_000150.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "solarization-high",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "solarization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": 64
+        },
+        "constant_across_frames": true,
+        "name": "solarization",
+        "operation": "solarization",
+        "solarization_threshold": 64
+      },
+      "sample_index": 449,
+      "sampling_strategy_match": true,
+      "video_id": "9H90R1fd_mo_000000_000010",
+      "video_path": "data/kinetics/raw/c50/barbequing/9H90R1fd_mo_000000_000010.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "solarization-high",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "solarization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": 64
+        },
+        "constant_across_frames": true,
+        "name": "solarization",
+        "operation": "solarization",
+        "solarization_threshold": 64
+      },
+      "sample_index": 805,
+      "sampling_strategy_match": true,
+      "video_id": "FajXNYlkL40_000032_000042",
+      "video_path": "data/kinetics/raw/c50/blowing nose/FajXNYlkL40_000032_000042.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "solarization-high",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "solarization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": 64
+        },
+        "constant_across_frames": true,
+        "name": "solarization",
+        "operation": "solarization",
+        "solarization_threshold": 64
+      },
+      "sample_index": 1174,
+      "sampling_strategy_match": true,
+      "video_id": "2Jp11scLcpo_000016_000026",
+      "video_path": "data/kinetics/raw/c50/building shed/2Jp11scLcpo_000016_000026.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "solarization-high",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "solarization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": 64
+        },
+        "constant_across_frames": true,
+        "name": "solarization",
+        "operation": "solarization",
+        "solarization_threshold": 64
+      },
+      "sample_index": 1182,
+      "sampling_strategy_match": true,
+      "video_id": "DG2KUPBWRb8_000151_000161",
+      "video_path": "data/kinetics/raw/c50/building shed/DG2KUPBWRb8_000151_000161.mp4"
+    },
+    {
+      "constant_across_frames": true,
+      "frame_indices": [
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157
+      ],
+      "frame_indices_match": true,
+      "perturbation_artifact": "solarization-high",
+      "perturbation_metadata": {
+        "config": {
+          "blur_kernel_size": 1,
+          "color_strength": 0.0,
+          "frame_index": null,
+          "freeze_start_fraction": 0.5,
+          "name": "solarization",
+          "occlusion_fill_value": 0,
+          "occlusion_size_fraction": 0.25,
+          "rgb_levels": 0,
+          "seed": 0,
+          "solarization_threshold": 64
+        },
+        "constant_across_frames": true,
+        "name": "solarization",
+        "operation": "solarization",
+        "solarization_threshold": 64
+      },
+      "sample_index": 1222,
+      "sampling_strategy_match": true,
+      "video_id": "5pqK33F6XZ0_000001_000011",
+      "video_path": "data/kinetics/raw/c50/bungee jumping/5pqK33F6XZ0_000001_000011.mp4"
     }
   ],
   "run_id": "kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe"
