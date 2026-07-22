@@ -116,6 +116,10 @@
 <circle cx="90.00" cy="341.77" r="3.8" fill="#334155" />
 <circle cx="510.00" cy="331.41" r="3.8" fill="#334155" />
 <circle cx="930.00" cy="307.06" r="3.8" fill="#334155" />
+<polyline points="90.00,340.39 510.00,321.66 930.00,289.83" fill="none" stroke="#334155" stroke-width="2.3" stroke-linejoin="round" />
+<circle cx="90.00" cy="340.39" r="3.8" fill="#334155" />
+<circle cx="510.00" cy="321.66" r="3.8" fill="#334155" />
+<circle cx="930.00" cy="289.83" r="3.8" fill="#334155" />
 <text x="90.00" y="397.00" font-size="12" font-weight="400" text-anchor="middle">low</text>
 <text x="510.00" y="397.00" font-size="12" font-weight="400" text-anchor="middle">mid</text>
 <text x="930.00" y="397.00" font-size="12" font-weight="400" text-anchor="middle">high</text>
@@ -165,6 +169,8 @@
 <text x="979.00" y="509.00" font-size="10" font-weight="400" text-anchor="start">DisMo x SSV2</text>
 <line x1="955" y1="525" x2="973" y2="525" stroke="#334155" stroke-width="3" stroke-dasharray="12 5" />
 <text x="979.00" y="529.00" font-size="10" font-weight="400" text-anchor="start">V-JEPA2 x UCF101</text>
+<line x1="955" y1="545" x2="973" y2="545" stroke="#334155" stroke-width="3" />
+<text x="979.00" y="549.00" font-size="10" font-weight="400" text-anchor="start">V-JEPA2 x SSV2</text>
 <text x="90.00" y="485.00" font-size="14" font-weight="700" text-anchor="start">Color transform low -&gt; mid -&gt; high</text>
 <text x="18.00" y="647.50" font-size="11" font-weight="400" text-anchor="middle" transform="rotate(-90 18.00 647.50)">Mean cosine distance</text>
 <line x1="90" y1="785" x2="930" y2="785" stroke="#111827" stroke-width="1" />
@@ -278,6 +284,10 @@
 <circle cx="90.00" cy="757.95" r="3.8" fill="#334155" />
 <circle cx="510.00" cy="749.19" r="3.8" fill="#334155" />
 <circle cx="930.00" cy="640.01" r="3.8" fill="#334155" />
+<polyline points="90.00,757.88 510.00,747.88 930.00,649.99" fill="none" stroke="#334155" stroke-width="2.3" stroke-linejoin="round" />
+<circle cx="90.00" cy="757.88" r="3.8" fill="#334155" />
+<circle cx="510.00" cy="747.88" r="3.8" fill="#334155" />
+<circle cx="930.00" cy="649.99" r="3.8" fill="#334155" />
 <text x="90.00" y="807.00" font-size="12" font-weight="400" text-anchor="middle">low</text>
 <text x="510.00" y="807.00" font-size="12" font-weight="400" text-anchor="middle">mid</text>
 <text x="930.00" y="807.00" font-size="12" font-weight="400" text-anchor="middle">high</text>
@@ -327,6 +337,8 @@
 <text x="979.00" y="919.00" font-size="10" font-weight="400" text-anchor="start">DisMo x SSV2</text>
 <line x1="955" y1="935" x2="973" y2="935" stroke="#334155" stroke-width="3" stroke-dasharray="12 5" />
 <text x="979.00" y="939.00" font-size="10" font-weight="400" text-anchor="start">V-JEPA2 x UCF101</text>
+<line x1="955" y1="955" x2="973" y2="955" stroke="#334155" stroke-width="3" />
+<text x="979.00" y="959.00" font-size="10" font-weight="400" text-anchor="start">V-JEPA2 x SSV2</text>
 <text x="90.00" y="895.00" font-size="14" font-weight="700" text-anchor="start">RGB quantization low -&gt; mid -&gt; high</text>
 <text x="18.00" y="1057.50" font-size="11" font-weight="400" text-anchor="middle" transform="rotate(-90 18.00 1057.50)">Mean cosine distance</text>
 <line x1="90" y1="1195" x2="930" y2="1195" stroke="#111827" stroke-width="1" />
@@ -428,6 +440,10 @@
 <circle cx="90.00" cy="1159.07" r="3.8" fill="#334155" />
 <circle cx="510.00" cy="1142.45" r="3.8" fill="#334155" />
 <circle cx="930.00" cy="1108.58" r="3.8" fill="#334155" />
+<polyline points="90.00,1145.50 510.00,1125.08 930.00,1095.12" fill="none" stroke="#334155" stroke-width="2.3" stroke-linejoin="round" />
+<circle cx="90.00" cy="1145.50" r="3.8" fill="#334155" />
+<circle cx="510.00" cy="1125.08" r="3.8" fill="#334155" />
+<circle cx="930.00" cy="1095.12" r="3.8" fill="#334155" />
 <text x="90.00" y="1217.00" font-size="12" font-weight="400" text-anchor="middle">low</text>
 <text x="510.00" y="1217.00" font-size="12" font-weight="400" text-anchor="middle">mid</text>
 <text x="930.00" y="1217.00" font-size="12" font-weight="400" text-anchor="middle">high</text>
@@ -471,6 +487,8 @@
 <text x="979.00" y="1329.00" font-size="10" font-weight="400" text-anchor="start">DisMo x SSV2</text>
 <line x1="955" y1="1345" x2="973" y2="1345" stroke="#334155" stroke-width="3" stroke-dasharray="12 5" />
 <text x="979.00" y="1349.00" font-size="10" font-weight="400" text-anchor="start">V-JEPA2 x UCF101</text>
+<line x1="955" y1="1365" x2="973" y2="1365" stroke="#334155" stroke-width="3" />
+<text x="979.00" y="1369.00" font-size="10" font-weight="400" text-anchor="start">V-JEPA2 x SSV2</text>
 <text x="90.00" y="1305.00" font-size="14" font-weight="700" text-anchor="start">Solarization low -&gt; mid -&gt; high</text>
 <text x="18.00" y="1467.50" font-size="11" font-weight="400" text-anchor="middle" transform="rotate(-90 18.00 1467.50)">Mean cosine distance</text>
 <line x1="90" y1="1605" x2="930" y2="1605" stroke="#111827" stroke-width="1" />
@@ -572,6 +590,10 @@
 <circle cx="90.00" cy="1550.03" r="3.8" fill="#334155" />
 <circle cx="510.00" cy="1549.88" r="3.8" fill="#334155" />
 <circle cx="930.00" cy="1515.73" r="3.8" fill="#334155" />
+<polyline points="90.00,1546.27 510.00,1552.68 930.00,1521.46" fill="none" stroke="#334155" stroke-width="2.3" stroke-linejoin="round" />
+<circle cx="90.00" cy="1546.27" r="3.8" fill="#334155" />
+<circle cx="510.00" cy="1552.68" r="3.8" fill="#334155" />
+<circle cx="930.00" cy="1521.46" r="3.8" fill="#334155" />
 <text x="90.00" y="1627.00" font-size="12" font-weight="400" text-anchor="middle">low</text>
 <text x="510.00" y="1627.00" font-size="12" font-weight="400" text-anchor="middle">mid</text>
 <text x="930.00" y="1627.00" font-size="12" font-weight="400" text-anchor="middle">high</text>
@@ -615,4 +637,6 @@
 <text x="979.00" y="1739.00" font-size="10" font-weight="400" text-anchor="start">DisMo x SSV2</text>
 <line x1="955" y1="1755" x2="973" y2="1755" stroke="#334155" stroke-width="3" stroke-dasharray="12 5" />
 <text x="979.00" y="1759.00" font-size="10" font-weight="400" text-anchor="start">V-JEPA2 x UCF101</text>
+<line x1="955" y1="1775" x2="973" y2="1775" stroke="#334155" stroke-width="3" />
+<text x="979.00" y="1779.00" font-size="10" font-weight="400" text-anchor="start">V-JEPA2 x SSV2</text>
 </svg>

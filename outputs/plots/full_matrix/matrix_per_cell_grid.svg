@@ -66,7 +66,22 @@
 <rect x="684.86" y="221.15" width="11.14" height="26.85" fill="#ea580c" />
 <line x1="514" y1="248.00" x2="696" y2="248.00" stroke="#9ca3af" stroke-width="1" />
 <rect x="704" y="110" width="182" height="142" fill="none" stroke="#e5e7eb" stroke-width="1" />
-<text x="795.00" y="181.00" font-size="10" font-weight="400" text-anchor="middle">no run</text>
+<text x="795.00" y="122.00" font-size="9" font-weight="400" text-anchor="middle">LP orig. 43%</text>
+<rect x="704.00" y="196.79" width="11.14" height="51.21" fill="#2563eb" />
+<rect x="717.14" y="239.55" width="11.14" height="8.45" fill="#2563eb" />
+<rect x="730.29" y="221.65" width="11.14" height="26.35" fill="#2563eb" />
+<rect x="743.43" y="194.93" width="11.14" height="53.07" fill="#2563eb" />
+<rect x="756.57" y="247.75" width="11.14" height="0.60" fill="#ea580c" />
+<rect x="769.71" y="246.38" width="11.14" height="1.62" fill="#ea580c" />
+<rect x="782.86" y="243.15" width="11.14" height="4.85" fill="#ea580c" />
+<rect x="796.00" y="227.99" width="11.14" height="20.01" fill="#ea580c" />
+<rect x="809.14" y="235.94" width="11.14" height="12.06" fill="#ea580c" />
+<rect x="822.29" y="225.75" width="11.14" height="22.25" fill="#ea580c" />
+<rect x="835.43" y="212.45" width="11.14" height="35.55" fill="#ea580c" />
+<rect x="848.57" y="229.36" width="11.14" height="18.64" fill="#ea580c" />
+<rect x="861.71" y="233.83" width="11.14" height="14.17" fill="#ea580c" />
+<rect x="874.86" y="218.29" width="11.14" height="29.71" fill="#ea580c" />
+<line x1="704" y1="248.00" x2="886" y2="248.00" stroke="#9ca3af" stroke-width="1" />
 <rect x="894" y="110" width="182" height="142" fill="none" stroke="#e5e7eb" stroke-width="1" />
 <text x="985.00" y="122.00" font-size="9" font-weight="400" text-anchor="middle">LP orig. 39%</text>
 <rect x="894.00" y="194.93" width="11.14" height="53.07" fill="#2563eb" />

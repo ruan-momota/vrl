@@ -22,3 +22,4 @@ Diving48,fine-grained motion / pose contrast,V-JEPA2,facebook/vjepa2-vitl-fpc64-
 HMDB51,action-recognition,DisMo,motion_extractor_large,hmdb51-full-split1-dismo-motion-extractor-large-frozen-linear-probe,3551,1524,128,0.4730971157550812,0.3720472440944882,True,0
 SSV2,motion-oriented,DisMo,motion_extractor_large,ssv2-c50-train100-heldout30-dismo-motion-extractor-large-frozen-linear-probe,5000,1500,128,0.3933333456516266,0.30866666666666664,True,0
 UCF101,appearance-rich / context-correlated contrast,V-JEPA2,facebook/vjepa2-vitl-fpc64-256,ucf101-c50-train100-heldout30-vjepa2-vitl-fpc64-256-frozen-linear-probe,5000,1500,1024,0.9906666874885559,0.9753333333333334,True,0
+SSV2,motion-oriented,V-JEPA2,facebook/vjepa2-vitl-fpc64-256,ssv2-c50-train100-heldout30-vjepa2-vitl-fpc64-256-frozen-linear-probe,5000,1500,1024,0.4273333251476288,0.21533333333333332,True,0
