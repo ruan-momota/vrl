@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 from dataclasses import asdict, dataclass
 from typing import Any, Literal
 
@@ -72,6 +73,8 @@ def load_vjepa_model(
         embedding_type="last_hidden_state_mean_pool",
         revision=revision or _config_value(getattr(model, "config", None), "_commit_hash"),
     )
+    if resolved_device.type == "cuda" and os.environ.get("VRL_FORCE_FP32") != "1":
+        model = torch.compile(model)
     return model, metadata
 
 

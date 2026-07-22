@@ -1,7 +1,8 @@
 from __future__ import annotations
 
+import os
 from dataclasses import dataclass
-from typing import Any
+from typing import Any, Callable
 
 import numpy as np
 import torch
@@ -30,6 +31,7 @@ class DisMoEncoder:
     model_source: str = "torch_hub:CompVis/DisMo:motion_extractor_large"
     embedding_source: str = "forward_sliding_time_mean_pool"
     name: str = "dismo"
+    compiled_forward_sliding: Callable[..., torch.Tensor] | None = None
 
     @classmethod
     def from_pretrained(
@@ -55,12 +57,16 @@ class DisMoEncoder:
         source = "torch_hub:CompVis/DisMo:motion_extractor_large"
         if revision:
             source = f"{source}@{revision}"
+        compiled_forward_sliding = None
+        if resolved_device.type == "cuda" and os.environ.get("VRL_FORCE_FP32") != "1":
+            compiled_forward_sliding = torch.compile(model.forward_sliding)  # type: ignore[attr-defined]
         return cls(
             model=model,
             checkpoint=checkpoint,
             device=str(resolved_device),
             image_size=image_size,
             model_source=source,
+            compiled_forward_sliding=compiled_forward_sliding,
         )
 
     def input_spec(self) -> dict[str, Any]:
@@ -98,12 +104,12 @@ class DisMoEncoder:
             resolved_device, dtype=torch.float32, non_blocking=True)
         self.model.to(resolved_device)
         self.model.eval()
+        forward_sliding = self.compiled_forward_sliding or self.model.forward_sliding  # type: ignore[attr-defined]
         with torch.inference_mode():
             embeddings: list[torch.Tensor] = []
             for clip in clips:
                 # forward_sliding expects a leading batch dim: (1, T, H, W, C).
-                sequence = self.model.forward_sliding(
-                    clip.unsqueeze(0)).squeeze(0)
+                sequence = forward_sliding(clip.unsqueeze(0)).squeeze(0)
                 pooled = sequence.reshape(-1, sequence.shape[-1]).mean(dim=0)
                 embeddings.append(pooled)
             features = torch.stack(embeddings, dim=0)
