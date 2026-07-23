@@ -12,8 +12,8 @@ HMDB51,action-recognition,V-JEPA2,facebook/vjepa2-vitl-fpc64-256,hmdb51-full-spl
 HMDB51,action-recognition,VideoMAE,MCG-NJU/videomae-base,hmdb51-full-split1-videomae-base-frozen-linear-probe,3551,1524,768,0.36351704597473145,0.1679790026246719,True,0
 HMDB51,action-recognition,SlowFast R50 8x8,facebookresearch/pytorchvideo:slowfast_r50,hmdb51-full-split1-slowfast-r50-8x8-frozen-linear-probe,3551,1524,9216,0.7178477644920349,0.6128608923884514,True,0
 Kinetics,large-scale web-video,VideoMAE,MCG-NJU/videomae-base,kinetics-c50-train100-heldout30-videomae-base-frozen-linear-probe,5000,1500,768,0.4633333384990692,0.19466666666666665,True,0
-Kinetics,large-scale web-video,DisMo,motion_extractor_large,kinetics-c50-train100-heldout30-dismo-motion-extractor-large-frozen-linear-probe,5000,1500,128,0.34599998593330383,0.20266666666666666,True,0
-Kinetics,large-scale web-video,V-JEPA2,facebook/vjepa2-vitl-fpc64-256,kinetics-c50-train100-heldout30-vjepa2-vitl-fpc64-256-frozen-linear-probe,5000,1500,1024,0.7179999947547913,0.5213333333333333,True,0
+Kinetics,large-scale web-video,DisMo,motion_extractor_large,kinetics-c50-train100-heldout30-dismo-motion-extractor-large-frozen-linear-probe,5000,1500,128,0.3440000116825104,0.20533333333333334,True,0
+Kinetics,large-scale web-video,V-JEPA2,facebook/vjepa2-vitl-fpc64-256,kinetics-c50-train100-heldout30-vjepa2-vitl-fpc64-256-frozen-linear-probe,5000,1500,1024,0.7260000109672546,0.52,True,0
 HMDB51,action-recognition,DINOv2 frame-mean,facebook/dinov2-base,hmdb51-full-split1-dinov2-base-frame-mean-frozen-linear-probe,3551,1524,768,0.6325459480285645,0.5295275590551181,True,0
 Kinetics,large-scale web-video,DINOv2 frame-mean,facebook/dinov2-base,kinetics-c50-train100-heldout30-dinov2-base-frame-mean-frozen-linear-probe,5000,1500,768,0.8306666612625122,0.784,True,0
 Kinetics,large-scale web-video,SlowFast R50 8x8,facebookresearch/pytorchvideo:slowfast_r50,kinetics-c50-train100-heldout30-slowfast-r50-8x8-frozen-linear-probe,5000,1500,9216,0.9206666946411133,0.892,True,0
@@ -23,3 +23,4 @@ HMDB51,action-recognition,DisMo,motion_extractor_large,hmdb51-full-split1-dismo-
 SSV2,motion-oriented,DisMo,motion_extractor_large,ssv2-c50-train100-heldout30-dismo-motion-extractor-large-frozen-linear-probe,5000,1500,128,0.3933333456516266,0.30866666666666664,True,0
 UCF101,appearance-rich / context-correlated contrast,V-JEPA2,facebook/vjepa2-vitl-fpc64-256,ucf101-c50-train100-heldout30-vjepa2-vitl-fpc64-256-frozen-linear-probe,5000,1500,1024,0.9906666874885559,0.9753333333333334,True,0
 SSV2,motion-oriented,V-JEPA2,facebook/vjepa2-vitl-fpc64-256,ssv2-c50-train100-heldout30-vjepa2-vitl-fpc64-256-frozen-linear-probe,5000,1500,1024,0.4273333251476288,0.21533333333333332,True,0
+UCF101,appearance-rich / context-correlated contrast,DisMo,motion_extractor_large,ucf101-c50-train100-heldout30-dismo-motion-extractor-large-frozen-linear-probe,5000,1500,128,0.8246666789054871,0.8113333333333334,True,0

@@ -1,99 +1,102 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="620" viewBox="0 0 1920 620">
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="620" viewBox="0 0 2000 620">
 <rect width="100%" height="100%" fill="#ffffff" />
 <style>text { font-family: Arial, Helvetica, sans-serif; fill: #111827; }</style>
-<text x="960.00" y="28.00" font-size="18" font-weight="700" text-anchor="middle">Fixed-mid perturbation: mean cosine distance</text>
+<text x="1000.00" y="28.00" font-size="18" font-weight="700" text-anchor="middle">Fixed-mid perturbation: mean cosine distance</text>
 <text x="18.00" y="257.50" font-size="12" font-weight="400" text-anchor="middle" transform="rotate(-90 18.00 257.50)">Mean cosine distance</text>
-<line x1="90" y1="460" x2="1890" y2="460" stroke="#111827" stroke-width="1" />
+<line x1="90" y1="460" x2="1970" y2="460" stroke="#111827" stroke-width="1" />
 <line x1="90" y1="55" x2="90" y2="460" stroke="#111827" stroke-width="1" />
 <line x1="86" y1="460.00" x2="90" y2="460.00" stroke="#111827" />
 <text x="82.00" y="464.00" font-size="10" font-weight="400" text-anchor="end">-0.085</text>
 <line x1="86" y1="379.00" x2="90" y2="379.00" stroke="#111827" />
 <text x="82.00" y="383.00" font-size="10" font-weight="400" text-anchor="end">0.091</text>
-<line x1="90" y1="379.00" x2="1890" y2="379.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="90" y1="379.00" x2="1970" y2="379.00" stroke="#e5e7eb" stroke-width="1" />
 <line x1="86" y1="298.00" x2="90" y2="298.00" stroke="#111827" />
 <text x="82.00" y="302.00" font-size="10" font-weight="400" text-anchor="end">0.267</text>
-<line x1="90" y1="298.00" x2="1890" y2="298.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="90" y1="298.00" x2="1970" y2="298.00" stroke="#e5e7eb" stroke-width="1" />
 <line x1="86" y1="217.00" x2="90" y2="217.00" stroke="#111827" />
 <text x="82.00" y="221.00" font-size="10" font-weight="400" text-anchor="end">0.443</text>
-<line x1="90" y1="217.00" x2="1890" y2="217.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="90" y1="217.00" x2="1970" y2="217.00" stroke="#e5e7eb" stroke-width="1" />
 <line x1="86" y1="136.00" x2="90" y2="136.00" stroke="#111827" />
 <text x="82.00" y="140.00" font-size="10" font-weight="400" text-anchor="end">0.619</text>
-<line x1="90" y1="136.00" x2="1890" y2="136.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="90" y1="136.00" x2="1970" y2="136.00" stroke="#e5e7eb" stroke-width="1" />
 <line x1="86" y1="55.00" x2="90" y2="55.00" stroke="#111827" />
 <text x="82.00" y="59.00" font-size="10" font-weight="400" text-anchor="end">0.795</text>
-<line x1="90" y1="420.81" x2="1890" y2="420.81" stroke="#6b7280" stroke-dasharray="4 4" />
-<rect x="106.88" y="410.21" width="18.75" height="10.60" fill="#2563eb" />
-<rect x="129.38" y="417.83" width="18.75" height="2.98" fill="#ea580c" />
-<text x="127.50" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 127.50 520.00)">VideoMAE x SSV2</text>
-<rect x="181.88" y="415.18" width="18.75" height="5.63" fill="#2563eb" />
-<rect x="204.38" y="416.46" width="18.75" height="4.35" fill="#ea580c" />
-<text x="202.50" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 202.50 520.00)">VideoMAE x UCF101</text>
-<rect x="256.88" y="383.89" width="18.75" height="36.92" fill="#2563eb" />
-<rect x="279.38" y="420.32" width="18.75" height="0.49" fill="#ea580c" />
-<text x="277.50" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 277.50 520.00)">VideoMAE x Diving48</text>
-<rect x="331.88" y="318.67" width="18.75" height="102.13" fill="#2563eb" />
-<rect x="354.38" y="385.75" width="18.75" height="35.05" fill="#ea580c" />
-<text x="352.50" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 352.50 520.00)">SlowFast R50 8x8 x SSV2</text>
-<rect x="406.88" y="346.51" width="18.75" height="74.29" fill="#2563eb" />
-<rect x="429.38" y="392.80" width="18.75" height="28.00" fill="#ea580c" />
-<text x="427.50" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 427.50 520.00)">SlowFast R50 8x8 x UCF101</text>
-<rect x="481.88" y="326.27" width="18.75" height="94.54" fill="#2563eb" />
-<rect x="504.38" y="418.35" width="18.75" height="2.46" fill="#ea580c" />
-<text x="502.50" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 502.50 520.00)">SlowFast R50 8x8 x Diving48</text>
-<rect x="556.88" y="420.81" width="18.75" height="0.00" fill="#2563eb" />
-<rect x="579.38" y="398.57" width="18.75" height="22.24" fill="#ea580c" />
-<text x="577.50" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 577.50 520.00)">DINOv2 frame-mean x SSV2</text>
-<rect x="631.88" y="420.81" width="18.75" height="0.00" fill="#2563eb" />
-<rect x="654.38" y="402.68" width="18.75" height="18.13" fill="#ea580c" />
-<text x="652.50" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 652.50 520.00)">DINOv2 frame-mean x UCF101</text>
-<rect x="706.88" y="420.81" width="18.75" height="0.00" fill="#2563eb" />
-<rect x="729.38" y="419.27" width="18.75" height="1.53" fill="#ea580c" />
-<text x="727.50" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 727.50 520.00)">DINOv2 frame-mean x Diving48</text>
-<rect x="781.88" y="379.07" width="18.75" height="41.74" fill="#2563eb" />
-<rect x="804.38" y="353.11" width="18.75" height="67.70" fill="#ea580c" />
-<text x="802.50" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 802.50 520.00)">V-JEPA2 x HMDB51</text>
-<rect x="856.88" y="414.24" width="18.75" height="6.57" fill="#2563eb" />
-<rect x="879.38" y="416.62" width="18.75" height="4.19" fill="#ea580c" />
-<text x="877.50" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 877.50 520.00)">VideoMAE x HMDB51</text>
-<rect x="931.88" y="310.06" width="18.75" height="110.74" fill="#2563eb" />
-<rect x="954.38" y="390.10" width="18.75" height="30.70" fill="#ea580c" />
-<text x="952.50" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 952.50 520.00)">SlowFast R50 8x8 x HMDB51</text>
-<rect x="1006.88" y="412.44" width="18.75" height="8.37" fill="#2563eb" />
-<rect x="1029.38" y="419.59" width="18.75" height="1.21" fill="#ea580c" />
-<text x="1027.50" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1027.50 520.00)">VideoMAE x Kinetics</text>
-<rect x="1081.88" y="247.11" width="18.75" height="173.70" fill="#2563eb" />
-<rect x="1104.38" y="416.68" width="18.75" height="4.13" fill="#ea580c" />
-<text x="1102.50" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1102.50 520.00)">DisMo x Kinetics</text>
-<rect x="1156.88" y="381.48" width="18.75" height="39.33" fill="#2563eb" />
-<rect x="1179.38" y="375.30" width="18.75" height="45.51" fill="#ea580c" />
-<text x="1177.50" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1177.50 520.00)">V-JEPA2 x Kinetics</text>
-<rect x="1231.88" y="420.81" width="18.75" height="0.00" fill="#2563eb" />
-<rect x="1254.38" y="403.35" width="18.75" height="17.46" fill="#ea580c" />
-<text x="1252.50" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1252.50 520.00)">DINOv2 frame-mean x HMDB51</text>
-<rect x="1306.88" y="420.81" width="18.75" height="0.00" fill="#2563eb" />
-<rect x="1329.38" y="413.93" width="18.75" height="6.88" fill="#ea580c" />
-<text x="1327.50" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1327.50 520.00)">DINOv2 frame-mean x Kinetics</text>
-<rect x="1381.88" y="335.15" width="18.75" height="85.66" fill="#2563eb" />
-<rect x="1404.38" y="409.32" width="18.75" height="11.49" fill="#ea580c" />
-<text x="1402.50" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1402.50 520.00)">SlowFast R50 8x8 x Kinetics</text>
-<rect x="1456.88" y="94.19" width="18.75" height="326.61" fill="#2563eb" />
-<rect x="1479.38" y="419.61" width="18.75" height="1.19" fill="#ea580c" />
-<text x="1477.50" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1477.50 520.00)">DisMo x Diving48</text>
-<rect x="1531.88" y="365.16" width="18.75" height="55.64" fill="#2563eb" />
-<rect x="1554.38" y="393.87" width="18.75" height="26.94" fill="#ea580c" />
-<text x="1552.50" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1552.50 520.00)">V-JEPA2 x Diving48</text>
-<rect x="1606.88" y="254.03" width="18.75" height="166.78" fill="#2563eb" />
-<rect x="1629.38" y="412.67" width="18.75" height="8.14" fill="#ea580c" />
-<text x="1627.50" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1627.50 520.00)">DisMo x HMDB51</text>
-<rect x="1681.88" y="232.14" width="18.75" height="188.67" fill="#2563eb" />
-<rect x="1704.38" y="410.82" width="18.75" height="9.98" fill="#ea580c" />
-<text x="1702.50" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1702.50 520.00)">DisMo x SSV2</text>
-<rect x="1756.88" y="387.25" width="18.75" height="33.56" fill="#2563eb" />
-<rect x="1779.38" y="351.19" width="18.75" height="69.62" fill="#ea580c" />
-<text x="1777.50" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1777.50 520.00)">V-JEPA2 x UCF101</text>
-<rect x="1831.88" y="385.49" width="18.75" height="35.31" fill="#2563eb" />
-<rect x="1854.38" y="372.64" width="18.75" height="48.16" fill="#ea580c" />
-<text x="1852.50" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1852.50 520.00)">V-JEPA2 x SSV2</text>
+<line x1="90" y1="420.81" x2="1970" y2="420.81" stroke="#6b7280" stroke-dasharray="4 4" />
+<rect x="106.92" y="410.21" width="18.80" height="10.60" fill="#2563eb" />
+<rect x="129.48" y="417.83" width="18.80" height="2.98" fill="#ea580c" />
+<text x="127.60" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 127.60 520.00)">VideoMAE x SSV2</text>
+<rect x="182.12" y="415.18" width="18.80" height="5.63" fill="#2563eb" />
+<rect x="204.68" y="416.46" width="18.80" height="4.35" fill="#ea580c" />
+<text x="202.80" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 202.80 520.00)">VideoMAE x UCF101</text>
+<rect x="257.32" y="383.89" width="18.80" height="36.92" fill="#2563eb" />
+<rect x="279.88" y="420.32" width="18.80" height="0.49" fill="#ea580c" />
+<text x="278.00" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 278.00 520.00)">VideoMAE x Diving48</text>
+<rect x="332.52" y="318.67" width="18.80" height="102.13" fill="#2563eb" />
+<rect x="355.08" y="385.75" width="18.80" height="35.05" fill="#ea580c" />
+<text x="353.20" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 353.20 520.00)">SlowFast R50 8x8 x SSV2</text>
+<rect x="407.72" y="346.51" width="18.80" height="74.29" fill="#2563eb" />
+<rect x="430.28" y="392.80" width="18.80" height="28.00" fill="#ea580c" />
+<text x="428.40" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 428.40 520.00)">SlowFast R50 8x8 x UCF101</text>
+<rect x="482.92" y="326.27" width="18.80" height="94.54" fill="#2563eb" />
+<rect x="505.48" y="418.35" width="18.80" height="2.46" fill="#ea580c" />
+<text x="503.60" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 503.60 520.00)">SlowFast R50 8x8 x Diving48</text>
+<rect x="558.12" y="420.81" width="18.80" height="0.00" fill="#2563eb" />
+<rect x="580.68" y="398.57" width="18.80" height="22.24" fill="#ea580c" />
+<text x="578.80" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 578.80 520.00)">DINOv2 frame-mean x SSV2</text>
+<rect x="633.32" y="420.81" width="18.80" height="0.00" fill="#2563eb" />
+<rect x="655.88" y="402.68" width="18.80" height="18.13" fill="#ea580c" />
+<text x="654.00" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 654.00 520.00)">DINOv2 frame-mean x UCF101</text>
+<rect x="708.52" y="420.81" width="18.80" height="0.00" fill="#2563eb" />
+<rect x="731.08" y="419.27" width="18.80" height="1.53" fill="#ea580c" />
+<text x="729.20" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 729.20 520.00)">DINOv2 frame-mean x Diving48</text>
+<rect x="783.72" y="379.07" width="18.80" height="41.74" fill="#2563eb" />
+<rect x="806.28" y="353.11" width="18.80" height="67.70" fill="#ea580c" />
+<text x="804.40" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 804.40 520.00)">V-JEPA2 x HMDB51</text>
+<rect x="858.92" y="414.24" width="18.80" height="6.57" fill="#2563eb" />
+<rect x="881.48" y="416.62" width="18.80" height="4.19" fill="#ea580c" />
+<text x="879.60" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 879.60 520.00)">VideoMAE x HMDB51</text>
+<rect x="934.12" y="310.06" width="18.80" height="110.74" fill="#2563eb" />
+<rect x="956.68" y="390.10" width="18.80" height="30.70" fill="#ea580c" />
+<text x="954.80" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 954.80 520.00)">SlowFast R50 8x8 x HMDB51</text>
+<rect x="1009.32" y="412.44" width="18.80" height="8.37" fill="#2563eb" />
+<rect x="1031.88" y="419.59" width="18.80" height="1.21" fill="#ea580c" />
+<text x="1030.00" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1030.00 520.00)">VideoMAE x Kinetics</text>
+<rect x="1084.52" y="246.27" width="18.80" height="174.54" fill="#2563eb" />
+<rect x="1107.08" y="416.58" width="18.80" height="4.22" fill="#ea580c" />
+<text x="1105.20" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1105.20 520.00)">DisMo x Kinetics</text>
+<rect x="1159.72" y="381.39" width="18.80" height="39.41" fill="#2563eb" />
+<rect x="1182.28" y="375.83" width="18.80" height="44.98" fill="#ea580c" />
+<text x="1180.40" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1180.40 520.00)">V-JEPA2 x Kinetics</text>
+<rect x="1234.92" y="420.81" width="18.80" height="0.00" fill="#2563eb" />
+<rect x="1257.48" y="403.35" width="18.80" height="17.46" fill="#ea580c" />
+<text x="1255.60" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1255.60 520.00)">DINOv2 frame-mean x HMDB51</text>
+<rect x="1310.12" y="420.81" width="18.80" height="0.00" fill="#2563eb" />
+<rect x="1332.68" y="413.93" width="18.80" height="6.88" fill="#ea580c" />
+<text x="1330.80" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1330.80 520.00)">DINOv2 frame-mean x Kinetics</text>
+<rect x="1385.32" y="335.15" width="18.80" height="85.66" fill="#2563eb" />
+<rect x="1407.88" y="409.32" width="18.80" height="11.49" fill="#ea580c" />
+<text x="1406.00" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1406.00 520.00)">SlowFast R50 8x8 x Kinetics</text>
+<rect x="1460.52" y="94.19" width="18.80" height="326.61" fill="#2563eb" />
+<rect x="1483.08" y="419.61" width="18.80" height="1.19" fill="#ea580c" />
+<text x="1481.20" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1481.20 520.00)">DisMo x Diving48</text>
+<rect x="1535.72" y="365.16" width="18.80" height="55.64" fill="#2563eb" />
+<rect x="1558.28" y="393.87" width="18.80" height="26.94" fill="#ea580c" />
+<text x="1556.40" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1556.40 520.00)">V-JEPA2 x Diving48</text>
+<rect x="1610.92" y="254.03" width="18.80" height="166.78" fill="#2563eb" />
+<rect x="1633.48" y="412.67" width="18.80" height="8.14" fill="#ea580c" />
+<text x="1631.60" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1631.60 520.00)">DisMo x HMDB51</text>
+<rect x="1686.12" y="232.14" width="18.80" height="188.67" fill="#2563eb" />
+<rect x="1708.68" y="410.82" width="18.80" height="9.98" fill="#ea580c" />
+<text x="1706.80" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1706.80 520.00)">DisMo x SSV2</text>
+<rect x="1761.32" y="387.25" width="18.80" height="33.56" fill="#2563eb" />
+<rect x="1783.88" y="351.19" width="18.80" height="69.62" fill="#ea580c" />
+<text x="1782.00" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1782.00 520.00)">V-JEPA2 x UCF101</text>
+<rect x="1836.52" y="385.49" width="18.80" height="35.31" fill="#2563eb" />
+<rect x="1859.08" y="372.64" width="18.80" height="48.16" fill="#ea580c" />
+<text x="1857.20" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1857.20 520.00)">V-JEPA2 x SSV2</text>
+<rect x="1911.72" y="263.97" width="18.80" height="156.84" fill="#2563eb" />
+<rect x="1934.28" y="410.95" width="18.80" height="9.86" fill="#ea580c" />
+<text x="1932.40" y="520.00" font-size="10" font-weight="400" text-anchor="end" transform="rotate(-40 1932.40 520.00)">DisMo x UCF101</text>
 <rect x="102" y="38" width="12" height="12" fill="#2563eb" />
 <text x="120.00" y="48.00" font-size="12" font-weight="400" text-anchor="start">temporal-shuffle-mid</text>
 <rect x="102" y="58" width="12" height="12" fill="#ea580c" />
